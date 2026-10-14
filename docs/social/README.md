@@ -291,6 +291,12 @@ yapabilmeli").
   alır (kaydedilmemiş metin, elle değiştirilmiş platform alanı korunur). Platform durumu kaydı formun gördüğü
   `updatedAt`ı taşır: satır o arada değiştiyse (işçi "Yayında" yaptı) yazılmaz, güncel durum yüklenir. Toplu işaret
   yalnız satırı olmayan ("Planlandı") bölümlere yazar.
+- **"Veri N dk" göstergesi (2026-10-14; Samet: "veriler belirtilen şimdi ifadelerinde çekilmiyor"):** eskiden işçinin son
+  eşitlemesini gösteriyordu, metrikler ise gönderi başına saatte bir, her gönderi kendi saatinde yazılıyordu (TikTok ve
+  YouTube her koşuda çektiği sayıları yazmadan atıyordu). Rate limit sorunu yoktu. Şimdi metrikler her okumada
+  (Instagram 15 dk, TikTok 5, YouTube 10) bütün gönderiler için yazılır, işçi `status.json`a `metricsAt` koyar,
+  gösterge onu gösterir (`src/app/studio/api-status.tsx`). Platformların kendi sayaçları gecikmeli ilerler (YouTube
+  Shorts izlenmesi saatlerce sabit kalıp birden artabilir): okuma taze olsa da sayı sıçramalı değişir.
 - **İstatistik (2026-10-12; Samet: "3 platformun istatistiklerini doğru harmanlayarak hem genel hem postlara özel"):**
   hesap `src/lib/social-stats-core.ts` (test `npm run test:social-stats`), okuma `src/lib/social-stats.ts`.
   Harmanlama: izlenme üç platformda oynatma sayısı → toplanır; etkileşim = beğeni + yorum + paylaşım + kaydetme (hangisi
@@ -359,7 +365,8 @@ stüdyo takviminde "Instagram API" etiketi.
   bölüm), satır "Yayında" olur, bağlantı ve kimlik yazılır. Elle (Instagram uygulamasından ya da Meta zamanlayıcısından)
   paylaşılan video da tanınır.
 - **Metrikler:** `views`, `reach`, `likes`, `comments`, `shares`, `saves`, `interactions`, `avgWatchSec`
-  (`ig_reels_avg_watch_time`). İlk 3 gün saatlik, 30 güne kadar 6 saatte bir, 90 güne kadar günde bir.
+  (`ig_reels_avg_watch_time`). 15 dakikada bir, vadesi gelen bütün gönderiler aynı koşuda: ilk 3 gün her seferinde,
+  30 güne kadar saatte bir, 90 güne kadar 6 saatte bir.
 - **Otomatik yayın:** Instagram durumu **Otomatik** olan bölüm saatinde yayınlanır (takvimde "N videoyu otomatik yayına
   al", editörde Yayın kutusu). Şart: güncel sürüm onaylı ve videosu sunucuda hazır. Saatten 20 dk önce kap açılır;
   Instagram MP4'ü ve kapağı **imzalı, 3 saatlik adresten** (`/api/studio/file/<üretim>?k=mp4|kapak&exp&sig`,
@@ -388,7 +395,7 @@ takviminde "TikTok API" etiketi.
 - **Eşitleme:** yalnız yayındaki videolar listede (zamanlanmış görünmez). Önce Samet'in yazdığı bağlantıdaki kimlikle,
   yoksa saatinden bölüme eşlenir (saatten 30 dk önce – 3 sa sonra); satır **Yayında** olur.
 - **Metrikler:** `views`, `likes`, `comments`, `shares` (Display API bu kadar; izlenme süresi/tamamlama yok, onlar
-  TikTok Studio'da ya da Business API onayıyla). Tek istekte bütün videolar: 90 güne kadar saatte bir. Hesap: takipçi,
+  TikTok Studio'da ya da Business API onayıyla). Tek istekte bütün videolar: 90 güne kadar her koşuda (5 dk). Hesap: takipçi,
   video sayısı.
 - **Yayın denetimi:** "Zamanlandı" satırı saatten 20 dk sonra hâlâ yayında değilse bir kez Telegram. API çalışmıyorsa
   herkese açık oEmbed'e düşer (`https://www.tiktok.com/oembed?url=…`: zamanlanmış/gizli video 400, yayındaki 200).
@@ -410,7 +417,7 @@ dakikada bir → `/opt/lernomi/social-yt.sh` (repo dışı). Belirteç `/opt/ler
 - **Eşitleme:** kanal sahibi zamanlanmış videoları da görür. YouTube Studio'da bölümün saatine zamanlanan Short
   (`publishAt`, saatten 30 dk önce – 3 sa sonra) kendiliğinden **Zamanlandı** + bağlantı; herkese açılınca **Yayında**.
   Liste dışı ve taslak videolar sayılmaz.
-- **Metrikler:** videos.list saatte bir (`views`, `likes`, `comments`; anlık) + Analytics API 6 saatte bir (`watchMin`,
+- **Metrikler:** videos.list her koşuda (10 dk, eşitlemeyle aynı istek; `views`, `likes`, `comments`) + Analytics API 6 saatte bir (`watchMin`,
   `avgWatchSec`, `avgViewPct`, `shares`, `subsGained`; 1–2 gün gecikmeli). Kanal: abone sayısı.
 - **Denetim:** "Zamanlandı" saatinden 20 dk sonra hâlâ herkese açık değilse bir kez Telegram.
 - **Yükleme (henüz yok):** API ile yükleme ve gerçek zamanlama (`status.publishAt`, `containsSyntheticMedia`) mümkün,

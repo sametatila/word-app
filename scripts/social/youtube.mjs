@@ -13,7 +13,8 @@
        (saatten 30 dk önce – 3 sa sonra; her saatte tek bölüm). Zamanlanmış (private + publishAt) → "scheduled" + bağlantı;
        herkese açık → "published". "Atlandı" ve başka videoya bağlı satırlara dokunulmaz. Zamanlanmış satırın videosu
        silinir ya da zamanlaması kalkarsa bağ çözülür (yeniden yüklenen video saatinden eşleşir).
-    3. METRİKLER (90 güne kadar): videos.list istatistikleri saatte bir (views, likes, comments; anlık) + Analytics API
+    3. METRİKLER (90 güne kadar): videos.list istatistikleri her koşuda (10 dk; eşitlemeyle aynı istek, ek kota yok;
+       YouTube'un herkese açık sayacı kendisi gecikmeli ilerler) (views, likes, comments) + Analytics API
        6 saatte bir (watchMin, avgWatchSec, avgViewPct, shares, subsGained; 1–2 gün gecikmeli). Kanal: abone sayısı.
     4. DENETİM: "scheduled" satır saatten 20 dk sonra hâlâ herkese açık değilse bir kez Telegram.
 
@@ -201,11 +202,12 @@ async function sync(get) {
     } else if (!row.external_id) {
       await q("update social_posts set external_id = $2, url = coalesce(url, $3) where id = $1", [row.id, v.id, urlOf(v)]);
     }
-    if (isPublic(v) && now - ts < METRICS_FOR && now - (row.metrics_at ? row.metrics_at.getTime() : 0) > HOUR - MIN) {
+    if (isPublic(v) && now - ts < METRICS_FOR) {
       const s = v.statistics || {};
       await q("update social_posts set metrics = coalesce(metrics, '{}'::jsonb) || $2::jsonb, metrics_at = now() where id = $1", [row.id, JSON.stringify({ views: Number(s.viewCount ?? 0), likes: Number(s.likeCount ?? 0), comments: Number(s.commentCount ?? 0) })]);
     }
   }
+  status.metricsAt = new Date().toISOString();
   return videos;
 }
 

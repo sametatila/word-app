@@ -23,7 +23,7 @@ export type StatEpisode = { id: string; title: string; slot: string | null; appr
 export type StatPost = { id: number; episodeId: string | null; platform: Platform; status: string; url: string | null; publishedAt: string | null; metrics: Metrics | null; metricsAt: string | null };
 export type StatSnapshot = { postId: number; at: string; metrics: Metrics };
 export type AccountDay = { platform: Platform; day: string; followers: number };
-export type AccountNow = { platform: Platform; connected: boolean; ok: boolean; followers: number | null; lastSyncAt: string | null; error: string | null; stale: boolean };
+export type AccountNow = { platform: Platform; connected: boolean; ok: boolean; followers: number | null; lastSyncAt: string | null; metricsAt: string | null; error: string | null; stale: boolean };
 
 const TZ = "Europe/Berlin";
 const HOUR = 3_600_000;

@@ -165,14 +165,15 @@ function slotPast(slot: string): boolean {
 /**
  * Platform API bağlantısı (işçinin yazdığı `SOCIAL_DIR/<platform>/status.json`; belirteç içermez). Dosya yoksa bağlı değil.
  * `stale`: işçi koşmadı (Instagram dakikada bir, TikTok 5, YouTube 10 dakikada bir koşuyor). TikTok'ta `tokenDays` yenileme belirtecinin günü.
+ * `metricsAt`: izlenme/beğeni sayılarının son okunduğu an (Instagram 15 dk, TikTok 5, YouTube 10 dk); `lastSyncAt` gönderi eşleştirmesi.
  */
-export type InstagramStatus = { connected: boolean; ok: boolean; username: string | null; followers: number | null; tokenDays: number | null; lastSyncAt: string | null; error: string | null; stale: boolean };
+export type InstagramStatus = { connected: boolean; ok: boolean; username: string | null; followers: number | null; tokenDays: number | null; lastSyncAt: string | null; metricsAt: string | null; error: string | null; stale: boolean };
 export type PlatformApiStatus = InstagramStatus;
 export const instagramStatus = () => apiStatus("instagram", 10 * 60_000);
 export const tiktokStatus = () => apiStatus("tiktok", 20 * 60_000);
 export const youtubeStatus = () => apiStatus("youtube", 40 * 60_000);
 async function apiStatus(platform: SocialPlatform, staleMs: number): Promise<PlatformApiStatus> {
-  const off: PlatformApiStatus = { connected: false, ok: false, username: null, followers: null, tokenDays: null, lastSyncAt: null, error: null, stale: false };
+  const off: PlatformApiStatus = { connected: false, ok: false, username: null, followers: null, tokenDays: null, lastSyncAt: null, metricsAt: null, error: null, stale: false };
   try {
     const s = JSON.parse(await fs.readFile(path.join(process.env.SOCIAL_DIR || "/opt/lernomi/social", platform, "status.json"), "utf8")) as Record<string, unknown>;
     const str = (v: unknown) => (typeof v === "string" ? v : null);
@@ -184,6 +185,7 @@ async function apiStatus(platform: SocialPlatform, staleMs: number): Promise<Pla
       followers: typeof s.followers === "number" ? s.followers : null,
       tokenDays: Number.isFinite(exp) ? Math.floor((exp - Date.now()) / 86_400_000) : null,
       lastSyncAt: str(s.lastSyncAt),
+      metricsAt: str(s.metricsAt),
       error: str(s.error) ?? str(s.tokenError),
       stale: Date.now() - Date.parse(str(s.lastRunAt) ?? "") > staleMs,
     };

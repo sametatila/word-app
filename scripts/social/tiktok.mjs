@@ -11,7 +11,8 @@
     2. EŞİTLEME: hesabın videoları (yalnız yayındakiler; zamanlanmış video listede yok) önce Samet'in yazdığı bağlantıdaki
        kimlikle, yoksa saatinden bölüme eşlenir (saatten 30 dk önce – 3 sa sonra; her saatte tek bölüm). Eşleşen satır
        "published" olur. METRİKLER (views, likes, comments, shares): tek istekte bütün videolar geldiği için 90 güne kadar
-       saatte bir. Hesap: takipçi ve video sayısı status.json'a (stüdyo takvimi "TikTok API" etiketi).
+       her koşuda (5 dk; stüdyodaki "Eşitleme N dk" metriklerin yaşı da olsun, 2026-10-14). Geçmiş tablosu yine en çok
+       saatte bir (lib/stats.mjs). Hesap: takipçi ve video sayısı status.json'a (stüdyo takvimi "TikTok API" etiketi).
   YEDEK (belirteç yoksa ya da API hata verirse): herkese açık oEmbed (`/oembed?url=`): zamanlanmış/gizli video 400,
   yayındaki 200 (2026-10-12 denendi). Metrik vermez.
   İkisinde de: "scheduled" satır saatten 20 dk sonra hâlâ yayında değilse bir kez Telegram; bağlantısı ve API'si yoksa
@@ -206,11 +207,12 @@ async function syncApi(t) {
       log(`eşleşti: ${cand.id} ← ${v.share_url}`);
     }
     if (row.status !== "published" || row.external_id !== v.id) await markPublished(row.id, v, row.url, "API");
-    if (now - ts < METRICS_FOR && now - (row.metrics_at ? row.metrics_at.getTime() : 0) > HOUR - MIN) {
+    if (now - ts < METRICS_FOR) {
       const metrics = { views: v.view_count ?? 0, likes: v.like_count ?? 0, comments: v.comment_count ?? 0, shares: v.share_count ?? 0 };
       await q("update social_posts set metrics = $2, metrics_at = now() where id = $1", [row.id, metrics]);
     }
   }
+  status.metricsAt = new Date().toISOString();
   return new Set(videos.map((v) => v.id));
 }
 

@@ -46,7 +46,7 @@ async function load() {
       ["instagram", ig],
       ["youtube", yt],
     ] as const
-  ).map(([platform, s]) => ({ platform, connected: s.connected, ok: s.ok, followers: s.followers, lastSyncAt: s.lastSyncAt, error: s.error, stale: s.stale }));
+  ).map(([platform, s]) => ({ platform, connected: s.connected, ok: s.ok, followers: s.followers, lastSyncAt: s.lastSyncAt, metricsAt: s.metricsAt, error: s.error, stale: s.stale }));
   return { episodes, posts: statPosts, snapshots, accountDays: days.map((d) => ({ platform: d.platform as Platform, day: d.day, followers: d.followers })), accounts };
 }
 

@@ -9,7 +9,7 @@
        yenilenir (refresh_access_token, süre yeniden 60 gün). Yenilenemezse ve 10 günden az kaldıysa Telegram.
     2. EŞİTLEME (15 dakikada bir; yayın penceresinde her koşuda): hesabın gönderileri bölümlerle saatinden eşleşir
        (her saatte tek bölüm; gönderi saatten 30 dk önce – 3 sa sonra). Eşleşen satır "published" olur (bağlantı,
-       kimlik). Metrikler: ilk 3 gün saatlik, 30 güne kadar 6 saatte bir, 90 güne kadar günde bir.
+       kimlik). Metrikler eşitlemeyle aynı koşuda (15 dk): ilk 3 gün her eşitlemede, 30 güne kadar saatte bir, 90 güne kadar 6 saatte bir.
     3. YAYIN: Instagram durumu "auto" olan bölüm saatinde yayınlanır. Şart: bölümün GÜNCEL sürümü onaylı ve o sürümün
        videosu sunucuda hazır (social_renders done). Saatten 20 dk önce kap (container) açılır: Instagram
        MP4'ü ve kapağı imzalı, 3 saatlik bir adresten (`/api/studio/file/<üretim>?sig=…`) baytı baytına kendisi çeker
@@ -213,7 +213,7 @@ async function syncMetrics() {
   let n = 0;
   for (const r of rows) {
     const age = Date.now() - r.published_at.getTime();
-    const every = age < 3 * DAY ? HOUR : age < 30 * DAY ? 6 * HOUR : DAY;
+    const every = age < 3 * DAY ? 15 * MIN : age < 30 * DAY ? HOUR : 6 * HOUR;
     if (r.metrics_at && Date.now() - r.metrics_at.getTime() < every - 2 * MIN) continue;
     try {
       const d = await ig("GET", `/${r.external_id}/insights`, { metric: METRICS });
@@ -455,8 +455,14 @@ try {
     const me = await account();
     Object.assign(status, { ok: true, username: me.username, followers: me.followers_count, tokenExpiresAt: t.expiresAt, error: null });
     await publishDue(me.user_id, status);
+    // metrikler 15 dakikada bir, vadesi gelen bütün gönderiler aynı koşuda: gönderiler kendi saatlerine dağılmasın,
+    // stüdyodaki "Veri N dk" metriklerin gerçek yaşı olsun (2026-10-14; Samet: "veriler belirtilen şimdi ifadelerinde
+    // çekilmiyor"). Kendi saati var çünkü yayın penceresinde publishDue eşitlemeyi her koşuda yapıyor.
     if (Date.now() - Date.parse(status.lastSyncAt || 0) > 15 * MIN - 10_000) await syncMedia(status);
-    await syncMetrics();
+    if (Date.now() - Date.parse(status.metricsAt || 0) > 15 * MIN - 10_000) {
+      await syncMetrics();
+      status.metricsAt = new Date().toISOString();
+    }
     await recordStats(q, "instagram", status.followers, log);
   }
 } catch (e) {

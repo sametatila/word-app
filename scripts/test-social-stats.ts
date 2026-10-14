@@ -59,9 +59,9 @@ const ov = overview({
     { platform: "instagram", day: "2026-10-13", followers: 596 },
   ],
   accounts: [
-    { platform: "tiktok", connected: true, ok: true, followers: 1062, lastSyncAt: null, error: null, stale: false },
-    { platform: "instagram", connected: true, ok: true, followers: 596, lastSyncAt: null, error: null, stale: false },
-    { platform: "youtube", connected: true, ok: true, followers: 1, lastSyncAt: null, error: null, stale: false },
+    { platform: "tiktok", connected: true, ok: true, followers: 1062, lastSyncAt: null, metricsAt: null, error: null, stale: false },
+    { platform: "instagram", connected: true, ok: true, followers: 596, lastSyncAt: null, metricsAt: null, error: null, stale: false },
+    { platform: "youtube", connected: true, ok: true, followers: 1, lastSyncAt: null, metricsAt: null, error: null, stale: false },
   ],
   now,
   rangeDays: 30,
