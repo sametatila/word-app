@@ -219,7 +219,9 @@ export const a2U18: SkillExercise[] = [
         text: "Kondüktörün bileti saklama nedenini söylediği cümleyi yaz.",
         options: [],
         answer: 0,
+        // İlk kabul hem "Cümleyi dinle"de çalan hem "Doğrusu" olan: soru tek cümleyi (nedeni) istiyor (QA F-0107).
         accept: [
+          "Damit bekommen Sie Geld zurück.",
           "Heben Sie den Fahrschein auf. Damit bekommen Sie Geld zurück.",
         ],
         explain: "Gecikme parasını almak için bilet gerekiyor — pratik bir bilgi.",
