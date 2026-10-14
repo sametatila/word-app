@@ -157,3 +157,10 @@ AND-4 → M9 · AND-6 → S10 · TEC-1 → T4 · LEG-13 → G4.
 | CNT-6 | Sınav "sertifikası" feragatsiz | ✅ | 470ba65a |
 | CNT-7 | Zürih seçilebiliyor, release'te STT logları | ✅ | aaeb03c2, 4b60150e, 648e6de2 |
 | CNT-8 | Deneme sınavı yönergeleri resmî sınavlara yakın | ✅ | 1580bd4c, f5c348d9 (66 yer); kalan kalıplar İ4 ile kapandı (6feb7eff, 1.466 alan) |
+
+## 2026-10-14 sosyal içerik editör incelemesi
+
+| Madde | Konu | Durum | Kanıt / kalan |
+|---|---|---|---|
+| SOC-ED-1 | Henüz platformda zamanlanmamış içeriklerde doğal Türkçe, hitap, vaat, başlık ve açıklama | ✅ | Canlı dökümle belirlenen 34 kısa + 8 uzun bölüm; kaynak/stüdyo aynı, editör değişikliği yok. Metinler ve YouTube başlıkları düzenlendi. Chrome + WebKit kısa yerleşim denetimi, sekiz uzun önizleme denetimi ve `ci:local` geçti. Ayrıntı `docs/social/editorial-review-2026-10-14.md` |
+| SOC-ED-2 | Uzun video üretimini bekletme (Samet) | ✅ | Mac'te bekleyen yeni ses kuyruğu üretim başlamadan durduruldu. Sekiz bölümde `narrationPaused: true`; işçi otomatik anlatım üretimini atlıyor. Salt okunur SQL: legacy/false uygun, true kapalı; çalışan/bekleyen uzun video işi yok. Yeni ses ve MP4 üretilmedi; yeniden üretim açıkça istendiğinde işaret kaldırılır |

@@ -4,19 +4,19 @@ const episode = {
   status: "hazır",
   created: "2026-10-08",
   slot: "2026-10-15 12:30",
-  ytTitle: "Otobüste ve trende lazım olan 3 Almanca cümle #almanca #shorts",
+  ytTitle: "Otobüs ve metro için 3 Almanca cümleyi sen kur #almanca #shorts",
   content: ({ sentence }) => ({
     copy: {
-      title: "Yolda 3 cümle, treni kur",
+      title: "Yolda 3 cümle, sen kur",
       scene: "Yolda",
       hook: ["Otobüste, trende 3 cümle.", "Doğru sıraya", "dizebilir misin?"],
-      caption: "Otobüste, trende lazım olan 3 cümle. Vagonları doğru sıraya dizebildin mi? Kaçını bildin, yaz.\n\n#almanca #almancaöğreniyorum #deutschlernen #almanyadayaşam #toplutaşıma #almancacümle",
-      outro: { series: "Yarın 3 cümle daha", ask: "Hangi vagonda takıldın? Yorumlara yaz." },
+      caption: "Toplu taşımada kullanılan üç Almanca cümle: bilet fiyatı, otobüse binmek ve metroyla merkeze gitmek. Bilet fiyatını soran cümleyi kurabildin mi?\n\n#almanca #almancaöğreniyorum #deutschlernen #almanyadayaşam #toplutaşıma #almancacümle",
+      outro: { series: "Almanca cümle alıştırmaları", ask: "Bilet fiyatını soran cümleyi kurabildin mi?" },
     },
     lines: [
       sentence("wie viel", [0, 1, 2], "„Wie viel“ başta, fiil hemen arkasında"),
       sentence("einsteigen", [1, 5], "einsteigen ikiye ayrılır, ein en sona gider"),
-      sentence("die U-Bahn", [2, 3, 4], "mit'ten sonra die, der olur"),
+      sentence("die U-Bahn", [2, 3, 4], "Bu cümlede mit, Dativ ister: die U-Bahn → der U-Bahn"),
     ],
   }),
 };

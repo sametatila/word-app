@@ -4,7 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-08",
   slot: "2026-10-15 18:30",
-  ytTitle: "Tren gecikince Almanca anonsu anlıyor musun? #almanca #shorts",
+  ytTitle: "Almanca tren anonsları: gecikme ve iptali anlayabiliyor musun? #almanca #shorts",
   content: ({ line }) => ({
     lines: [
       { who: "them", key: "sich verspäten", board: "+20 MIN" },
@@ -13,14 +13,14 @@ const episode = {
       { who: "me", key: "stundenlang", board: "FÄLLT AUS" },
     ].map(line),
     copy: {
-      title: "Tren gecikti, 4 cümle",
-      hook: ["Trenin gecikti.", "Anonsu anlayacak mısın?"],
-      caption: "Trenin gecikti, anonsu anlayacak mısın? İstasyonda duyacağın 4 cümle. Senin trenin en çok kaç dakika gecikti?\n\n#almanca #almanyadayaşam #deutschlernen #deutschebahn #almancaöğreniyorum #tren",
-      outro: { series: "Her hafta yeni bir durum", ask: "Senin trenin en çok kaç dakika gecikti?" },
+      title: "Trenle ilgili 4 cümle",
+      hook: ["Trenin gecikti ya da iptal oldu.", "Anonsu anlayacak mısın?"],
+      caption: "Almanca tren anonsları: gecikme, iptal ve anlayış istemek için üç ayrı örnek. Son cümlede ise ne kadar beklediğini sen söylüyorsun. Trenin en fazla ne kadar gecikti?\n\n#almanca #almanyadayaşam #deutschlernen #deutschebahn #almancaöğreniyorum #tren",
+      outro: { series: "Her hafta yeni bir durum", ask: "Trenin en fazla ne kadar gecikti?" },
       board: { time: "14:32", dest: "KÖLN", track: " 3" },
       them: "ANONS",
       recapTitle: "Anonslarda duyacağın kelimeler",
-      endTitle: "Tren gecikti ama sen anladın.",
+      endTitle: "Gecikme ve iptal için 4 cümle.",
     },
   }),
 };

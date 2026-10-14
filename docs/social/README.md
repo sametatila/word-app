@@ -44,9 +44,18 @@ WebKit bir kez kurulur: `node node_modules/playwright-core/cli.js install webkit
 (2026-10-08, WebKit iPhone 15 benzetimi). Dosya okunamazsa (yerelde `file://`) oynatıcı sesi tarayıcıda sentezler;
 yerel telefon testi için klasörü `python3 -m http.server` ile sun.
 
+## Editoryal yaklaşım
+
+14 Ekim incelemesindeki [metin kararları ve kanıt sınırı](editorial-review-2026-10-14.md) yeni bölümlerde de uygulanır.
+İlk karede somut durum veya sınama, içerikle aynı vaat, doğal Türkçe ve bölüm başına tek katılım çağrısı kullanılır.
+Kesin kural ile eğilim ayrılır. Başlık ve açıklama aranabilir konu ve Almanca terimlerle başlar; gelecekteki yayın
+sözü takvimle doğrulanır. İzlenme kazancı varsayılmaz; pilot sonuçları aynı yaşta gönderiler ve platform bazında ölçülür.
+
 ## Bölüm üretimi (Claude Code iş akışı)
 
-1. **Durumu gör:** `npm run social:check`. Hangi seri kaç bölümde, hangisi yayında.
+1. **Durumu gör:** önce canlı stüdyoda platform durumlarını oku. `social_posts` kaydı olmayan bölümler henüz
+   platformda zamanlanmamıştır; `auto`, `scheduled`, `publishing`, `published` bölümler editoryal partiden çıkarılır.
+   Depodaki `status` veya `slot`, platformda zamanlandığını göstermez. Ardından `npm run social:check` ile kaynakları denetle.
 2. **Şablonu seç:** takvimden (aşağıda "Plan"). Bir seri hep aynı temada kalır.
 3. **İçeriği seç** (kurallar aşağıda). Kullanılmış kelimeyi tekrar seçme: `check` zaten durdurur.
 4. **Bölüm dosyasını yaz:** `data/social/episodes/<şablon>-<NNN>.mjs`, NNN o şablonda sıradaki numara.
@@ -257,7 +266,9 @@ vb.) yazılmaz, öğretmen tonu metnin kendisinden: "Şimdi hızlı bir tekrar y
 Kayıtlar uygulamanın ses tablosuna girmez: `SOCIAL_DIR/ses` (tts-map.json + m4a/ahu/), −16 LUFS'e eşitlenir (Aras'la
 aynı düzey). İşçi (`--once`) her koşuda yayını geçmemiş yatay bölümlerin eksik anlatıcı satırlarını üretir (koşu başına
 20, aylık tavan `ELEVENLABS_MONTHLY_CHARS`, varsayılan 100 bin; Creator planı 131 bin; kullanım `ses/kullanim.jsonl`):
-editör metni değiştirip kaydedince talep gerekmez. Ahu Almanca artikelleri ("die") doğru okuyor. Bölüm başına anlatım
+editör metni değiştirip kaydedince talep gerekmez. Bölüm verisinde `narrationPaused: true` varsa otomatik
+anlatım üretimi durur; metin taslağı kaydedilebilir. Samet 14 Ekim incelemesinde sekiz uzun bölüm için üretimi
+bekletti. Tekrar üretim açıkça istendiğinde bu işaret bölüm kaynağından kaldırılır. Ahu Almanca artikelleri ("die") doğru okuyor. Bölüm başına anlatım
 ~1–3 bin karakter. Yerel deneme: `node scripts/social/yatay/anlatici.mjs <id>` → `.shots/social/yatay/ses`.
 
 **Türkçe anlatımda Almanca kelime yok** (Türkçe ses bozuk okur): "bu sonla biten" gibi yazılır, Almanca ekranda.

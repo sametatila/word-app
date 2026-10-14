@@ -7,8 +7,10 @@ const episode = {
   status: "taslak",
   created: "2026-10-14",
   slot: "2026-11-06 19:00",
-  ytTitle: "A1 Almanca dinleme sınavı 2: ev ve iş konulu 15 soru, cevaplı ve açıklamalı",
+  ytTitle: "A1 Almanca dinleme denemesi 2: ev ve iş konulu 15 soru ve açıklamalar",
   content: ({ L }) => ({
+    // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
+    narrationPaused: true,
     series: "A1 Sınavı: Birlikte Çözüyoruz",
     ep: "Deneme 2 · Dinleme",
     hook: {
@@ -64,7 +66,7 @@ const episode = {
             { role: "Mann", line: L("aras", "de", "Sie ist immer noch im Krankenhaus.", "listen") },
           ],
           mark: "Jetzt bin ich in einer Apotheke",
-          say: L("defne", "tr", "Doğru cevap c, eczanede. Hastane geçmişte kaldı; martan beri orada çalışmıyor. Hâlâ hastanede olan kız kardeşi."),
+          say: L("defne", "tr", "Doğru cevap c, eczanede. Hastane geçmişte kaldı; marttan beri orada çalışmıyor. Hâlâ hastanede olan kız kardeşi."),
         },
         {
           sit: "İki çalışan toplantı saatini konuşuyor.",
@@ -108,7 +110,7 @@ const episode = {
             { role: "Mitarbeiterin", line: L("defne", "de", "Milch ist hinten links, im Kühlregal.", "listen") },
           ],
           mark: "im Gang drei",
-          say: L("defne", "tr", "Doğru cevap a, üçüncü koridorda. Kahve şekerin yanında. Soğutucu ve arka sol sütün yeri; iki ürünü karıştırmamak gerekiyor."),
+          say: L("defne", "tr", "Doğru cevap a, üçüncü koridorda. Kahve şekerin yanında. Süt ise arkada soldaki soğutucuda. İki ürünün yerini karıştırma."),
         },
         {
           sit: "Bir kadın restoranda masa ayırtıyor.",
@@ -167,7 +169,7 @@ const episode = {
             { role: "", line: L("defne", "de", "Nächste Haltestelle: Hauptpost. Hier fahren auch die Linien acht und zwölf. Bitte beachten Sie: Die Linie acht fährt heute nur bis zum Stadtpark.", "listen") },
           ],
           mark: "nur bis zum Stadtpark",
-          say: L("defne", "tr", "Cevap doğru. Sekiz numaralı hat bugün yalnız şehir parkına kadar gidiyor, hattın tamamını gitmiyor."),
+          say: L("defne", "tr", "Cevap doğru. Sekiz numaralı hat bugün yalnız şehir parkına kadar gidiyor, hattın sonuna kadar gitmiyor."),
         },
         {
           sit: "Bir yönetim şirketinin telefon anonsu.",
@@ -228,7 +230,7 @@ const episode = {
             { role: "Chefin", line: L("defne", "de", "Gut, dann Donnerstag bis achtzehn Uhr.", "listen") },
           ],
           mark: "Aber Donnerstag geht",
-          say: L("defne", "tr", "Doğru cevap a, perşembe. Cuma günü doktor randevusu var, bu yüzden cumayı geri çeviriyor ve perşembede anlaşıyorlar."),
+          say: L("defne", "tr", "Doğru cevap a, perşembe. Cuma günü doktor randevusu var, bu yüzden cumayı geri çeviriyor ve perşembe günü için anlaşıyorlar."),
         },
         {
           sit: "Bir kız babasına mesaj bırakıyor.",
@@ -263,12 +265,12 @@ const episode = {
     key: {
       lab: "Cevap anahtarı",
       title: "Kaç doğru yaptın?",
-      say: L("defne", "tr", "Cevap anahtarı burada. Kaç doğru yaptığını say ve yorumlara yaz."),
+      say: L("defne", "tr", "Cevap anahtarı burada. İşaretlediğin cevaplarla karşılaştırıp doğrularını say."),
     },
     app: {
       lab: "Lernomi'de",
       title: "Bu sınavın tamamı uygulamada.",
-      body: "Dört bölüm, gerçek süre. Bitince puanın ve hangi soru tipinde puan kaybettiğin.",
+      body: "Dört bölümü süre tutarak çöz. Sonunda puanını ve hangi soru tiplerinde zorlandığını gör.",
       where: "Deneme sınavı 2 · A1",
       link: "Bağlantı açıklamada",
       panel: { title: "80 dakika", sub: "Dört bölüm, sırayla", rows: [["Lesen", "25 dk"], ["Hören", "20 dk"], ["Schreiben", "20 dk"], ["Sprechen", "15 dk"]], start: "Başla" },
@@ -284,10 +286,10 @@ const episode = {
     },
     cover: { lab: "A1 · Dinleme · Deneme 2", lines: ["A1 dinleme", "ev ve iş"] },
     yt: {
-      desc: "A1 Almanca sınavının dinleme bölümü, ikinci deneme: ev ve iş konulu 15 soru, sınavdaki formatta. Her sorudan sonra doğru cevap ve neden doğru olduğu; sonda cevap anahtarı. Kâğıt kalemle birlikte çöz.",
+      desc: "Ev ve iş konulu 15 soruyla A1 Almanca dinleme alıştırması yap. Kısa konuşmalar, anonslar ve telefon mesajlarını dinle; her sorudan sonra doğru cevabı ve gerekçesini incele. Sonda cevap anahtarı var. Anlatım aralarıyla birlikte çözülür; kesintisiz bir sınav oturumu olarak sunulmaz. Kaç doğru yaptın?",
       tags: "#almanca #almancaöğren #a1almanca #almancasınav",
     },
-    ui: {},
+    ui: { cardNote: "Almanca alıştırması" },
   }),
 };
 export default episode;

@@ -4,18 +4,18 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-21 12:30",
-  ytTitle: "Almanca kursunun ilk haftasında lazım olan 2 cümle #almanca #shorts",
+  ytTitle: "Almanca kursuna başlarken kullanabileceğin 2 cümleyi sen kur #almanca #shorts",
   content: ({ sentence }) => ({
     copy: {
       title: "Kursta 2 cümle, sen kur",
       scene: "Kursta",
-      hook: ["Almanca kursunun ilk haftası.", "Bu 2 cümleyi", "sen kur."],
-      caption: "Almanca kursunun ilk haftasında lazım olan 2 cümle. Türkçesini gördün, Almancasını sen dizebildin mi?\n\n#almanca #almancaöğreniyorum #deutschlernen #almancakursu #almancacümle #almanyadayaşam",
-      outro: { series: "Yeni cümleler yakında", ask: "Hangisinde takıldın? Yorumlara yaz." },
+      hook: ["Almanca kursuna başlıyorsun.", "Bu 2 cümleyi", "sen kur."],
+      caption: "Almanca kursuna başlarken kullanabileceğin iki cümle: kursa kaydolmak ve soruların olduğunu söylemek. Kursa kayıt cümlesini kurabildin mi?\n\n#almanca #almancaöğreniyorum #deutschlernen #almancakursu #almancacümle #almanyadayaşam",
+      outro: { series: "Yeni cümleler yakında", ask: "Kursa kayıt cümlesini kurabildin mi?" },
     },
     lines: [
       sentence("sich anmelden", [1, 6], "melde … an: an en sona gider"),
-      sentence("viel", [2], "Çoğul isimle viel, viele olur"),
+      sentence("viel", [2], "Burada Fragen çoğul; önünde viele kullanılır"),
     ],
   }),
 };

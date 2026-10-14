@@ -4,16 +4,16 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-19 12:30",
-  ytTitle: "Kiste mi, Küste mi? Almancada ü sesini duyabiliyor musun? #almanca #shorts",
+  ytTitle: "Kiste mi, Küste mi? Almanca ü sesi dinleme testi #almanca #shorts",
   content: ({ pair }) => ({
     rounds: [pair("die Kiste", "die Küste", 1), pair("spielen", "spülen", 1), pair("fordern", "fördern", 0)],
     copy: {
-      title: "Yuvarlak mı, düz mü?",
-      hook: ["Yuvarlak mı, düz mü?", "Dudaklara dikkat."],
-      pill: "Dudak yuvarlanınca anlam değişir.",
+      title: "Kiste mi, Küste mi?",
+      hook: ["Kiste mi, Küste mi?", "Dinle, farkı bul."],
+      pill: "Ü sesi için dudaklarını yuvarla.",
       recap: "Kaçını doğru duydun?",
-      caption: "Yuvarlak mı, düz mü? Almancada dudakları yuvarlamak anlamı değiştiriyor: Kiste sandık, Küste sahil. Üçünü de duyabildin mi?\n\n#almanca #almancaöğreniyorum #deutschlernen #telaffuz #almancakelimeler #dinleme",
-      outro: { series: "Yarın yeni çiftler geliyor", ask: "Hangisinde zorlandın? Yorumlara yaz." },
+      caption: "Almanca dinleme testi: Kiste/Küste, spielen/spülen, fordern/fördern. Kiste sandık, Küste sahil; benzer sesler anlamı değiştiriyor. Kiste mi, Küste mi? Hangisinde zorlandın?\n\n#almanca #almancaöğreniyorum #deutschlernen #telaffuz #almancakelimeler #dinleme",
+      outro: { series: "Almanca dinleme alıştırmaları", ask: "Kiste mi, Küste mi? Hangisinde zorlandın?" },
     },
   }),
 };

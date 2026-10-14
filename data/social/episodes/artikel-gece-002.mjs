@@ -4,7 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-23 07:30",
-  ytTitle: "Almancada fiil isim olunca artikeli ne olur? #almanca #shorts",
+  ytTitle: "Almancada fiil isim olunca neden das alır? #almanca #shorts",
   content: ({ quiz }) => ({
     items: quiz(["das Essen", "das Leben", "das Wissen", "der Garten"]),
     copy: {
@@ -12,8 +12,8 @@ const episode = {
       hook: ["essen, leben, wissen…", "İsim olunca artikeli ne?"],
       rule: "Fiil isim olunca hep <b>das</b> alır:<br>essen → das Essen.<br>Garten fiil değil: der Garten.",
       endTitle: "İşte cevaplar",
-      outro: { series: "Yarın yeni tur var", ask: "Garten'da yanılan var mı? Yorumlara yaz" },
-      caption: "Fiil isim olunca artikeli ne olur? Üçü kolay, sonuncusu tuzak. Kaç tane bildin?\n\n#almanca #almancaöğreniyorum #deutschlernen #artikel #derdiedas #almancagramer",
+      outro: { series: "Almanca artikel alıştırmaları", ask: "Garten neden der? Farkı yorumlara yaz" },
+      caption: "Almancada fiilin mastar hâli isim olarak kullanıldığında das alır: Essen, Leben, Wissen. Garten neden bu kurala uymuyor? Farkı yorumlara yaz.\n\n#almanca #almancaöğreniyorum #deutschlernen #artikel #derdiedas #almancagramer",
     },
   }),
 };

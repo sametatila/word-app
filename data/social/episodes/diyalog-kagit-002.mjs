@@ -1,23 +1,24 @@
-/* Restoranda: garsonun önerisi, ana yemek, tatlı, hesap (4 cümle). */
+/* Restoranda: arkadaşının önerisi (du), ana yemek, garsonun tatlı önerisi ve nakit ödeme (4 örnek). */
 const episode = {
   template: "diyalog-kagit",
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-18 18:30",
-  ytTitle: "Restoranda Almanca sipariş vermek için 4 cümle #almanca #shorts",
+  ytTitle: "Restoranda Almanca: sipariş ve ödeme için 4 örnek cümle #almanca #shorts",
   content: ({ line }) => ({
     lines: [
-      { scene: "order", who: "them", key: "die Spezialität" },
+      { scene: "friend", who: "them", key: "die Spezialität" },
       { scene: "order", who: "me", key: "der Hauptgang" },
       { scene: "order", who: "them", key: "der Nachtisch" },
       { scene: "pay", who: "me", key: "das Bargeld" },
     ].map(line),
     copy: {
       title: "Restoranda, 4 cümle",
-      hook: ["Almanya'da", "restoranda mısın?", "Bu 4 cümle yeter."],
-      caption: "Restoranda bu 4 cümle yeter: garsonun önerisi, ana yemek, tatlı ve hesap. Kaydet, dışarıda yerken lazım olur.\n\n#almanca #almanyadayaşam #deutschlernen #almancaöğreniyorum #restoran #essengehen",
-      outro: { series: "Her hafta yeni bir durum", ask: "Almanya'da en sevdiğin yemek ne? Yorumlara yaz" },
+      hook: ["Almanya'da", "restoranda mısın?", "Siparişte geçen 4 cümle."],
+      caption: "Restoranda geçen dört Almanca cümle: arkadaşının önerisi, ana yemek siparişi, garsonun tatlı önerisi ve yanında nakit olmadığını söylemek. Kaydet, restorana gitmeden önce tekrar et.\n\n#almanca #almanyadayaşam #deutschlernen #almancaöğreniyorum #restoran #essengehen",
+      outro: { series: "Her hafta yeni bir durum", ask: "Kaydet, restorana gitmeden önce tekrar et" },
       scenes: {
+        friend: { label: "Arkadaşınla", icon: "shop", them: "Arkadaşın" },
         order: { label: "Sipariş", icon: "shop" },
         pay: { label: "Hesap", icon: "shop" },
       },

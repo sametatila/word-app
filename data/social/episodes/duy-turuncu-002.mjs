@@ -4,15 +4,15 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-20 18:30",
-  ytTitle: "Stelle mi, Stille mi? Almancada e ile i farkı #almanca #shorts",
+  ytTitle: "Stelle mi, Stille mi? Almanca e ve i dinleme testi #almanca #shorts",
   content: ({ pair }) => ({
     rounds: [pair("schlecht", "schlicht", 1), pair("die Stelle", "die Stille", 0), pair("der Wert", "der Wirt", 1)],
     copy: {
       title: "E mi, i mi?",
-      hook: ["E mi, i mi?", "Dinle, sonra seç."],
+      hook: ["E mi, i mi?", "Stelle mi, Stille mi?"],
       recap: "Kaç tanesini bildin?",
-      caption: "E mi, i mi? Stelle pozisyon, Stille sessizlik: tek ünlü, bambaşka anlam. Üç çiftin kaçını bildin?\n\n#almanca #almancaöğreniyorum #deutschlernen #telaffuz #almancakelimeler #almanyadayaşam",
-      outro: { series: "Yarın yeni çiftler geliyor", ask: "En çok hangisi zorladı? Yorumlara yaz." },
+      caption: "Almanca dinleme testi: schlecht/schlicht, Stelle/Stille, Wert/Wirt. Stelle pozisyon, Stille sessizlik. Stelle ile Stille'yi ayırt edebildin mi?\n\n#almanca #almancaöğreniyorum #deutschlernen #telaffuz #almancakelimeler #almanyadayaşam",
+      outro: { series: "Almanca dinleme alıştırmaları", ask: "Stelle ile Stille'yi ayırt edebildin mi?" },
     },
   }),
 };

@@ -4,18 +4,18 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-24 18:30",
-  ytTitle: "Almanya'da ev bakarken lazım olan 3 Almanca cümle #almanca #shorts",
+  ytTitle: "Almanya'da ev ararken kullanabileceğin 3 Almanca cümle #almanca #shorts",
   content: ({ line }) => ({
     lines: [
       { scene: "phone", who: "me", key: "die Empfehlung" },
       { scene: "flat", who: "them", key: "die Fläche" },
       { scene: "flat", who: "me", key: "genügen" },
-    ].map(line),
+    ].map((l) => (l.key === "die Fläche" ? { ...line(l), tr: "Daire 80 metrekare." } : line(l))),
     copy: {
       title: "Ev bakmaya gittin, 3 cümle",
-      hook: ["Almanya'da", "ev mi bakıyorsun?", "Bu 3 cümle yeter."],
-      caption: "Almanya'da ev bakıyorsun: telefonda ve evi gezerken bu 3 cümle yeter. Kaydet, ev ararken lazım olacak.\n\n#almanca #almanyadayaşam #evarıyorum #deutschlernen #wohnung #almancaöğreniyorum",
-      outro: { series: "Her hafta yeni bir durum", ask: "Ev ararken en zor ne oldu? Yorumlara yaz" },
+      hook: ["Almanya'da", "ev mi arıyorsun?", "Ev gezerken geçen 3 cümle."],
+      caption: "Almanya'da ev ararken geçen üç Almanca cümle: telefonda kendini tanıtmak, dairenin büyüklüğünü anlamak ve nasıl bir ev istediğini söylemek. Ev arayan arkadaşına gönder.\n\n#almanca #almanyadayaşam #evarıyorum #deutschlernen #wohnung #almancaöğreniyorum",
+      outro: { series: "Her hafta yeni bir durum", ask: "Ev arayan arkadaşına gönder" },
       scenes: {
         phone: { label: "Telefonda", icon: "phone" },
         flat: { label: "Evi gezerken", icon: "home" },

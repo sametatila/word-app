@@ -4,14 +4,14 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-23 12:30",
-  ytTitle: "Almanya'da doktorda lazım olan 3 Almanca kelime #almanca #shorts",
+  ytTitle: "Doktorda kullanılan 3 Almanca kelime: göz doktoru, hasta, ağrı kesici #almanca #shorts",
   content: ({ deck }) => ({
     items: deck(["der Augenarzt", "der Patient", "das Schmerzmittel"]),
     copy: {
       title: "Doktorda 3 kelime",
       hook: ["Doktora gitmeden önce", "bu 3 kelimeyi", "öğren."],
-      caption: "Almanya'da doktora gitmeden önce bu 3 kelimeyi öğren: göz doktoru, hasta, ağrı kesici. Kaydet, randevuda lazım olacak.\n\n#almanca #almanyadayaşam #doktor #deutschlernen #almancakelimeler #arzt",
-      outro: { series: "Her hafta yeni bir resmî iş", ask: "Randevu için en uzun kaç hafta bekledin?" },
+      caption: "Doktorda kullanılan üç Almanca kelime: Augenarzt göz doktoru, Patient hasta, Schmerzmittel ağrı kesici. Kaydet, doktor randevusundan önce tekrar et.\n\n#almanca #almanyadayaşam #doktor #deutschlernen #almancakelimeler #arzt",
+      outro: { series: "Doktorda Almanca", ask: "Kaydet, doktor randevusundan önce tekrar et" },
       runningHead: "DOKTORDA",
       summaryKicker: "Kaydet, randevuda lazım olacak",
       summaryTitle: "3 kelimelik mini sözlük",

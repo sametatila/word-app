@@ -4,7 +4,7 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-21 07:30",
-  ytTitle: "-schaft ve -ig ile biten kelimelerin Almanca artikeli #almanca #shorts",
+  ytTitle: "Almanca artikel testi: -schaft ve -ig sonlarına bak #almanca #shorts",
   content: ({ quiz }) => ({
     items: quiz(["die Mannschaft", "der Honig", "die Freundschaft", "der König"], {
       Mannschaft: { stem: "Mann", sfx: "schaft" },
@@ -14,15 +14,15 @@ const episode = {
     }),
     copy: {
       title: "-schaft ve -ig",
-      hook: ["Kelimenin sonuna bak,", "artikeli oradan oku."],
+      hook: ["-schaft mı, -ig mi?", "Hangisi die, hangisi der?"],
       pill: "Kartı doğru kutuya at",
       rules: [
         { label: "-schaft", sfx: ["schaft"], artikel: "die" },
-        { label: "-ig", sfx: ["ig"], artikel: "der" },
+        { label: "-ig çoğunlukla", sfx: ["ig"], artikel: "der" },
       ],
-      endKicker: "Aklında kalsın",
-      outro: { series: "Yarın yeni bir kural geliyor", ask: "Başka -schaft kelimesi biliyor musun?" },
-      caption: "Kelimenin sonuna bak, artikeli oradan oku: -schaft ile bitenler hep die, -ig ile bitenler de neredeyse hep der. Başka örnek biliyor musun?\n\n#almanca #artikel #derdiedas #deutschlernen #almancaöğreniyorum #almancagramer",
+      endKicker: "Sonlar ipucu verir",
+      outro: { series: "Almanca artikel alıştırmaları", ask: "Bir -schaft kelimesi de sen yaz" },
+      caption: "Almanca isimlerde kelimenin sonu artikel için ipucu verebilir. Bu turda -schaft ile -ig sonlarını karşılaştırıyoruz; -ig bir eğilim, kesin kural değil. Bir -schaft kelimesi de sen yaz.\n\n#almanca #artikel #derdiedas #deutschlernen #almancaöğreniyorum #almancagramer",
     },
   }),
 };

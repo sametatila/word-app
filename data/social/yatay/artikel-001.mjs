@@ -6,28 +6,30 @@ const episode = {
   status: "taslak",
   created: "2026-10-14",
   slot: "2026-11-03 19:00",
-  ytTitle: "der, die, das: kelimenin sonundan artikel bulmanın 14 kuralı (sözlükten sayılarla)",
+  ytTitle: "Almanca artikel: der, die, das için 14 ipucu, örnekler ve istisnalar",
   content: ({ L, stats, art }) => ({
+    // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
+    narrationPaused: true,
     series: "Artikel Kuralları",
     ep: "Sonlar · 14 kural",
     hook: {
       lab: "Artikel kuralları · sayılarla",
-      lines: ["Ezberleme,", "sonuna bak."],
+      lines: ["Artikeli tahmin et,", "sonuna bak."],
       sub: "Her kural Lernomi sözlüğünden sayılarla.",
       card: { suf: "ung", word: "die Wohnung", tr: "daire · A1", art: "die", hit: 732, all: 734 },
-      say: L("defne", "tr", "Artikeli ezberlemek zorunda değilsin; çoğu zaman kelimenin sonu sana söylüyor. Bu videoda on dört kural var, her biri Lernomi sözlüğünden sayılarla."),
+      say: L("defne", "tr", "Artikeli tahmin ederken kelimenin sonundan yardım alabilirsin. On dört ipucunu örnekler ve istisnalarla çalışacağız. Sayılar bizim sözlüğümüzden; bütün Almanca kelimeleri temsil etmiyor."),
     },
     groups: [
       {
-        title: "die: kesin kurallar",
+        title: "die: güçlü ipuçları",
         sub: "Neredeyse hiç şaşmayanlar",
-        say: L("defne", "tr", "Önce kesin kurallar. Bunlar neredeyse hiç şaşmıyor."),
+        say: L("defne", "tr", "Önce güçlü ipuçları. Örnekleri dinle ve ekrandaki kelime sonuna bak. İstisnaları da birlikte göreceğiz."),
         rules: [
-          { suf: "-ung", stats: stats(["ung"], { hit: 732, all: 734 }), examples: ["die Wohnung", "die Einladung", "die Prüfung", "die Meinung", "die Kleidung", "die Entschuldigung"].map(art), say: L("defne", "tr", "Bu sonla biten isimler die alır. Lernomi sözlüğünde bu sonla biten yedi yüz otuz dört isim var; yalnız ikisi istisna.") },
-          { suf: "-heit / -keit", stats: stats(["heit", "keit"], { hit: 187, all: 187 }), examples: ["die Gesundheit", "die Krankheit", "die Wahrheit", "die Pünktlichkeit", "die Sehenswürdigkeit", "die Schwierigkeit"].map(art), say: L("defne", "tr", "Bu iki son da die. Sözlükte yüz seksen yedi kelime var ve hiç istisna yok.") },
-          { suf: "-schaft", stats: stats(["schaft"], { hit: 54, all: 54 }), examples: ["die Mannschaft", "die Landschaft", "die Gesellschaft", "die Wissenschaft", "die Wirtschaft", "die Nachbarschaft"].map(art), say: L("defne", "tr", "Bu sonla biten elli dört ismin hepsi die.") },
-          { suf: "-ion", stats: stats(["ion"], { hit: 143, all: 144 }), examples: ["die Information", "die Situation", "die Rezeption", "die Portion", "die Operation", "die Generation"].map(art), say: L("defne", "tr", "Bu sonla biten yüz kırk dört ismin yüz kırk üçü die. Tek istisna stadyum.") },
-          { suf: "-tät", stats: stats(["tät"], { hit: 56, all: 56 }), examples: ["die Universität", "die Qualität", "die Aktivität", "die Mobilität", "die Spezialität", "die Solidarität"].map(art), say: L("defne", "tr", "Bu sonla biten elli altı ismin hepsi die. Çoğu Türkçeden de tanıdık: üniversite, kalite, aktivite.") },
+          { suf: "-ung", stats: stats(["ung"], { hit: 732, all: 734 }), examples: ["die Wohnung", "die Einladung", "die Prüfung", "die Meinung", "die Kleidung", "die Entschuldigung"].map(art), say: L("defne", "tr", "Ekrandaki sonla biten isimler sözlüğümüzde büyük ölçüde die alıyor. Örnekleri dinle; iki istisna da ekranda.") },
+          { suf: "-heit / -keit", stats: stats(["heit", "keit"], { hit: 187, all: 187 }), examples: ["die Gesundheit", "die Krankheit", "die Wahrheit", "die Pünktlichkeit", "die Sehenswürdigkeit", "die Schwierigkeit"].map(art), say: L("defne", "tr", "Ekrandaki iki son da die için güçlü bir ipucu. Sözlüğümüzdeki örneklerin tamamı die alıyor.") },
+          { suf: "-schaft", stats: stats(["schaft"], { hit: 54, all: 54 }), examples: ["die Mannschaft", "die Landschaft", "die Gesellschaft", "die Wissenschaft", "die Wirtschaft", "die Nachbarschaft"].map(art), say: L("defne", "tr", "Sözlüğümüzde bu sonla biten isimlerin hepsi die alıyor. Örnekleri birlikte dinleyelim.") },
+          { suf: "-ion", stats: stats(["ion"], { hit: 143, all: 144 }), examples: ["die Information", "die Situation", "die Rezeption", "die Portion", "die Operation", "die Generation"].map(art), say: L("defne", "tr", "Bu sonla biten isimler sözlüğümüzde büyük ölçüde die alıyor. İstisna kelimeyi artikeliyle birlikte ekranda görebilirsin.") },
+          { suf: "-tät", stats: stats(["tät"], { hit: 56, all: 56 }), examples: ["die Universität", "die Qualität", "die Aktivität", "die Mobilität", "die Spezialität", "die Solidarität"].map(art), say: L("defne", "tr", "Sözlüğümüzde bu sonla biten isimlerin hepsi die. Anlamları Türkçeden tanıdık olabilir: üniversite, kalite, aktivite.") },
         ],
       },
       {
@@ -35,9 +37,9 @@ const episode = {
         sub: "Çoğu zaman doğru, birkaç istisnayla",
         say: L("defne", "tr", "Şimdi güçlü eğilimler. Çoğu zaman doğru, ama birkaç istisnası var."),
         rules: [
-          { suf: "-ik", stats: stats(["ik"], { hit: 46, all: 50 }), examples: ["die Musik", "die Mathematik", "die Grammatik", "die Fabrik", "die Physik", "die Klinik"].map(art), say: L("defne", "tr", "Bu son güçlü bir işaret ama kesin değil: elli kelimenin kırk altısı die. Plastik ve grev istisna.") },
-          { suf: "-ie", stats: stats(["ie"], { hit: 75, all: 77 }), examples: ["die Familie", "die Chemie", "die Serie", "die Batterie", "die Fantasie", "die Kopie"].map(art), say: L("defne", "tr", "Bu sonla biten yetmiş yedi ismin yetmiş beşi die. İstisnalar diz ve özçekim.") },
-          { suf: "-enz", stats: stats(["enz"], { hit: 30, all: 30 }), examples: ["die Konkurrenz", "die Intelligenz", "die Konferenz", "die Tendenz", "die Kompetenz", "die Referenz"].map(art), say: L("defne", "tr", "Bu sonla biten otuz ismin hepsi die.") },
+          { suf: "-ik", stats: stats(["ik"], { hit: 46, all: 50 }), examples: ["die Musik", "die Mathematik", "die Grammatik", "die Fabrik", "die Physik", "die Klinik"].map(art), say: L("defne", "tr", "Bu son da die için güçlü bir ipucu, ama kesin değil. İstisna kelimeleri ekranda artikelleriyle karşılaştır.") },
+          { suf: "-ie", stats: stats(["ie"], { hit: 75, all: 77 }), examples: ["die Familie", "die Chemie", "die Serie", "die Batterie", "die Fantasie", "die Kopie"].map(art), say: L("defne", "tr", "Bu sonla biten isimlerin çoğu die alıyor. İstisnaları yalnız anlamıyla değil, Almanca kelimesi ve artikeliyle birlikte öğren.") },
+          { suf: "-enz", stats: stats(["enz"], { hit: 30, all: 30 }), examples: ["die Konkurrenz", "die Intelligenz", "die Konferenz", "die Tendenz", "die Kompetenz", "die Referenz"].map(art), say: L("defne", "tr", "Sözlüğümüzde bu sonla biten isimlerin hepsi die alıyor.") },
         ],
       },
       {
@@ -45,9 +47,9 @@ const episode = {
         sub: "Küçültme eki ve yabancı kökenliler",
         say: L("defne", "tr", "Şimdi das alanlar."),
         rules: [
-          { suf: "-chen", stats: stats(["chen"], { hit: 15, all: 18 }), examples: ["das Mädchen", "das Hähnchen", "das Brötchen", "das Päckchen"].map(art), say: L("defne", "tr", "Küçültme eki olan bu son her zaman das. Sözlükte on sekiz kelime var ama üçü tuzak; birazdan göreceğiz.") },
-          { suf: "-ment", stats: stats(["ment"], { hit: 14, all: 15 }), examples: ["das Medikament", "das Kompliment", "das Instrument", "das Apartment", "das Abonnement", "das Parlament"].map(art), say: L("defne", "tr", "Bu sonla biten on beş ismin on dördü das. İstisna, an anlamındaki kelime.") },
-          { suf: "-ma", stats: stats(["ma"], { hit: 11, all: 12 }), examples: ["das Thema", "das Komma", "das Klima", "das Trauma"].map(art), say: L("defne", "tr", "Bu sonla biten on iki ismin on biri das. Tek istisna şirket: die.") },
+          { suf: "-chen", stats: stats(["chen"], { hit: 15, all: 18 }), examples: ["das Mädchen", "das Hähnchen", "das Brötchen", "das Päckchen"].map(art), say: L("defne", "tr", "Bu son küçültme eki olarak kullanıldığında isim das alır. Ama bazı kelimelerde yalnız benzer bir harf dizisi var; birazdan farkı göreceğiz.") },
+          { suf: "-ment", stats: stats(["ment"], { hit: 14, all: 15 }), examples: ["das Medikament", "das Kompliment", "das Instrument", "das Apartment", "das Abonnement", "das Parlament"].map(art), say: L("defne", "tr", "Bu sonla biten isimlerin çoğu sözlüğümüzde das alıyor. İstisnayı ekranda artikeliyle birlikte görebilirsin.") },
+          { suf: "-ma", stats: stats(["ma"], { hit: 11, all: 12 }), examples: ["das Thema", "das Komma", "das Klima", "das Trauma"].map(art), say: L("defne", "tr", "Bu sonla biten isimlerin çoğu das alıyor. Şirket anlamındaki istisna kelimeyi ekranda artikeliyle birlikte görüyorsun.") },
         ],
       },
       {
@@ -55,9 +57,9 @@ const episode = {
         sub: "Kişiler ve akımlar",
         say: L("defne", "tr", "Son olarak der alanlar."),
         rules: [
-          { suf: "-ling", stats: stats(["ling"], { hit: 7, all: 7 }), examples: ["der Zwilling", "der Frühling", "der Lehrling", "der Flüchtling"].map(art), say: L("defne", "tr", "Bu sonla biten yedi ismin hepsi der.") },
-          { suf: "-ismus", stats: stats(["ismus"], { hit: 29, all: 29 }), examples: ["der Tourismus", "der Organismus"].map(art), say: L("defne", "tr", "Bu sonla biten yirmi dokuz ismin hepsi der; turizm gibi.") },
-          { suf: "-or", stats: stats(["or"], { hit: 20, all: 21 }), examples: ["der Doktor", "der Motor", "der Direktor", "der Autor", "der Humor", "der Monitor"].map(art), say: L("defne", "tr", "Bu sonla biten yirmi bir ismin yirmisi der: doktor, motor, müdür.") },
+          { suf: "-ling", stats: stats(["ling"], { hit: 7, all: 7 }), examples: ["der Zwilling", "der Frühling", "der Lehrling", "der Flüchtling"].map(art), say: L("defne", "tr", "Sözlüğümüzde bu sonla biten isimlerin hepsi der alıyor.") },
+          { suf: "-ismus", stats: stats(["ismus"], { hit: 29, all: 29 }), examples: ["der Tourismus", "der Organismus"].map(art), say: L("defne", "tr", "Sözlüğümüzde bu sonla biten isimlerin hepsi der alıyor. Turizm ve benzer kavramlarda bu sonla karşılaşabilirsin.") },
+          { suf: "-or", stats: stats(["or"], { hit: 20, all: 21 }), examples: ["der Doktor", "der Motor", "der Direktor", "der Autor", "der Humor", "der Monitor"].map(art), say: L("defne", "tr", "Bu sonla biten isimlerin çoğu der alıyor. Örneklerdeki meslek adlarına ve nesnelere bak.") },
         ],
       },
     ],
@@ -73,7 +75,7 @@ const episode = {
       title: "Bileşik isimler",
       lab: "Bonus · bileşik isimler",
       sub: "Son kelime belirler",
-      say: L("defne", "tr", "Kurallar yetmediğinde işe yarayan en güçlü bilgi: bileşik isimlerde artikeli neredeyse her zaman son kelime belirler. Ev das, kapı die; ev kapısı da die olur."),
+      say: L("defne", "tr", "Bir başka yararlı ipucu: bileşik isimlerde artikeli neredeyse her zaman son kelime belirler. Ev das, kapı die; ev kapısı da die olur."),
       items: [
         { last: art("das Haus"), whole: art("das Krankenhaus") },
         { first: art("das Haus"), last: art("die Tür"), whole: art("die Haustür") },
@@ -102,17 +104,17 @@ const episode = {
     end: {
       lab: "Sıradaki",
       line: "Hangi kuralı bilmiyordun?",
-      ask: "Yorumlara yaz; en çok istenenle devam edelim.",
+      ask: "Önerini yorumlara yaz.",
       sub: "Her salı ve cuma yeni video",
       slot: "Sıradaki video",
-      say: L("defne", "tr", "Hangi kuralı bilmiyordun? Yorumlara yaz; en çok istenen konuyla devam edelim."),
+      say: L("defne", "tr", "Hangi kuralı bilmiyordun? Çalışmak istediğin konuyu yorumlara yaz."),
     },
     cover: { line: "sonundan artikel: 14 kural" },
     yt: {
-      desc: "Almanca artikel kuralları: kelimenin sonundan der, die, das tahmin etmenin 14 kuralı. Her kural Lernomi sözlüğünden sayılarla (ör. -ung ile biten 734 ismin 732'si die), örnekler ve istisnalarla; bileşik isimlerin kuralı ve sonda 24 kelimelik hız turu.",
+      desc: "Almanca isimlerin sonundan artikel tahmini yapmaya yardımcı 14 ipucunu çalış. Örnekleri ve istisnaları artikelleriyle karşılaştır; ekrandaki oranlar Lernomi sözlüğündeki kelimelere ait, bütün Almancayı temsil etmiyor. Bileşik isimlerin artikelini de inceleyip 24 kelimelik hız turuyla tekrar et. Bu ders ekrana bakarak çalışmak için hazırlandı. Hangi ipucu senin için yeniydi?",
       tags: "#almanca #almancaartikel #derdiedas #almancaöğren",
     },
-    ui: {},
+    ui: { cardNote: "Almanca alıştırması" },
   }),
 };
 export default episode;

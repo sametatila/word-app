@@ -198,7 +198,9 @@ async function audioRequests() {
  */
 async function narration() {
   if (!process.env.ELEVENLABS_API_KEY) return;
-  const { rows } = await q("select spoken from social_episodes where format = 'yatay' and archived_at is null and (slot is null or slot >= to_char(now() - interval '2 days', 'YYYY-MM-DD'))");
+  // Bölüm verisinde narrationPaused=true ise metin taslağı otomatik ses üretmez.
+  // Alanı olmayan eski bölümlerde mevcut otomatik anlatım davranışı korunur.
+  const { rows } = await q("select spoken from social_episodes where format = 'yatay' and archived_at is null and data->>'narrationPaused' IS DISTINCT FROM 'true' and (slot is null or slot >= to_char(now() - interval '2 days', 'YYYY-MM-DD'))");
   const keys = rows.flatMap((r) => r.spoken).filter(isNarration);
   if (!keys.length) return;
   const r = await generateNarration(keys, { log });

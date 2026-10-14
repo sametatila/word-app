@@ -9,8 +9,10 @@ const episode = {
   status: "taslak",
   created: "2026-10-14",
   slot: "2026-11-10 19:00",
-  ytTitle: "Yavaş Almanca hikâyeler (A2): kaybolan valiz ve büyükannemlerde · Türkçe çevirili",
+  ytTitle: "A2 Almanca hikâyeler: yavaş dinle, Türkçe çeviriyle çalış | 2 hikâye",
   content: ({ L, walk }) => ({
+    // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
+    narrationPaused: true,
     series: "Yavaş Almanca Hikâyeler",
     ep: "A2 · iki hikâye",
     hook: {
@@ -19,7 +21,7 @@ const episode = {
       lines: ["Yavaş Almanca", "hikâyeler"],
       sub: "Önce kelimeler, sonra yavaş okuma, sorular ve normal hız.",
       pills: ["Kelimeler", "Yavaş okuma", "Sorular"],
-      say: L("defne", "tr", "Yavaş okunan Almanca hikâyeler. Önce kelimeler, sonra hikâye paragraf paragraf ve yavaş, ardından sorular. En sonda hikâyeyi normal hızda dinleyeceksin. Bugün iki hikâye var."),
+      say: L("defne", "tr", "Yavaş okunan Almanca hikâyeler. Önce birkaç kelimeyi çalışacağız. Sonra hikâyeyi yavaşça, paragraf paragraf dinleyip soruları cevaplayacağız. En sonda hikâyeyi normal hızda dinleyeceksin. Bugün iki hikâye var."),
     },
     wordsSay: L("defne", "tr", "Önce bu hikâyenin kelimeleri."),
     quizSay: L("defne", "tr", "Şimdi sorular. Her soruda beş saniyen var."),
@@ -33,10 +35,10 @@ const episode = {
         words: ["der Koffer", "umsteigen", "die Hochzeit", "der Schaffner", "das Fundbüro", "abgeben", "der Anzug", "peinlich"].map((w) => walk(w)),
         paras: [
           P(L, "Im Mai bin ich mit dem Zug zu einer Hochzeit nach Dresden gefahren. In Leipzig musste ich umsteigen. Der Anschlusszug stand schon da und ich hatte nur vier Minuten.", "Mayısta trenle Dresden'e bir düğüne gittim. Leipzig'de aktarma yapmam gerekiyordu. Aktarma treni çoktan oradaydı ve yalnız dört dakikam vardı."),
-          P(L, "Ich bin gerannt, bin eingestiegen und habe mich gefreut. Dann habe ich gemerkt: Mein Koffer stand noch im anderen Zug.", "Koştum, bindim ve sevindim. Sonra fark ettim: Valizim hâlâ öteki trendeydi."),
-          P(L, "Der Schaffner war sehr ruhig. „Das passiert oft“, hat er gesagt und telefoniert. Eine halbe Stunde später wusste er, dass ein Mitarbeiter den Koffer in Dresden abgegeben hatte.", "Kondüktör çok sakindi. “Bu sık olur” dedi ve telefon etti. Yarım saat sonra bir görevlinin valizi Dresden'de teslim ettiğini öğrendi."),
-          P(L, "Am Abend bin ich zum Fundbüro gegangen. Der Koffer war da, aber er war offen. Eine Frau hatte ihn geöffnet, weil sie meinen Namen suchen wollte. Sie hat mir eine Nachricht hineingelegt: „Schöne Hochzeit! Ihr Anzug hängt jetzt ordentlich.“", "Akşam kayıp eşya bürosuna gittim. Valiz oradaydı ama açıktı. Bir kadın adımı bulmak için açmıştı. İçine bir not bırakmıştı: “İyi düğünler! Takım elbiseniz artık düzgünce asılı.”"),
-          P(L, "Das war mir ein bisschen peinlich. Aber der Anzug war wirklich nicht mehr geknittert.", "Bu beni biraz utandırdı. Ama takım elbise gerçekten artık buruşuk değildi."),
+          P(L, "Ich bin gerannt, bin eingestiegen und habe mich gefreut. Dann habe ich gemerkt: Mein Koffer stand noch im anderen Zug.", "Koşup trene bindim; yetiştiğime sevindim. Sonra fark ettim: Valizim hâlâ öteki trendeydi."),
+          P(L, "Der Schaffner war sehr ruhig. „Das passiert oft“, hat er gesagt und telefoniert. Eine halbe Stunde später wusste er, dass ein Mitarbeiter den Koffer in Dresden abgegeben hatte.", "Kondüktör çok sakindi. “Böyle şeyler sık oluyor” dedi ve telefon etti. Yarım saat sonra bir görevlinin valizi Dresden'de teslim ettiğini öğrendi."),
+          P(L, "Am Abend bin ich zum Fundbüro gegangen. Der Koffer war da, aber er war offen. Eine Frau hatte ihn geöffnet, weil sie meinen Namen suchen wollte. Sie hat mir eine Nachricht hineingelegt: „Schöne Hochzeit! Ihr Anzug hängt jetzt ordentlich.“", "Akşam kayıp eşya bürosuna gittim. Valiz oradaydı ama açıktı. Bir kadın adımı bulmak için açmıştı. İçine bir not bırakmıştı: “Düğünde iyi eğlenceler! Takım elbiseniz artık düzgünce asılı.”"),
+          P(L, "Das war mir ein bisschen peinlich. Aber der Anzug war wirklich nicht mehr geknittert.", "Bu beni biraz utandırdı. Ama takım elbisenin kırışıklıkları gerçekten de düzelmişti."),
         ],
         questions: [
           { q: "Warum ist der Koffer nicht mitgefahren?", opts: ["Die Erzählerin hat ihn im ersten Zug vergessen.", "Jemand hat ihn gestohlen.", "Der Schaffner hat ihn ausgeladen."], ans: 0, say: L("defne", "tr", "Doğru cevap a. Aktarmada yalnız dört dakikası vardı; koşup bindi ve valiz öteki trende kaldı.") },
@@ -54,7 +56,7 @@ const episode = {
         paras: [
           P(L, "In den Sommerferien war ich immer bei meinen Großeltern auf dem Land. Sie hatten sieben Enkelkinder, aber ich war das einzige, das jedes Jahr blieb.", "Yaz tatillerinde hep köydeki büyükannemle büyükbabamın yanındaydım. Yedi torunları vardı ama her yıl kalan tek torun bendim."),
           P(L, "Bei ihnen gab es einen alten Kamin im Wohnzimmer. Im Juli hat ihn natürlich niemand angemacht, aber er hat immer nach Holz gerochen. In der Küche stand ein sehr großer Topf, und am Freitag hat meine Großmutter darin Suppe gekocht.", "Oturma odalarında eski bir şömine vardı. Temmuzda elbette kimse yakmazdı ama hep odun kokardı. Mutfakta çok büyük bir tencere dururdu; cuma günleri büyükannem onda çorba pişirirdi."),
-          P(L, "Am liebsten habe ich beim Backen geholfen. Ich durfte den Teig rühren, und danach durfte ich die Schüssel auslecken.", "En çok hamur işlerinde yardım etmeyi severdim. Hamuru karıştırmama izin verilirdi, sonra da kâseyi yalayabilirdim."),
+          P(L, "Am liebsten habe ich beim Backen geholfen. Ich durfte den Teig rühren, und danach durfte ich die Schüssel auslecken.", "En çok hamur işi yaparken yardım etmeyi severdim. Hamuru karıştırır, sonra da kâsede kalan hamuru yalardım."),
           P(L, "Reich waren sie nicht. Sie haben fünf Kinder allein großgezogen. Aber sie waren die liebevollsten Menschen, die ich gekannt habe. Später habe ich von ihnen das kleine Haus geerbt.", "Zengin değillerdi. Beş çocuğu tek başlarına büyüttüler. Ama tanıdığım en sevgi dolu insanlardı. Sonra küçük evi onlardan miras aldım."),
         ],
         questions: [
@@ -76,17 +78,17 @@ const episode = {
     end: {
       lab: "Sıradaki",
       line: "Hangisini daha kolay anladın?",
-      ask: "Yorumlara yaz; sıradaki hikâyeyi de sen seç.",
+      ask: "Yorumlara yaz; dinlemek istediğin konuyu da yaz.",
       sub: "Her salı ve cuma yeni video",
       slot: "Sıradaki video",
-      say: L("defne", "tr", "Hangi hikâyeyi daha kolay anladın? Yorumlara yaz; bir sonraki hikâyeyi de sen seç."),
+      say: L("defne", "tr", "Hangi hikâyeyi daha kolay anladın? Yorumlara yaz; dinlemek istediğin konuyu da yaz."),
     },
     cover: { lab: "A2 · yavaş okuma · Türkçe çevirili", lines: ["Yavaş", "Almanca"], pill: "2 hikâye · sorularıyla" },
     yt: {
-      desc: "Yavaş okunan iki A2 Almanca hikâye: kaybolan valiz (Der Koffer, der weiterfuhr) ve büyükannemlerde (Bei meinen Großeltern). Önce kelimeler, sonra paragraf paragraf yavaş okuma ve Türkçe çevirisi, anlama soruları ve en sonda normal hızda baştan sona.",
+      desc: "İki A2 Almanca hikâyeyi yavaş ve normal hızda dinle: Yola devam eden valiz ve Büyükannemlerde. Önce hikâyede geçen kelimeleri çalış; sonra paragrafları yavaşça dinleyip Türkçe çevirileriyle karşılaştır. Anlama sorularından sonra hikâyenin tamamını normal hızda dinleyebilirsin. Hangisini daha kolay anladın?",
       tags: "#almanca #almancahikaye #almancadinleme #a2almanca",
     },
-    ui: {},
+    ui: { cardNote: "Almanca alıştırması" },
   }),
 };
 export default episode;

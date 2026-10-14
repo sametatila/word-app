@@ -1,10 +1,10 @@
-/* Kıyafet olmadı: mağazada değiştirmek, online siparişi geri göndermek (3 cümle). */
+/* Kıyafet olmadı: mağazada değiştirmek, internetten verdiğin siparişi geri göndermek (3 cümle). */
 const episode = {
   template: "diyalog-kagit",
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-22 18:30",
-  ytTitle: "Kıyafet değiştirirken ve iade ederken Almanca 3 cümle #almanca #shorts",
+  ytTitle: "Almanca kıyafet değişimi ve iade için 3 örnek cümle #almanca #shorts",
   content: ({ line }) => ({
     lines: [
       { scene: "shop", who: "me", key: "umtauschen" },
@@ -13,12 +13,12 @@ const episode = {
     ].map(line),
     copy: {
       title: "Kıyafet olmadı, 3 cümle",
-      hook: ["Aldığın kıyafet", "olmadı mı?", "Bu 3 cümle yeter."],
-      caption: "Aldığın kıyafet olmadı mı? Mağazada değiştirirken ve online siparişi geri gönderirken bu 3 cümle yeter. Fişi saklamayı unutma.\n\n#almanca #almanyadayaşam #deutschlernen #almancaöğreniyorum #alışveriş #umtausch",
-      outro: { series: "Her hafta yeni bir durum", ask: "Sırada hangisi olsun? Yorumlara yaz" },
+      hook: ["Aldığın kıyafet", "olmadı mı?", "Değişim ve iade için 3 cümle."],
+      caption: "Almanca kıyafet değişimi ve iade: daha büyük beden istemek, fişle değişim ve internetten verilen siparişi geri göndermek. Değişim yaparken fişini istediler mi?\n\n#almanca #almanyadayaşam #deutschlernen #almancaöğreniyorum #alışveriş #umtausch",
+      outro: { series: "Her hafta yeni bir durum", ask: "Değişim yaparken fişini istediler mi?" },
       scenes: {
         shop: { label: "Mağazada", icon: "shop" },
-        online: { label: "Online siparişte", icon: "phone" },
+        online: { label: "İnternetten alışverişte", icon: "phone" },
       },
       them: "Satıcı",
       endTitle: "Fişi saklamayı unutma.",

@@ -6,8 +6,10 @@ const episode = {
   status: "taslak",
   created: "2026-10-13",
   slot: "2026-10-16 19:00",
-  ytTitle: "Doktorda lazım olan 50 Almanca kelime: dinle, söyle, tekrar et",
+  ytTitle: "Doktorda Almanca: örnek cümlelerle 50 kelime | Yürürken Almanca 1",
   content: ({ L, walk }) => ({
+    // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
+    narrationPaused: true,
     series: "Yürürken Almanca",
     ep: "Doktorda",
     hook: {
@@ -16,7 +18,7 @@ const episode = {
       sub: "50 kelime, her biri örnek cümleyle.",
       pills: ["Dinle", "Söyle", "Tekrar et"],
       stops: ["der Termin", "die Kopfschmerzen", "die Apotheke"],
-      say: L("ahu", "tr", "Merhaba! Bugün doktorda en çok lazım olan elli Almanca kelimeyi çalışıyoruz. Ben sana Türkçesini söyleyeceğim, sen de Almancasını yüksek sesle söyleyeceksin."),
+      say: L("ahu", "tr", "Merhaba! Bugün doktorda kullanabileceğin elli Almanca kelimeyi çalışıyoruz. Ben sana Türkçesini söyleyeceğim, sen de Almancasını yüksek sesle söyleyeceksin."),
     },
     how: {
       steps: [
@@ -36,7 +38,7 @@ const episode = {
       {
         title: "Şikâyetler: ağrılar, belirtiler",
         sub: "Doktora derdini anlatmak için",
-        say: L("ahu", "tr", "Güzel. İkinci konumuz şikâyetler. Doktor ilk olarak nerenin ağrıdığını sorar; bu kelimeler tam bunun için."),
+        say: L("ahu", "tr", "Güzel. İkinci konumuz şikâyetler. Bu kelimelerle nerenin ağrıdığını ve nasıl hissettiğini anlatabilirsin."),
         words: ["wehtun", "der Schmerz", "die Kopfschmerzen", "die Halsschmerzen", "die Rückenschmerzen", "die Zahnschmerzen", "das Fieber", "der Husten", "der Schnupfen", "schwindlig"].map((w) => walk(w, { tr: "ahu" })),
       },
       {
@@ -63,27 +65,27 @@ const episode = {
     },
     app: {
       lab: "Lernomi'de",
-      title: "Aynı tur, ekran kapalıyken.",
+      title: "Ekran kapalıyken de çalış.",
       body: "Telefon cebinde, kulaklık takılı. Kelimeyi sen söylersin, Lernomi dinler; doğruysa sıradakine geçer.",
       where: "Yürüyüş modu · 4/12",
       link: "Bağlantı açıklamada",
       panel: { tr: "Türkçesi: diş hekimi", de: "der Zahnarzt", ok: "Doğru söyledin" },
-      say: L("ahu", "tr", "Bu turun aynısı Lernomi'nin yürüyüş modunda var. Ekran kapalıyken de çalışıyor ve söylediğini dinliyor. Bağlantıyı açıklamaya koydum."),
+      say: L("ahu", "tr", "Lernomi'nin yürüyüş modunda da Türkçesini duyup Almancasını söyleyebilirsin. Ekran kapalıyken de çalışıyor ve söylediğini dinliyor. Bağlantıyı açıklamaya koydum."),
     },
     end: {
       lab: "Sıradaki",
-      line: "Kaç tanesini ilk seferde söyledin?",
-      ask: "Yorumlara yaz; bir sonraki konuyu da sen seç.",
+      line: "Hangi kelime aklında kaldı?",
+      ask: "Yorumlara yaz; çalışmak istediğin konuyu da yaz.",
       sub: "Her salı ve cuma yeni video",
       slot: "Sıradaki video",
-      say: L("ahu", "tr", "Peki, kaç tanesini ilk seferde söyleyebildin? Yorumlara yaz; bir sonraki konuyu da sen seç. Görüşmek üzere!"),
+      say: L("ahu", "tr", "Peki, hangi kelime aklında kaldı? Yorumlara yaz; çalışmak istediğin konuyu da yaz. Görüşmek üzere!"),
     },
     cover: { lab: "Dinle · söyle · tekrar et", lines: ["Doktorda", "Almanca"], pill: "50 kelime · örnek cümleyle", words: ["der Termin", "verschreiben"] },
     yt: {
-      desc: "Doktorda lazım olan 50 Almanca kelime, Türkçesi ve örnek cümlesiyle: randevu, şikâyetler, muayene, reçete ve acil durum. Türkçesini duyuyorsun, Almancasını sen söylüyorsun, sonra doğrusunu ve örnek cümleyi dinliyorsun. Ekrana bakmadan, yürürken de çalışır.",
+      desc: "Doktorda kullanabileceğin 50 Almanca kelimeyi Türkçesi ve örnek cümlesiyle çalış. Önce Türkçesini duy, Almancasını söylemek için üç saniye bekle, sonra doğru kelimeyi ve örnek cümleyi dinle. Randevu, şikâyetler, muayene, eczane ve acil durum konuları var. Ekrana bakmadan yürürken veya günlük işlerini yaparken de tekrar edebilirsin. Hangi kelime aklında kaldı?",
       tags: "#almanca #almancaöğren #almancakelimeler #doktorda",
     },
-    ui: {},
+    ui: { cardNote: "Almanca alıştırması" },
   }),
 };
 export default episode;

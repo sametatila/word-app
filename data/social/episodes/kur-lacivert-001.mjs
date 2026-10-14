@@ -4,14 +4,14 @@ const episode = {
   status: "hazır",
   created: "2026-10-08",
   slot: "2026-10-18 07:30",
-  ytTitle: "Telefonda lazım olan 3 Almanca cümleyi sen kur #almanca #shorts",
+  ytTitle: "Telefonda kullanabileceğin 3 Almanca cümleyi sen kur #almanca #shorts",
   content: ({ sentence }) => ({
     copy: {
-      title: "Telefonda 3 cümle, sen yaz",
+      title: "Telefonda 3 cümle, sen kur",
       scene: "Telefonda",
       hook: ["Telefonda bunu", "nasıl dersin?", "Kelimeleri doğru sıraya koy."],
-      caption: "Telefonda bunu nasıl dersin? Kelimeleri doğru sıraya koyabildin mi? Kaçını bildin, yorumlara yaz.\n\n#almanca #almancaöğreniyorum #deutschlernen #almancacümle #telefonda #almanyadayaşam",
-      outro: { series: "Yarın 3 cümle daha", ask: "Hangisini ilk denemede bildin? Yorumlara yaz." },
+      caption: "Telefonda kullanabileceğin üç Almanca cümle: geri aramasını istemek, mesaj göndermek ve telefon numarasını bilmediğini söylemek. Geri aramasını isteyen cümleyi kurabildin mi?\n\n#almanca #almancaöğreniyorum #deutschlernen #almancacümle #telefonda #almanyadayaşam",
+      outro: { series: "Almanca cümle alıştırmaları", ask: "Geri aramasını isteyen cümleyi kurabildin mi?" },
     },
     lines: [
       sentence("zurückrufen", [0, 5], "Evet/hayır sorusu fiille başlar, zurückrufen en sonda"),

@@ -6,31 +6,33 @@ const episode = {
   status: "taslak",
   created: "2026-10-14",
   slot: "2026-10-23 19:00",
-  ytTitle: "Hangisini duydun? Türk kulağını zorlayan 37 Almanca kelime çifti (dinleme testi)",
+  ytTitle: "Almanca dinleme testi: 37 benzer kelime çifti | Hangisini duydun?",
   content: ({ L, pair }) => ({
+    // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
+    narrationPaused: true,
     series: "Hangisini Duydun?",
     ep: "1. bölüm · 37 çift",
     hook: {
       lab: "Dinleme testi · 5 tur · 37 çift",
-      lines: ["Hangisini duydun?", "Tek ses farkı, tek doğru."],
+      lines: ["Hangisini duydun?", "Benzer kelimeler, farklı sesler."],
       demo: ["der Herd", "der Herr"],
       say: L("defne", "tr", "İki kelime göreceksin, ben yalnız birini söyleyeceğim. Hangisini duyduysan onu seç. Beş tur, otuz yedi çift."),
     },
     how: {
       lab: "Kurallar",
-      title: "Duy, seç, puanını tut.",
+      title: "Dinle, seç, doğrularını say.",
       steps: [
-        ["İki kez dinle", "Defne kelimeyi iki kez söyler."],
+        ["İki kez dinle", "Kelimeyi iki kez duyacaksın."],
         ["Üç saniyede seç", "A mı, B mi? Doğru bildiğin her çift bir puan."],
-        ["Puanını yaz", "Sonunda toplamını yorumlara yaz."],
+        ["Puanını yaz", "Her doğru cevabını not et."],
       ],
-      say: L("defne", "tr", "Her kelimeyi iki kez duyacaksın. Sonra üç saniyen var: A mı, B mi? Doğru bildiğin her çift için kendine bir puan ver, sonunda toplamı yorumlara yaz."),
+      say: L("defne", "tr", "Her kelimeyi iki kez duyacaksın. Sonra üç saniyen var: A mı, B mi? Her doğru cevabın bir puan. Saymak istersen doğrularını bir kâğıda not et."),
     },
     rounds: [
       {
-        name: "Tek ünsüz",
+        name: "Benzer ünsüzler",
         sub: "r ile l, n ile l, d ile r, r ile s",
-        say: L("defne", "tr", "Birinci tur, ısınma. Kelimeler yalnız tek bir ünsüzde ayrılıyor."),
+        say: L("defne", "tr", "Birinci turda benzer ünsüzleri dinliyoruz. Bazı çiftlerde bir ses değişiyor, bazılarında ek bir ses var."),
         pairs: [
           pair("das Glas", "das Gras", 1),
           pair("die Flucht", "die Frucht", 0),
@@ -61,7 +63,7 @@ const episode = {
       {
         name: "a, e ve ä",
         sub: "ä çoğu zaman e gibi duyulur",
-        say: L("defne", "tr", "Üçüncü tur: a, e ve a umlaut. A umlaut çoğu zaman e gibi duyulur; dikkatli dinle."),
+        say: L("defne", "tr", "Üçüncü turda farklı ünlüleri dinliyoruz. Ekrandaki iki noktalı a harfine de dikkat et; sesi e harfine benzeyebilir."),
         pairs: [
           pair("danken", "denken", 1),
           pair("dann", "denn", 0),
@@ -87,7 +89,7 @@ const episode = {
       {
         name: "Umlaut ve ch",
         sub: "o ile ö, u ile ü, ch ile ck",
-        say: L("defne", "tr", "Final turu: o ile ö, u ile ü, bir de c h ile c k."),
+        say: L("defne", "tr", "Son turda iki noktalı ünlüler ve farklı ünsüzler var. Önce kelimeyi dinle, sonra seç."),
         pairs: [
           pair("schon", "schön", 1),
           pair("froh", "früh", 0),
@@ -103,9 +105,9 @@ const episode = {
     compare: { say: L("defne", "tr", "Şimdi bu turun çiftlerini yan yana dinle: önce A, sonra B.") },
     score: {
       lab: "Puan",
-      title: "Kaç çift doğru?",
-      sub: "37 üzerinden puanını yorumlara yaz.",
-      say: L("defne", "tr", "Kaç çifti doğru bildin? Puanını yorumlara yaz; en çok hangi turda zorlandığını da yaz."),
+      title: "Kaçını doğru bildin?",
+      sub: "En çok hangi turda zorlandın?",
+      say: L("defne", "tr", "En çok hangi turda zorlandın? Sonuçlarını karşılaştır; istersen o turu bir kez daha dinle."),
     },
     app: {
       lab: "Lernomi'de",
@@ -126,10 +128,10 @@ const episode = {
     },
     cover: { lines: ["Hangisini", "duydun?"], pill: "37 çift · kaç puan?" },
     yt: {
-      desc: "Almanca dinleme testi: tek sesle ayrılan 37 kelime çifti, beş turda. Defne iki kelimeden birini söylüyor, sen hangisi olduğunu seçiyorsun. Turlar: tek ünsüz, e ile i, a, e ve ä, uzun ve kısa ünlü, umlaut ve ch. Puanını yorumlara yaz.",
+      desc: "37 Almanca kelime çiftinde duyduğun kelimeyi seç. Her kelime iki kez okunuyor; cevap vermek için üç saniyen var. Beş turda benzer ünsüzleri, e/i ve a/e/ä seslerini, uzun/kısa ünlüleri ve iki noktalı ünlüleri çalışıyoruz. Her turun sonunda çiftleri yan yana dinleyebilirsin. Doğrularını not ederek puanını takip et. En çok hangi turda zorlandın?",
       tags: "#almanca #almancaöğren #almancatelaffuz #almancadinleme",
     },
-    ui: {},
+    ui: { cardNote: "Almanca alıştırması" },
   }),
 };
 export default episode;

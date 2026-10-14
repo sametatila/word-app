@@ -7,8 +7,10 @@ const episode = {
   status: "taslak",
   created: "2026-10-14",
   slot: "2026-10-20 19:00",
-  ytTitle: "A1 Almanca sınavı dinleme bölümü: 15 soru, cevaplı ve açıklamalı deneme",
+  ytTitle: "A1 Almanca dinleme denemesi 1: 15 soru, cevaplar ve açıklamalar",
   content: ({ L }) => ({
+    // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
+    narrationPaused: true,
     series: "A1 Sınavı: Birlikte Çözüyoruz",
     ep: "Deneme 1 · Dinleme",
     hook: {
@@ -123,7 +125,7 @@ const episode = {
             { role: "Herr Albers", line: L("aras", "de", "Am Sonntag. Montag muss ich wieder ins Büro.", "listen") },
           ],
           mark: "Meine Mutter ist krank",
-          say: L("defne", "tr", "Doğru cevap b, annesini ziyaret ediyor. Tatile mi gidiyorsunuz sorusuna hayır diyor, çünkü annesi hasta. Ofis Bremen'de değil; pazartesi döndüğünde işe gidiyor."),
+          say: L("defne", "tr", "Doğru cevap b, annesini ziyaret ediyor. Tatile mi gidiyorsunuz sorusuna hayır diyor, çünkü annesi hasta. Pazartesi ofise gitmesi, bu yolculuğun nedeni değil."),
         },
         ],
       },
@@ -213,7 +215,7 @@ const episode = {
             { role: "Tim", line: L("aras", "de", "Gut, an der Information also.", "listen") },
           ],
           mark: "Komm lieber zur Information in der Halle",
-          say: L("defne", "tr", "Doğru cevap c, danışmada. Trenin yanı öneriliyor ama peron çok kalabalık. İlk söylenen yer çoğu zaman doğru cevap olmuyor."),
+          say: L("defne", "tr", "Doğru cevap c, danışmada. Trenin yanı öneriliyor ama peron çok kalabalık. Bu soruda ilk önerilen yer değil, sonunda anlaştıkları yer önemli."),
         },
         {
           sit: "Bir hasta ne kadar bekleyeceğini soruyor.",
@@ -264,12 +266,12 @@ const episode = {
     key: {
       lab: "Cevap anahtarı",
       title: "Kaç doğru yaptın?",
-      say: L("defne", "tr", "Cevap anahtarı burada. Kaç doğru yaptığını say ve yorumlara yaz."),
+      say: L("defne", "tr", "Cevap anahtarı burada. İşaretlediğin cevaplarla karşılaştırıp doğrularını say."),
     },
     app: {
       lab: "Lernomi'de",
       title: "Bu sınavın tamamı uygulamada.",
-      body: "Dört bölüm, gerçek süre. Bitince puanın ve hangi soru tipinde puan kaybettiğin.",
+      body: "Dört bölümü süre tutarak çöz. Sonunda puanını ve hangi soru tiplerinde zorlandığını gör.",
       where: "Deneme sınavı 1 · A1",
       link: "Bağlantı açıklamada",
       panel: { title: "80 dakika", sub: "Dört bölüm, sırayla", rows: [["Lesen", "25 dk"], ["Hören", "20 dk"], ["Schreiben", "20 dk"], ["Sprechen", "15 dk"]], start: "Başla" },
@@ -285,10 +287,10 @@ const episode = {
     },
     cover: { lab: "A1 · Dinleme · 15 soru", lines: ["A1 dinleme", "cevaplı deneme"] },
     yt: {
-      desc: "A1 Almanca sınavının dinleme bölümü baştan sona: 15 soru, sınavdaki formatta. Her sorudan sonra doğru cevap ve neden doğru olduğu; sonda cevap anahtarı. Kâğıt kalemle birlikte çöz.",
+      desc: "A1 Almanca dinleme için 15 soruluk bir denemeyi birlikte çöz. Kısa konuşmalar, anonslar ve telefon mesajları var. Her sorudan sonra doğru cevabı ve gerekçesini gör; sonunda cevap anahtarıyla doğrularını say. Bu video açıklamalı çalışma içindir; anlatım araları nedeniyle kesintisiz bir sınav oturumu değildir. Kaç doğru yaptın?",
       tags: "#almanca #almancaöğren #a1almanca #almancasınav",
     },
-    ui: {},
+    ui: { cardNote: "Almanca alıştırması" },
   }),
 };
 export default episode;

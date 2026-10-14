@@ -4,14 +4,14 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-19 07:30",
-  ytTitle: "Restoranda lazım olan 2 Almanca cümleyi sen kur #almanca #shorts",
+  ytTitle: "Restoranda geçen 2 Almanca cümleyi sen kur #almanca #shorts",
   content: ({ sentence }) => ({
     copy: {
-      title: "Restoranda 2 cümle, treni kur",
+      title: "Restoranda 2 cümle, sen kur",
       scene: "Restoranda",
-      hook: ["Restoranda 2 cümle.", "Treni sen", "kurabilir misin?"],
-      caption: "Restoranda lazım olan 2 cümle. Vagonları doğru sıraya dizebildin mi? Hangisinde takıldın, yaz.\n\n#almanca #almancaöğreniyorum #deutschlernen #almanyadayaşam #restoranda #almancacümle",
-      outro: { series: "Yeni cümleler yolda", ask: "İkisini de doğru dizdin mi? Yorumlara yaz." },
+      hook: ["Restoranda 2 cümle.", "Kelimeleri sıraya", "koyabilir misin?"],
+      caption: "Restoranda geçen iki Almanca cümleyi kur: garnitür seçenekleri ve eksik tabak. Masada tabak eksikse hangi cümleyi söylersin?\n\n#almanca #almancaöğreniyorum #deutschlernen #almanyadayaşam #restoranda #almancacümle",
+      outro: { series: "Yeni cümleler yolda", ask: "Masada tabak eksikse hangi cümleyi söylersin?" },
     },
     lines: [
       sentence("die Beilage", [0, 1, 2], "„Als Beilage“ başta, gibt yine ikinci sırada"),

@@ -4,16 +4,16 @@ const episode = {
   status: "hazır",
   created: "2026-10-08",
   slot: "2026-10-15 07:30",
-  ytTitle: "Mond mu, Mund mu? Tek harf fark, Almanca dinleme testi #almanca #shorts",
+  ytTitle: "Mond mu, Mund mu? 4 çiftle Almanca dinleme testi #almanca #shorts",
   content: ({ pair }) => ({
     rounds: [pair("der Mond", "der Mund", 1), pair("die Miete", "die Mitte", 0), pair("lesen", "lösen", 1), pair("das Boot", "das Brot", 1)],
     copy: {
       title: "Kulağına güveniyor musun?",
       hook: ["Kulağına", "güveniyor musun?"],
-      pill: "Fark sadece tek harf.",
+      pill: "Benzer kelimeler, farklı sesler.",
       recap: "Dört çift, dört fark",
-      caption: "Kulağına güveniyor musun? Dört çift, fark sadece tek harf. Hangisini ilk duyuşta bildin?\n\n#almanca #almancaöğreniyorum #deutschlernen #telaffuz #almancakelimeler #dinleme",
-      outro: { series: "Yarın yeni çiftler geliyor", ask: "Hangisini ilk duyuşta bildin?" },
+      caption: "Almanca dinleme testi: Mond/Mund, Miete/Mitte, lesen/lösen, Boot/Brot. Benzer kelimelerdeki ses farkına kulak ver. Mond mu, Mund mu? İlk seferde bildin mi?\n\n#almanca #almancaöğreniyorum #deutschlernen #telaffuz #almancakelimeler #dinleme",
+      outro: { series: "Almanca dinleme alıştırmaları", ask: "Mond mu, Mund mu? İlk seferde bildin mi?" },
     },
   }),
 };

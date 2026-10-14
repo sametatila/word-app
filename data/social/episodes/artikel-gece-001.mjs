@@ -4,17 +4,17 @@ const episode = {
   status: "hazır",
   created: "2026-10-08",
   slot: "2026-10-27 07:30",
-  ytTitle: "Kaşık, çatal, bıçak Almancada hangi artikeli alır? #almanca #shorts",
+  ytTitle: "Almanca artikel testi: kaşık, çatal, bıçak ve Mädchen #almanca #shorts",
   content: ({ quiz }) => ({
     items: quiz(["der Löffel", "die Gabel", "das Messer", "das Mädchen"], { Löffel: { icon: "spoon" }, Gabel: { icon: "fork" }, Messer: { icon: "knife" } }),
     copy: {
-      title: "Kaşık, çatal, bıçak",
-      hook: ["Kaşık, çatal, bıçak…", "Üçünün artikeli de farklı."],
+      title: "4 kelime, 3 artikel",
+      hook: ["Kaşık, çatal, bıçak…", "Peki Mädchen hangi artikeli alır?"],
       pill: "3 saniyen var",
-      rule: "<b>-chen</b> ile biten her kelime <b>das</b> alır.<br>das Mädchen, das Brötchen…",
+      rule: "Küçültme eki <b>-chen</b> alan isimler <b>das</b> alır.<br>das Mädchen, das Brötchen…",
       endTitle: "İşte cevaplar",
-      outro: { series: "Yarın yeni tur var", ask: "Kaç tane bildin? Yorumlara yaz" },
-      caption: "Kaşık, çatal ve bıçağın artikeli farklı. Son soru biraz tuzaklı, kaç tane bildin?\n\n#almanca #almancaöğreniyorum #deutschlernen #artikel #derdiedas #almanyadayaşam",
+      outro: { series: "Almanca artikel alıştırmaları", ask: "Mädchen neden das? Farkı yorumlara yaz" },
+      caption: "Almanca artikel testi: kaşık, çatal, bıçak ve Mädchen. Mutfaktaki üç kelimenin artikeli farklı; son soruda ise -chen eki ipucu veriyor. Mädchen neden das? Farkı yorumlara yaz.\n\n#almanca #almancaöğreniyorum #deutschlernen #artikel #derdiedas #almanyadayaşam",
     },
   }),
 };

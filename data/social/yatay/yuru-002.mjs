@@ -5,13 +5,15 @@ const episode = {
   status: "taslak",
   created: "2026-10-14",
   slot: "2026-10-30 19:00",
-  ytTitle: "Ev ararken ve kirada lazım olan 50 Almanca kelime: dinle, söyle, tekrar et",
+  ytTitle: "Ev ve kira için 50 Almanca kelime: dinle ve söyle | Yürürken Almanca 2",
   content: ({ L, walk }) => ({
+    // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
+    narrationPaused: true,
     series: "Yürürken Almanca",
     ep: "Ev ve kira",
     hook: {
       lab: "Kulaklığını tak, yürürken dinle",
-      lines: ["Evde ve kirada", "Almanca"],
+      lines: ["Ev ve kira için", "Almanca"],
       sub: "50 kelime, her biri örnek cümleyle.",
       pills: ["Dinle", "Söyle", "Tekrar et"],
       stops: ["die Wohnung", "der Umzug", "die Heizung"],
@@ -19,7 +21,7 @@ const episode = {
     },
     how: {
       steps: [
-        ["Türkçesini duy", "Defne kelimeyi Türkçe söyler."],
+        ["Türkçesini duy", "Kelimenin Türkçesini duyacaksın."],
         ["Almancasını söyle", "Üç saniyen var, yüksek sesle söyle."],
         ["Doğrusunu dinle", "Kelimenin kendisi ve örnek bir cümle."],
       ],
@@ -53,36 +55,36 @@ const episode = {
       {
         title: "Komşular ve ev düzeni",
         sub: "Sessizlik, çöp, merdiven boşluğu",
-        say: L("defne", "tr", "Son konu komşular ve ev düzeni. Apartmanda en çok konuşulan konular bunlar."),
+        say: L("defne", "tr", "Son konu komşular ve ev düzeni. Sessizlik, çöp ve apartmandaki günlük işler."),
         words: ["der Nachbar", "die Nachbarin", "ruhig", "die Ruhe", "der Müll", "die Mülltonne", "das Treppenhaus", "der Briefkasten", "die Klingel", "lüften"].map((w) => walk(w)),
       },
     ],
     review: {
-      say: L("defne", "tr", "Hızlı tekrar. Bu sefer es yok: Türkçesini duyunca Almancasını hemen söyle."),
+      say: L("defne", "tr", "Hızlı tekrar. Bu sefer beklemeden devam ediyoruz: Türkçesini duyunca Almancasını hemen söyle."),
     },
     app: {
       lab: "Lernomi'de",
-      title: "Aynı tur, ekran kapalıyken.",
+      title: "Ekran kapalıyken de çalış.",
       body: "Telefon cebinde, kulaklık takılı. Kelimeyi sen söylersin, Lernomi dinler; doğruysa sıradakine geçer.",
       where: "Yürüyüş modu · 4/12",
       link: "Bağlantı açıklamada",
       panel: { tr: "Türkçesi: kira", de: "die Miete", ok: "Doğru söyledin" },
-      say: L("defne", "tr", "Bu turun aynısı Lernomi'de yürüyüş modunda var. Ekran kapalıyken de çalışır ve söylediğini dinler. Bağlantı açıklamada."),
+      say: L("defne", "tr", "Lernomi'nin yürüyüş modunda da Türkçesini duyup Almancasını söyleyebilirsin. Ekran kapalıyken de çalışır ve söylediğini dinler. Bağlantı açıklamada."),
     },
     end: {
       lab: "Sıradaki",
-      line: "Kaç tanesini ilk seferde söyledin?",
-      ask: "Yorumlara yaz; bir sonraki konuyu da sen seç.",
+      line: "Ev ararken hangi kelime işine yaradı?",
+      ask: "Yorumlara yaz; çalışmak istediğin konuyu da yaz.",
       sub: "Her salı ve cuma yeni video",
       slot: "Sıradaki video",
-      say: L("defne", "tr", "Kaç tanesini ilk seferde söyledin? Yorumlara yaz; bir sonraki konuyu da sen seç."),
+      say: L("defne", "tr", "Ev ararken hangi kelime işine yaradı? Yorumlara yaz; çalışmak istediğin konuyu da yaz."),
     },
     cover: { lab: "Dinle · söyle · tekrar et", lines: ["Ev ve kira", "Almanca"], pill: "50 kelime · örnek cümleyle", words: ["die Miete", "der Vermieter"] },
     yt: {
-      desc: "Almanya'da ev ararken, kiralarken ve evde lazım olan 50 Almanca kelime, Türkçesi ve örnek cümlesiyle: ilan, sözleşme, taşınma, odalar, arıza ve komşular. Defne Türkçesini söylüyor, sen Almancasını söylüyorsun, sonra doğrusunu ve örnek cümleyi dinliyorsun. Ekrana bakmadan, yürürken de çalışır.",
+      desc: "Ev ararken, taşınırken ve evde kullanabileceğin 50 Almanca kelimeyi Türkçesi ve örnek cümlesiyle çalış. Türkçesini duyunca Almancasını söyle; üç saniye sonra doğru kelimeyi ve örnek cümleyi dinle. İlanlar, sözleşme, taşınma, odalar, arızalar ve komşularla ilgili kelimeler var. Ekrana bakmadan da tekrar edebilirsin. Ev ararken hangi kelime işine yaradı?",
       tags: "#almanca #almancaöğren #almancakelimeler #almanyadaev",
     },
-    ui: {},
+    ui: { cardNote: "Almanca alıştırması" },
   }),
 };
 export default episode;

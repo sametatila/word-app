@@ -4,22 +4,22 @@ const episode = {
   status: "hazır",
   created: "2026-10-09",
   slot: "2026-10-25 18:30",
-  ytTitle: "Yabancılar dairesini ararken Almanca 3 cümle #almanca #shorts",
+  ytTitle: "Almanca izin ve vize uzatma konuşmalarında geçen 3 cümle #almanca #shorts",
   content: ({ line }) => ({
     lines: [
       { who: "me", key: "ablaufen" },
       { who: "them", key: "die Verlängerung" },
       { who: "me", key: "vorteilhaft" },
-    ].map(line),
+    ].map((l) => (l.key === "vorteilhaft" ? { ...line(l), tr: "Bizim için daha erken bir randevu daha uygun olurdu." } : line(l))),
     copy: {
       title: "Oturma izni bitiyor, 3 cümle",
-      hook: ["Oturma iznin bitiyor.", "Yabancılar dairesini arıyorsun."],
-      caption: "Oturma iznin bitiyor, yabancılar dairesini arıyorsun. Bu 3 cümle işini görür. Sen randevuyu kaç hafta önceden aldın?\n\n#almanca #almanyadayaşam #deutschlernen #ausländerbehörde #aufenthaltstitel #almancaöğreniyorum",
-      outro: { series: "Her hafta yeni bir durum", ask: "Sen randevuyu kaç hafta önce aldın? Yorumlara yaz" },
+      hook: ["İznin veya vizen bitiyor.", "Yabancılar dairesini arıyorsun."],
+      caption: "Almanca izin ve vize uzatma konuşmalarında geçen üç örnek cümle: sürenin dolması, gereken belgeler ve daha erken bir randevu. Randevunu kaç hafta önceden aldın?\n\n#almanca #almanyadayaşam #deutschlernen #ausländerbehörde #aufenthaltstitel #almancaöğreniyorum",
+      outro: { series: "Her hafta yeni bir durum", ask: "Randevunu kaç hafta önceden aldın?" },
       callee: "Yabancılar dairesi",
       calleeTag: "YABANCILAR DAİRESİ",
       avatar: "work",
-      endTitle: "Randevunu istedin.",
+      endTitle: "İzin ve vize uzatma için 3 cümle.",
     },
   }),
 };

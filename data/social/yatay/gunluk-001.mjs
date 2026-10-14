@@ -7,17 +7,19 @@ const episode = {
   status: "taslak",
   created: "2026-10-14",
   slot: "2026-10-27 19:00",
-  ytTitle: "Ausländerbehörde'de Almanca: oturma izni uzatma konuşması ve memurun 3 kalıbı",
+  ytTitle: "Ausländerbehörde'de Almanca: oturma izni uzatma için 3 kalıp ve konuşma provası",
   content: ({ L, walk }) => ({
+    // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
+    narrationPaused: true,
     series: "Almanya'da Günlük Hayat",
     ep: "Ausländerbehörde",
     hook: {
       chap: "Memurun dili",
       lab: "B1 · Resmî işler · oturma izni",
-      lines: ["Ausländerbehörde'de", "her cümle", "aynı kalıptan."],
+      lines: ["Ausländerbehörde'de", "işine yarayacak", "üç kalıp."],
       sub: "Kalıbı bil, memuru anla.",
       ticket: { office: "AUSLÄNDERBEHÖRDE", label: "Ihre Nummer", num: "A 127", rows: [["Raum", "2.14"], ["Termin", "09:30"], ["Anliegen", "Verlängerung"]] },
-      say: L("defne", "tr", "Yabancılar dairesinde duyacağın hemen her cümle edilgen ve birkaç kalıptan çıkıyor. Bu videoda memurun dilini çözüyoruz; sonunda konuşmayı sen yapacaksın."),
+      say: L("defne", "tr", "Yabancılar dairesinde belgeler ve başvurular için kullanılan üç Almanca kalıbı çalışıyoruz. Bu videoda memurun dilini çözüyoruz; sonunda konuşmayı sen yapacaksın."),
     },
     vocab: [
       {
@@ -29,7 +31,7 @@ const episode = {
       {
         title: "Belgeler ve formlar",
         sub: "10 kelime · masada istenenler",
-        say: L("defne", "tr", "Şimdi belgeler. Memurun masasında en çok istenen on kelime."),
+        say: L("defne", "tr", "Şimdi belgeler. Başvuruda belgeler ve formlarla ilgili duyabileceğin on kelime."),
         words: ["der Reisepass", "die Meldebescheinigung", "die Krankenkasse", "das Einkommen", "das Formular", "ausfüllen", "die Kopie", "das Original", "mitbringen", "abgeben"].map((w) => walk(w)),
       },
     ],
@@ -37,8 +39,8 @@ const episode = {
       {
         lab: "resmî dilde “gerekiyor”",
         title: "Kalıp 1: Es werden … benötigt",
-        tiles: [["Es", "sahte özne", "yer tutar"], ["werden", "yardımcı fiil", "çoğul: özneye uyar"], ["Unterlagen", "asıl özne", "belgeler"], ["benötigt.", "ortaç", "en sonda"]],
-        say: L("defne", "tr", "Birinci kalıp. Cümlenin başındaki kelime sahte bir öznedir, yalnız yer tutar. Asıl özne belgeler; bu yüzden yardımcı fiil çoğul çekilir. Ortaç en sona gider."),
+        tiles: [["Es", "yer tutan es", "yer tutar"], ["werden", "yardımcı fiil", "çoğul: özneye uyar"], ["Unterlagen", "asıl özne", "belgeler"], ["benötigt.", "ortaç", "en sonda"]],
+        say: L("defne", "tr", "Birinci kalıp, hangi belgelerin gerektiğini anlatıyor. Başta yer tutan bir kelime var. Asıl özne belgeler olduğu için yardımcı fiil çoğul. İşlemi anlatan fiilin üçüncü hâli ise en sonda."),
         ex: L("defne", "de", "Es werden Unterlagen benötigt."),
         exTr: "Belgeler gerekiyor.",
         more: [
@@ -50,19 +52,19 @@ const episode = {
         lab: "işi kimin yaptığı söylenmez",
         title: "Kalıp 2: wird + ortaç",
         tiles: [["Ihr Antrag", "özne", "başvurunuz"], ["wird", "yardımcı fiil", "tekil özne"], ["noch", "zarf", "hâlâ"], ["bearbeitet.", "ortaç", "en sonda"]],
-        say: L("defne", "tr", "İkinci kalıp: edilgen. Memur işi kimin yaptığını söylemez; önemli olan işin kendisi. Özne tekilse yardımcı fiil de tekil, ortaç yine en sonda."),
+        say: L("defne", "tr", "İkinci kalıp, başvurunun incelendiğini söylüyor. Buna edilgen yapı denir: işi kimin yaptığı yerine ne yapıldığı anlatılır. Başvuru tekil olduğu için yardımcı fiil de tekil. Fiilin üçüncü hâli, yani ortaç, en sonda."),
         ex: L("defne", "de", "Ihr Antrag wird noch bearbeitet."),
-        exTr: "Başvurunuz hâlâ işleme alınıyor.",
+        exTr: "Başvurunuz hâlâ inceleniyor.",
         more: [
           { line: L("defne", "de", "Die Unterlagen werden geprüft."), tr: "Belgeler kontrol ediliyor." },
-          { line: L("defne", "de", "Der Antrag wird innerhalb von vier Wochen bearbeitet."), tr: "Başvuru dört hafta içinde işleme alınır." },
+          { line: L("defne", "de", "Der Antrag wird innerhalb von vier Wochen bearbeitet."), tr: "Başvuru dört hafta içinde incelenir." },
         ],
       },
       {
         lab: "zorunluluk + edilgen",
         title: "Kalıp 3: muss … werden",
         tiles: [["Der Pass", "özne", "pasaport"], ["muss", "modal fiil", "ikinci sırada"], ["vorgelegt", "ortaç", "ibraz edilmiş"], ["werden.", "yardımcı fiil", "mastar, en sonda"]],
-        say: L("defne", "tr", "Üçüncü kalıp: zorunluluk ve edilgen birlikte. Modal fiil ikinci sırada çekimlenir; ortaç ve yardımcı fiil mastar hâliyle en sona gider."),
+        say: L("defne", "tr", "Üçüncü kalıp, pasaportun gösterilmesi gerektiğini söylüyor. Gerekliliği anlatan fiil ikinci sırada. Fiilin üçüncü hâli ve yardımcı fiil cümlenin sonunda."),
         ex: L("defne", "de", "Der Pass muss vorgelegt werden."),
         exTr: "Pasaport ibraz edilmeli.",
         more: [
@@ -76,13 +78,13 @@ const episode = {
       say: L("defne", "tr", "Şimdi konuşmanın tamamını dinle. Altyazıda Türkçesi de var."),
       again: L("defne", "tr", "Bir kez daha dinle; bu sefer altyazı yok, yalnız kulağına güven."),
       lines: [
-        { who: "memur", line: L("aras", "de", "Guten Tag. Sie haben einen Termin zur Verlängerung. Worum geht es genau?"), tr: "İyi günler. Uzatma için randevunuz var. Tam olarak konu nedir?" },
+        { who: "memur", line: L("aras", "de", "Guten Tag. Sie haben einen Termin zur Verlängerung. Worum geht es genau?"), tr: "İyi günler. Uzatma için randevunuz var. Hangi konuda işlem yaptırmak istiyorsunuz?" },
         { who: "sen", line: L("defne", "de", "Meine Aufenthaltserlaubnis läuft im Mai ab."), tr: "Oturma iznim mayısta doluyor." },
         { who: "memur", line: L("aras", "de", "Gut. Für die Verlängerung werden einige Unterlagen benötigt."), tr: "Peki. Uzatma için bazı belgeler gerekiyor." },
         { who: "sen", line: L("defne", "de", "Welche Unterlagen werden benötigt?"), tr: "Hangi belgeler gerekiyor?" },
         { who: "memur", line: L("aras", "de", "Der Pass muss vorgelegt werden. Außerdem brauchen wir ein aktuelles Foto."), tr: "Pasaportun ibraz edilmesi gerekiyor. Ayrıca güncel bir fotoğraf lazım." },
         { who: "sen", line: L("defne", "de", "Wie lange dauert die Bearbeitung?"), tr: "İşlem ne kadar sürüyor?" },
-        { who: "memur", line: L("aras", "de", "Der Antrag wird innerhalb von vier Wochen bearbeitet."), tr: "Başvuru dört hafta içinde işleme alınır." },
+        { who: "memur", line: L("aras", "de", "Der Antrag wird innerhalb von vier Wochen bearbeitet."), tr: "Başvuru dört hafta içinde incelenir." },
         { who: "sen", line: L("defne", "de", "Muss ich eine Gebühr bezahlen?"), tr: "Bir ücret ödemem gerekiyor mu?" },
         { who: "memur", line: L("aras", "de", "Ja, die Gebühr wird heute hier bezahlt."), tr: "Evet, ücret bugün burada ödeniyor." },
         { who: "sen", line: L("defne", "de", "Vielen Dank für die Informationen."), tr: "Bilgiler için çok teşekkürler." },
@@ -90,9 +92,9 @@ const episode = {
       ],
     },
     explain: {
-      say: L("defne", "tr", "Şimdi memurun cümlelerini tek tek açalım."),
+      say: L("defne", "tr", "Şimdi memurun cümlelerini tek tek inceleyelim."),
       items: [
-        { at: 2, mark: "werden einige Unterlagen benötigt", tag: "Kalıp 1", note: "Başta sahte özne yok ama kalıp aynı: çoğul özne, ortaç sonda.", say: L("defne", "tr", "Burada başta sahte özne yok, ama kalıp aynı: belgeler çoğul, ortaç en sonda.") },
+        { at: 2, mark: "werden einige Unterlagen benötigt", tag: "Kalıp 1", note: "Başta yer tutan es yok ama kalıp aynı: çoğul özne, ortaç sonda.", say: L("defne", "tr", "Burada başta yer tutan es yok, ama kalıp aynı: belgeler çoğul, ortaç en sonda.") },
         { at: 4, mark: "muss vorgelegt werden", tag: "Kalıp 3", note: "Zorunluluk ve edilgen birlikte: pasaport getirilmeli.", say: L("defne", "tr", "Zorunluluk ve edilgen birlikte: pasaportun getirilmesi gerekiyor.") },
         { at: 6, mark: "wird innerhalb von vier Wochen bearbeitet", tag: "Kalıp 2", note: "Süre cümlenin ortasında, ortaç en sonda.", say: L("defne", "tr", "Süre bilgisi cümlenin ortasında, ortaç yine en sonda. Dört hafta, yaklaşık bir ay.") },
         { at: 8, mark: "wird heute hier bezahlt", tag: "Kalıp 2", note: "Kimin ödediği söylenmiyor ama belli: sen ödüyorsun.", say: L("defne", "tr", "Kimin ödediği söylenmiyor, ama belli: ücreti sen ödüyorsun.") },
@@ -100,8 +102,8 @@ const episode = {
       ],
     },
     roleplay: {
-      sub: "Senin satırların sessiz",
-      say: L("defne", "tr", "Şimdi sıra sende. Senin satırların sessiz: Türkçesini oku, dört saniye içinde Almancasını söyle, sonra doğrusunu dinle."),
+      sub: "Şimdi sen cevap ver",
+      say: L("defne", "tr", "Şimdi sıra sende. Senin cevapların sesli okunmayacak. Türkçesini oku, dört saniye içinde Almancasını söyle, sonra doğrusunu dinle."),
     },
     quiz: {
       say: L("defne", "tr", "Son olarak üç cümle. Doğru mu, yanlış mı?"),
@@ -120,7 +122,7 @@ const episode = {
         ["Welche Unterlagen werden benötigt?", "Hangi belgeler gerekiyor?"],
         ["Der Pass muss vorgelegt werden.", "Pasaport ibraz edilmeli."],
         ["Wie lange dauert die Bearbeitung?", "İşlem ne kadar sürüyor?"],
-        ["Der Antrag wird bearbeitet.", "Başvuru işleme alınıyor."],
+        ["Der Antrag wird bearbeitet.", "Başvuru inceleniyor."],
         ["Sie werden informiert.", "Size haber verilecek."],
       ],
     },
@@ -135,18 +137,18 @@ const episode = {
     },
     end: {
       lab: "Sıradaki",
-      line: "Sırada hangi daire olsun?",
-      ask: "Yorumlara yaz, sıradaki bölüm o olsun.",
+      line: "Hangi resmî işlemi çalışmak istersin?",
+      ask: "Önerini yorumlara yaz.",
       sub: "Her salı ve cuma yeni video",
       slot: "Sıradaki video",
-      say: L("defne", "tr", "Sırada hangi daire olsun? Bürgeramt mı, iş ajansı mı? Yorumlara yaz, sıradaki bölüm o olsun."),
+      say: L("defne", "tr", "Hangi resmî işlemi çalışmak istersin? Bürgeramt mı, iş ajansı mı? Önerini yorumlara yaz."),
     },
-    cover: { lab: "Oturma izni uzatma · B1", lines: ["Ausländerbehörde", "memurun dili: üç kalıp"], pill: "Konuşma · cep kartı · Sen ol" },
+    cover: { lab: "Oturma izni uzatma · B1", lines: ["Ausländerbehörde", "memurun dili: üç kalıp"], pill: "Konuşma · cep kartı · Konuşma provası" },
     yt: {
-      desc: "Yabancılar dairesinde (Ausländerbehörde) oturma izni uzatma: 22 kelime ve belge adı, memurun kullandığı üç edilgen kalıp, konuşmanın tamamı Türkçe altyazıyla ve \"Sen ol\" provası. Sonunda ekran görüntüsü alınacak bir cep kartı var.",
+      desc: "Yabancılar dairesinde oturma izni uzatma konuşmasını Almanca çalış. B1 düzeyindeki bu derste 22 kelime, belgeler ve başvurularla ilgili üç edilgen kalıp ve Türkçe altyazılı örnek konuşma var. Sonra başvuranın yerine sen cevap ver. En sonda, randevudan önce tekrar bakabileceğin bir özet kartı bulunuyor. Hangi resmî işlemi çalışmak istersin?",
       tags: "#almanca #almanya #ausländerbehörde #oturmaizni",
     },
-    ui: {},
+    ui: { cardNote: "Almanca alıştırması" },
   }),
 };
 export default episode;
