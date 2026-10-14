@@ -15,7 +15,7 @@ const episode = {
     copy: {
       title: "Trenle ilgili 4 cümle",
       hook: ["Trenin gecikti ya da iptal oldu.", "Anonsu anlayacak mısın?"],
-      caption: "Almanca tren anonsları: gecikme, iptal ve anlayış istemek için üç ayrı örnek. Son cümlede ise ne kadar beklediğini sen söylüyorsun. Trenin en fazla ne kadar gecikti?\n\n#almanca #almanyadayaşam #deutschlernen #deutschebahn #almancaöğreniyorum #tren",
+      caption: "Almanca tren anonsları: gecikme, iptal ve anlayış istemek için üç ayrı örnek. Son cümlede ise ne kadar beklediğini sen söylüyorsun. Trenin en fazla ne kadar gecikti?\n\n#almanca #almancakonuşma #deutschlernen #deutschebahn #almancaöğreniyorum #tren",
       outro: { series: "Her hafta yeni bir durum", ask: "Trenin en fazla ne kadar gecikti?" },
       board: { time: "14:32", dest: "KÖLN", track: " 3" },
       them: "ANONS",

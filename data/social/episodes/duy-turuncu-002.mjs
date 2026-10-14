@@ -11,7 +11,7 @@ const episode = {
       title: "E mi, i mi?",
       hook: ["E mi, i mi?", "Stelle mi, Stille mi?"],
       recap: "Kaç tanesini bildin?",
-      caption: "Almanca dinleme testi: schlecht/schlicht, Stelle/Stille, Wert/Wirt. Stelle pozisyon, Stille sessizlik. Stelle ile Stille'yi ayırt edebildin mi?\n\n#almanca #almancaöğreniyorum #deutschlernen #telaffuz #almancakelimeler #almanyadayaşam",
+      caption: "Almanca dinleme testi: schlecht/schlicht, Stelle/Stille, Wert/Wirt. Stelle pozisyon, Stille sessizlik. Stelle ile Stille'yi ayırt edebildin mi?\n\n#almanca #almancaöğreniyorum #deutschlernen #telaffuz #almancakelimeler #almancakonuşma",
       outro: { series: "Almanca dinleme alıştırmaları", ask: "Stelle ile Stille'yi ayırt edebildin mi?" },
     },
   }),

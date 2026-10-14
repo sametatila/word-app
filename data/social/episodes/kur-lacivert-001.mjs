@@ -10,7 +10,7 @@ const episode = {
       title: "Telefonda 3 cümle, sen kur",
       scene: "Telefonda",
       hook: ["Telefonda bunu", "nasıl dersin?", "Kelimeleri doğru sıraya koy."],
-      caption: "Telefonda kullanabileceğin üç Almanca cümle: geri aramasını istemek, mesaj göndermek ve telefon numarasını bilmediğini söylemek. Geri aramasını isteyen cümleyi kurabildin mi?\n\n#almanca #almancaöğreniyorum #deutschlernen #almancacümle #telefonda #almanyadayaşam",
+      caption: "Telefonda kullanabileceğin üç Almanca cümle: geri aramasını istemek, mesaj göndermek ve telefon numarasını bilmediğini söylemek. Geri aramasını isteyen cümleyi kurabildin mi?\n\n#almanca #almancaöğreniyorum #deutschlernen #almancacümle #telefonda #almancakonuşma",
       outro: { series: "Almanca cümle alıştırmaları", ask: "Geri aramasını isteyen cümleyi kurabildin mi?" },
     },
     lines: [

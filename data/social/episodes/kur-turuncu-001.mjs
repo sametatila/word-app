@@ -10,7 +10,7 @@ const episode = {
       title: "Yolda 3 cümle, sen kur",
       scene: "Yolda",
       hook: ["Otobüste, trende 3 cümle.", "Doğru sıraya", "dizebilir misin?"],
-      caption: "Toplu taşımada kullanılan üç Almanca cümle: bilet fiyatı, otobüse binmek ve metroyla merkeze gitmek. Bilet fiyatını soran cümleyi kurabildin mi?\n\n#almanca #almancaöğreniyorum #deutschlernen #almanyadayaşam #toplutaşıma #almancacümle",
+      caption: "Toplu taşımada kullanılan üç Almanca cümle: bilet fiyatı, otobüse binmek ve metroyla merkeze gitmek. Bilet fiyatını soran cümleyi kurabildin mi?\n\n#almanca #almancaöğreniyorum #deutschlernen #almancakonuşma #toplutaşıma #almancacümle",
       outro: { series: "Almanca cümle alıştırmaları", ask: "Bilet fiyatını soran cümleyi kurabildin mi?" },
     },
     lines: [

@@ -14,7 +14,7 @@ const episode = {
     copy: {
       title: "Oturma izni bitiyor, 3 cümle",
       hook: ["İznin veya vizen bitiyor.", "Yabancılar dairesini arıyorsun."],
-      caption: "Almanca izin ve vize uzatma konuşmalarında geçen üç örnek cümle: sürenin dolması, gereken belgeler ve daha erken bir randevu. Randevunu kaç hafta önceden aldın?\n\n#almanca #almanyadayaşam #deutschlernen #ausländerbehörde #aufenthaltstitel #almancaöğreniyorum",
+      caption: "Almanca izin ve vize uzatma konuşmalarında geçen üç örnek cümle: sürenin dolması, gereken belgeler ve daha erken bir randevu. Randevunu kaç hafta önceden aldın?\n\n#almanca #almancakonuşma #deutschlernen #ausländerbehörde #aufenthaltstitel #almancaöğreniyorum",
       outro: { series: "Her hafta yeni bir durum", ask: "Randevunu kaç hafta önceden aldın?" },
       callee: "Yabancılar dairesi",
       calleeTag: "YABANCILAR DAİRESİ",

@@ -10,7 +10,7 @@ const episode = {
       title: "Restoranda 2 cümle, sen kur",
       scene: "Restoranda",
       hook: ["Restoranda 2 cümle.", "Kelimeleri sıraya", "koyabilir misin?"],
-      caption: "Restoranda geçen iki Almanca cümleyi kur: garnitür seçenekleri ve eksik tabak. Masada tabak eksikse hangi cümleyi söylersin?\n\n#almanca #almancaöğreniyorum #deutschlernen #almanyadayaşam #restoranda #almancacümle",
+      caption: "Restoranda geçen iki Almanca cümleyi kur: garnitür seçenekleri ve eksik tabak. Masada tabak eksikse hangi cümleyi söylersin?\n\n#almanca #almancaöğreniyorum #deutschlernen #almancakonuşma #restoranda #almancacümle",
       outro: { series: "Yeni cümleler yolda", ask: "Masada tabak eksikse hangi cümleyi söylersin?" },
     },
     lines: [

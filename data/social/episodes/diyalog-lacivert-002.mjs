@@ -14,7 +14,7 @@ const episode = {
     copy: {
       title: "Havalimanında, 3 cümle",
       hook: ["Uçağa biniyorsun.", "Kapıdaki anonsu anlayacak mısın?"],
-      caption: "Havalimanında geçen üç Almanca cümle: biniş kapısına gitmek, ek bagaj ücreti ve yalnız el bagajıyla seyahat ettiğini söylemek. Türkiye'ye uçacak arkadaşına gönder.\n\n#almanca #almanyadayaşam #deutschlernen #flughafen #almancaöğreniyorum #havalimanı",
+      caption: "Havalimanında geçen üç Almanca cümle: biniş kapısına gitmek, ek bagaj ücreti ve yalnız el bagajıyla seyahat ettiğini söylemek. Türkiye'ye uçacak arkadaşına gönder.\n\n#almanca #almancakonuşma #deutschlernen #flughafen #almancaöğreniyorum #havalimanı",
       outro: { series: "Her hafta yeni bir durum", ask: "Türkiye'ye uçacak arkadaşına gönder" },
       board: { time: "07:45", dest: "ISTANBUL", track: "B12" },
       boardLabels: ["ZEIT", "ZIEL", "GATE", "HINWEIS"],

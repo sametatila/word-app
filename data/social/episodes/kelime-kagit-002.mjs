@@ -10,7 +10,7 @@ const episode = {
     copy: {
       title: "Doktorda 3 kelime",
       hook: ["Doktora gitmeden önce", "bu 3 kelimeyi", "öğren."],
-      caption: "Doktorda kullanılan üç Almanca kelime: Augenarzt göz doktoru, Patient hasta, Schmerzmittel ağrı kesici. Kaydet, doktor randevusundan önce tekrar et.\n\n#almanca #almanyadayaşam #doktor #deutschlernen #almancakelimeler #arzt",
+      caption: "Doktorda kullanılan üç Almanca kelime: Augenarzt göz doktoru, Patient hasta, Schmerzmittel ağrı kesici. Kaydet, doktor randevusundan önce tekrar et.\n\n#almanca #almancakonuşma #doktor #deutschlernen #almancakelimeler #arzt",
       outro: { series: "Doktorda Almanca", ask: "Kaydet, doktor randevusundan önce tekrar et" },
       runningHead: "DOKTORDA",
       summaryKicker: "Kaydet, randevuda lazım olacak",

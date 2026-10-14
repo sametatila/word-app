@@ -11,7 +11,7 @@ const episode = {
       title: "Blume mi, Bluse mi?",
       hook: ["Blume mi, Bluse mi?", "Duyduğun kelimeyi seç."],
       recap: "Kaç tanesini bildin?",
-      caption: "Almanca dinleme testi: Blume/Bluse, Münze/Mütze, fühlen/füllen, danken/denken. Duyduğun kelimeyi seç. Blume mi, Bluse mi? Hangisini duydun?\n\n#almanca #almancaöğreniyorum #deutschlernen #telaffuz #almancakelimeler #almanyadayaşam",
+      caption: "Almanca dinleme testi: Blume/Bluse, Münze/Mütze, fühlen/füllen, danken/denken. Duyduğun kelimeyi seç. Blume mi, Bluse mi? Hangisini duydun?\n\n#almanca #almancaöğreniyorum #deutschlernen #telaffuz #almancakelimeler #almancakonuşma",
       outro: { series: "Almanca dinleme alıştırmaları", ask: "Blume mi, Bluse mi? Hangisini duydun?" },
     },
   }),

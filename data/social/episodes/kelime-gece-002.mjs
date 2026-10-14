@@ -10,7 +10,7 @@ const episode = {
     copy: {
       title: "Postayla ilgili 3 kelime",
       hook: ["Päckchen, Porto, Postbote…", "Hangisi posta ücreti?"],
-      caption: "Postayla ilgili üç Almanca kelime: Päckchen küçük paket, Porto posta ücreti, Postbote postacı. Posta ücreti hangisiydi? Yorumlara yaz.\n\n#almanca #almanyadayaşam #deutschlernen #almancakelimeler #post #almancaöğreniyorum",
+      caption: "Postayla ilgili üç Almanca kelime: Päckchen küçük paket, Porto posta ücreti, Postbote postacı. Posta ücreti hangisiydi? Yorumlara yaz.\n\n#almanca #almancakonuşma #deutschlernen #almancakelimeler #post #almancaöğreniyorum",
       outro: { series: "Günlük hayatta Almanca", ask: "Posta ücreti hangisiydi? Yorumlara yaz" },
       summary: "Paketten postacıya",
     },

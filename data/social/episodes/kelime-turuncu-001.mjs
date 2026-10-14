@@ -10,7 +10,7 @@ const episode = {
     copy: {
       title: "Alışverişte 3 kelime",
       hook: ["Almanya'da alışverişte", "bu 3 kelime", "ne anlama geliyor?"],
-      caption: "Alışverişte kullanılan üç Almanca kelime: Pfand şişe depozitosu, Rückgabe iade, Sonderangebot kampanya. Pfand makinesini hiç kullandın mı?\n\n#almanca #almanyadayaşam #deutschlernen #almancakelimeler #alışveriş #pfand",
+      caption: "Alışverişte kullanılan üç Almanca kelime: Pfand şişe depozitosu, Rückgabe iade, Sonderangebot kampanya. Pfand makinesini hiç kullandın mı?\n\n#almanca #almancakonuşma #deutschlernen #almancakelimeler #alışveriş #pfand",
       outro: { series: "Günlük hayatta Almanca", ask: "Pfand makinesini hiç kullandın mı?" },
       summary: "Kaçını biliyordun?",
     },

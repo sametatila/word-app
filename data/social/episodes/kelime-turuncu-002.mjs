@@ -10,7 +10,7 @@ const episode = {
     copy: {
       title: "Okul için 3 kelime",
       hook: ["Çocuğun Almanya'da", "okula başlıyorsa", "bu 3 kelimeyle karşılaşabilirsin."],
-      caption: "Almanya'da okul hayatıyla ilgili üç kelime: Grundschule ilkokul, Klassenlehrer sınıf öğretmeni, Elternabend veli toplantısı. Almanya'da okula başlayacak bir aileye gönder.\n\n#almanca #almanyadayaşam #deutschlernen #almancakelimeler #okul #veli",
+      caption: "Almanya'da okul hayatıyla ilgili üç kelime: Grundschule ilkokul, Klassenlehrer sınıf öğretmeni, Elternabend veli toplantısı. Almanya'da okula başlayacak bir aileye gönder.\n\n#almanca #almancakonuşma #deutschlernen #almancakelimeler #okul #veli",
       outro: { series: "Günlük hayatta Almanca", ask: "Almanya'da okula başlayacak bir aileye gönder" },
       summary: "Kaçını biliyordun?",
     },

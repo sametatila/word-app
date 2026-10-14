@@ -10,7 +10,7 @@ const episode = {
     copy: {
       title: "Faturada 3 kelime",
       hook: ["Almanca elektrik faturasında", "karşına çıkabilecek", "3 kelime."],
-      caption: "Almanca elektrik faturası ve ödeme yazışmalarında geçen üç kelime: Stromrechnung elektrik faturası, Aufforderung çağrı/talep, Kontonummer hesap numarası. Ödeme talebi örnekte Aufforderung zur Zahlung olarak geçiyor. Kaydet, fatura geldiğinde tekrar bak.\n\n#almanca #almanyadayaşam #deutschlernen #almancakelimeler #fatura #bürokrasi",
+      caption: "Almanca elektrik faturası ve ödeme yazışmalarında geçen üç kelime: Stromrechnung elektrik faturası, Aufforderung çağrı/talep, Kontonummer hesap numarası. Ödeme talebi örnekte Aufforderung zur Zahlung olarak geçiyor. Kaydet, fatura geldiğinde tekrar bak.\n\n#almanca #almancakonuşma #deutschlernen #almancakelimeler #fatura #bürokrasi",
       outro: { series: "Günlük hayatta Almanca", ask: "Kaydet, fatura geldiğinde tekrar bak" },
       cardLabel: "RECHNUNG",
       summaryKicker: "Fatura gelince lazım olacak",
