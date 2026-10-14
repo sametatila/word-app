@@ -166,21 +166,26 @@ function slotPast(slot: string): boolean {
  * Platform API bağlantısı (işçinin yazdığı `SOCIAL_DIR/<platform>/status.json`; belirteç içermez). Dosya yoksa bağlı değil.
  * `stale`: işçi koşmadı (Instagram dakikada bir, TikTok 5, YouTube 10 dakikada bir koşuyor). TikTok'ta `tokenDays` yenileme belirtecinin günü.
  * `metricsAt`: izlenme/beğeni sayılarının son okunduğu an (Instagram 15 dk, TikTok 5, YouTube 10 dk); `lastSyncAt` gönderi eşleştirmesi.
+ * `retrying`: son koşu hata verdi ama hata yeni (en çok `stale` süresinin yarısı; ağ kesintisi gibi): `ok` sayılır,
+ * gösterge sarı "yeniden deneniyor" der. Kalıcı hatada kırmızı (2026-10-14; Samet: "her şey düzeldi ama youtube hata
+ * diye kaldı": YouTube 10 dk'da bir koştuğu için kesintideki tek hata bir sonraki koşuya dek kırmızı kalıyordu).
  */
-export type InstagramStatus = { connected: boolean; ok: boolean; username: string | null; followers: number | null; tokenDays: number | null; lastSyncAt: string | null; metricsAt: string | null; error: string | null; stale: boolean };
+export type InstagramStatus = { connected: boolean; ok: boolean; retrying: boolean; username: string | null; followers: number | null; tokenDays: number | null; lastSyncAt: string | null; metricsAt: string | null; error: string | null; stale: boolean };
 export type PlatformApiStatus = InstagramStatus;
 export const instagramStatus = () => apiStatus("instagram", 10 * 60_000);
 export const tiktokStatus = () => apiStatus("tiktok", 20 * 60_000);
 export const youtubeStatus = () => apiStatus("youtube", 40 * 60_000);
 async function apiStatus(platform: SocialPlatform, staleMs: number): Promise<PlatformApiStatus> {
-  const off: PlatformApiStatus = { connected: false, ok: false, username: null, followers: null, tokenDays: null, lastSyncAt: null, metricsAt: null, error: null, stale: false };
+  const off: PlatformApiStatus = { connected: false, ok: false, retrying: false, username: null, followers: null, tokenDays: null, lastSyncAt: null, metricsAt: null, error: null, stale: false };
   try {
     const s = JSON.parse(await fs.readFile(path.join(process.env.SOCIAL_DIR || "/opt/lernomi/social", platform, "status.json"), "utf8")) as Record<string, unknown>;
     const str = (v: unknown) => (typeof v === "string" ? v : null);
     const exp = Date.parse(str(s.tokenExpiresAt) ?? "");
+    const retrying = s.ok !== true && Date.now() - Date.parse(str(s.failingSince) ?? "") < staleMs / 2;
     return {
       connected: true,
-      ok: s.ok === true,
+      ok: s.ok === true || retrying,
+      retrying,
       username: str(s.username),
       followers: typeof s.followers === "number" ? s.followers : null,
       tokenDays: Number.isFinite(exp) ? Math.floor((exp - Date.now()) / 86_400_000) : null,

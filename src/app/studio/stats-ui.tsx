@@ -80,7 +80,7 @@ function Definitions() {
 }
 
 function ApiLine({ ov }: { ov: Overview }) {
-  return <ApiStatus items={ov.platforms.map((p) => ({ platform: p.platform, connected: !!p.account?.connected, ok: !!p.account?.ok, stale: !!p.account?.stale, lastSyncAt: p.account?.lastSyncAt ?? null, metricsAt: p.account?.metricsAt ?? null, error: p.account?.error }))} />;
+  return <ApiStatus items={ov.platforms.map((p) => ({ platform: p.platform, connected: !!p.account?.connected, ok: !!p.account?.ok, retrying: !!p.account?.retrying, stale: !!p.account?.stale, lastSyncAt: p.account?.lastSyncAt ?? null, metricsAt: p.account?.metricsAt ?? null, error: p.account?.error }))} />;
 }
 
 const GROUP_LABEL = (kind: "approach" | "slot" | "theme", k: string) => (kind === "approach" ? APPROACH_TR[k] ?? k : kind === "theme" ? THEME_TR[k] ?? k : `${k} (Berlin)`);

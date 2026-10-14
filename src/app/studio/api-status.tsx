@@ -10,7 +10,7 @@ import { PLATFORMS } from "./shared";
  * "hata", "bağlı değil"); ayrıntı (hesap, okuma sıklığı, belirteç, hata) üzerine gelince. Takvim ve Genel bakış aynı
  * göstergeyi kullanır.
  */
-export type ApiHealth = { platform: SocialPlatform; connected: boolean; ok: boolean; stale: boolean; lastSyncAt: string | null; metricsAt?: string | null; error?: string | null; username?: string | null; tokenDays?: number | null };
+export type ApiHealth = { platform: SocialPlatform; connected: boolean; ok: boolean; retrying?: boolean; stale: boolean; lastSyncAt: string | null; metricsAt?: string | null; error?: string | null; username?: string | null; tokenDays?: number | null };
 
 /** İşçilerin okuma sıklığı (scripts/social/*.mjs) */
 const EVERY: Record<SocialPlatform, string> = { instagram: "15 dakikada bir", tiktok: "5 dakikada bir", youtube: "10 dakikada bir; izlenme süresi 6 saatte bir, 1–2 gün gecikmeli" };
@@ -29,14 +29,15 @@ export function ApiStatus({ items }: { items: ApiHealth[] }) {
       {items.map((s) => {
         const label = PLATFORMS.find((p) => p.key === s.platform)?.label ?? s.platform;
         const problem = !s.connected ? "bağlı değil" : !s.ok ? "hata" : s.stale ? "işçi durdu" : null;
-        const warn = !problem && s.tokenDays != null && s.tokenDays < 10;
+        const warn = !problem && (s.retrying || (s.tokenDays != null && s.tokenDays < 10));
         const color = !s.connected ? "var(--text-faint)" : problem ? TONE.bad : warn ? TONE.warn : TONE.ok;
         const read = s.metricsAt ?? s.lastSyncAt;
-        const value = problem ?? short(read);
+        const value = problem ?? (s.retrying ? "yeniden deneniyor" : short(read));
         const title = [
           s.username ? `@${s.username.replace(/^@/, "")}` : null,
           read ? `metrikler ${at(read)} okundu (${EVERY[s.platform]}; platformun kendi sayacı gecikmeli ilerleyebilir)` : null,
           s.metricsAt && s.lastSyncAt ? `gönderi eşleştirme ${at(s.lastSyncAt)}` : null,
+          s.retrying ? "son deneme hata verdi (ağ kesintisi olabilir), işçi kendiliğinden yeniden deniyor" : null,
           s.tokenDays != null ? `belirteç ${s.tokenDays} gün (kendiliğinden yenilenir)` : null,
           s.error,
         ]
