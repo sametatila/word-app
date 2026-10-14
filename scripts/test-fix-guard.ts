@@ -380,6 +380,9 @@ async function streamTests() {
   const gCommitted = JSON.parse(readFileSync("src/lib/conversations/noun-gender.generated.json", "utf8"));
   check("artikel sözlüğü words.json ile güncel", JSON.stringify(nounGender()) === JSON.stringify(gCommitted), "node scripts/gen-noun-gender.mjs");
   check("sayılamayan isim listesi words.json ile güncel", JSON.stringify(massNouns()) === JSON.stringify(committed), "node scripts/gen-mass-nouns.mjs");
+  const { nounNumber } = (await import("./gen-mass-nouns.mjs")) as { nounNumber: () => unknown };
+  const nCommitted = JSON.parse(readFileSync("src/lib/conversations/noun-number.generated.json", "utf8"));
+  check("sayı belirsiz isim listesi words.json ile güncel", JSON.stringify(nounNumber()) === JSON.stringify(nCommitted), "node scripts/gen-mass-nouns.mjs");
   // Modelin özel işaretleri (QA F-0065): her bölmede silinmiş, metin aynen.
   const LEAK = "<|channel>thought\n<channel|>Gut, dann nehmen Sie den Zug um acht.\n[SAY] Danke!";
   const CLEAN = "Gut, dann nehmen Sie den Zug um acht.\n[SAY] Danke!";
@@ -452,6 +455,21 @@ check("V2: fiil gerçekten taşınıyor → kalıyor", judgeCorrection("Am Monta
 check("fehlt + Nominativ'e Akkusativ düzeltmesi → siliniyor", !judgeCorrection("ein Schraubenzieher → einen Schraubenzieher (Akkusativ)", "Ich baue ein Regal auf, aber mir fehlt ein Schraubenzieher.").keep);
 check("brauchen + Akkusativ düzeltmesi → kalıyor", judgeCorrection("ein Schraubenzieher → einen Schraubenzieher (Akkusativ)", "Ich brauche ein Schraubenzieher.").keep);
 check("öbek değil artikelli isim silme → kalıyor", judgeCorrection("mit dem Bus mit dem Auto → mit dem Auto (Doppelung)", "Ich fahre mit dem Bus mit dem Auto.").keep);
+// Panel #124 #125 #126 (2026-10-14): çoğulu aynı isme artikel, yalnız ilgeç ekleme, sayısı serbest isim.
+for (const [said, fix] of [
+  ["Ich bringe Kuchen mit, wenn du willst.", "Ich bringe Kuchen mit, wenn du willst → Ich bringe einen Kuchen mit, wenn du willst (Artikel)"],
+  ["Ja, bis dahin muss ich noch frühstücken.", "bis dahin muss ich noch frühstücken → bis dahin muss ich erst noch frühstücken (Wortwahl)"],
+  ["Deine Jeans gefallen mir auch.", "Deine Jeans gefallen mir auch → Deine Jeans gefällt mir auch (Singular/Plural-Kongruenz)"],
+  ["Meine Eltern wohnen in Köln.", "Meine Eltern wohnen in Köln → Meine Eltern wohnt in Köln (Kongruenz)"],
+]) check(`sahte düzeltme siliniyor: ${fix.slice(0, 50)}`, !judgeCorrection(fix, said).keep);
+for (const [said, fix] of [
+  ["Ich bringe ein Kuchen mit.", "ein Kuchen → einen Kuchen (Akkusativ)"],
+  ["Ich fahre mit Lehrer nach Berlin.", "mit Lehrer → mit einem Lehrer (Artikel)"],
+  ["Da ist Lehrer.", "Da ist Lehrer → Da ist ein Lehrer (Artikel)"],
+  ["Ich habe Bruder.", "Ich habe Bruder → Ich habe einen Bruder (Artikel)"],
+  ["Die Leute ist nett.", "Die Leute ist nett → Die Leute sind nett (Kongruenz)"],
+  ["Meine Eltern haben einen Hund und er bellen laut.", "er bellen → er bellt (Kongruenz)"],
+]) check(`gerçek düzeltme kalıyor: ${fix.slice(0, 50)}`, judgeCorrection(fix, said).keep);
 
 streamTests().then(() => {
   console.log(fails === 0 ? "\ntamam: hepsi geçti" : `\nKALDI: ${fails}`);

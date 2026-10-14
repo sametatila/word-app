@@ -2,6 +2,7 @@ import { CORRECTION_MARK, SUGGESTION_MARK, breakInlineMarkers } from "@/lib/chat
 import { foldSentence } from "@/lib/sentence-match";
 import MASS_NOUNS from "./mass-nouns.generated.json";
 import NOUN_GENDER from "./noun-gender.generated.json";
+import NOUN_NUMBER from "./noun-number.generated.json";
 import { fixPerfektAux } from "./perfekt-aux";
 
 /**
@@ -263,8 +264,19 @@ function addsArticleToMassNoun(left: string[], right: string[]): boolean {
   while (i < left.length && left[i] === right[i]) i++;
   if (!INDEF.has(right[i]) || left.slice(i).join(" ") !== right.slice(i + 1).join(" ")) return false;
   // artikelden sonraki ilk iki sözcükten biri (araya sıfat girebilir) sayılamayan isim
-  return right.slice(i + 1, i + 3).some((w) => MASS.has(w));
+  const noun = right.slice(i + 1, i + 3);
+  if (noun.some((w) => MASS.has(w))) return true;
+  // Çoğulu tekiliyle aynı isim (panel #124, 2026-10-14: "Ich bringe Kuchen mit → Ich bringe
+  // einen Kuchen mit (Artikel)"): artikelsiz hâli çoğul okunur. Yalnız yalın/belirtme artikeli;
+  // ilgeçten sonra değil (yönelme çoğulu -n alır: "mit Lehrern"), "sein"in yanında değil
+  // ("Da ist Lehrer" çoğul okunmaz).
+  if (!["ein", "eine", "einen"].includes(right[i]) || (i > 0 && (PREP.has(left[i - 1]) || NOMINATIVE_SLOT.has(left[i - 1])))) return false;
+  const k = noun.findIndex((w) => SAME_PLURAL.has(w));
+  if (k < 0) return false;
+  const after = right[i + 2 + k];
+  return !after || !NOMINATIVE_SLOT.has(after);
 }
+const SAME_PLURAL = new Set<string>(NOUN_NUMBER.samePlural);
 
 /**
  * SERBEST KONUMLU İLGEÇ (QA F-0008, 2026-10-09): "Halten Sie bitte hier → Bitte halten
@@ -276,6 +288,39 @@ function onlyParticleMoved(left: string[], right: string[]): boolean {
   if ([...left].sort().join(" ") !== [...right].sort().join(" ") || left.join(" ") === right.join(" ")) return false;
   const core = (ws: string[]) => ws.filter((w) => !FREE_PARTICLES.has(w)).join(" ");
   return core(left) === core(right);
+}
+
+/**
+ * YALNIZ İLGEÇ EKLEYEN düzeltme (panel #125, 2026-10-14): "bis dahin muss ich noch frühstücken →
+ * bis dahin muss ich erst noch frühstücken (Wortwahl)". erst, noch, doch, mal, auch… eklemek anlamı
+ * inceltir, hata düzeltmez; öğrencinin cümlesi zaten doğru.
+ */
+const ADDED_PARTICLES = new Set([...FREE_PARTICLES, "erst"]);
+function insertsParticleOnly(left: string[], right: string[]): boolean {
+  if (right.length !== left.length + 1) return false;
+  let i = 0;
+  while (i < left.length && left[i] === right[i]) i++;
+  return ADDED_PARTICLES.has(right[i]) && left.slice(i).join(" ") === right.slice(i + 1).join(" ");
+}
+
+/**
+ * SAYISI SERBEST İSİM (panel #126, 2026-10-14): "Deine Jeans gefallen mir auch → Deine Jeans
+ * gefällt mir auch (Singular/Plural-Kongruenz)". die Jeans/SMS tekil de çoğul da kullanılır;
+ * Eltern, Leute, Kosten yalnız çoğul. Fiili çoğuldan tekile çeviren tek sözcüklük düzeltme, isim
+ * fiilin hemen yanındaysa siliniyor; tekilden çoğula düzeltme ("Die Leute ist → sind") kalıyor.
+ */
+const NUMBER_FREE = new Set<string>(NOUN_NUMBER.numberFree);
+const PLURAL_TO_SG: Record<string, string> = { sind: "ist", haben: "hat", waren: "war", werden: "wird", hatten: "hatte" };
+const fold3 = (w: string) => w.normalize("NFD").replace(/\p{M}/gu, "").slice(0, 3);
+function singularizesNumberFree(left: string[], right: string[]): boolean {
+  if (left.length !== right.length) return false;
+  const diffs = left.map((_, i) => i).filter((i) => left[i] !== right[i]);
+  if (diffs.length !== 1) return false;
+  const d = diffs[0];
+  const a = left[d];
+  const b = right[d];
+  const toSg = PLURAL_TO_SG[a] === b || (a.endsWith("en") && b.endsWith("t") && fold3(a) === fold3(b));
+  return toSg && left.some((w, i) => NUMBER_FREE.has(w) && Math.abs(i - d) <= 2);
 }
 
 /**
@@ -534,6 +579,8 @@ export function judgeCorrection(correction: string, said: string, ctx: FixContex
     (lang === "de" && pronounToDas(left, right)) ||
     (lang === "de" && insertsEsAfterVerb(left, right)) ||
     (lang === "de" && changesComparedOnly(left, right)) ||
+    (lang === "de" && insertsParticleOnly(left, right)) ||
+    (lang === "de" && singularizesNumberFree(left, right)) ||
     (lang === "de" && addsDefiniteToBareNoun(left, right, (w) => w in NOUN_GENDER))
   ) {
     return { keep: false, reason: "style" };
