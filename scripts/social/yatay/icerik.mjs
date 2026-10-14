@@ -52,12 +52,13 @@ export function helpers() {
   }
   const label = (w) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
   /**
-   * Yürürken kelimesi: Türkçesi (Defne), kelime ve örnek cümle (de: Almanca ses, varsayılan Aras). Türkçe ve örnek
-   * cümle kelime kaydının kendisinden (uygulamanın söylediği metnin aynısı: ses tablosunda aynı anahtar).
+   * Yürürken kelimesi: Türkçesi (tr: varsayılan Defne; anlatıcı "ahu" olunca videoda tek Türkçe ses), kelime ve örnek
+   * cümle (de: Almanca ses, varsayılan Aras). Türkçe ve örnek cümle kelime kaydının kendisinden (uygulamanın söylediği
+   * metnin aynısı: ses tablosunda aynı anahtar).
    */
-  const walk = (full, { de = "aras" } = {}) => {
+  const walk = (full, { de = "aras", tr = "defne" } = {}) => {
     const w = word(full);
-    return { de: L(de, "de", label(w)), tr: L("defne", "tr", w.tr), ex: L(de, "de", w.beispiel), exTr: w.beispielTr, lv: w.niveau };
+    return { de: L(de, "de", label(w)), tr: L(tr, "tr", w.tr), ex: L(de, "de", w.beispiel), exTr: w.beispielTr, lv: w.niveau };
   };
   /**
    * "Hangisini duydun?" çifti: confusables.json'da olmalı, iki kelime aynı türde ve aynı artikelle (sesteki artikel

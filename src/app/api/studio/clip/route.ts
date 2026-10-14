@@ -16,7 +16,7 @@ export async function GET(req: Request) {
   const q = new URL(req.url).searchParams;
   const key = q.get("k");
   const text = q.get("t") ?? "";
-  if (key != null ? !/^(defne|aras|can|mira)\|(de|tr|en)\|.{1,700}$/s.test(key) : !text || text.length > 600) return NextResponse.json({ error: "bad_input" }, { status: 400 });
+  if (key != null ? !/^(ahu|defne|aras|can|mira)\|(de|tr|en)\|.{1,900}$/s.test(key) : !text || text.length > 600) return NextResponse.json({ error: "bad_input" }, { status: 400 });
   const file = key != null ? clipFile(key) : defneFile(text);
   if (!file) return NextResponse.json({ error: "not_found" }, { status: 404 });
   try {

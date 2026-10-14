@@ -17,7 +17,8 @@ type Line = { v: string; l: string; t: string; x?: string };
 const isLine = (o: unknown): o is Line => !!o && typeof o === "object" && !Array.isArray(o) && typeof (o as Line).v === "string" && typeof (o as Line).l === "string" && typeof (o as Line).t === "string";
 export const keyOf = (l: Line) => `${l.v}|${l.l}|${l.t}${l.x ? `#${l.x}` : ""}`;
 const LOCKED = ["v", "l", "x", "lv", "art", "who", "icon", "avatar", "key", "typ"];
-export const VOICE: Record<string, { name: string; color: string }> = { defne: { name: "Defne", color: "#d2783a" }, aras: { name: "Aras", color: "#5d80c4" }, can: { name: "Can", color: "#4f9a7c" }, mira: { name: "Mira", color: "#8f7bc4" } };
+/** auto: anlatıcı (ElevenLabs); kaydı işçi kaydedilen metinden kendiliğinden üretir, Mac talebi gerekmez. */
+export const VOICE: Record<string, { name: string; color: string; auto?: boolean }> = { ahu: { name: "Ahu", color: "#b8577e", auto: true }, defne: { name: "Defne", color: "#d2783a" }, aras: { name: "Aras", color: "#5d80c4" }, can: { name: "Can", color: "#4f9a7c" }, mira: { name: "Mira", color: "#8f7bc4" } };
 const LANG: Record<string, string> = { tr: "Türkçe", de: "Almanca", en: "İngilizce" };
 
 const KEY_TR: Record<string, string> = {

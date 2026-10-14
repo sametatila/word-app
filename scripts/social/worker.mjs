@@ -42,6 +42,7 @@ import { ROOT, TTS } from "./lib/content.mjs";
 import { DIR as LONG_DIR, loadLong } from "./yatay/icerik.mjs";
 import { renderLong } from "./yatay/uret.mjs";
 import { engineSource } from "./yatay/sayfa.mjs";
+import { generateNarration, isNarration } from "./yatay/anlatici.mjs";
 
 const SOCIAL_DIR = process.env.SOCIAL_DIR || "/opt/lernomi/social";
 const STALE_MS = 3 * 60_000;
@@ -191,6 +192,19 @@ async function audioRequests() {
   fs.writeFileSync(st, JSON.stringify({ last: at }));
 }
 
+/**
+ * Yatay anlatıcı (ElevenLabs, yatay/anlatici.mjs): kaydedilmiş metinde kaydı olmayan anlatıcı satırlarını üret (koşu
+ * başına en çok 20; kalan sonraki koşuya). Editör metni değiştirince talep gerekmeden birkaç dakikada gelir.
+ */
+async function narration() {
+  if (!process.env.ELEVENLABS_API_KEY) return;
+  const { rows } = await q("select spoken from social_episodes where format = 'yatay' and archived_at is null and (slot is null or slot >= to_char(now() - interval '2 days', 'YYYY-MM-DD'))");
+  const keys = rows.flatMap((r) => r.spoken).filter(isNarration);
+  if (!keys.length) return;
+  const r = await generateNarration(keys, { log });
+  if (r.errors.length) log(`anlatıcı hata ${r.errors.length}: ${r.errors.slice(0, 3).join(" | ")}`);
+}
+
 async function recoverStale() {
   const r = await q(
     `update social_renders set status = 'failed', error = 'işçi yanıt vermedi (sunucu yeniden başlamış olabilir); yeniden onaylayın', finished_at = now()
@@ -337,6 +351,7 @@ try {
     await importEpisodes(process.argv.includes("--force-import"));
     if (!process.argv.includes("--import")) {
       await audioRequests();
+      await narration();
       await recoverStale();
       await renderNext(false);
     }

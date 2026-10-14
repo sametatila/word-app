@@ -2,9 +2,9 @@
   Yatay sayfa kurucu: motor + şablon + veri + sesler tek HTML'de. Üretim (uret.mjs, sunucu işçisi) ve yerel
   araçlar (onizle.mjs, denetim) aynı sayfayı kullanır: aynı kod, aynı kare.
 
-  Sesler: TTS_OWN_DIR (sunucu, /opt/lernomi/tts-own) ya da TTS_DIR'deki tts-map.json + m4a/. Mac'te yerel kopya
-  eksik (dinleme kayıtları yalnız sunucuda): `--sunucudan` ile gereken dosyalar sunucudan .shots/social/yatay/tts'e
-  çekilir (okuma).
+  Sesler: TTS_OWN_DIR (sunucu, /opt/lernomi/tts-own) ya da TTS_DIR'deki tts-map.json + m4a/; anlatıcı (ElevenLabs,
+  "ahu") SOCIAL_DIR/ses'te aynı düzenle. Mac'te yerel kopya eksik (dinleme kayıtları yalnız sunucuda): `--sunucudan`
+  ile gereken dosyalar sunucudan .shots/social/yatay/{tts,ses}'e çekilir (okuma).
 */
 import fs from "node:fs";
 import path from "node:path";
@@ -15,37 +15,48 @@ import { fontCss, iconUri } from "../lib/page.mjs";
 export const SRC = path.join(ROOT, "scripts/social/yatay");
 export const OUT = path.join(ROOT, ".shots/social/yatay");
 const LOCAL_TTS = path.join(OUT, "tts");
+const LOCAL_SES = path.join(OUT, "ses");
 export const ttsDir = () => process.env.TTS_DIR || process.env.TTS_OWN_DIR || LOCAL_TTS;
+/** Anlatıcı (ElevenLabs) kayıtları: sunucuda SOCIAL_DIR/ses, yerelde .shots/social/yatay/ses (aynı düzen: tts-map.json + m4a/). */
+export const sesDir = () => process.env.SES_DIR || (process.env.TTS_OWN_DIR ? path.join(process.env.SOCIAL_DIR || "/opt/lernomi/social", "ses") : LOCAL_SES);
+/** Anlatıcı sesleri (anlatici.mjs ELEVEN ile aynı liste; burada yalnız adlar, döngüsel içe aktarma olmasın). */
+export const AUTO_VOICES = new Set(["ahu"]);
+const dirOf = (key) => (AUTO_VOICES.has(key.split("|")[0]) ? sesDir() : ttsDir());
 
-let table = null;
-function tables() {
-  const dir = ttsDir();
+const tableCache = new Map();
+function tables(dir) {
   const mapFile = path.join(dir, "tts-map.json");
   if (!fs.existsSync(mapFile)) return { dir, map: {}, hold: {} };
   const mtime = fs.statSync(mapFile).mtimeMs;
-  if (!table || table.mtime !== mtime || table.dir !== dir) {
-    const holdFile = path.join(dir, "tts-hold.json");
-    table = { dir, mtime, map: JSON.parse(fs.readFileSync(mapFile, "utf8")), hold: fs.existsSync(holdFile) ? JSON.parse(fs.readFileSync(holdFile, "utf8")) : {} };
-  }
-  return table;
+  const cur = tableCache.get(dir);
+  if (cur && cur.mtime === mtime) return cur;
+  const holdFile = path.join(dir, "tts-hold.json");
+  const t = { dir, mtime, map: JSON.parse(fs.readFileSync(mapFile, "utf8")), hold: fs.existsSync(holdFile) ? JSON.parse(fs.readFileSync(holdFile, "utf8")) : {} };
+  tableCache.set(dir, t);
+  return t;
 }
 /** Kaydın dosya yolu ya da null (yok ya da bekletmede). */
 export function clipPath(key) {
-  const { dir, map, hold } = tables();
+  const { dir, map, hold } = tables(dirOf(key));
   return map[key] && !hold[key] ? path.join(dir, "m4a", map[key]) : null;
 }
 
-/** Yerel deneme: sunucudaki tabloyu ve bu anahtarların dosyalarını .shots/social/yatay/tts'e çek (yalnız okuma). */
+/** Yerel deneme: sunucudaki tabloları ve bu anahtarların dosyalarını .shots/social/yatay/{tts,ses}'e çek (yalnız okuma). */
 export function pullFromServer(keys) {
-  fs.mkdirSync(path.join(LOCAL_TTS, "m4a"), { recursive: true });
-  for (const f of ["tts-map.json", "tts-hold.json"]) spawnSync("scp", ["-q", `lernomi:/opt/lernomi/tts-own/${f}`, path.join(LOCAL_TTS, f)], { stdio: "inherit" });
-  table = null;
-  const { map, hold } = tables();
-  const need = keys.map((k) => map[k]).filter((f, i) => f && !hold[keys[i]] && !fs.existsSync(path.join(LOCAL_TTS, "m4a", f)));
-  if (need.length) {
-    const lst = path.join(OUT, "cek.txt");
-    fs.writeFileSync(lst, [...new Set(need)].join("\n") + "\n");
-    spawnSync("rsync", ["-a", `--files-from=${lst}`, "lernomi:/opt/lernomi/tts-own/m4a/", path.join(LOCAL_TTS, "m4a") + "/"], { stdio: "inherit" });
+  for (const [local, remote, ks] of [
+    [LOCAL_TTS, "/opt/lernomi/tts-own", keys.filter((k) => !AUTO_VOICES.has(k.split("|")[0]))],
+    [LOCAL_SES, "/opt/lernomi/social/ses", keys.filter((k) => AUTO_VOICES.has(k.split("|")[0]))],
+  ]) {
+    fs.mkdirSync(path.join(local, "m4a"), { recursive: true });
+    for (const f of ["tts-map.json", "tts-hold.json"]) spawnSync("scp", ["-q", `lernomi:${remote}/${f}`, path.join(local, f)], { stdio: "ignore" });
+    tableCache.delete(local);
+    const { map, hold } = tables(local);
+    const need = ks.map((k) => map[k]).filter((f, i) => f && !hold[ks[i]] && !fs.existsSync(path.join(local, "m4a", f)));
+    if (need.length) {
+      const lst = path.join(OUT, "cek.txt");
+      fs.writeFileSync(lst, [...new Set(need)].join("\n") + "\n");
+      spawnSync("rsync", ["-a", `--files-from=${lst}`, `lernomi:${remote}/m4a/`, path.join(local, "m4a") + "/"], { stdio: "inherit" });
+    }
   }
 }
 

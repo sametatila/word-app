@@ -43,8 +43,8 @@ export function RequestsView({ requests: initial, role, email }: { requests: Stu
   );
 }
 
-const KEY_RE = /^(defne|aras|can|mira)\|(de|tr|en)\|(.*?)(#\w+)?$/s;
-const VOICE: Record<string, string> = { defne: "Defne", aras: "Aras", can: "Can", mira: "Mira" };
+const KEY_RE = /^(ahu|defne|aras|can|mira)\|(de|tr|en)\|(.*?)(#\w+)?$/s;
+const VOICE: Record<string, string> = { ahu: "Ahu", defne: "Defne", aras: "Aras", can: "Can", mira: "Mira" };
 const LANG: Record<string, string> = { tr: "Türkçe", de: "Almanca", en: "İngilizce" };
 /** Metinler: dikeyde düz liste (Defne); yatayda ses ve dile göre gruplu + Mac komutu. ✓ kaydı gelmiş. */
 function TextList({ r }: { r: StudioRequest }) {

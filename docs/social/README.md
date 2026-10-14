@@ -221,7 +221,7 @@ partiyi ister. Ayda bir bu belgedeki eleştiri ve plan veriyle güncellenir.
 ## Yatay: YouTube uzun video (2026-10-13)
 
 Samet (2026-10-13): haftada 2 uzun video (10–15 dk, 1920×1080), yalnız YouTube (TikTok'a tek tük deneme). Yüz yok;
-sesler Mac'te Defne, Aras, Can ve Mira. Uygulama ekran kaydı değil, dikey videolardaki gibi tasarlanmış sahne. Akış:
+sesler Mac'te Defne, Aras, Can ve Mira; Türkçe anlatıcı Ahu (ElevenLabs, aşağıda). Uygulama ekran kaydı değil, dikey videolardaki gibi tasarlanmış sahne. Akış:
 Claude yazar → editör stüdyoda düzeltir (önizleme, video üretmeden) → Samet seslendirir → onay → sunucuda video.
 
 | Yer | Ne |
@@ -231,6 +231,7 @@ Claude yazar → editör stüdyoda düzeltir (önizleme, video üretmeden) → S
 | `data/social/yatay/<seri>-<NNN>.mjs` | Bölümler; stüdyoda kimlik `yatay-<seri>-<NNN>` (format "yatay") |
 | `scripts/social/yatay/{icerik,sayfa,uret,aciklama,arac}.mjs` | Yükleme ve kurallar · sayfa · üretim (MP4, kapak 1280×720, açıklama) · YouTube açıklaması · yerel araç |
 | `~/Workspace/tts-test/yatay_mac.sh <talep>` | Mac: talepteki satırları dört karakterle üretir, canlı tabloya ekler |
+| `scripts/social/yatay/anlatici.mjs` | Anlatıcı (ElevenLabs Eleven v4, ses `ahu`): işçi kaydı olmayan anlatıcı satırlarını kendiliğinden üretir → `SOCIAL_DIR/ses` |
 
 ```bash
 npm run social:yatay                                   # yatay bölümler: yükleniyor mu, tekrar/takvim, eksik ses
@@ -248,6 +249,16 @@ her yazı düzenlenebilir.
 **Ses talebi (bölüm başına tek talep):** editör "Seslendirmeye gönder" der → Telegram + Talepler (ses ve dile göre
 gruplu) → Samet Mac'te `yatay_mac.sh <talep>` → kayıtlar tabloya eklenir, talep kendiliğinden kapanır. Talep olmadan
 (ör. yeni partinin eksikleri): `yatay_mac.sh --dosya <anahtarlar.txt> <ad>`.
+
+**Anlatıcı: Ahu (ElevenLabs, 2026-10-14).** Samet: "gerçekçiliği abartmamalıyız, öğretmen hissi mutlaka ön planda".
+Türkçe anlatım ve Yürürken'de kelimelerin Türkçesi `L("ahu", "tr", …)` / `walk(w, { tr: "ahu" })`; Almanca kelime ve
+cümleler yine Aras/Defne (uygulamanın sesi). Model `eleven_v4`, stabilite 0,7, stil 0; metne ses işareti (`[pause]`
+vb.) yazılmaz, öğretmen tonu metnin kendisinden: "Şimdi hızlı bir tekrar yapalım.", "Güzel. İkinci konumuz…".
+Kayıtlar uygulamanın ses tablosuna girmez: `SOCIAL_DIR/ses` (tts-map.json + m4a/ahu/), −16 LUFS'e eşitlenir (Aras'la
+aynı düzey). İşçi (`--once`) her koşuda yayını geçmemiş yatay bölümlerin eksik anlatıcı satırlarını üretir (koşu başına
+20, aylık tavan `ELEVENLABS_MONTHLY_CHARS`, varsayılan 100 bin; Creator planı 131 bin; kullanım `ses/kullanim.jsonl`):
+editör metni değiştirip kaydedince talep gerekmez. Ahu Almanca artikelleri ("die") doğru okuyor. Bölüm başına anlatım
+~1–3 bin karakter. Yerel deneme: `node scripts/social/yatay/anlatici.mjs <id>` → `.shots/social/yatay/ses`.
 
 **Türkçe anlatımda Almanca kelime yok** (Türkçe ses bozuk okur): "bu sonla biten" gibi yazılır, Almanca ekranda.
 Kaçınılmazsa (artikeller, "Bürgeramt") `yatay_mac.sh`'ın ALMANCA listesi kelimeyi «…» ile işaretler ve Almanca okutur

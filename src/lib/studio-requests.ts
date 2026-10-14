@@ -4,7 +4,7 @@ import { db } from "@/lib/db";
 import { socialEpisodes, socialRequests } from "@/lib/db/schema";
 import { esc, sendTelegram } from "@/lib/telegram";
 import { SITE_URL } from "@/lib/site";
-import { clipFile, missingAudio } from "@/lib/studio";
+import { clipFile, isAutoVoice, missingAudio } from "@/lib/studio";
 import type { StudioRole } from "@/lib/studio-auth";
 
 /**
@@ -123,7 +123,8 @@ export async function createAudioRequest(episodeId: string, note: unknown, actor
   const [e] = await db.select({ spoken: socialEpisodes.spoken, data: socialEpisodes.data, format: socialEpisodes.format }).from(socialEpisodes).where(eq(socialEpisodes.id, episodeId));
   if (!e) return fail(404, "not_found");
   const long = e.format === "yatay";
-  const missing = missingAudio(e.spoken, e.format);
+  // anlatıcı (ElevenLabs) satırlarını işçi kendisi üretir: talebe yalnız Mac'in sesleri girer
+  const missing = missingAudio(e.spoken, e.format).filter((k) => !isAutoVoice(k));
   if (!missing.length) return fail(409, "audio_ready");
   const n = typeof note === "string" ? note.trim().slice(0, 1000) || null : null;
   const now = new Date();

@@ -102,34 +102,41 @@ const titleOf = (data: Record<string, unknown>, id: string, format = "dikey") =>
   return typeof c?.title === "string" && c.title ? c.title : id;
 };
 
-// ---------- Defne kayıtları (TTS_OWN_DIR/tts-map.json; işçinin lib/clips.mjs'iyle aynı kural) ----------
-let tts: { mtime: number; map: Record<string, string>; hold: Record<string, unknown> } | null = null;
-function ttsTables() {
-  const dir = process.env.TTS_OWN_DIR;
+// ---------- kayıtlar: Defne/Aras/Can/Mira (TTS_OWN_DIR/tts-map.json; işçinin lib/clips.mjs'iyle aynı kural) ve
+// yatay anlatıcı (ElevenLabs, SOCIAL_DIR/ses/tts-map.json; scripts/social/yatay/anlatici.mjs) ----------
+/** ElevenLabs anlatıcıları (2026-10-14, Samet: "Ahu"): kayıtları işçi kaydedilen metinden kendiliğinden üretir, Mac talebi yok. */
+export const AUTO_VOICES = new Set(["ahu"]);
+export const isAutoVoice = (key: string) => AUTO_VOICES.has(key.split("|")[0]);
+type Table = { mtime: number; map: Record<string, string>; hold: Record<string, unknown> };
+const tables = new Map<string, Table>();
+function ttsTable(dir: string | undefined): Table | null {
   if (!dir) return null;
   try {
     const mapFile = path.join(dir, "tts-map.json");
     const mtime = statSync(mapFile).mtimeMs;
-    if (!tts || tts.mtime !== mtime) {
-      let hold: Record<string, unknown> = {};
-      try {
-        hold = JSON.parse(readFileSync(path.join(dir, "tts-hold.json"), "utf8"));
-      } catch {
-        /* bekletme listesi yok */
-      }
-      tts = { mtime, map: JSON.parse(readFileSync(mapFile, "utf8")), hold };
+    const cur = tables.get(dir);
+    if (cur && cur.mtime === mtime) return cur;
+    let hold: Record<string, unknown> = {};
+    try {
+      hold = JSON.parse(readFileSync(path.join(dir, "tts-hold.json"), "utf8"));
+    } catch {
+      /* bekletme listesi yok */
     }
-    return tts;
+    const t = { mtime, map: JSON.parse(readFileSync(mapFile, "utf8")), hold };
+    tables.set(dir, t);
+    return t;
   } catch (err) {
-    console.error("[studio] tts-map okunamadı", err);
+    if ((err as NodeJS.ErrnoException).code !== "ENOENT") console.error("[studio] tts-map okunamadı", dir, err);
     return null;
   }
 }
-/** Kaydın dosya yolu ya da null: anahtar "ses|dil|metin[#tür]" (yatay, dört karakter). */
+const sesDir = () => path.join(process.env.SOCIAL_DIR || "/opt/lernomi/social", "ses");
+/** Kaydın dosya yolu ya da null: anahtar "ses|dil|metin[#tür]" (yatay: dört karakter ve anlatıcı). */
 export function clipFile(key: string): string | null {
-  const t = ttsTables();
+  const dir = isAutoVoice(key) ? sesDir() : process.env.TTS_OWN_DIR;
+  const t = ttsTable(dir);
   if (!t || !t.map[key] || t.hold[key]) return null;
-  return path.join(process.env.TTS_OWN_DIR as string, "m4a", t.map[key]);
+  return path.join(dir as string, "m4a", t.map[key]);
 }
 /** Defne kaydının dosya yolu ya da null (dikey: yalnız Defne, Almanca). */
 export const defneFile = (text: string): string | null => clipFile(`defne|de|${text}`);

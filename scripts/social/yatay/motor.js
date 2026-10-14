@@ -28,7 +28,7 @@
   Y.videos = {};
   Y.ICON = Y.ICON || "";
   Y.GRAIN = Y.GRAIN || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E";
-  Y.VOICES = { defne: { name: "Defne", color: "#d2783a" }, aras: { name: "Aras", color: "#5d80c4" }, can: { name: "Can", color: "#4f9a7c" }, mira: { name: "Mira", color: "#8f7bc4" } };
+  Y.VOICES = { ahu: { name: "Ahu", color: "#b8577e" }, defne: { name: "Defne", color: "#d2783a" }, aras: { name: "Aras", color: "#5d80c4" }, can: { name: "Can", color: "#4f9a7c" }, mira: { name: "Mira", color: "#8f7bc4" } };
 
   // ---------- yardımcılar ----------
   const clamp = (Y.clamp = (x, a = 0, b = 1) => (x < a ? a : x > b ? b : x));

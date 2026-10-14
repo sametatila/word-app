@@ -304,7 +304,11 @@ function AudioRequest({ ep, dirty, role, email, requests, onChanged }: { ep: Epi
   const [err, setErr] = useState<string | null>(null);
   const openReq = requests.find((r) => r.status === "open" || r.status === "in_progress");
   const last = requests[0];
-  if (!ep.missing.length) return last && last.status === "done" && last.requestedBy === email && !last.requesterSeen ? <Notice tone="ok" title="Kayıtlar geldi">Talebin tamamlandı; bölümü onaylayabilirsin.</Notice> : null;
+  // anlatıcı satırları işçide kendiliğinden üretilir; talep yalnız Mac'in sesleri için
+  const auto = ep.missing.filter((k) => VOICE[k.split("|")[0]]?.auto);
+  const mac = ep.missing.filter((k) => !VOICE[k.split("|")[0]]?.auto);
+  const autoNote = auto.length ? <Notice tone="warn" title={`Anlatım sesi üretiliyor: ${auto.length} satır`}>Ahu&apos;nun satırları kaydettikten sonra birkaç dakika içinde kendiliğinden gelir; sayfayı yenileyince görünür.</Notice> : null;
+  if (!mac.length) return autoNote ?? (last && last.status === "done" && last.requestedBy === email && !last.requesterSeen ? <Notice tone="ok" title="Kayıtlar geldi">Talebin tamamlandı; bölümü onaylayabilirsin.</Notice> : null);
   const send = async () => {
     setBusy(true);
     setErr(null);
@@ -316,9 +320,10 @@ function AudioRequest({ ep, dirty, role, email, requests, onChanged }: { ep: Epi
   };
   return (
     <div className="space-y-2 rounded-tile border p-3" style={{ borderColor: "var(--color-flame)" }}>
+      {autoNote}
       <details>
-        <summary className="cursor-pointer text-strong">Kaydı olmayan {ep.missing.length} satır</summary>
-        <ul className="mt-1 max-h-48 list-disc overflow-y-auto pl-4">{ep.missing.map((k) => <li key={k}><span className="muted">{VOICE[k.split("|")[0]]?.name ?? k.split("|")[0]} · {k.split("|")[1]}:</span> {k.split("|").slice(2).join("|")}</li>)}</ul>
+        <summary className="cursor-pointer text-strong">Kaydı olmayan {mac.length} satır</summary>
+        <ul className="mt-1 max-h-48 list-disc overflow-y-auto pl-4">{mac.map((k) => <li key={k}><span className="muted">{VOICE[k.split("|")[0]]?.name ?? k.split("|")[0]} · {k.split("|")[1]}:</span> {k.split("|").slice(2).join("|")}</li>)}</ul>
       </details>
       {openReq ? (
         <div className="space-y-1">
@@ -326,7 +331,7 @@ function AudioRequest({ ep, dirty, role, email, requests, onChanged }: { ep: Epi
           {openReq.reply ? <p><span className="muted">Samet:</span> {openReq.reply}</p> : null}
           {role === "admin" ? <p className="muted">Mac&apos;te: <span className="font-mono">~/Workspace/tts-test/yatay_mac.sh {openReq.id}</span></p> : null}
           <RequestActions r={openReq} role={role} email={email} onDone={onChanged} />
-          {openReq.texts.length < ep.missing.length ? <button type="button" className={BTN.small} disabled={busy || dirty} onClick={() => void send()}>Yeni satırları talebe ekle</button> : null}
+          {openReq.texts.length < mac.length ? <button type="button" className={BTN.small} disabled={busy || dirty} onClick={() => void send()}>Yeni satırları talebe ekle</button> : null}
         </div>
       ) : (
         <div className="space-y-2">
