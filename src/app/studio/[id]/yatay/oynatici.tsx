@@ -47,11 +47,18 @@ function loadEngine(): Promise<LongEngine> {
 
 // ---- kayıtlar: anahtar → AudioBuffer (bir kez çözülür, sayfa boyunca) ----
 const bufs = new Map<string, AudioBuffer | "missing">();
+/**
+ * Kaydı yok sayılan anahtarın son denendiği an. "Yok" kalıcı değil (2026-10-14): anlatıcı sesleri işçide kaydedildikten
+ * sonra birkaç dakikada geliyor; sayfa açıkken gelen kayıt yeniden sorulur (15 sn'den eski "yok" yeniden denenir).
+ */
+const missedAt = new Map<string, number>();
+const RETRY_MS = 15_000;
+const stale = (k: string) => !bufs.has(k) || (bufs.get(k) === "missing" && Date.now() - (missedAt.get(k) ?? 0) > RETRY_MS);
 let audioCtx: AudioContext | null = null;
 const ctx = () => (audioCtx ||= new AudioContext({ sampleRate: 48000 }));
 /** Eksik kayıtları getir (6'şar paralel); her biri gelince onTick. Dönüş: kaydı olmayanlar. */
 async function ensureClips(keys: string[], onTick: (done: number, total: number) => void): Promise<string[]> {
-  const todo = keys.filter((k) => !bufs.has(k));
+  const todo = keys.filter(stale);
   let done = keys.length - todo.length;
   onTick(done, keys.length);
   let i = 0;
@@ -64,6 +71,7 @@ async function ensureClips(keys: string[], onTick: (done: number, total: number)
         bufs.set(k, await ctx().decodeAudioData(await r.arrayBuffer()));
       } catch {
         bufs.set(k, "missing");
+        missedAt.set(k, Date.now());
       }
       onTick(++done, keys.length);
     }
@@ -106,13 +114,14 @@ export async function playKey(key: string): Promise<boolean> {
   } catch {
     /* durmuş */
   }
-  if (!bufs.has(key)) {
+  if (stale(key)) {
     try {
       const r = await apiFetch(`/api/studio/clip?k=${encodeURIComponent(key)}`);
       if (!r.ok) throw new Error(String(r.status));
       bufs.set(key, await ctx().decodeAudioData(await r.arrayBuffer()));
     } catch {
       bufs.set(key, "missing");
+      missedAt.set(key, Date.now());
     }
   }
   const b = bufs.get(key);
@@ -150,6 +159,9 @@ export function LongPreview({ template, data, onState, focus }: { template: stri
   const [chapters, setChapters] = useState<{ t: number; title: string }[]>([]);
   const [cover, setCover] = useState(false);
   const [loading, setLoading] = useState<string | null>("Önizleme hazırlanıyor…");
+  // kaydı eksik satır varken 20 sn'de bir yeniden sor; gelen olursa sahne yeniden kurulur (süreler kayda göre kayar)
+  const [waiting, setWaiting] = useState<string[]>([]);
+  const [retry, setRetry] = useState(0);
   const srcs = useRef<AudioBufferSourceNode[]>([]);
   const raf = useRef(0);
   const clock = useRef({ at: 0, from: 0 });
@@ -251,6 +263,7 @@ export function LongPreview({ template, data, onState, focus }: { template: stri
         show(Math.min(was, I.plan.duration));
         setLoading(null);
         push({ ready: true, error: null, spoken, missing, plan: I.plan, chapters: Y.chapterList(I.plan) });
+        setWaiting(missing);
       } catch (err) {
         if (!dead) {
           setLoading(null);
@@ -264,7 +277,21 @@ export function LongPreview({ template, data, onState, focus }: { template: stri
     };
     // cover burada bilerek yok: sahneyi yeniden kurmaz
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [template, dataKey]);
+  }, [template, dataKey, retry]);
+
+  useEffect(() => {
+    if (!waiting.length) return;
+    let dead = false;
+    const timer = setInterval(async () => {
+      const before = waiting.length;
+      const still = await ensureClips(waiting, () => {});
+      if (!dead && still.length < before) setRetry((n) => n + 1);
+    }, 20_000);
+    return () => {
+      dead = true;
+      clearInterval(timer);
+    };
+  }, [waiting]);
 
   // yerleşim denetimi + ekrandaki yazılar: değişiklikten ~1,5 sn sonra, ölçeksiz görünmez sahnede
   useEffect(() => {
