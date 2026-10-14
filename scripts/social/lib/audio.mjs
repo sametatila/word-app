@@ -7,8 +7,9 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { buildPage, localDoc } from "./page.mjs";
 
+// ebur128 saniyede 10 satır yazar: 11 dakikalık yatay izde stderr 1 MB'lik varsayılan tamponu aşıyor, ffmpeg kesiliyordu (2026-10-14)
 export const run = (cmd, a) => {
-  const r = spawnSync(cmd, a, { encoding: "utf8" });
+  const r = spawnSync(cmd, a, { encoding: "utf8", maxBuffer: 1 << 28 });
   if (r.status !== 0) throw new Error(`${cmd} ${a.join(" ")}\n${r.stderr}`);
   return r.stderr;
 };
