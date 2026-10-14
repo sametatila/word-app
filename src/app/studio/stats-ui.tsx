@@ -180,13 +180,14 @@ export function StudioOverview({ ov }: { ov: Overview }) {
               int(p.likes),
               int(p.comments),
               int(p.shares),
-              p.saves == null ? <span key="s" className="faint">yok</span> : int(p.saves),
-              p.reach == null ? <span key="r" className="faint">yok</span> : int(p.reach),
+              p.saves == null ? <Missing key="s" p={p.platform} k="saves" /> : int(p.saves),
+              p.reach == null ? <Missing key="r" p={p.platform} k="reach" /> : int(p.reach),
               pct(p.rate),
-              p.avgWatchSec == null ? <span key="w" className="faint">{p.platform === "tiktok" ? "API vermiyor" : "—"}</span> : p.watchPct == null ? sec(p.avgWatchSec) : `${sec(p.avgWatchSec)} · ${pct(p.watchPct, 0)}`,
+              p.avgWatchSec == null ? <Missing key="w" p={p.platform} k="avgWatchSec" /> : p.watchPct == null ? sec(p.avgWatchSec) : `${sec(p.avgWatchSec)} · ${pct(p.watchPct, 0)}`,
               <span key="f" className="tabular-nums">{int(p.followers)}{signed(p.followersDelta) ? <span className="muted"> ({signed(p.followersDelta)})</span> : null}</span>,
             ])}
           />
+          <p className="faint mt-3 text-caption">Boş hücreler: {GAPS.tiktok} {GAPS.youtube}</p>
         </Panel>
 
         <div className="grid gap-5 @5xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
@@ -252,6 +253,34 @@ function GrowthChart({ steps, lines }: { steps: number[]; lines: { platform: Pla
   );
 }
 
+/**
+ * Platformun vermediği metrik neden boş (Samet, 2026-10-14: "kaydetme, erişim, ortalama izlenme Instagram dışında hiç
+ * gelmiyor"). TikTok Display API yalnız izlenme/beğeni/yorum/paylaşım veriyor (favorites_count, reach,
+ * average_time_watched "invalid field", 2026-10-14 denendi; Business API gerekir). YouTube'da kaydetme yok, erişim
+ * (gösterim) Analytics API'de yok, izleme süresi Analytics'ten 1–2 gün gecikmeli.
+ */
+const MISSING: Record<Platform, Partial<Record<string, [string, string]>>> = {
+  tiktok: {
+    saves: ["API vermiyor", "TikTok'un bize açık API'si kaydetme sayısı vermiyor (Business API onayı gerekir); TikTok Studio'da görünür."],
+    reach: ["API vermiyor", "TikTok'un bize açık API'si erişim vermiyor (Business API onayı gerekir); TikTok Studio'da görünür."],
+    avgWatchSec: ["API vermiyor", "TikTok'un bize açık API'si izleme süresi vermiyor (Business API onayı gerekir); TikTok Studio'da görünür."],
+  },
+  youtube: {
+    saves: ["YouTube'da yok", "YouTube'da kaydetme sayacı yok."],
+    reach: ["API vermiyor", "Gösterim sayısı YouTube Analytics API'sinde yok; YouTube Studio'da görünür."],
+    avgWatchSec: ["gecikmeli", "İzleme süresi YouTube Analytics'ten 1–2 gün gecikmeli gelir (6 saatte bir okunuyor)."],
+  },
+  instagram: {},
+};
+function Missing({ p, k }: { p: Platform; k: string }) {
+  const m = MISSING[p][k];
+  return <span className="faint" title={m?.[1]} aria-label={m ? `${m[0]}: ${m[1]}` : undefined}>{m?.[0] ?? "—"}</span>;
+}
+const GAPS: Partial<Record<Platform, string>> = {
+  tiktok: "TikTok'un bize açık API'si kaydetme, erişim ve izleme süresi vermiyor (Business API onayı gerekir); TikTok Studio'da görünür.",
+  youtube: "YouTube'da kaydetme sayacı yok, erişim (gösterim) API'de yok; izleme süresi Analytics'ten 1–2 gün gecikmeli gelir.",
+};
+
 const METRIC_ROWS: [string, string, (v: number, d: number | null) => string][] = [
   ["views", "İzlenme", (v) => int(v)],
   ["reach", "Erişim (tekil hesap)", (v) => int(v)],
@@ -308,8 +337,8 @@ export function PostPerformanceView({ perf }: { perf: PostPerformance }) {
                 ) : (
                   <div className="space-y-3 text-caption">
                     <dl className="grid grid-cols-[1fr_auto] gap-x-3 gap-y-1">
-                      {METRIC_ROWS.filter(([k]) => typeof p.metrics?.[k] === "number").map(([k, l, f]) => (
-                        <div key={k} className="contents"><dt className="muted">{l}</dt><dd className="text-right tabular-nums">{f(p.metrics![k], e.duration)}</dd></div>
+                      {METRIC_ROWS.filter(([k]) => typeof p.metrics?.[k] === "number" || MISSING[p.platform][k]).map(([k, l, f]) => (
+                        <div key={k} className="contents"><dt className="muted">{l}</dt><dd className="text-right tabular-nums">{typeof p.metrics?.[k] === "number" ? f(p.metrics[k], e.duration) : <Missing p={p.platform} k={k} />}</dd></div>
                       ))}
                       <div className="contents"><dt className="muted">Etkileşim oranı</dt><dd className="text-right tabular-nums">{pct(p.metrics?.views ? ((p.metrics.likes ?? 0) + (p.metrics.comments ?? 0) + (p.metrics.shares ?? 0) + (p.metrics.saves ?? 0)) / p.metrics.views : null)}</dd></div>
                       <div className="contents"><dt className="muted">İlk 24 sa</dt><dd className="text-right tabular-nums">{int(p.views24)}{p.views24 != null && peer ? <span className="muted"> · medyan {int(peer.median)}</span> : null}</dd></div>
@@ -317,7 +346,7 @@ export function PostPerformanceView({ perf }: { perf: PostPerformance }) {
                     {p.views24 != null && peer && peer.median > 0 ? <p className="muted">Öbür {peer.n} videonun ilk 24 saat medyanının <b>{(p.views24 / peer.median).toFixed(1)} katı</b>.</p> : null}
                     <p className="faint">Yayın {at(p.publishedAt)} · ölçüm {ago(p.metricsAt)} · {p.snapshots} geçmiş ölçüm</p>
                     {p.url ? <a href={p.url} target="_blank" rel="noreferrer" className="underline underline-offset-2">Gönderiyi aç ↗</a> : null}
-                    {p.platform === "tiktok" ? <p className="faint">TikTok API&apos;si izleme süresi ve kaydetme vermiyor.</p> : null}
+                    {GAPS[p.platform] ? <p className="faint">{GAPS[p.platform]}</p> : null}
                   </div>
                 )}
               </Panel>
