@@ -35,7 +35,7 @@
  { "tr": "Sırada sen varsın. 'İki sorum var' cümlesini İngilizce kur.", "kind": "say.tr", "de": "Du bist an der Reihe. Bilde „Ich habe zwei Fragen“ auf Englisch." },
  { "tr": "Hadi sen kur. Memura şunu sor: Perşembe günü müsait bir şey var mı?", "kind": "say.tr", "de": "Bilde du den Satz. Frag den Beamten: Ist am Donnerstag etwas frei?" },
  { "tr": "Şimdi bir soru kur. Satıcıya şunu sor: Bu ceket için indirim var mı?", "kind": "say.tr", "de": "Bilde jetzt eine Frage. Frag den Verkäufer: Gibt es auf diese Jacke einen Rabatt?" },
- { "tr": "Şimdi sen kur. Yazıcı bozuldu. Birine 'Yazıcıyı tamir edebilir misin?' diye sor.", "kind": "say.tr", "de": "Jetzt bildest du den Satz. Der Drucker ist kaputt. Frag jemanden „Kannst du den Drucker reparieren?“." },
+ { "tr": "Şimdi sen kur. Telefonun bozuldu. Birine 'Telefonumu tamir edebilir misin?' diye sor.", "kind": "say.tr", "de": "Jetzt bildest du den Satz. Dein Handy ist kaputt. Frag jemanden „Kannst du mein Handy reparieren?“." },
  { "tr": "Son bir cümle kuralım. Şunu İngilizce söyle: Kartını okuyucuya okutmak zorundasın.", "kind": "say.tr", "de": "Bilden wir einen letzten Satz. Sag auf Englisch: Du musst deine Karte an das Lesegerät halten." },
  { "tr": "Deneyelim. 'Yarın saat dokuzda bir randevuya ihtiyacım var' cümlesini İngilizce kur.", "kind": "say.tr", "de": "Probieren wir es. Bilde „Ich brauche morgen um neun Uhr einen Termin“ auf Englisch." },
  { "tr": "Şimdi sıra sende. Arkadaşına adım adım söyle: Önce uygulamayı aç, sonra ekrana dokun.", "kind": "say.tr", "de": "Jetzt bist du dran. Sag deinem Freund Schritt für Schritt: Öffne zuerst die App, dann tippe auf den Bildschirm." },

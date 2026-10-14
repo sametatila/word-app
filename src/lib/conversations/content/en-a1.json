@@ -44039,18 +44039,18 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur. Yazıcı bozuldu. Birine 'Yazıcıyı tamir edebilir misin?' diye sor."
+      "text": "Şimdi sen kur. Telefonun bozuldu. Birine 'Telefonumu tamir edebilir misin?' diye sor."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Can you fix the printer?",
+     "target": "Can you fix my phone?",
      "accept": [
-      "Can you fix the printer, please?",
-      "Could you fix the printer?",
-      "Could you fix the printer, please?",
-      "Can you fix this printer?",
-      "Can you repair the printer?"
+      "Can you fix my phone, please?",
+      "Could you fix my phone?",
+      "Could you fix my phone, please?",
+      "Can you fix my cell phone?",
+      "Can you repair my phone?"
      ],
      "hint": [
       {
@@ -44059,7 +44059,7 @@
       },
       {
        "lang": "en",
-       "text": "Can you fix the printer?"
+       "text": "Can you fix my phone?"
       },
       {
        "lang": "tr",
