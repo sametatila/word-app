@@ -38207,24 +38207,29 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi bir soru kur. Satıcıya iki üründen hangisinin daha ucuz olduğunu soruyorsun."
+      "text": "Şimdi bir soru kur. Satıcıya şunu sor: Bu ceket için indirim var mı?"
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Which one is cheaper?",
+     "target": "Is there a discount on this jacket?",
      "accept": [
-      "Which is cheaper?",
-      "Which one is cheaper, this one or that one?"
+      "Is there a discount for this jacket?",
+      "Is there any discount on this jacket?",
+      "Is this jacket on sale?"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Hangisi daha ucuz?"
+       "text": "İndirim sorusu hep aynı kalıpla başlar:"
       },
       {
        "lang": "en",
-       "text": "Which one is cheaper?"
+       "text": "Is there a discount ...?"
+      },
+      {
+       "lang": "en",
+       "text": "Is there a discount on this jacket?"
       },
       {
        "lang": "tr",
@@ -47259,25 +47264,27 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sıra sende: Misafirler bütün gece dans etti."
+      "text": "Sıra sende: Damat siyah bir takım elbise giydi."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The guests danced all night.",
+     "target": "The groom wore a black suit.",
      "accept": [
-      "The guests danced all night long.",
-      "All the guests danced all night.",
-      "The guests danced until morning."
+      "The groom was wearing a black suit."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Misafirler guests, dans etti danced."
+       "text": "Giymek kural dışı bir fiil, geçmişi şöyle:"
       },
       {
        "lang": "en",
-       "text": "The guests danced all night."
+       "text": "wear, wore"
+      },
+      {
+       "lang": "en",
+       "text": "The groom wore a black suit."
       },
       {
        "lang": "tr",
@@ -52747,28 +52754,30 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende. Ekranın kırıldı. Bunu İngilizce nasıl söylersin?"
+      "text": "Şimdi sıra sende. Arkadaşına adım adım söyle: Önce uygulamayı aç, sonra ekrana dokun."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "My screen is broken.",
+     "target": "First open the app, then tap the screen.",
      "accept": [
-      "The screen is broken.",
-      "My screen is cracked."
+      "First, open the app, then tap the screen.",
+      "First open the app. Then tap the screen.",
+      "First open the app and then tap the screen.",
+      "First open the app, then touch the screen."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Ekran: screen. Kırık: broken."
+       "text": "Yönergede özne yok, fiil yalın; sırayı şu iki kelime kurar:"
       },
       {
        "lang": "en",
-       "text": "My screen ..."
+       "text": "first, then"
       },
       {
        "lang": "en",
-       "text": "My screen is broken."
+       "text": "First open the app, then tap the screen."
       },
       {
        "lang": "tr",
@@ -52797,29 +52806,30 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir cümle daha kur. Pilin çok azaldı ve bunu söylemek istiyorsun."
+      "text": "Bir cümle daha kur. Arkadaşının hoparlöründen ses gelmiyor. Ona şunu söyle: Hoparlörü kapat ve tekrar aç."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "My battery is low.",
+     "target": "Turn off the speaker and turn it on again.",
      "accept": [
-      "The battery is low.",
-      "My battery is very low.",
-      "My phone battery is low."
+      "Turn the speaker off and turn it on again.",
+      "Turn off the speaker and turn it back on.",
+      "Turn the speaker off and turn it back on.",
+      "Turn off the speaker, then turn it on again."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Pil: battery. Az kaldı için low kelimesini kullan."
+       "text": "Kapatmak ve açmak için şu fiilleri kullan, kısa kelime araya girer:"
       },
       {
        "lang": "en",
-       "text": "My battery ..."
+       "text": "turn off, turn it on"
       },
       {
        "lang": "en",
-       "text": "My battery is low."
+       "text": "Turn off the speaker and turn it on again."
       },
       {
        "lang": "tr",
@@ -57143,7 +57153,7 @@
      "hint": [
       {
        "lang": "en",
-       "text": "Tyler"
+       "text": "Can"
       },
       {
        "lang": "tr",
@@ -62945,36 +62955,29 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir cümle kuralım. İpucu: Kartımı çoktan yükledim."
+      "text": "Son bir cümle kuralım. Şunu İngilizce söyle: Kartını okuyucuya okutmak zorundasın."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I have already reloaded my card.",
+     "target": "You have to tap your card on the reader.",
      "accept": [
-      "I've already reloaded my card.",
-      "I already reloaded my card."
+      "You must tap your card on the reader.",
+      "You have to tap your card on the card reader.",
+      "You have to tap your card."
      ],
      "hint": [
       {
-       "lang": "en",
-       "text": "have already"
-      },
-      {
        "lang": "tr",
-       "text": "kullan, sonra"
+       "text": "Zorunluluk için şunu kullan, ardından fiil yalın gelir:"
       },
       {
        "lang": "en",
-       "text": "reloaded"
-      },
-      {
-       "lang": "tr",
-       "text": "de."
+       "text": "You have to tap ..."
       },
       {
        "lang": "en",
-       "text": "I have already reloaded my card."
+       "text": "You have to tap your card on the reader."
       },
       {
        "lang": "tr",
@@ -63263,28 +63266,29 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Hadi sen kur. Perşembe müsait mi diye sormak istiyorsun. Kısa hâlini söyle."
+      "text": "Hadi sen kur. Memura şunu sor: Perşembe günü müsait bir şey var mı?"
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Is Thursday available?",
+     "target": "Do you have anything available on Thursday?",
      "accept": [
-      "Do you have anything available on Thursday?",
-      "Is Thursday free?"
+      "Do you have anything on Thursday?",
+      "Is there anything available on Thursday?",
+      "Is Thursday available?"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Is ile başla, sonra gün, sonra"
+       "text": "Soruyu şöyle başlat, günden önce de on gelir:"
       },
       {
        "lang": "en",
-       "text": "available"
+       "text": "Do you have anything available ...?"
       },
       {
        "lang": "en",
-       "text": "Is Thursday available?"
+       "text": "Do you have anything available on Thursday?"
       },
       {
        "lang": "tr",
@@ -63397,28 +63401,29 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sıra sende. Kimliğini getirmen gerekip gerekmediğini sormak istiyorsun. Kibarca sor."
+      "text": "Sıra sende. Memura kibarca sor: Kimliğimi getirmeli miyim?"
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Do I need to bring my ID?",
+     "target": "Should I bring my ID?",
      "accept": [
-      "Should I bring my ID?",
-      "Do I have to bring my ID?"
+      "Do I need to bring my ID?",
+      "Do I have to bring my ID?",
+      "Should I bring my ID card?"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Do I need to ile başla, sonra"
+       "text": "Soruda should özneden önce gelir, fiil yalın kalır:"
       },
       {
        "lang": "en",
-       "text": "bring my ID"
+       "text": "Should I bring ...?"
       },
       {
        "lang": "en",
-       "text": "Do I need to bring my ID?"
+       "text": "Should I bring my ID?"
       },
       {
        "lang": "tr",

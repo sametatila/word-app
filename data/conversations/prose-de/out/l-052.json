@@ -65,7 +65,6 @@
  { "tr": "Şimdi sen kur. Söylemek istediğin şu: Mutfak büyük.", "kind": "say.tr", "de": "Jetzt bildest du. Du willst sagen: Die Küche ist groß." },
  { "tr": "Şimdi sen sor. \"Salonda bir halı var mı?\" diye sor.", "kind": "say.tr", "de": "Jetzt fragst du. Frag „Liegt im Wohnzimmer ein Teppich?“." },
  { "tr": "Şimdi sıra sende. Arkadaşına 'Tekrar buluşalım' de.", "kind": "say.tr", "de": "Jetzt bist du dran. Sag deinem Freund „treffen wir uns wieder“." },
- { "tr": "Şimdi sıra sende. Şunu İngilizce kur: Dün evdeydim.", "kind": "say.tr", "de": "Jetzt bist du dran. Bilde auf Englisch: Gestern war ich zu Hause." },
  { "tr": "Şimdi soruya geçelim. \"Buraya uzak mı?\" demek için:", "kind": "say.tr", "de": "Jetzt zur Frage. Um „Ist es weit von hier?“ zu sagen:" },
  { "tr": "Tam bir cümle kuralım. İyi bir iş bulmayı umuyorum:", "kind": "say.tr", "de": "Bilden wir einen ganzen Satz. Ich hoffe, eine gute Stelle zu finden:" },
  { "tr": "Karşı taraf telefonu açınca neden aradığını hemen söylersin:", "kind": "say.tr", "de": "Nimmt jemand ab, sagst du gleich, warum du anrufst:" },

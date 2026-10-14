@@ -2187,14 +2187,14 @@ export const deA1B02: Conversation[] = [
         expect: { kind: "repeat", target: "Wir feiern zusammen" },
       },
       {
-        say: [tr("Bir cümle daha: 'Annem ve babam kutlamaya geliyor.' nasıl dersin?")],
+        say: [tr("Bir cümle daha: 'Düğünü birlikte kutluyoruz.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Meine Eltern kommen zum Fest",
-          accept: ["Meine Mutter und mein Vater kommen zum Fest", "Mein Vater und meine Mutter kommen zum Fest"],
+          target: "Wir feiern die Hochzeit zusammen",
+          accept: ["Wir feiern zusammen die Hochzeit", "Wir feiern die Hochzeit gemeinsam"],
           hint: [
-            tr("Anne baba çoğul bir kelime; iyelik uzar ve fiil de çoğul biçiminde kalır:"),
-            de("Meine Eltern kommen zum Fest."),
+            tr("Biz biçiminde fiil sözlükteki hâliyle kalır, birlikte anlamındaki kelime sona gelir:"),
+            de("Wir feiern die Hochzeit zusammen."),
             tr("Tekrar dene."),
           ],
         },

@@ -1,5 +1,4 @@
 [
- { "tr": "İkinci mastar öbeği de nesnesini taşımalı:", "en": "The second infinitive phrase must carry its object too:" },
  { "tr": "İlk sorumuz bir soru kelimesiyle başlıyor:", "en": "Our first question starts with a question word:" },
  { "tr": "İş biterken herkesin söylediği şey. Lütfen", "en": "What everyone says as work ends. Please say" },
  { "tr": "Kalıplaşmış soru; edat davon ile birleşir:", "en": "A set question; the preposition fuses into davon:" },
@@ -12,7 +11,6 @@
  { "tr": "Nesne ortada, öbek sonda, mastar en sonda:", "en": "The object in the middle, the phrase then the infinitive last:" },
  { "tr": "Nesne öne alınmış; deyim değişmeden sonda:", "en": "The object moved to the front; the idiom intact at the end:" },
  { "tr": "Nötr adda ilgi zamiri de nötr, fiil sonda:", "en": "With a neuter noun the relative pronoun is neuter too, the verb last:" },
- { "tr": "Olmak fiilinin kısa geçmişi ikinci sırada:", "en": "The simple past of the verb to be in second place:" },
  { "tr": "Ortaç doğrudan ismin önünde, sıfat ekiyle:", "en": "The participle straight before the noun, with an adjective ending:" },
  { "tr": "Öbeğin ismi değişmez; yalnız fiil çekilir:", "en": "The noun in the phrase is fixed; only the verb conjugates:" },
  { "tr": "Önce birler, sonra onlar ve hepsi bitişik:", "en": "The units first, then the tens, all written as one word:" },
@@ -25,7 +23,6 @@
  { "tr": "Örnek: 'Yazın seyahate çıktım.' Almancası:", "en": "Example: 'In summer I went traveling.' In German:" },
  { "tr": "Özne çoğul, yardımcı fiil de çoğul olmalı:", "en": "The subject is plural, so the auxiliary must be too:" },
  { "tr": "Sıra sende: 'Ağzım ağrıyor.' nasıl dersin?", "en": "Your turn: how do you say 'My mouth hurts.'?" },
- { "tr": "Sıra sende: 'Ayak bileğim şişti.' nasıl dersin?", "en": "Your turn: how do you say 'My ankle is swollen.'?" },
  { "tr": "Sıra sende: 'Bir kedim var.' nasıl dersin?", "en": "Your turn: how do you say 'I have a cat.'?" },
  { "tr": "Sıra sende: 'Buna rağmen karar değişmedi.'", "en": "Your turn: 'Even so the decision did not change.'" },
  { "tr": "Sıra sende: 'Bunun vakti çoktan gelmişti.'", "en": "Your turn: 'It was high time for this.'" },
@@ -38,12 +35,8 @@
  { "tr": "Sıra sende: 'Gerekli önlemler başlatıldı.'", "en": "Your turn: 'The necessary steps have been started.'" },
  { "tr": "Sıra sende: 'Hem iyimser hem gerçekçiyim.'", "en": "Your turn: 'I am both optimistic and realistic.'" },
  { "tr": "Sıra sende: 'İlgilendiğim kedi çok ürkek.'", "en": "Your turn: 'The cat I look after is very shy.'" },
- { "tr": "Sıra sende: 'İlk adımı atmaya cesaret et.'", "en": "Your turn: 'Dare to take the first step.'" },
  { "tr": "Sıra sende: 'Keşke daha yakın yaşasaydık.'", "en": "Your turn: 'I wish we lived closer.'" },
- { "tr": "Sıra sende: 'Midem ağrıyor.' nasıl dersin?", "en": "Your turn: how do you say 'My stomach hurts.'?" },
  { "tr": "Sıra sende: 'Öksürüğüm var.' nasıl dersin?", "en": "Your turn: how do you say 'I have a cough.'?" },
- { "tr": "Sıra sende: 'Sen olsan nasıl hissederdin?'", "en": "Your turn: 'How would you feel in their place?'" },
- { "tr": "Sıra sende: 'Soyut sanatla ilgileniyorum.'", "en": "Your turn: 'I am interested in abstract art.'" },
  { "tr": "Sıra sende: 'Takdirimi belirtmek isterim.'", "en": "Your turn: 'I would like to express my appreciation.'" },
  { "tr": "Sıra sende: 'Unuttuğum telefonu arıyorum.'", "en": "Your turn: 'I am looking for the phone I left behind.'" },
  { "tr": "Sıra sende: 'Yalıtımı yenilenen bir bina.'", "en": "Your turn: 'A building whose insulation is being renewed.'" },
@@ -145,6 +138,5 @@
  { "tr": "eril bir kelime ve burada cümlenin nesnesi.", "en": "is a masculine word and here the object of the sentence." },
  { "tr": "Etkinlik özne oluyor ve ortaç sona gidiyor:", "en": "The event becomes the subject and the participle goes last:" },
  { "tr": "Fiilin edatı sabit ve yönelme hâli istiyor:", "en": "The verb's preposition is fixed and takes the dative:" },
- { "tr": "Hareket ve durum değişimi sein ile çekilir:", "en": "Motion and change of state take sein:" },
  { "tr": "Hazırsın. Şimdi polise olayı bildireceksin.", "en": "You are ready. Now you will report it to the police." }
 ]

@@ -133,7 +133,6 @@
  { "tr": "Sen de sırayla cevap veriyorsun: My name is…", "kind": "say.tr", "de": "Und du antwortest der Reihe nach: My name is…" },
  { "tr": "Sen de söyle: Daha iyi bir kalite umuyordum.", "kind": "say.tr", "de": "Sag du auch: Ich hatte eine bessere Qualität erwartet." },
  { "tr": "Sesini duyacağım, acele etme. Başlayalım mı?", "kind": "say.tr", "de": "Ich höre deine Stimme, lass dir Zeit. Fangen wir an?" },
- { "tr": "Sıra sende: Misafirler bütün gece dans etti.", "kind": "say.tr", "de": "Du bist dran: Die Gäste haben die ganze Nacht getanzt." },
  { "tr": "Sıra sende. Elinde azıcık su olduğunu söyle.", "kind": "say.tr", "de": "Du bist dran. Sag, dass du ein wenig Wasser hast." },
  { "tr": "Sıra sende. Hâlâ kimsenin gelmediğini söyle.", "kind": "say.tr", "de": "Du bist dran. Sag, dass noch niemand gekommen ist." },
  { "tr": "Son kelimemiz, en çok işine yarayacak olanı:", "kind": "say.tr", "de": "Unser letztes Wort, das nützlichste von allen:" },

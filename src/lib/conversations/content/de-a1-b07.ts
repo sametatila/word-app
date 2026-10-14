@@ -442,15 +442,14 @@ export const deA1B07: Conversation[] = [
         expect: { kind: "repeat", target: "Wie viele Zimmer hat die Wohnung" },
       },
       {
-        say: [tr("Bir tane daha: 'Burası giriş.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Evin kaç penceresi var?' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Das ist der Eingang",
-          /* Panel bildirimi (QA F-0076): "Hier ist der Eingang." reddediliyordu; kalıp bu konuşmada öğretiliyor. */
-          accept: ["Hier ist der Eingang"],
+          target: "Wie viele Fenster hat die Wohnung",
+          accept: ["Wie viele Fenster hat das Haus"],
           hint: [
-            tr("Bu kelime eril, o yüzden işaret cümlesinde de eril artikel geliyor:"),
-            de("Das ist der Eingang."),
+            tr("Sayı soran iki kelime başa gelir, arkasından çoğul isim ve fiil:"),
+            de("Wie viele Fenster hat die Wohnung?"),
             tr("Tekrar dene."),
           ],
         },
@@ -891,13 +890,14 @@ export const deA1B07: Conversation[] = [
         expect: { kind: "repeat", target: "Klopfen Sie einfach" },
       },
       {
-        say: [tr("Şimdi sen: 'Komşum çok sakin.' demek için ne dersin?")],
+        say: [tr("Şimdi sen: 'Çekinmeden arayın.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Mein Nachbar ist sehr ruhig",
+          target: "Rufen Sie einfach an",
+          accept: ["Rufen Sie mich einfach an", "Rufen Sie einfach mal an"],
           hint: [
-            tr("Önce komşu, sonra fiil, sonra özelliği:"),
-            de("Mein Nachbar ist sehr ruhig."),
+            tr("Kibar emirde fiil başa geçer, ayrılan parça en sona gider:"),
+            de("Rufen Sie einfach an."),
             tr("Tekrar dene."),
           ],
         },
@@ -1380,14 +1380,14 @@ export const deA1B07: Conversation[] = [
         expect: { kind: "repeat", target: "Ich zahle die Miete pro Monat" },
       },
       {
-        say: [tr("Bir tane daha: 'Kirayı her ay havale ediyorum.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Ayda altı yüz euro ödüyorum.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich überweise die Miete jeden Monat",
-          accept: ["Jeden Monat überweise ich die Miete", "Ich überweise jeden Monat die Miete"],
+          target: "Ich zahle sechshundert Euro pro Monat",
+          accept: ["Pro Monat zahle ich sechshundert Euro", "Ich zahle pro Monat sechshundert Euro", "Ich zahle sechshundert Euro im Monat"],
           hint: [
-            tr("Fiil ikinci sırada, zaman ifadesi nesneden sonra geliyor:"),
-            de("Ich überweise die Miete jeden Monat."),
+            tr("Türkçedeki 'ayda' Almancada iki kelimedir ve tutarın arkasına gelir:"),
+            de("Ich zahle sechshundert Euro pro Monat."),
             tr("Tekrar dene."),
           ],
         },
@@ -2342,13 +2342,13 @@ export const deA1B07: Conversation[] = [
         expect: { kind: "repeat", target: "Können Sie kommen" },
       },
       {
-        say: [tr("Bir tane daha: 'Tamir ne kadar sürüyor?' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Lambayı tamir edebilir misiniz?' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Wie lange dauert die Reparatur",
+          target: "Können Sie die Lampe reparieren",
           hint: [
-            tr("Soru ifadesi başta, fiil hemen arkasında, özne sonda:"),
-            de("Wie lange dauert die Reparatur?"),
+            tr("Soruda çekimli fiil başa geçer, asıl fiil mastar hâliyle en sona gider:"),
+            de("Können Sie die Lampe reparieren?"),
             tr("Tekrar dene."),
           ],
         },

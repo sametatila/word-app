@@ -160,13 +160,14 @@ export const deA2B10: Conversation[] = [
         expect: { kind: "repeat", target: "Das Formular bekommen Sie im Rathaus" },
       },
       {
-        say: [tr("Sıra sende: 'Formda kapı numarasını unutmuşsunuz.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Adres kaydımı sildirmek istiyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Sie haben die Hausnummer im Formular vergessen",
+          target: "Ich möchte mich abmelden",
+          accept: ["Ich will mich abmelden"],
           hint: [
-            tr("Nesne belirtme hâline girer ve ortaç sona gider:"),
-            de("Sie haben die Hausnummer im Formular vergessen."),
+            tr("Dönüşlü zamir kip fiilinden hemen sonra, asıl fiil sonda:"),
+            de("Ich möchte mich abmelden."),
             tr("Tekrar dene."),
           ],
         },
@@ -179,13 +180,13 @@ export const deA2B10: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Kontrolde kimliğini göstermek zorundasın.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Kayıt belgesini nereden alırım?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Bei der Kontrolle musst du dich ausweisen",
+          target: "Wo bekomme ich die Meldebescheinigung",
           hint: [
-            tr("Yer ifadesi başta, kip fiili ikinci sırada ve dönüşlü zamir öznenin arkasında:"),
-            de("Bei der Kontrolle musst du dich ausweisen."),
+            tr("Soru kelimesi başta, fiil ikinci sırada ve özne onun arkasında:"),
+            de("Wo bekomme ich die Meldebescheinigung?"),
             tr("Tekrar dene."),
           ],
         },
@@ -379,13 +380,14 @@ export const deA2B10: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Bana bir kalem verebilir misin?' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Lütfen yavaş konuşun.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Kannst du mir bitte einen Stift geben",
+          target: "Bitte sprechen Sie langsam",
+          accept: ["Sprechen Sie bitte langsam"],
           hint: [
-            tr("Alan kişi yönelme hâlinde ve önde, verilen şey belirtme hâlinde:"),
-            de("Kannst du mir bitte einen Stift geben?"),
+            tr("Sıfat burada zarf gibi kullanılıyor ve hiç ek almıyor:"),
+            de("Bitte sprechen Sie langsam."),
             tr("Tekrar dene."),
           ],
         },
@@ -559,13 +561,13 @@ export const deA2B10: Conversation[] = [
         expect: { kind: "repeat", target: "An der Kasse war eine lange Warteschlange" },
       },
       {
-        say: [tr("Sıra sende: 'Ofis zemin katta.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Yarım saat bekledim.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Das Büro ist im Erdgeschoss",
+          target: "Ich habe eine halbe Stunde gewartet",
           hint: [
-            tr("Yer bildiren edat yönelme hâlini getirir ve artikelle kaynaşır:"),
-            de("Das Büro ist im Erdgeschoss."),
+            tr("Süre bildiren ifade belirtme hâline giriyor ve ortaç sonda:"),
+            de("Ich habe eine halbe Stunde gewartet."),
             tr("Tekrar dene."),
           ],
         },
@@ -580,14 +582,15 @@ export const deA2B10: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Meslektaşım maalesef hep geç kalıyor.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Sayın Bay Wagner' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Mein Kollege ist leider immer unpünktlich",
-          accept: ["Meine Kollegin ist leider immer unpünktlich"],
+          target: "Sehr geehrter Herr Wagner",
           hint: [
-            tr("Sıfat yüklem olarak kullanıldığı için hiç ek almaz:"),
-            de("Mein Kollege ist leider immer unpünktlich."),
+            tr("Yazdığın kişi erkekse sıfat"),
+            de("geehrter"),
+            tr("olur:"),
+            de("Sehr geehrter Herr Wagner,"),
             tr("Tekrar dene."),
           ],
         },
@@ -761,14 +764,14 @@ export const deA2B10: Conversation[] = [
         expect: { kind: "repeat", target: "Die Regel kannst du im Buch nachlesen" },
       },
       {
-        say: [tr("Sıra sende: 'Lütfen kitabı on ikinci sayfadan açın.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Kaç kitap ödünç alabilirim?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Schlagen Sie bitte das Buch auf Seite zwölf auf",
-          accept: ["Schlagen Sie das Buch bitte auf Seite zwölf auf"],
+          target: "Wie viele Bücher darf ich ausleihen",
+          accept: ["Wie viele Bücher kann ich ausleihen"],
           hint: [
-            tr("Resmî emirde fiil başta, hitap zamiri arkasında ve ayrılabilen ön ek en sonda:"),
-            de("Schlagen Sie bitte das Buch auf Seite zwölf auf."),
+            tr("Soru kalıbı başta, izin fiili ikinci sırada ve asıl fiil sonda:"),
+            de("Wie viele Bücher darf ich ausleihen?"),
             tr("Tekrar dene."),
           ],
         },
@@ -781,13 +784,14 @@ export const deA2B10: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Faturaları tarihe göre sıralıyorum.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Burada yemek yemek yasak.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich sortiere die Rechnungen nach Datum",
+          target: "Hier darf man nicht essen",
+          accept: ["Man darf hier nicht essen"],
           hint: [
-            tr("Ölçüt bildiren edat yönelme hâlini getirir ve isim artikelsiz durur:"),
-            de("Ich sortiere die Rechnungen nach Datum."),
+            tr("Herkes için geçerli kural belirsiz özneyle söylenir ve fiil tekil kalır:"),
+            de("Hier darf man nicht essen."),
             tr("Tekrar dene."),
           ],
         },
@@ -963,13 +967,13 @@ export const deA2B10: Conversation[] = [
         expect: { kind: "repeat", target: "Ich möchte am Tanzkurs teilnehmen" },
       },
       {
-        say: [tr("Sıra sende: 'Babam bana yüzmeyi öğretiyor.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bir atölyeye katılmak istiyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Mein Vater bringt mir das Schwimmen bei",
+          target: "Ich möchte an einem Workshop teilnehmen",
           hint: [
-            tr("Öğretilen kişi yönelme hâlinde ve ayrılabilen ön ek cümlenin sonunda:"),
-            de("Mein Vater bringt mir das Schwimmen bei."),
+            tr("Fiilin kendi edatı yönelme hâlini getiriyor ve ayrılabilen fiil sonda bölünmeden duruyor:"),
+            de("Ich möchte an einem Workshop teilnehmen."),
             tr("Tekrar dene."),
           ],
         },
@@ -982,13 +986,14 @@ export const deA2B10: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Siz de bir enstrüman çalıyor musunuz?' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Almanca kursu ocakta başlayacak.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Spielen Sie auch ein Instrument",
+          target: "Der Deutschkurs wird im Januar beginnen",
+          accept: ["Im Januar wird der Deutschkurs beginnen"],
           hint: [
-            tr("Fiil başta olduğu için cümle soru olur ve nesne belirtme hâlinde durur:"),
-            de("Spielen Sie auch ein Instrument?"),
+            tr("Gelecek zamanda yardımcı fiil ikinci sırada, asıl fiil sonda:"),
+            de("Der Deutschkurs wird im Januar beginnen."),
             tr("Tekrar dene."),
           ],
         },
@@ -1162,13 +1167,14 @@ export const deA2B10: Conversation[] = [
         expect: { kind: "repeat", target: "Du musst deine Ausbildung auf jeden Fall beenden" },
       },
       {
-        say: [tr("Sıra sende: 'Komşularımız yeni bir ev inşa ediyor.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bir gün bir yazlık ev inşa edeceğim.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Unsere Nachbarn bauen ein neues Haus",
+          target: "Ich werde eines Tages ein Ferienhaus bauen",
+          accept: ["Eines Tages werde ich ein Ferienhaus bauen"],
           hint: [
-            tr("Çoğul özneye fiil uyar ve nötr isimde sıfat belirtme hâlinde ek alır:"),
-            de("Unsere Nachbarn bauen ein neues Haus."),
+            tr("Gelecek zamanda yardımcı fiil ikinci sırada, asıl fiil sonda:"),
+            de("Ich werde eines Tages ein Ferienhaus bauen."),
             tr("Tekrar dene."),
           ],
         },
@@ -1181,13 +1187,14 @@ export const deA2B10: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'İki menü arasından seçebilirsiniz.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bu yılki hedefin ne?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Sie können zwischen zwei Menüs wählen",
+          target: "Was ist dein Ziel für dieses Jahr",
+          accept: ["Was ist dieses Jahr dein Ziel"],
           hint: [
-            tr("Bu edat yönelme hâlini getirir ve asıl fiil sonda kalır:"),
-            de("Sie können zwischen zwei Menüs wählen."),
+            tr("Soru kelimesi başta, fiil ikinci sırada:"),
+            de("Was ist dein Ziel für dieses Jahr?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1380,14 +1387,14 @@ export const deA2B10: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Yeni şoför henüz çok deneyimsiz.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bunun için daha çok deneyime ihtiyacım var.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Der neue Fahrer ist noch sehr unerfahren",
-          accept: ["Die neue Fahrerin ist noch sehr unerfahren"],
+          target: "Dafür brauche ich mehr Erfahrung",
+          accept: ["Ich brauche dafür mehr Erfahrung"],
           hint: [
-            tr("Sıfat isimden önce ek alır, yüklem olarak kullanıldığında almaz:"),
-            de("Der neue Fahrer ist noch sehr unerfahren."),
+            tr("Edat ile zamirin kaynaşmış hâli başta olduğu için özne fiilin arkasına düşüyor:"),
+            de("Dafür brauche ich mehr Erfahrung."),
             tr("Tekrar dene."),
           ],
         },
@@ -1560,13 +1567,14 @@ export const deA2B10: Conversation[] = [
         expect: { kind: "repeat", target: "Der Eintritt kostet fünf Euro pro Person" },
       },
       {
-        say: [tr("Sıra sende: 'Pazarları dükkânlar kapalı.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Burada otobüsler bizdekinden daha dakik.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Sonntags haben die Geschäfte geschlossen",
+          target: "Hier sind die Busse pünktlicher als bei uns",
+          accept: ["Die Busse sind hier pünktlicher als bei uns"],
           hint: [
-            tr("Zaman zarfı başta olduğu için özne fiilin arkasına düşer:"),
-            de("Sonntags haben die Geschäfte geschlossen."),
+            tr("Karşılaştırma eki sıfatın sonunda, karşılaştırma kelimesi iki tarafın arasında:"),
+            de("Hier sind die Busse pünktlicher als bei uns."),
             tr("Tekrar dene."),
           ],
         },
@@ -1579,13 +1587,14 @@ export const deA2B10: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Çöp kovasını boşaltabilir misin?' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Burada ekmek fırından alınır.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Kannst du bitte den Mülleimer leeren",
+          target: "Das Brot kauft man hier beim Bäcker",
+          accept: ["Man kauft das Brot hier beim Bäcker", "Brot kauft man hier beim Bäcker"],
           hint: [
-            tr("Kip fiili başta olduğu için soru; nesne belirtme hâlinde ve asıl fiil sonda:"),
-            de("Kannst du bitte den Mülleimer leeren?"),
+            tr("Nesne başa alınmış ve belirtme hâlinde; belirsiz özne fiilin arkasında:"),
+            de("Das Brot kauft man hier beim Bäcker."),
             tr("Tekrar dene."),
           ],
         },
@@ -1778,13 +1787,14 @@ export const deA2B10: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Günlerce çalıştım.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Yarın sürüş sınavına giriyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich habe tagelang gelernt",
+          target: "Morgen lege ich die Fahrprüfung ab",
+          accept: ["Morgen lege ich meine Fahrprüfung ab", "Ich lege morgen die Fahrprüfung ab", "Morgen mache ich die Fahrprüfung"],
           hint: [
-            tr("Süre bildiren zarf ortacın önünde durur:"),
-            de("Ich habe tagelang gelernt."),
+            tr("Zaman ifadesi başta, özne fiilin arkasında ve ayrılabilen ön ek sonda:"),
+            de("Morgen lege ich die Fahrprüfung ab."),
             tr("Tekrar dene."),
           ],
         },
@@ -1957,13 +1967,13 @@ export const deA2B10: Conversation[] = [
         expect: { kind: "repeat", target: "Ich habe den Kuchen selbst gebacken" },
       },
       {
-        say: [tr("Sıra sende: 'Bütün gün çalıştık.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Kitabın neredeyse tamamını okudum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Wir haben den ganzen Tag gearbeitet",
+          target: "Ich habe fast das ganze Buch gelesen",
           hint: [
-            tr("Süre bildiren ifade belirtme hâline girer ve sıfat da ona göre ek alır:"),
-            de("Wir haben den ganzen Tag gearbeitet."),
+            tr("Derece bildiren kelime nesnenin hemen önünde ve ortaç sonda:"),
+            de("Ich habe fast das ganze Buch gelesen."),
             tr("Tekrar dene."),
           ],
         },
@@ -1978,14 +1988,14 @@ export const deA2B10: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Herkes onun iyi Almancasına şaşırdı.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Artık telefon etmeye bile cesaret ediyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Alle waren erstaunt über sein gutes Deutsch",
-          accept: ["Alle waren erstaunt über ihr gutes Deutsch"],
+          target: "Jetzt traue ich mich sogar zu telefonieren",
+          accept: ["Ich traue mich jetzt sogar zu telefonieren"],
           hint: [
-            tr("Şaşkınlığın sebebi bir edatla söylenir ve o edat belirtme hâlini getirir:"),
-            de("Alle waren erstaunt über sein gutes Deutsch."),
+            tr("Zarf başta olduğu için özne fiilin arkasına düşüyor ve dönüşlü zamir onu izliyor:"),
+            de("Jetzt traue ich mich sogar zu telefonieren."),
             tr("Tekrar dene."),
           ],
         },

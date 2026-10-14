@@ -870,14 +870,14 @@ export const deA1B09: Conversation[] = [
         expect: { kind: "repeat", target: "Musst du arbeiten" },
       },
       {
-        say: [tr("Bir cümle daha: 'Hemen doktora gitmelisin.' nasıl dersin?")],
+        say: [tr("Bir cümle daha: 'Bugün doktora gitmen gerekiyor mu?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Du musst sofort zum Arzt",
-          accept: ["Du musst sofort zum Arzt gehen", "Du musst gleich zum Arzt", "Du musst gleich zum Arzt gehen", "Du musst sofort zum Doktor", "Du musst sofort zum Doktor gehen"],
+          target: "Musst du heute zum Arzt",
+          accept: ["Musst du heute zum Arzt gehen", "Musst du heute zum Doktor", "Musst du heute zum Doktor gehen"],
           hint: [
-            tr("Burada da asıl fiili söylemene gerek yok:"),
-            de("Du musst sofort zum Arzt."),
+            tr("Soruda çekimli fiil başa geçer; gitmek fiilini söylemene gerek yok:"),
+            de("Musst du heute zum Arzt?"),
             tr("Tekrar dene."),
           ],
         },

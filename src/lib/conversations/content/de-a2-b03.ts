@@ -155,13 +155,16 @@ export const deA2B03: Conversation[] = [
         expect: { kind: "repeat", target: "Abends sollen Sie zwei Tabletten nehmen" },
       },
       {
-        say: [tr("Sıra sende: 'Midem ağrıyor.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'İlacı sabahları almalısınız.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Mein Magen tut weh",
+          target: "Morgens sollen Sie das Medikament nehmen",
+          accept: ["Sie sollen das Medikament morgens nehmen"],
           hint: [
-            tr("Ağrıyan yer öznedir ve fiil ayrılabilen bir fiildir:"),
-            de("Mein Magen tut weh."),
+            tr("Doktorun tavsiyesi"),
+            de("sollen"),
+            tr("ile söylenir; kip fiili ikinci sırada, asıl fiil sonda:"),
+            de("Morgens sollen Sie das Medikament nehmen."),
             tr("Tekrar dene."),
           ],
         },
@@ -174,14 +177,14 @@ export const deA2B03: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Doktor beni muayene etti.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Ne zaman tekrar gelmem gerekiyor?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Der Arzt hat mich untersucht",
+          target: "Wann soll ich wiederkommen",
+          accept: ["Wann soll ich wieder kommen"],
           hint: [
-            de("untersuchen"),
-            tr("vurgusuz bir ön ekle başlıyor, o yüzden ortacın hecesini almıyor:"),
-            de("Der Arzt hat mich untersucht."),
+            tr("Tavsiye sorarken soru kelimesi başta, kip fiili ikinci sırada ve asıl fiil sonda:"),
+            de("Wann soll ich wiederkommen?"),
             tr("Tekrar dene."),
           ],
         },
@@ -355,13 +358,13 @@ export const deA2B03: Conversation[] = [
         expect: { kind: "repeat", target: "Heute fühle ich mich sehr schlecht" },
       },
       {
-        say: [tr("Sıra sende: 'Üşütmüşüm.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Kendimi çok yorgun hissediyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich bin erkältet",
+          target: "Ich fühle mich sehr müde",
           hint: [
-            tr("Bu durum bir sıfatla ve olmak fiiliyle kurulur:"),
-            de("Ich bin erkältet."),
+            tr("Hissetmek dönüşlü bir fiil; zamir fiilden hemen sonra duruyor:"),
+            de("Ich fühle mich sehr müde."),
             tr("Tekrar dene."),
           ],
         },
@@ -578,14 +581,14 @@ export const deA2B03: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Bu sağlığa zararlı.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Alkol içmeniz yasak.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Das ist schädlich für die Gesundheit",
-          accept: ["Das ist schlecht für die Gesundheit", "Das schadet der Gesundheit", "Das ist ungesund"],
+          target: "Sie dürfen keinen Alkohol trinken",
+          accept: ["Alkohol dürfen Sie nicht trinken"],
           hint: [
-            tr("Neye zararlı olduğu bir edatla söylenir ve o edat belirtme hâlini getirir:"),
-            de("Das ist schädlich für die Gesundheit."),
+            tr("Yasak, izin fiilinin olumsuzuyla söylenir, zorunluluk fiiliyle değil:"),
+            de("Sie dürfen keinen Alkohol trinken."),
             tr("Tekrar dene."),
           ],
         },
@@ -961,13 +964,16 @@ export const deA2B03: Conversation[] = [
         expect: { kind: "repeat", target: "Bekomme ich die Augentropfen ohne Rezept" },
       },
       {
-        say: [tr("Sıra sende: 'Bir paket hap istiyorum.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bu öksürük şurubunu reçetesiz alabilir miyim?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich möchte eine Packung Tabletten",
+          target: "Bekomme ich den Hustensaft ohne Rezept",
+          accept: ["Bekomme ich diesen Hustensaft ohne Rezept", "Kann ich den Hustensaft ohne Rezept bekommen", "Kann ich diesen Hustensaft ohne Rezept bekommen"],
           hint: [
-            tr("Ölçü bildiren isimden sonra ikinci isim artikelsiz durur:"),
-            de("Ich möchte eine Packung Tabletten."),
+            tr("Fiil başa gelince cümle soru olur; şurup eril bir nesne, o yüzden artikeli"),
+            de("den"),
+            tr("olur:"),
+            de("Bekomme ich den Hustensaft ohne Rezept?"),
             tr("Tekrar dene."),
           ],
         },
@@ -980,13 +986,13 @@ export const deA2B03: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Hapı yutmam gerekiyor mu?' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Uyku haplarını ne sıklıkla alabilirim?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Muss ich die Tablette schlucken",
+          target: "Wie oft darf ich die Schlaftabletten nehmen",
           hint: [
-            tr("Zorunluluk fiili başta, asıl fiil sonda:"),
-            de("Muss ich die Tablette schlucken?"),
+            tr("Doz sorulurken izin fiili kullanılır; soru kelimesi başta, asıl fiil sonda:"),
+            de("Wie oft darf ich die Schlaftabletten nehmen?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1161,13 +1167,13 @@ export const deA2B03: Conversation[] = [
         expect: { kind: "repeat", target: "Beim Fußball habe ich mir den Knöchel verletzt" },
       },
       {
-        say: [tr("Sıra sende: 'Ayak bileğim şişti.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bileğimi incittim.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Mein Knöchel ist geschwollen",
+          target: "Ich habe mir das Handgelenk verletzt",
           hint: [
-            tr("Burada durum bir sıfatla anlatılır ve incinen yer öznedir:"),
-            de("Mein Knöchel ist geschwollen."),
+            tr("Dönüşlü zamir yönelme hâlinde ve incinen yerin önünde belirli artikel var:"),
+            de("Ich habe mir das Handgelenk verletzt."),
             tr("Tekrar dene."),
           ],
         },
@@ -1180,13 +1186,13 @@ export const deA2B03: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Röntgenimi çektiler.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Ayak bileğim çok ağrıyor.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Sie haben mich geröntgt",
+          target: "Mein Knöchel tut sehr weh",
           hint: [
-            tr("Belirsiz bir özne için çoğul kişi kullanılır ve ortaç sona gider:"),
-            de("Sie haben mich geröntgt."),
+            tr("Ağrıyan yer özne oluyor ve ayrılabilen fiilin ön eki sona düşüyor:"),
+            de("Mein Knöchel tut sehr weh."),
             tr("Tekrar dene."),
           ],
         },
@@ -1382,13 +1388,14 @@ export const deA2B03: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Randevuyu teyit edebilir misiniz?' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Pasaportum artık geçerli değil.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Können Sie den Termin bestätigen",
+          target: "Mein Pass ist nicht mehr gültig",
+          accept: ["Mein Reisepass ist nicht mehr gültig"],
           hint: [
-            tr("Kip fiili başta, asıl fiil sonda ve nesne belirtme hâlinde:"),
-            de("Können Sie den Termin bestätigen?"),
+            tr("Artık değil anlamı iki kelimeyle kuruluyor ve ikisi de fiilden sonra duruyor:"),
+            de("Mein Pass ist nicht mehr gültig."),
             tr("Tekrar dene."),
           ],
         },
@@ -1564,13 +1571,14 @@ export const deA2B03: Conversation[] = [
         expect: { kind: "repeat", target: "Ich habe heftige Zahnschmerzen" },
       },
       {
-        say: [tr("Sıra sende: 'Aksi takdirde beklemek zorundasınız.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Çok acı veriyor.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ansonsten müssen Sie warten",
+          target: "Es ist sehr schmerzhaft",
+          accept: ["Das ist sehr schmerzhaft", "Es tut sehr weh", "Das tut sehr weh"],
           hint: [
-            tr("Bağlayıcı başta olduğu için özne fiilin arkasına düşer ve asıl fiil sonda kalır:"),
-            de("Ansonsten müssen Sie warten."),
+            tr("Durumu anlatırken kişisiz özne kullanılıyor:"),
+            de("Es ist sehr schmerzhaft."),
             tr("Tekrar dene."),
           ],
         },
@@ -1766,14 +1774,14 @@ export const deA2B03: Conversation[] = [
         expect: { kind: "repeat", target: "Abends kann ich nicht abschalten" },
       },
       {
-        say: [tr("Sıra sende: 'Bir saat uzanmam gerekiyor.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Geceleri uykuya dalamıyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich muss mich eine Stunde hinlegen",
-          accept: ["Ich muss mich für eine Stunde hinlegen"],
+          target: "Nachts kann ich nicht einschlafen",
+          accept: ["Ich kann nachts nicht einschlafen"],
           hint: [
-            tr("Dönüşlü zamir kip fiilinden hemen sonra durur, asıl fiil sona gider:"),
-            de("Ich muss mich eine Stunde hinlegen."),
+            tr("Olumsuzluk kelimesi asıl fiilin hemen önünde; ayrılabilen fiil kip fiiliyle birlikte bölünmüyor:"),
+            de("Nachts kann ich nicht einschlafen."),
             tr("Tekrar dene."),
           ],
         },
@@ -1986,13 +1994,14 @@ export const deA2B03: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Her yıl aşı yaptırıyorum.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Yılda bir kez aşı yaptırıyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich lasse mich jährlich impfen",
+          target: "Einmal im Jahr lasse ich mich impfen",
+          accept: ["Ich lasse mich einmal im Jahr impfen"],
           hint: [
-            tr("Bir işi başkasına yaptırmak için ayrı bir fiil kullanılır ve asıl fiil sonda kalır:"),
-            de("Ich lasse mich jährlich impfen."),
+            tr("Zaman ifadesi başa geçince özne fiilin arkasına düşüyor:"),
+            de("Einmal im Jahr lasse ich mich impfen."),
             tr("Tekrar dene."),
           ],
         },

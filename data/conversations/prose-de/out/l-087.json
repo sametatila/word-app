@@ -315,11 +315,6 @@
   "de": "Richtig. Der ursprüngliche Satz stand im Present Perfect und ist bei der Wiedergabe eine Stufe zurückgerückt; genau das ist üblich."
  },
  {
-  "tr": "Edilgen ve araç bildiren tümleç:",
-  "kind": "hint.tr",
-  "de": "Passiv mit einer Angabe des Mittels:"
- },
- {
   "tr": "Bu bağlaçtan sonra tam bir cümle gelir. Hazır için",
   "kind": "hint.tr",
   "de": "Nach diesem Konnektor steht ein vollständiger Satz. Für bereit"
@@ -678,11 +673,6 @@
   "tr": "Şimdi bir arkadaşına geri bildirimi aktaracaksın.",
   "kind": "say.tr",
   "de": "Jetzt gibst du einer Freundin die Rückmeldung weiter."
- },
- {
-  "tr": "Şimdi sen kur: Sertifika e-postayla gönderiliyor.",
-  "kind": "say.tr",
-  "de": "Jetzt du: Das Zertifikat wird per E-Mail geschickt."
  },
  {
   "tr": "Bir tane daha: Görevi bitirip bitirmediğimi sordu.",

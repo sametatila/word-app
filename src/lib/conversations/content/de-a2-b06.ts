@@ -182,13 +182,14 @@ export const deA2B06: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Lütfen iki teklifi karşılaştırın.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bu iki telefon arasındaki fark ne?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Vergleichen Sie bitte die beiden Angebote",
+          target: "Was ist der Unterschied zwischen den beiden Handys",
+          accept: ["Was ist der Unterschied zwischen diesen beiden Handys", "Was ist der Unterschied zwischen den zwei Handys", "Was ist der Unterschied zwischen diesen zwei Handys", "Was ist der Unterschied zwischen diesen beiden Telefonen"],
           hint: [
-            tr("Kibar emirde fiil başa geçer ve hitap hemen arkasından gelir:"),
-            de("Vergleichen Sie bitte die beiden Angebote."),
+            tr("Farkı sorarken soru kelimesi başta; arasında edatı yönelme hâlini getiriyor:"),
+            de("Was ist der Unterschied zwischen den beiden Handys?"),
             tr("Tekrar dene."),
           ],
         },
@@ -388,13 +389,14 @@ export const deA2B06: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Sürekli müşteri olarak indirim alıyorum.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Öğrenciler için indirim var mı?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Als Stammkunde bekomme ich eine Ermäßigung",
+          target: "Gibt es eine Ermäßigung für Studenten",
+          accept: ["Gibt es für Studenten eine Ermäßigung", "Gibt es eine Ermäßigung für Studierende", "Gibt es einen Rabatt für Studenten"],
           hint: [
-            tr("'Olarak' anlamındaki kelime başta olduğu için özne fiilin arkasına düşer:"),
-            de("Als Stammkunde bekomme ich eine Ermäßigung."),
+            tr("Var mı sorusu fiille başlar ve isim belirtme hâline girer:"),
+            de("Gibt es eine Ermäßigung für Studenten?"),
             tr("Tekrar dene."),
           ],
         },
@@ -569,13 +571,14 @@ export const deA2B06: Conversation[] = [
         expect: { kind: "repeat", target: "Diese Jacke ist bequemer als die andere" },
       },
       {
-        say: [tr("Sıra sende: 'Bu etek daha yumuşak.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Ya eteği ya da takım elbiseyi alıyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Dieser Rock ist weicher",
+          target: "Ich nehme entweder den Rock oder den Anzug",
+          accept: ["Ich nehme entweder den Anzug oder den Rock"],
           hint: [
-            tr("Eril isimde işaret sıfatı ek alır ve sıfata karşılaştırma eki gelir:"),
-            de("Dieser Rock ist weicher."),
+            tr("İki seçenek de nesne olduğu için ikisi de belirtme hâline girer:"),
+            de("Ich nehme entweder den Rock oder den Anzug."),
             tr("Tekrar dene."),
           ],
         },
@@ -588,14 +591,14 @@ export const deA2B06: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Ya eteği ya da takım elbiseyi alıyorum.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bu eteği deneyebilir miyim?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich nehme entweder den Rock oder den Anzug",
-          accept: ["Ich nehme entweder den Anzug oder den Rock"],
+          target: "Kann ich diesen Rock anprobieren",
+          accept: ["Darf ich diesen Rock anprobieren", "Kann ich den Rock anprobieren"],
           hint: [
-            tr("İki seçenek de nesne olduğu için ikisi de belirtme hâline girer:"),
-            de("Ich nehme entweder den Rock oder den Anzug."),
+            tr("Kip fiili başta olunca soru oluyor ve ayrılabilen fiil sonda bölünmeden duruyor:"),
+            de("Kann ich diesen Rock anprobieren?"),
             tr("Tekrar dene."),
           ],
         },
@@ -797,13 +800,14 @@ export const deA2B06: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Kareli bir gömlek istiyorum.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bu pantolonun çizgilisi de var mı?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich möchte ein kariertes Hemd",
+          target: "Haben Sie die Hose auch gestreift",
+          accept: ["Haben Sie diese Hose auch gestreift", "Gibt es die Hose auch gestreift", "Gibt es diese Hose auch gestreift"],
           hint: [
-            tr("Nötr bir isimde sıfat iki harfle biter:"),
-            de("Ich möchte ein kariertes Hemd."),
+            tr("Sıfat ismin önünde değil, o yüzden hiç ek almıyor:"),
+            de("Haben Sie die Hose auch gestreift?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1183,13 +1187,16 @@ export const deA2B06: Conversation[] = [
         expect: { kind: "repeat", target: "Im Karton waren zwei zerbrochene Teller" },
       },
       {
-        say: [tr("Sıra sende: 'Halı çoktan yıpranmış.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Lamba kırık geldi.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Der Teppich ist schon abgenutzt",
+          target: "Die Lampe ist zerbrochen angekommen",
+          accept: ["Die Lampe ist kaputt angekommen"],
           hint: [
-            tr("Ortaçtan gelen sıfat yüklem olarak kullanıldığında hiç ek almaz:"),
-            de("Der Teppich ist schon abgenutzt."),
+            tr("Gelmek yer değiştirmeyi anlatır, o yüzden yardımcı fiil"),
+            de("sein"),
+            tr("olur; durum bildiren ortaç ek almaz:"),
+            de("Die Lampe ist zerbrochen angekommen."),
             tr("Tekrar dene."),
           ],
         },
@@ -1204,13 +1211,14 @@ export const deA2B06: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Fişsiz iade mümkün mü?' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Lambayı iade etmek istiyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ist die Rückgabe ohne Kassenzettel möglich",
+          target: "Ich möchte die Lampe zurückgeben",
+          accept: ["Ich möchte diese Lampe zurückgeben"],
           hint: [
-            tr("Fiil başta olduğu için cümle soru olur ve edat belirtme hâlini getirir:"),
-            de("Ist die Rückgabe ohne Kassenzettel möglich?"),
+            tr("Ayrılabilen fiil kibar istek biçimiyle birlikte sonda ve bölünmeden duruyor:"),
+            de("Ich möchte die Lampe zurückgeben."),
             tr("Tekrar dene."),
           ],
         },
@@ -1386,13 +1394,18 @@ export const deA2B06: Conversation[] = [
         expect: { kind: "repeat", target: "Die Stromrechnung ist dieses Jahr sehr hoch" },
       },
       {
-        say: [tr("Sıra sende: 'Kullanıcı adımı unuttum.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bu akıllı telefon ötekinden daha pahalı.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich habe meinen Benutzernamen vergessen",
+          target: "Dieses Smartphone ist teurer als das andere",
+          accept: ["Dieses Handy ist teurer als das andere"],
           hint: [
-            tr("Bu eril isim belirtme hâlinde sonuna bir harf alır:"),
-            de("Ich habe meinen Benutzernamen vergessen."),
+            tr("Pahalı anlamındaki"),
+            de("teuer"),
+            tr("karşılaştırmada bir sesli harfini kaybeder ve"),
+            de("teurer"),
+            tr("olur; karşılaştırma kelimesi iki tarafın arasına girer:"),
+            de("Dieses Smartphone ist teurer als das andere."),
             tr("Tekrar dene."),
           ],
         },
@@ -1585,13 +1598,14 @@ export const deA2B06: Conversation[] = [
         expect: { kind: "repeat", target: "Mein Konto ist bei der Sparkasse" },
       },
       {
-        say: [tr("Sıra sende: 'Yeni bir bisiklet için para biriktiriyorum.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Kredi için başvurmak istiyorum.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich spare für ein neues Fahrrad",
+          target: "Ich möchte einen Kredit beantragen",
+          accept: ["Ich möchte gern einen Kredit beantragen"],
           hint: [
-            tr("Amaç bildiren edat belirtme hâlini getirir ve sıfat da ona göre ek alır:"),
-            de("Ich spare für ein neues Fahrrad."),
+            tr("Kibar istek biçimi ikinci sırada, asıl fiil sonda:"),
+            de("Ich möchte einen Kredit beantragen."),
             tr("Tekrar dene."),
           ],
         },
@@ -1606,13 +1620,16 @@ export const deA2B06: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Kitaplara çok para harcıyorum.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Kredinin faizi ne kadar?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich gebe viel Geld für Bücher aus",
+          target: "Wie hoch sind die Zinsen für den Kredit",
+          accept: ["Wie hoch sind die Zinsen"],
           hint: [
-            tr("Ayrılabilen fiilin ön eki cümlenin sonuna düşer:"),
-            de("Ich gebe viel Geld für Bücher aus."),
+            tr("Faiz gibi tutarlar"),
+            de("wie hoch"),
+            tr("ile sorulur; faiz Almancada çoğul kullanılır:"),
+            de("Wie hoch sind die Zinsen für den Kredit?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1786,13 +1803,18 @@ export const deA2B06: Conversation[] = [
         expect: { kind: "repeat", target: "Das Porto für den Brief kostet einen Euro" },
       },
       {
-        say: [tr("Sıra sende: 'İki yüz gram peynire ihtiyacım var.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Hangi zarf en ucuz?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich brauche zweihundert Gramm Käse",
+          target: "Welcher Umschlag ist am billigsten",
+          accept: ["Welcher Umschlag ist am günstigsten"],
           hint: [
-            tr("Ağırlık birimi sayıdan sonra tekil kalır ve ardından gelen isim artikelsiz durur:"),
-            de("Ich brauche zweihundert Gramm Käse."),
+            tr("En üstünlük biçimi"),
+            de("am"),
+            tr("ile kurulur ve ucuz sıfatı"),
+            de("billigsten"),
+            tr("olur:"),
+            de("Welcher Umschlag ist am billigsten?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1805,13 +1827,14 @@ export const deA2B06: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Formu hemen gönderiyorum.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bu mektup ne kadar ağır?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich schicke das Formular gleich ab",
+          target: "Wie viel wiegt dieser Brief",
+          accept: ["Wie schwer ist dieser Brief", "Wie viel wiegt der Brief"],
           hint: [
-            tr("Ayrılabilen fiilin ön eki cümlenin sonuna düşer:"),
-            de("Ich schicke das Formular gleich ab."),
+            tr("Ağırlık sorusu iki kelimelik soru kalıbıyla başlıyor ve fiil hemen arkasında:"),
+            de("Wie viel wiegt dieser Brief?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1986,13 +2009,14 @@ export const deA2B06: Conversation[] = [
         expect: { kind: "repeat", target: "Diesen Hut habe ich auf dem Flohmarkt gekauft" },
       },
       {
-        say: [tr("Sıra sende: 'Biz ikinci el bir çamaşır makinesi aldık.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Tabure biraz daha ucuza olur mu?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Wir haben eine gebrauchte Waschmaschine gekauft",
+          target: "Geht der Hocker auch etwas billiger",
+          accept: ["Geht der Hocker auch billiger", "Geht es mit dem Hocker auch etwas billiger", "Geht der Hocker auch etwas günstiger"],
           hint: [
-            tr("Dişil bir isimde belirsiz artikelden sonra sıfat sonuna bir harf alır:"),
-            de("Wir haben eine gebrauchte Waschmaschine gekauft."),
+            tr("Pazarlık fiille başlayan bir soruyla açılır, sonda ucuz sıfatının karşılaştırma biçimi durur:"),
+            de("Geht der Hocker auch etwas billiger?"),
             tr("Tekrar dene."),
           ],
         },
@@ -2005,13 +2029,14 @@ export const deA2B06: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Yılda bir kez dolabı ayıklıyorum.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bu kitapları tek tek de satıyor musunuz?' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Einmal im Jahr miste ich den Kleiderschrank aus",
+          target: "Verkaufen Sie die Bücher auch einzeln",
+          accept: ["Verkaufen Sie diese Bücher auch einzeln"],
           hint: [
-            tr("Zaman ifadesi başta olunca özne fiilin arkasına düşer ve ayrılabilen ön ek sona gider:"),
-            de("Einmal im Jahr miste ich den Kleiderschrank aus."),
+            tr("Fiil başta olunca cümle soru oluyor ve hitap zamiri onun arkasında:"),
+            de("Verkaufen Sie die Bücher auch einzeln?"),
             tr("Tekrar dene."),
           ],
         },

@@ -500,7 +500,7 @@ export const deB2B03: Conversation[] = [
       word("Son", { de: "festziehen", tr: "sıkmak" }),
       { say: [tr("Kalıbımız:"), de("Die Dichtungen sind auszutauschen."), tr("Yani 'contaların değiştirilmesi gerekiyor'. Çoğulda sind.")] },
       { say: [tr("Tekrar et:"), de("Die Dichtungen sind auszutauschen")], expect: repeat("Die Dichtungen sind auszutauschen") },
-      { say: [tr("Sıra sende: 'Araç hâlâ sürülebilir.'")], expect: produce("Das Fahrzeug lässt sich noch fahren", [tr("İmkân lassen artı sich ile; mastar sonda:"), de("Das Fahrzeug lässt sich noch fahren."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Vidaların sıkılması gerekiyor.'")], expect: produce("Die Schrauben sind festzuziehen", [tr("sein artı zu ile mastar; ayrılabilen fiilde zu ortaya girer:"), de("Die Schrauben sind festzuziehen."), tr("Tekrar dene.")], ["Die Schrauben sind nachzuziehen"]) },
       { say: [tr("Şimdi: 'Aşınma açıkça görülüyor.'")], expect: produce("Der Verschleiß ist deutlich sichtbar", [tr("Sıfat biçimi; sein ile:"), de("Der Verschleiß ist deutlich sichtbar."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Bakımın zamanı geldi.'")], expect: produce("Die Wartung ist fällig", [tr("Kısa hüküm cümlesi:"), de("Die Wartung ist fällig."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Die Dichtungen sind auszutauschen."), tr("cümlesi doğru mu?")], expect: truefalse("Die Dichtungen sind auszutauschen.", true, [tr("Doğru. Çoğul özne sind alıyor ve sein artı zu yapısı zorunluluğu kişisiz söylüyor.")]) },

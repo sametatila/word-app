@@ -68,7 +68,6 @@
  { "tr": "Şimdi ne istediğini söyleyelim.", "kind": "say.tr", "de": "Jetzt sagen wir, was du möchtest." },
  { "tr": "Şimdi ofiste memurla konuşalım.", "kind": "say.tr", "de": "Jetzt sprechen wir im Amt mit dem Beamten." },
  { "tr": "Şimdi sabah rutinini konuşalım.", "kind": "say.tr", "de": "Jetzt sprechen wir über deinen Morgenablauf." },
- { "tr": "Şimdi sen kur: Anahtarım bozuk.", "kind": "say.tr", "de": "Jetzt bildest du: Mein Schlüssel ist kaputt." },
  { "tr": "Şimdi sen söyle: \"Yemek hazır.\"", "kind": "say.tr", "de": "Jetzt sag du: „Das Essen ist fertig.“" },
  { "tr": "Şimdi şu cümleyi benimle söyle:", "kind": "say.tr", "de": "Jetzt sag diesen Satz mit mir:" },
  { "tr": "Şimdi tam bir tarif gibi dinle:", "kind": "say.tr", "de": "Jetzt hör es wie ein richtiges Rezept:" },

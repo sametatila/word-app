@@ -391,7 +391,7 @@ export const deB1B08: Conversation[] = [
       word("Son", { de: "die Sucht", tr: "bağımlılık" }),
       { say: [tr("Kalıbımız:"), de("Ich mache mir Sorgen um …"), tr("Dönüşlü zamir yönelme hâlinde, edat ise belirtme istiyor.")] },
       { say: [tr("Örnek:"), de("Ich mache mir seit Wochen Sorgen um meine Mutter."), tr("Tekrar et:"), de("Ich mache mir seit Wochen Sorgen um meine Mutter")], expect: repeat("Ich mache mir seit Wochen Sorgen um meine Mutter") },
-      { say: [tr("Sıra sende: 'Bu durum bana çok ağır geliyor.'")], expect: produce("Diese Situation ist sehr belastend für mich", [tr("Sıfat yüklemde, edat öbeği en sonda:"), de("Diese Situation ist sehr belastend für mich."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Sağlığım için endişeleniyorum.'")], expect: produce("Ich mache mir Sorgen um meine Gesundheit", [tr("Dönüşlü zamir yönelme hâlinde, edat belirtme hâli istiyor:"), de("Ich mache mir Sorgen um meine Gesundheit."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Kız kardeşime içimi döktüm.'")], expect: produce("Ich habe mich meiner Schwester anvertraut", [tr("Bu fiil yönelme ister ve dönüşlüdür; ortaç en sonda:"), de("Ich habe mich meiner Schwester anvertraut."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Konuşmak beni rahatlattı.'")], expect: produce("Das Gespräch hat mich entlastet", [tr("Yardımcı fiil ikinci sırada, ortaç sonda:"), de("Das Gespräch hat mich entlastet."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Ich mache mir Sorgen um meinen Vater."), tr("cümlesi doğru mu?")], expect: truefalse("Ich mache mir Sorgen um meinen Vater.", true, [tr("Doğru. Dönüşlü zamir yönelme hâlinde, edattan sonraki nesne belirtme hâlinde.")]) },

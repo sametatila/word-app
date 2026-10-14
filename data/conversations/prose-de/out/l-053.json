@@ -141,7 +141,6 @@
  { "tr": "Sıra sende. \"Kahve içmiyorum\" cümlesini İngilizce kur.", "kind": "say.tr", "de": "Du bist dran. Bilde „Ich trinke keinen Kaffee“ auf Englisch." },
  { "tr": "Sıra sende. Şunu söyle: Ondan sonra anahtarları aldık.", "kind": "say.tr", "de": "Du bist dran. Sag das: Danach haben wir die Schlüssel bekommen." },
  { "tr": "Son alıştırma. Şunu kur: Bir sonraki durakta iniyorum.", "kind": "say.tr", "de": "Letzte Übung. Bilde das: Ich steige an der nächsten Haltestelle aus." },
- { "tr": "Son bir cümle kuralım. İpucu: Kartımı çoktan yükledim.", "kind": "say.tr", "de": "Bilden wir einen letzten Satz. Tipp: Ich habe die Karte schon aufgeladen." },
  { "tr": "Son bir cümle kurmanı istiyorum. Şunu İngilizce söyle:", "kind": "say.tr", "de": "Ich möchte einen letzten Satz von dir. Sag das auf Englisch:" },
  { "tr": "soru kelimesinin hemen arkasında, kişi ondan sonra ve", "kind": "say.tr", "de": "steht direkt hinter dem Fragewort, die Person danach, und" },
  { "tr": "Soru sorarken 'is' cümlenin başına geçiyor. Düz cümle:", "kind": "say.tr", "de": "In der Frage rückt „is“ an den Satzanfang. Aussagesatz:" }

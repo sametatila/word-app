@@ -1470,13 +1470,14 @@ export const deA2B01: Conversation[] = [
         expect: { kind: "repeat", target: "Früher war alles altmodisch" },
       },
       {
-        say: [tr("Sıra sende: 'Bugün her şey modern.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Eskiden sokaklar sessizdi.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Heute ist alles modern",
+          target: "Früher waren die Straßen ruhig",
+          accept: ["Die Straßen waren früher ruhig"],
           hint: [
-            tr("Şimdiki hâl için olmak fiilinin bugünkü biçimi kullanılır:"),
-            de("Heute ist alles modern."),
+            tr("Geçmiş, olmak fiilinin kısa biçimiyle söylenir; zaman kelimesi başta olunca özne fiilin arkasına düşüyor:"),
+            de("Früher waren die Straßen ruhig."),
             tr("Tekrar dene."),
           ],
         },
@@ -1698,14 +1699,14 @@ export const deA2B01: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Ehliyetimi aldım.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bu heyecan verici bir deneyimdi.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich habe den Führerschein gemacht",
-          accept: ["Ich habe meinen Führerschein gemacht"],
+          target: "Das war eine aufregende Erfahrung",
+          accept: ["Es war eine aufregende Erfahrung"],
           hint: [
-            tr("Almancada ehliyet için 'yapmak' fiili kullanılır ve nesne belirtme hâline girer:"),
-            de("Ich habe den Führerschein gemacht."),
+            tr("Sıfat dişil ismin önünde duruyor ve sonuna bir harf alıyor:"),
+            de("Das war eine aufregende Erfahrung."),
             tr("Tekrar dene."),
           ],
         },

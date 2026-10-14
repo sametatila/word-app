@@ -847,13 +847,14 @@ export const deA1B08: Conversation[] = [
         expect: { kind: "repeat", target: "Ich spiele Gitarre" },
       },
       {
-        say: [tr("Şimdi sen söyle: 'Severek konsere giderim.'")],
+        say: [tr("Şimdi sen söyle: 'Piyano çalıyorum.'")],
         expect: {
           kind: "produce",
-          target: "Ich gehe gern ins Konzert",
+          target: "Ich spiele Klavier",
+          accept: ["Ich spiele Piano"],
           hint: [
-            tr("Önce sen ve fiil, sonra severek yapmayı anlatan kelime, en sonda gidilen yer:"),
-            de("Ich gehe gern ins Konzert."),
+            tr("Enstrümanın önüne artikel gelmez, adını doğrudan söylersin:"),
+            de("Ich spiele Klavier."),
             tr("Tekrar dene."),
           ],
         },

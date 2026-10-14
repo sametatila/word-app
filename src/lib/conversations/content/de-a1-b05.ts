@@ -1378,15 +1378,14 @@ export const deA1B05: Conversation[] = [
         expect: { kind: "repeat", target: "Nein, leider nicht" },
       },
       {
-        say: [tr("Bir tane daha: 'Bu fazla bol.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Ayakkabıları iade etmek istiyorum.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Das ist zu weit",
+          target: "Ich möchte die Schuhe zurückgeben",
+          accept: ["Ich will die Schuhe zurückgeben"],
           hint: [
-            tr("Ölçü sıfatının önüne"),
-            de("zu"),
-            tr("gelince 'fazla' anlamı çıkıyor:"),
-            de("Das ist zu weit."),
+            tr("İki fiil olduğunda ikincisi mastar hâliyle en sona gider:"),
+            de("Ich möchte die Schuhe zurückgeben."),
             tr("Tekrar dene."),
           ],
         },

@@ -441,7 +441,7 @@ export const deC1B02: Conversation[] = [
       word("Yedinci", { de: "hingegen", tr: "buna karşılık" }),
       word("Son", { de: "die Sackgasse", tr: "çıkmaz" }),
       { say: [tr("Örnek:"), de("Sagen Sie mal, wie lange sind Sie schon hier?"), tr("Tekrar et:"), de("Sagen Sie mal, wie lange sind Sie schon hier")], expect: repeat("Sagen Sie mal, wie lange sind Sie schon hier") },
-      { say: [tr("Sıra sende: 'Vay canına!'")], expect: produce("Ist ja ein Ding", [tr("Öznesiz kalıp; parçacık şaşkınlığı taşır:"), de("Ist ja ein Ding!"), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Söyleyin bakalım, ev sahibini nereden tanıyorsunuz?'")], expect: produce("Sagen Sie mal, woher kennen Sie den Gastgeber", [tr("Giriş virgülle ayrılır; soru sözcüğünden hemen sonra fiil gelir:"), de("Sagen Sie mal, woher kennen Sie den Gastgeber?"), tr("Tekrar dene.")], ["Sagen Sie mal, woher kennen Sie die Gastgeberin", "Sagen Sie mal, woher kennen Sie eigentlich den Gastgeber"]) },
       { say: [tr("Şimdi bağlayıcı olmayan cevap: 'Nasıl bakarsan.'")], expect: produce("Wie man's nimmt", [tr("Kısaltılmış kalıp; günlük dilde böyle söylenir:"), de("Wie man's nimmt."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Bunun üzerinden devam edebilirim.'")], expect: produce("Daran kann ich anknüpfen", [tr("Edat zamirle kaynaşır; ayrılabilen mastar sonda:"), de("Daran kann ich anknüpfen."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Sagen Sie mal, wie lange Sie sind schon hier?"), tr("cümlesi doğru mu?")], expect: truefalse("Sagen Sie mal, wie lange Sie sind schon hier?", false, [tr("Doğrudan soruda çekimli fiil soru kelimesinden hemen sonra gelir:"), de("Sagen Sie mal, wie lange sind Sie schon hier?")]) },

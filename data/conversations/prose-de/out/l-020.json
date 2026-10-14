@@ -70,7 +70,6 @@
  { "tr": "Ne kadar için", "kind": "hint.tr", "de": "Für wie viel" },
  { "tr": "sonra açılır:", "kind": "hint.tr", "de": "dann öffnet:" },
  { "tr": "sonra sebebi:", "kind": "hint.tr", "de": "dann der Grund:" },
- { "tr": "yani 'sonra':", "kind": "hint.tr", "de": "also „dann“:" },
  { "tr": ", 'bir dakika'", "kind": "hint.tr", "de": ", „eine Minute“" },
  { "tr": ", ikinci cümle", "kind": "hint.tr", "de": ", zweiter Satz" },
  { "tr": "'bu dizi' için", "kind": "hint.tr", "de": "für „diese Serie“" },
@@ -101,7 +100,6 @@
  { "tr": "Ben öğrenciyim.", "kind": "hint.tr", "de": "Ich bin Student." },
  { "tr": "Diş fırçalamak:", "kind": "hint.tr", "de": "Zähne putzen:" },
  { "tr": "edatını kullan.", "kind": "hint.tr", "de": "als Präposition verwenden." },
- { "tr": "İki emir, arada", "kind": "hint.tr", "de": "Zwei Befehle, dazwischen" },
  { "tr": "ile başla, sonu", "kind": "hint.tr", "de": "damit beginnen, am Ende steht" },
  { "tr": "Kaç tablet için", "kind": "hint.tr", "de": "Für wie viele Tabletten" },
  { "tr": "kahve: a coffee", "kind": "hint.tr", "de": "Kaffee: a coffee" },
@@ -146,7 +144,6 @@
  { "tr": "'gelemiyorum' için", "kind": "hint.tr", "de": "für „ich kann nicht kommen“" },
  { "tr": "\"nasıl\" demek olan", "kind": "hint.tr", "de": "das Wort für „wie“" },
  { "tr": "Bu kahve daha iyi.", "kind": "hint.tr", "de": "Dieser Kaffee ist besser." },
- { "tr": "Hangisi daha ucuz?", "kind": "hint.tr", "de": "Welcher ist billiger?" },
  { "tr": "I'd like ile başla", "kind": "hint.tr", "de": "Beginne mit I'd like" },
  { "tr": "Ne kadar: How much", "kind": "hint.tr", "de": "Wie viel: How much" },
  { "tr": "Olumsuz başlangıç:", "kind": "hint.tr", "de": "Verneinter Anfang:" }

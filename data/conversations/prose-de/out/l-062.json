@@ -118,7 +118,6 @@
  { "tr": "derler. Yani iki kelime birleşip tek kelime olur. Bunlara kısaltma diyoruz.", "kind": "say.tr", "de": "sagen sie. Zwei Wörter werden eins. Das nennen wir Kurzform." },
  { "tr": "dersin. Sonra fiil gelir. Yani \"Ben Türkçe konuşuyorum\" cümlesi şöyle olur:", "kind": "say.tr", "de": "sagst du. Dann kommt das Verb. Also lautet „Ich spreche Türkisch“ so:" },
  { "tr": "geri dönmek demek. Bir mağazada ise aldığın şeyi iade etmek anlamına gelir.", "kind": "say.tr", "de": "heißt zurückkommen. Im Laden heißt es, das Gekaufte zurückzugeben." },
- { "tr": "Hadi sen kur. Perşembe müsait mi diye sormak istiyorsun. Kısa hâlini söyle.", "kind": "say.tr", "de": "Los, bilde du den Satz. Du willst fragen, ob Donnerstag frei ist. Sag die kurze Form." },
  { "tr": "ise ayrı bir hece alır. Şimdilik bu kadarı yeter, kulağın zamanla alışacak.", "kind": "say.tr", "de": "bekommt dagegen eine eigene Silbe. Das reicht fürs Erste, dein Ohr gewöhnt sich." },
  { "tr": "Konuşmayı bitirirken yeni saati mutlaka tekrarla, yanlış anlaşılma olmasın:", "kind": "say.tr", "de": "Wiederhole am Ende unbedingt die neue Uhrzeit, damit nichts schiefgeht:" },
  { "tr": "Kural basit: müşteriye ve yeni kişilere 'Dear', tanıdık iş arkadaşına 'Hi'.", "kind": "say.tr", "de": "Die Regel ist einfach: Kundschaft und Fremde „Dear“, bekannte Kollegen „Hi“." },

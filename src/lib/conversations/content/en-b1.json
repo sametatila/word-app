@@ -18178,24 +18178,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Onun parasını çoktan ödemiştim."
+      "text": "Şimdi sen kur: Sonra karışıklığı hallettim."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I had already paid for it.",
+     "target": "Then I sorted out the confusion.",
      "accept": [
-      "I had already paid for it before that.",
-      "I had paid for it already."
+      "Then I sorted the confusion out.",
+      "Then I cleared up the confusion."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Önce olan olay geriye gidiyor:"
+       "text": "Sonra olan olay normal geçmişte kalır:"
       },
       {
        "lang": "en",
-       "text": "I had already paid for it."
+       "text": "Then I sorted out the confusion."
       },
       {
        "lang": "tr",
@@ -22346,24 +22346,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Altıdan önce gişeyi kapatmışlardı."
+      "text": "Şimdi sen kur: Sonra beni gişeye çağırdılar."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "They had closed the counter before six.",
+     "target": "Then they called me to the counter.",
      "accept": [
-      "They had shut the counter before six.",
-      "They had closed the counter before six o'clock."
+      "Then they called me up to the counter.",
+      "Then they asked me to come to the counter."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Önce olan olay geriye gidiyor:"
+       "text": "Sonra olan olay normal geçmişte kalır:"
       },
       {
        "lang": "en",
-       "text": "They had closed the counter before six."
+       "text": "Then they called me to the counter."
       },
       {
        "lang": "tr",
@@ -25538,24 +25538,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Aynı hatayı iki kez yapmıştım."
+      "text": "Şimdi sen kur: Sonra hatamı kabul ettim."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I had made the same mistake twice.",
+     "target": "Then I admitted my mistake.",
      "accept": [
-      "I had made that mistake twice.",
-      "I had made the same error twice."
+      "Then I admitted the mistake.",
+      "Then I admitted my error."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Önce olan olay geriye gidiyor:"
+       "text": "Sonra olan olay normal geçmişte kalır:"
       },
       {
        "lang": "en",
-       "text": "I had made the same mistake twice."
+       "text": "Then I admitted my mistake."
       },
       {
        "lang": "tr",
@@ -26909,24 +26909,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Sertifika e-postayla gönderiliyor."
+      "text": "Şimdi sen kur: Modül bir kodla açılabilir."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The certificate is sent by email.",
+     "target": "The module can be opened with a code.",
      "accept": [
-      "The certificate is sent by e-mail.",
-      "The certificate is sent to you by email."
+      "The module can be unlocked with a code.",
+      "This module can be opened with a code."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Edilgen ve araç bildiren tümleç:"
+       "text": "Yapılabilen iş edilgende can be ile kurulur:"
       },
       {
        "lang": "en",
-       "text": "The certificate is sent by email."
+       "text": "The module can be opened with a code."
       },
       {
        "lang": "tr",
@@ -46047,7 +46047,7 @@
      },
      {
       "lang": "tr",
-      "text": "Kieran bir arkadaş saygıyı hak eder."
+      "text": "Sadık bir arkadaş saygıyı hak eder."
      }
     ],
     "expect": {

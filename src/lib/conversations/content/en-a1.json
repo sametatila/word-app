@@ -584,54 +584,29 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi hepsini birleştiriyoruz. Adın Charlie, Türkiyelisin. Selam ver, adını söyle ve nereli olduğunu ekle."
+      "text": "Şimdi hepsini birleştiriyoruz. Adın Charlie ve İzmir'de yaşıyorsun. Selam ver, adını söyle ve nerede yaşadığını ekle."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Hello, my name is Charlie. I'm from Türkiye.",
+     "target": "Hello, my name is Charlie. I live in Izmir.",
      "accept": [
-      "Hello, my name is Charlie. I'm from Turkey.",
-      "Hello, I'm Charlie. I'm from Turkey.",
-      "Hi, my name is Charlie. I'm from Turkey.",
-      "Hello, my name is Charlie. I am from Turkey.",
-      "Hi, I'm Charlie. I'm from Turkey.",
-      "Hi, I am Charlie. I am from Turkey.",
-      "Hello, I am Charlie. I am from Turkey.",
-      "Hi, my name is Charlie. I am from Turkey."
+      "Hi, my name is Charlie. I live in Izmir.",
+      "Hello, I'm Charlie. I live in Izmir.",
+      "Hi, I'm Charlie. I live in Izmir.",
+      "Hello, I am Charlie. I live in Izmir.",
+      "Hi, I am Charlie. I live in Izmir.",
+      "Hello, my name's Charlie. I live in Izmir.",
+      "Hello, my name is Charlie. I live in İzmir."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Önce"
+       "text": "Nerede yaşadığını söylerken from değil, in kullan:"
       },
       {
        "lang": "en",
-       "text": "Hello"
-      },
-      {
-       "lang": "tr",
-       "text": ", sonra"
-      },
-      {
-       "lang": "en",
-       "text": "my name is Charlie"
-      },
-      {
-       "lang": "tr",
-       "text": ", en son"
-      },
-      {
-       "lang": "en",
-       "text": "I'm from Türkiye"
-      },
-      {
-       "lang": "tr",
-       "text": "."
-      },
-      {
-       "lang": "en",
-       "text": "Hello, my name is Charlie. I'm from Türkiye."
+       "text": "Hello, my name is Charlie. I live in Izmir."
       },
       {
        "lang": "tr",
@@ -7571,24 +7546,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende. Bir kız kardeşim var, İngilizce nasıl dersin?"
+      "text": "Şimdi sıra sende. Bir erkekten bahsediyorsun: onun iki kızı var. İngilizce nasıl dersin?"
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I've got a sister.",
+     "target": "He's got two daughters.",
      "accept": [
-      "I have got a sister.",
-      "I have a sister."
+      "He has got two daughters.",
+      "He has two daughters."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "I've got ile başla, sonra a sister ekle."
+       "text": "Erkek için he kullan; he ile have değil has gelir:"
       },
       {
        "lang": "en",
-       "text": "I've got a sister."
+       "text": "He's got two daughters."
       },
       {
        "lang": "tr",
@@ -13251,29 +13226,31 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir cümle kuralım. Bu sefer kahve istiyorsun ve 'alayım' kalıbını kullan."
+      "text": "Son bir cümle kuralım. Garson başka bir şey isteyip istemediğini soruyor, senin siparişin tamam."
      },
      {
       "lang": "tr",
-      "text": "Bir kahve alayım, lütfen."
+      "text": "Hayır, teşekkürler. Hepsi bu."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I'll have a coffee, please.",
+     "target": "No, thank you. That's all.",
      "accept": [
-      "I will have a coffee, please.",
-      "I'd like a coffee, please.",
-      "I would like a coffee, please."
+      "No, thanks. That's all.",
+      "No, thank you. That's it.",
+      "No, thank you. That is all.",
+      "No, thank you, that's all.",
+      "No, thanks, that's all."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "'Alayım' için 'I'll have' kullan, sonra 'a coffee, please'."
+       "text": "Önce teşekkür ederek kibarca hayır de, sonra hepsi bu de:"
       },
       {
        "lang": "en",
-       "text": "I'll have a coffee, please."
+       "text": "No, thank you. That's all."
       },
       {
        "lang": "tr",
@@ -14527,24 +14504,26 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son alıştırma. Kasada çantan yok, bir poşet istiyorsun. Kibarca sor bakalım."
+      "text": "Son alıştırma. Büfede bir gazete beğendin ve almaya karar verdin. Satıcıya 'Gazeteyi alıyorum' de."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Can I have a bag, please?",
+     "target": "I'll take the newspaper.",
      "accept": [
-      "Could I have a bag, please?",
-      "Can I get a bag, please?"
+      "I will take the newspaper.",
+      "I'll take this newspaper.",
+      "I will take this newspaper.",
+      "I'll take the newspaper, please."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Can I have + a bag + please."
+       "text": "Almaya karar verince take fiilinin önüne I'll koy:"
       },
       {
        "lang": "en",
-       "text": "Can I have a bag, please?"
+       "text": "I'll take the newspaper."
       },
       {
        "lang": "tr",
@@ -21024,32 +21003,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir cümle senden. 'Bugün cuma' de."
+      "text": "Son bir cümle senden. 'Sabahleyin çay içerim' de."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Today is Friday.",
+     "target": "I drink tea in the morning.",
      "accept": [
-      "It is Friday today.",
-      "It's Friday today."
+      "In the morning I drink tea.",
+      "In the morning, I drink tea."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Bugün:"
+       "text": "Günün bölümlerinden önce in ve the gelir:"
       },
       {
        "lang": "en",
-       "text": "today"
-      },
-      {
-       "lang": "tr",
-       "text": "Burada edat yok, sadece is ile bağla."
-      },
-      {
-       "lang": "en",
-       "text": "Today is Friday."
+       "text": "I drink tea in the morning."
       },
       {
        "lang": "tr",
@@ -32579,32 +32550,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir meydan okuma: iki tarifi birleştir. 'Dümdüz git, sonra sola dön.' nasıl dersin?"
+      "text": "Son alıştırma. Bankayı arıyorsun. Yoldan geçen birine kibarca 'Affedersiniz, banka nerede?' diye sor."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Go straight, then turn left",
+     "target": "Excuse me, where is the bank?",
      "accept": [
-      "Go straight and turn left",
-      "Go straight and then turn left"
+      "Excuse me, where's the bank?",
+      "Excuse me, where is the bank, please?"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "İki emir, arada"
+       "text": "Önce kibar girişi söyle, sonra where is ve aradığın yer:"
       },
       {
        "lang": "en",
-       "text": "then"
-      },
-      {
-       "lang": "tr",
-       "text": "yani 'sonra':"
-      },
-      {
-       "lang": "en",
-       "text": "Go straight, then turn left."
+       "text": "Excuse me, where is the bank?"
       },
       {
        "lang": "tr",
@@ -34161,23 +34124,25 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi en önemli cümleyi sen kur. Tren gecikiyor, yani tren rötarlı, cümlesini İngilizce söyle."
+      "text": "Sıra sende. İstasyondasın ve yolculuğun ne kadar süreceğini öğrenmek istiyorsun. 'Yolculuk ne kadar sürüyor?' diye sor."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The train is running late.",
+     "target": "How long is the trip?",
      "accept": [
-      "The train is late."
+      "How long does the trip take?",
+      "How long is the journey?",
+      "How long is the ride?"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "The train ile başla, sonra is, sonra running late."
+       "text": "Süre sorarken how long ile başla, ardından is gelir:"
       },
       {
        "lang": "en",
-       "text": "The train is running late."
+       "text": "How long is the trip?"
       },
       {
        "lang": "tr",
@@ -34950,23 +34915,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir cümle daha. Şoföre sor: Uzak mı?"
+      "text": "Son bir cümle daha. Şoföre söyle: Lütfen meydanda dur."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Is it far?",
+     "target": "Please stop at the square.",
      "accept": [
-      "Is it far from here?"
+      "Stop at the square, please.",
+      "Please stop at this square."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Is ile başla, sonra it, sonra far."
+       "text": "Kibar bir ricada please başa gelir, sonra stop ve yer:"
       },
       {
        "lang": "en",
-       "text": "Is it far?"
+       "text": "Please stop at the square."
       },
       {
        "lang": "tr",
@@ -36685,25 +36651,27 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sıra sende. Bu sefer aradığın yer otel, yani hotel. Bulamadığını söyle."
+      "text": "Sıra sende. Otelinin yolunu bilmiyorsun. Birine 'Bana otelin yolunu gösterebilir misiniz?' diye sor."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I can't find my hotel.",
+     "target": "Can you show me the way to the hotel?",
      "accept": [
-      "I cannot find my hotel",
-      "I can't find the hotel.",
-      "I cannot find the hotel."
+      "Could you show me the way to the hotel?",
+      "Can you show me the way to my hotel?",
+      "Could you show me the way to my hotel?",
+      "Can you show me the way to the hotel, please?",
+      "Could you show me the way to the hotel, please?"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "I can't find ile başla, sonuna my hotel koy:"
+       "text": "Yolu sorarken way kelimesinden sonra to gelir, onu unutma:"
       },
       {
        "lang": "en",
-       "text": "I can't find my hotel."
+       "text": "Can you show me the way to the hotel?"
       },
       {
        "lang": "tr",
@@ -44071,32 +44039,27 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Anahtarım bozuk."
+      "text": "Şimdi sen kur. Yazıcı bozuldu. Birine 'Yazıcıyı tamir edebilir misin?' diye sor."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "My key is broken.",
+     "target": "Can you fix the printer?",
      "accept": [
-      "The key is broken.",
-      "My key's broken."
+      "Can you fix the printer, please?",
+      "Could you fix the printer?",
+      "Could you fix the printer, please?",
+      "Can you fix this printer?",
+      "Can you repair the printer?"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Benim anahtarım için"
+       "text": "Rica ederken can you ile başla, sonra fix ve bozuk olan şey:"
       },
       {
        "lang": "en",
-       "text": "my key"
-      },
-      {
-       "lang": "tr",
-       "text": "de, sonra bozuk kelimesini ekle."
-      },
-      {
-       "lang": "en",
-       "text": "My key is broken."
+       "text": "Can you fix the printer?"
       },
       {
        "lang": "tr",
@@ -50656,27 +50619,26 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir cümle daha kur: \"Birlikte bir plan yapacağız.\""
+      "text": "Bir cümle daha kur. Arkadaşına 'Sekizde buluşalım' de."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "We're going to make a plan together.",
+     "target": "Let's meet at eight.",
      "accept": [
-      "We are going to make a plan together."
+      "Let's meet at eight o'clock.",
+      "Let us meet at eight.",
+      "Lets meet at eight.",
+      "Let's meet at 8."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "We're ile başla; \"plan yapmak\" İngilizcede make a plan."
+       "text": "Öneri için let's ile başla, saatten önce at gelir:"
       },
       {
        "lang": "en",
-       "text": "We're going to make a plan ..."
-      },
-      {
-       "lang": "en",
-       "text": "We're going to make a plan together."
+       "text": "Let's meet at eight."
       },
       {
        "lang": "tr",
@@ -52412,32 +52374,27 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Deneyelim. Yarın için bir randevuya ihtiyacım var, demek istiyorsun."
+      "text": "Deneyelim. 'Yarın saat dokuzda bir randevuya ihtiyacım var' cümlesini İngilizce kur."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I need an appointment tomorrow.",
+     "target": "I need an appointment tomorrow at nine o'clock.",
      "accept": [
-      "I need an appointment for tomorrow.",
-      "I would like an appointment tomorrow."
+      "I need an appointment tomorrow at nine.",
+      "I need an appointment for tomorrow at nine o'clock.",
+      "I need an appointment for tomorrow at nine.",
+      "I would like an appointment tomorrow at nine o'clock.",
+      "I need an appointment at nine o'clock tomorrow."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Randevu kelimesinin önünde"
+       "text": "Önce gün, sonra saat gelir; tam saatte o'clock eklenir:"
       },
       {
        "lang": "en",
-       "text": "an"
-      },
-      {
-       "lang": "tr",
-       "text": "var, ve yarın en sona geliyor."
-      },
-      {
-       "lang": "en",
-       "text": "I need an appointment tomorrow."
+       "text": "I need an appointment tomorrow at nine o'clock."
       },
       {
        "lang": "tr",
@@ -52462,7 +52419,7 @@
      },
      {
       "lang": "en",
-      "text": "Tyler"
+      "text": "Can"
      },
      {
       "lang": "tr",
@@ -55140,28 +55097,23 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son alıştırma. Arkadaşın iki gündür hasta. Ona \"bir doktora görünmelisin\" de."
+      "text": "Son alıştırma. Hastasın ve ne içmen gerektiğini bilmiyorsun. Arkadaşına 'Ne içmeliyim?' diye sor."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "You should see a doctor.",
+     "target": "What should I drink?",
      "accept": [
-      "You should go to the doctor.",
-      "You should see a doctor today."
+      "What should I drink now?"
      ],
      "hint": [
       {
-       "lang": "en",
-       "text": "See a doctor"
-      },
-      {
        "lang": "tr",
-       "text": "doktora görünmek demek. Başına You should ekle."
+       "text": "Soru kelimesi başa gelir, sonra should, sonra ben ve fiilin yalın hâli:"
       },
       {
        "lang": "en",
-       "text": "You should see a doctor."
+       "text": "What should I drink?"
       },
       {
        "lang": "tr",
@@ -58713,28 +58665,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sırada sen varsın. 'Bir e-posta yazıyorum' cümlesini İngilizce kur."
+      "text": "Sırada sen varsın. 'İki sorum var' cümlesini İngilizce kur."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I'm writing an email.",
+     "target": "I have two questions.",
      "accept": [
-      "I am writing an email.",
-      "I write an email."
+      "I've got two questions.",
+      "I have 2 questions."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Önce ben, sonra yazmak, sonra e-posta."
+       "text": "Bir şeyin var demek için have kullan; iki tane olunca kelimenin sonuna s gelir:"
       },
       {
        "lang": "en",
-       "text": "I ... an email."
-      },
-      {
-       "lang": "en",
-       "text": "I'm writing an email."
+       "text": "I have two questions."
       },
       {
        "lang": "tr",
@@ -60505,26 +60453,30 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende. Şunu İngilizce kur: Dün evdeydim."
+      "text": "Şimdi sıra sende. Şunu İngilizce kur: Onlar dün evdeydi."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I was at home yesterday.",
+     "target": "They were at home yesterday.",
      "accept": [
-      "Yesterday I was at home.",
-      "I was at home.",
-      "I was home yesterday.",
-      "Yesterday I was home."
+      "Yesterday they were at home.",
+      "They were home yesterday.",
+      "Yesterday they were home.",
+      "They were at home."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Ben için was kullan, ev at home, dün yesterday."
+       "text": "They ile was değil were kullanılır:"
       },
       {
        "lang": "en",
-       "text": "I was at home yesterday."
+       "text": "They were at home yesterday."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }

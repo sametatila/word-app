@@ -65,7 +65,6 @@
  { "tr": "Peki ne kadar uzakta? İngilizcede bunu genelde süreyle söyleriz. Dinle:", "kind": "say.tr", "de": "Und wie weit ist es? Im Englischen sagt man das meist über die Dauer. Hör zu:" },
  { "tr": "Sabahleyin, öğleden sonra, akşamleyin. Sadece gece farklıdır: at night.", "kind": "say.tr", "de": "Morgens, nachmittags, abends. Nur die Nacht ist anders: at night." },
  { "tr": "Seslide \"an\", sessizde \"a\". Kulağın buna alışacak, zorlamana gerek yok.", "kind": "say.tr", "de": "Bei Vokal „an“, bei Konsonant „a“. Dein Ohr gewöhnt sich, kein Zwang." },
- { "tr": "Sıra sende. Bu sefer aradığın yer otel, yani hotel. Bulamadığını söyle.", "kind": "say.tr", "de": "Du bist dran. Diesmal suchst du das Hotel, also hotel. Sag, dass du es nicht findest." },
  { "tr": "Sıra sende. Doktorun karşısındasın ve soruyorsun: \"Kilo vermeli miyim?\"", "kind": "say.tr", "de": "Du bist dran. Du sitzt beim Arzt und fragst: „Sollte ich abnehmen?“" },
  { "tr": "Sıra sende. Şunu İngilizce kur: 'Genellikle müşterilere yardım ederim.'", "kind": "say.tr", "de": "Du bist dran. Bilde auf Englisch: „Meistens helfe ich den Kunden.“" },
  { "tr": "Son bir ayrıntı: never zaten olumsuz demektir, yanına 'don't' koymayız.", "kind": "say.tr", "de": "Noch ein Detail: never ist schon verneint, wir setzen kein „don't“ dazu." },

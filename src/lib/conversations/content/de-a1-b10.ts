@@ -1101,14 +1101,14 @@ export const deA1B10: Conversation[] = [
         expect: { kind: "repeat", target: "Hast du das gehört" },
       },
       {
-        say: [tr("Şimdi sen: 'Dün müzik dinledim.' demek için ne dersin?")],
+        say: [tr("Şimdi sen: 'Filmi gördün mü?' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Gestern habe ich Musik gehört",
-          accept: ["Ich habe gestern Musik gehört"],
+          target: "Hast du den Film gesehen",
+          accept: ["Hast du den Film schon gesehen"],
           hint: [
-            tr("Zaman başa gelirse özne yardımcı fiilin arkasına geçer:"),
-            de("Gestern habe ich Musik gehört."),
+            tr("Soruda yardımcı fiil başa geçer, geçmiş biçim yine en sonda kalır:"),
+            de("Hast du den Film gesehen?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1308,13 +1308,14 @@ export const deA1B10: Conversation[] = [
         expect: { kind: "repeat", target: "Wohin bist du gefahren" },
       },
       {
-        say: [tr("Şimdi sen: 'Evde kaldım.' demek için ne dersin?")],
+        say: [tr("Şimdi sen: 'Dün nereye gittin?' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich bin zu Hause geblieben",
+          target: "Wohin bist du gestern gefahren",
+          accept: ["Wohin bist du gestern gegangen"],
           hint: [
-            tr("Kalmak da bu kümeye girer, yani aynı yardımcı fiili alır:"),
-            de("Ich bin zu Hause geblieben."),
+            tr("Soru kelimesi başta, yardımcı fiil hemen arkasında, geçmiş biçim en sonda:"),
+            de("Wohin bist du gestern gefahren?"),
             tr("Tekrar dene."),
           ],
         },
@@ -2174,13 +2175,16 @@ export const deA1B10: Conversation[] = [
         expect: { kind: "repeat", target: "Als Nächstes möchte ich weitermachen" },
       },
       {
-        say: [tr("Şimdi sen: 'Bu bir başlangıçtı.' demek için ne dersin?")],
+        say: [tr("Şimdi sen: 'Bundan sonra bir sınava girmek istiyorum.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Das war ein Anfang",
+          target: "Als Nächstes möchte ich eine Prüfung machen",
+          accept: ["Als Nächstes will ich eine Prüfung machen"],
           hint: [
-            tr("Geçmişte bir şeyin ne olduğunu tek kelimeyle söylüyorduk:"),
-            de("Das war ein Anfang."),
+            tr("Cümlenin başında"),
+            de("Als Nächstes"),
+            tr("durduğu için çekimli fiil hemen arkasından gelir, asıl fiil en sonda kalır:"),
+            de("Als Nächstes möchte ich eine Prüfung machen."),
             tr("Tekrar dene."),
           ],
         },

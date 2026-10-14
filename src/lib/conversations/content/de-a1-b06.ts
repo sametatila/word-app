@@ -832,13 +832,13 @@ export const deA1B06: Conversation[] = [
         expect: { kind: "repeat", target: "Wann kommt der Zug" },
       },
       {
-        say: [tr("Şimdi ne kadar beklediğini söyle: 'On dakika bekliyorum.'")],
+        say: [tr("Şimdi sen sor: 'Otobüs ne zaman geliyor?'")],
         expect: {
           kind: "produce",
-          target: "Ich warte zehn Minuten",
+          target: "Wann kommt der Bus",
           hint: [
-            tr("Önce sen, sonra fiil, en sonda süre:"),
-            de("Ich warte zehn Minuten."),
+            tr("Soru kelimesi başta, fiil hemen arkasında, araç en sonda:"),
+            de("Wann kommt der Bus?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1051,13 +1051,13 @@ export const deA1B06: Conversation[] = [
         expect: { kind: "repeat", target: "Wie lange dauert es" },
       },
       {
-        say: [tr("Şimdi şoföre nerede duracağını söyle: 'Burada durun, lütfen.'")],
+        say: [tr("Şimdi sen sor: 'Yolculuk ne kadar sürüyor?'")],
         expect: {
           kind: "produce",
-          target: "Halten Sie hier, bitte",
+          target: "Wie lange dauert die Fahrt",
           hint: [
-            tr("Kibar emirde fiil başa gelir, arkasına 'siz':"),
-            de("Halten Sie hier, bitte."),
+            tr("Süre sorusu iki kelimeyle başlar, fiil hemen arkasından gelir:"),
+            de("Wie lange dauert die Fahrt?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1940,13 +1940,18 @@ export const deA1B06: Conversation[] = [
         expect: { kind: "repeat", target: "Ich fahre mit dem Fahrrad" },
       },
       {
-        say: [tr("Sıra sende: 'Bisiklet yolu nerede?'")],
+        say: [tr("Sıra sende: 'Bisikletle işe gidiyorum.'")],
         expect: {
           kind: "produce",
-          target: "Wo ist der Radweg",
+          target: "Ich fahre mit dem Fahrrad zur Arbeit",
+          accept: ["Ich fahre mit dem Rad zur Arbeit", "Mit dem Fahrrad fahre ich zur Arbeit", "Ich fahre zur Arbeit mit dem Fahrrad", "Mit dem Rad fahre ich zur Arbeit"],
           hint: [
-            tr("Soru kelimesi başta, sorduğun şey sonda:"),
-            de("Wo ist der Radweg?"),
+            tr("Bisiklet nötr bir kelime ve"),
+            de("mit"),
+            tr("kelimesinden sonra artikeli"),
+            de("dem"),
+            tr("olur:"),
+            de("Ich fahre mit dem Fahrrad zur Arbeit."),
             tr("Tekrar dene."),
           ],
         },

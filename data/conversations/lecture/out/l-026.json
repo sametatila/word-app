@@ -62,10 +62,8 @@
  { "tr": "Sıra sende: 'Basitçe söylersek şöyle işliyor.'", "en": "Your turn: 'Put simply, it works like this.'" },
  { "tr": "Sıra sende: 'Bu genç kuşağın aleyhine oluyor.'", "en": "Your turn: 'This works against the younger generation.'" },
  { "tr": "Sıra sende: 'Bu haktan yararlanmak istiyorum.'", "en": "Your turn: 'I want to make use of that right.'" },
- { "tr": "Sıra sende: 'Bu, ahşaptan yapılmış bir parça.'", "en": "Your turn: 'This is a part made of wood.'" },
  { "tr": "Sıra sende: 'Bunu ekiple mutabakata bağlarım.'", "en": "Your turn: 'I will coordinate this with the team.'" },
  { "tr": "Sıra sende: 'Çekicinizi ödünç alabilir miyim?'", "en": "Your turn: 'Could I borrow your hammer?'" },
- { "tr": "Sıra sende: 'Günlerce çalıştım.' nasıl dersin?", "en": "Your turn: how do you say 'I studied for days.'?" },
  { "tr": "Sıra sende: 'Hamburg treni ne zaman kalkıyor?'", "en": "Your turn: 'When does the Hamburg train leave?'" },
  { "tr": "Sıra sende: 'Hedefim altı ayda sınavı geçmek.'", "en": "Your turn: 'My goal is to pass the exam in six months.'" },
  { "tr": "Sıra sende: 'İlaç geçen yıl ruhsatlandırıldı.'", "en": "Your turn: 'The medicine was licensed last year.'" },
@@ -87,7 +85,6 @@
  { "tr": "Son: 'İş yorucu ama bir yandan çok şey öğreniyorum.'", "en": "Last: 'The work is tiring, but on the other hand I learn a lot.'" },
  { "tr": "Son: 'Tutanak onaydan sonra herkese iletilir.'", "en": "Last: 'The minutes go to everyone after approval.'" },
  { "tr": "Son: 'Türkçe ile Almanca akraba diller değil.'", "en": "Last: 'Turkish and German are not related languages.'" },
- { "tr": "Soru kelimesi başta, dilek kipi ikinci sırada:", "en": "The question word first, the subjunctive in second place:" },
  { "tr": "Soru sözcüğü bağlaç oluyor, fiil sona gidiyor:", "en": "The question word becomes a conjunction, the verb goes last:" },
  { "tr": "Şimdi dişil bir isimle: 'Sevdiğim dizi bitti.'", "en": "Now with a feminine noun: 'The series I love has ended.'" },
  { "tr": "Şimdi duyulan bilgiyle: 'Bir açık kalacakmış.'", "en": "Now with hearsay: 'There will apparently be a shortfall.'" },
@@ -146,6 +143,5 @@
  { "tr": "Bir tane daha: 'Yazmada epey açığımı kapattım.'", "en": "One more: 'I have closed quite a gap in writing.'" },
  { "tr": "Birlikte bir şey yaptığınızı söylemek de kolay:", "en": "Saying you do something together is easy too:" },
  { "tr": "Bu bağlaçtan sonra fiil en sona gider. Doğrusu:", "en": "After this conjunction the verb goes last. It should be:" },
- { "tr": "Bu durum bir sıfatla ve olmak fiiliyle kurulur:", "en": "This state is built with an adjective and the verb to be:" },
  { "tr": "Bu fiil yönelme hâli ister ve öneki sona gider:", "en": "This verb takes the dative and its prefix goes last:" }
 ]
