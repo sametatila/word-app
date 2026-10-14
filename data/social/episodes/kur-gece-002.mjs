@@ -11,7 +11,7 @@ const episode = {
       scene: "Komşular",
       hook: ["Komşularını Almanca anlat.", "Sırayı sen bul."],
       caption: "Komşularını anlatan iki Almanca cümleyi kur: bizi içtenlikle karşıladılar ve çok yardımseverler. Komşuların için hangisini söylersin?\n\n#almanca #almancaöğreniyorum #deutschlernen #almancacümle #komşu #almancakonuşma",
-      outro: { series: "Yeni cümleler yakında", ask: "Komşuların için hangisini söylersin?" },
+      outro: { series: "Almanca cümle alıştırmaları", ask: "Komşuların için hangisini söylersin?" },
     },
     lines: [
       sentence("herzlich", [2, 5], "haben ikinci sırada, begrüßt en sonda"),

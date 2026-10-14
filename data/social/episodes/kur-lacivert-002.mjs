@@ -12,7 +12,7 @@ const episode = {
       summary: "Buluşma için 2 cümle",
       hook: ["Buluşma mesajını", "Almanca yaz.", "Kelimeleri doğru sıraya koy."],
       caption: "Arkadaşına yazabileceğin iki Almanca buluşma mesajı: yola çıkış saatini söylemek ve zamanında geleceğini belirtmek. Buluşmaya giderken bu cümleleri sesli söyle.\n\n#almanca #almancaöğreniyorum #deutschlernen #almancacümle #almancamesaj #almancakonuşma",
-      outro: { series: "Yeni mesajlar yakında", ask: "Buluşmaya giderken bu cümleleri sesli söyle" },
+      outro: { series: "Almanca cümle alıştırmaları", ask: "Buluşmaya giderken bu cümleleri sesli söyle" },
     },
     lines: [
       sentence("losgehen", [1, 5], "losgehen ayrılır, los en sona gider"),

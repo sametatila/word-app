@@ -14,7 +14,7 @@ const episode = {
       outro: { series: "Günlük hayatta Almanca", ask: "Kaydet, fatura geldiğinde tekrar bak" },
       cardLabel: "RECHNUNG",
       summaryKicker: "Fatura gelince lazım olacak",
-      summaryTitle: "Mektuptaki 3 kelime",
+      summaryTitle: "Faturadaki 3 kelime",
     },
   }),
 };

@@ -11,7 +11,7 @@ const episode = {
       scene: "Kursta",
       hook: ["Almanca kursuna başlıyorsun.", "Bu 2 cümleyi", "sen kur."],
       caption: "Almanca kursuna başlarken kullanabileceğin iki cümle: kursa kaydolmak ve soruların olduğunu söylemek. Kursa kayıt cümlesini kurabildin mi?\n\n#almanca #almancaöğreniyorum #deutschlernen #almancakursu #almancacümle #almancakonuşma",
-      outro: { series: "Yeni cümleler yakında", ask: "Kursa kayıt cümlesini kurabildin mi?" },
+      outro: { series: "Almanca cümle alıştırmaları", ask: "Kursa kayıt cümlesini kurabildin mi?" },
     },
     lines: [
       sentence("sich anmelden", [1, 6], "melde … an: an en sona gider"),

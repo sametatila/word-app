@@ -13,7 +13,7 @@ const episode = {
       rule: "Fiil isim olunca hep <b>das</b> alır:<br>essen → das Essen.<br>Garten fiil değil: der Garten.",
       endTitle: "İşte cevaplar",
       outro: { series: "Almanca artikel alıştırmaları", ask: "Garten neden der? Farkı yorumlara yaz" },
-      caption: "Almancada fiilin mastar hâli isim olarak kullanıldığında das alır: Essen, Leben, Wissen. Garten neden bu kurala uymuyor? Farkı yorumlara yaz.\n\n#almanca #almancaöğreniyorum #deutschlernen #artikel #derdiedas #almancagramer",
+      caption: "Almancada fiilin mastar hâli isim olarak kullanıldığında das alır: Essen, Leben, Wissen. Peki Garten neden der? İpucu: fiilden gelmiyor. Farkı yorumlara yaz.\n\n#almanca #almancaöğreniyorum #deutschlernen #artikel #derdiedas #almancagramer",
     },
   }),
 };

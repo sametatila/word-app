@@ -14,7 +14,7 @@ const episode = {
       rule: "Küçültme eki <b>-chen</b> alan isimler <b>das</b> alır.<br>das Mädchen, das Brötchen…",
       endTitle: "İşte cevaplar",
       outro: { series: "Almanca artikel alıştırmaları", ask: "Mädchen neden das? Farkı yorumlara yaz" },
-      caption: "Almanca artikel testi: kaşık, çatal, bıçak ve Mädchen. Mutfaktaki üç kelimenin artikeli farklı; son soruda ise -chen eki ipucu veriyor. Mädchen neden das? Farkı yorumlara yaz.\n\n#almanca #almancaöğreniyorum #deutschlernen #artikel #derdiedas #almancakonuşma",
+      caption: "Almanca artikel testi: kaşık, çatal, bıçak ve Mädchen. Mutfaktaki üç kelimenin artikeli farklı; son soruda ise -chen eki ipucu veriyor. Mädchen neden das? Farkı yorumlara yaz.\n\n#almanca #almancaöğreniyorum #deutschlernen #artikel #derdiedas #almancagramer",
     },
   }),
 };
