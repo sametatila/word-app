@@ -5,11 +5,10 @@ const episode = {
   template: "yuru",
   status: "taslak",
   created: "2026-10-13",
-  slot: "2026-10-16 19:00",
+  slot: "2026-10-14 19:00",
   ytTitle: "Doktorda Almanca: örnek cümlelerle 50 kelime | Yürürken Almanca 1",
   content: ({ L, walk }) => ({
-    // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
-    narrationPaused: true,
+    // Samet 2026-10-14: ilk video bu akşam 19:00'da, eksik Ahu satırları ElevenLabs ile üretilsin (duraklatma kalktı).
     series: "Yürürken Almanca",
     ep: "Doktorda",
     hook: {
