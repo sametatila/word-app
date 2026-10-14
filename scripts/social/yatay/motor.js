@@ -105,7 +105,7 @@
   };
   Y.ICONS = {
     hp: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4.5" height="7" rx="2" fill="currentColor" stroke="none"/><rect x="16.5" y="14" width="4.5" height="7" rx="2" fill="currentColor" stroke="none"/></svg>`,
-    play: `<svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></svg>`,
+    play: `<svg viewBox="0 0 24 24"><path d="M8 4.5v15L20.5 12z" fill="currentColor"/></svg>`,
     check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`,
     mic: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3" fill="currentColor" stroke="none"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>`,
     bell: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>`,
@@ -295,6 +295,7 @@
   .cv .pill.bad { background: var(--badSoft); color: var(--bad); box-shadow: inset 0 0 0 2px var(--bad) }
   .cv .pill i { font-style: normal; font: 500 22px var(--mono); width: 36px; height: 36px; border-radius: 18px; display: grid; place-items: center; background: rgba(127,127,127,.16) }
   .cv .ic { display: block; flex: none }
+  .cv .ic > svg, .cv .ico > svg { display: block; width: 100%; height: 100% }
   .cv .row { display: flex; align-items: center }
   .cv .hl { border-radius: 6px; padding: 0 6px; background: var(--accSoft); box-shadow: inset 0 -3px 0 var(--accLine) }
   .cv .kw { opacity: .32 } .cv .kw.said { opacity: 1 } .cv .kw.now { color: var(--acc) }
@@ -600,6 +601,13 @@
             if (!e.children.length && (e.textContent || "").trim()) issues.add(`${S.a.toFixed(1)} sn: içerik alanı dışında: ${name(e)}`);
           }
           if (!e.children.length && cs.whiteSpace === "nowrap" && e.scrollWidth > e.clientWidth + 2 && cs.overflow !== "visible" && cs.textOverflow !== "ellipsis") issues.add(`${S.a.toFixed(1)} sn: yazı kutusuna sığmıyor: ${name(e)}`);
+          // Simge kutusunun tek çocuğu olan svg kutuyu doldurur ve ortada durur (2026-10-14: sabit 22 px'lik oynat
+          // simgesi 36 px'lik kutunun sol üstünde kalıyordu).
+          if (e.tagName === "svg" && e.parentElement.children.length === 1) {
+            const p = rel(e.parentElement);
+            const off = Math.max(Math.abs(r.l + r.w / 2 - (p.l + p.w / 2)), Math.abs(r.t + r.h / 2 - (p.t + p.h / 2)));
+            if (off > 2 || Math.min(r.w, r.h) < 0.9 * Math.min(p.w, p.h)) issues.add(`${S.a.toFixed(1)} sn: simge kutusunda ortalı değil: ${e.parentElement.className || e.parentElement.tagName} (${Math.round(r.w)}×${Math.round(r.h)} / ${Math.round(p.w)}×${Math.round(p.h)})`);
+          }
         }
       }
     }
