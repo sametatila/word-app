@@ -15,7 +15,7 @@ const episode = {
     copy: {
       title: "Restoranda, 4 cümle",
       hook: ["Almanya'da", "restoranda mısın?", "Siparişte geçen 4 cümle."],
-      caption: "Restoranda geçen dört Almanca cümle: arkadaşının önerisi, ana yemek siparişi, garsonun tatlı önerisi ve yanında nakit olmadığını söylemek. Kaydet, restorana gitmeden önce tekrar et.\n\n#almanca #almanyadayaşam #deutschlernen #almancaöğreniyorum #restoran #essengehen",
+      caption: "Restoranda geçen dört Almanca cümle: arkadaşının önerisi, ana yemek siparişi, garsonun tatlı önerisi ve yanında nakit olmadığını söylemek. Kaydet, restorana gitmeden önce tekrar et.\n\n#almanca #almancakonuşma #deutschlernen #almancaöğreniyorum #restoran #essengehen",
       outro: { series: "Her hafta yeni bir durum", ask: "Kaydet, restorana gitmeden önce tekrar et" },
       scenes: {
         friend: { label: "Arkadaşınla", icon: "shop", them: "Arkadaşın" },
@@ -24,7 +24,7 @@ const episode = {
       },
       them: "Garson",
       endTitle: "Kaydet, restoranda lazım.",
-      options: ["Eczane", "Kuaför"],
+      options: ["Sipariş", "Tatlı", "Ödeme"],
     },
   }),
 };

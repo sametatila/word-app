@@ -14,7 +14,7 @@ const episode = {
     copy: {
       title: "Kıyafet olmadı, 3 cümle",
       hook: ["Aldığın kıyafet", "olmadı mı?", "Değişim ve iade için 3 cümle."],
-      caption: "Almanca kıyafet değişimi ve iade: daha büyük beden istemek, fişle değişim ve internetten verilen siparişi geri göndermek. Değişim yaparken fişini istediler mi?\n\n#almanca #almanyadayaşam #deutschlernen #almancaöğreniyorum #alışveriş #umtausch",
+      caption: "Almanca kıyafet değişimi ve iade: daha büyük beden istemek, fişle değişim ve internetten verilen siparişi geri göndermek. Değişim yaparken fişini istediler mi?\n\n#almanca #almancakonuşma #deutschlernen #almancaöğreniyorum #alışveriş #umtausch",
       outro: { series: "Her hafta yeni bir durum", ask: "Değişim yaparken fişini istediler mi?" },
       scenes: {
         shop: { label: "Mağazada", icon: "shop" },
@@ -22,7 +22,7 @@ const episode = {
       },
       them: "Satıcı",
       endTitle: "Fişi saklamayı unutma.",
-      options: ["Eczane", "Kuaför"],
+      options: ["Değişim", "İade"],
     },
   }),
 };

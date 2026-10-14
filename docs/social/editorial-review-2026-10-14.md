@@ -74,3 +74,13 @@ okumada 42 bölümün tamamı hâlâ zamanlanmamıştı; editör değişikliği 
 Otomatik anlatım filtresi salt okunur SQL ile kontrol edildi: alanı olmayan eski bölüm ve `false` değeri üretime
 uygun, `true` değeri üretime kapalı. Canlıda bekleyen veya çalışan uzun video üretimi yoktu. Durdurulan Mac kuyruğu
 143 çıkış koduyla sonlandı; üretim kilidi açılmadığı için yeni satır üretmedi.
+
+Son kapanış kontrolünde sahneli diyalog şablonunun eski “Eczane / Kuaför” konu seçenekleri de düzeltildi.
+Restoran, değişim/iade ve ev arama bölümlerinde bu küçük etiketler artık videodaki konu başlıklarını özetliyor.
+Ev arama kapanışındaki ikinci sosyal çağrı kaldırıldı: başlık konu özeti, tek çağrı ilgili arkadaşına gönderme.
+
+İlk deploy'un ses bekçisi çıktısı ek bir hatayı ortaya çıkardı: yatay bölümün `ses|dil|metin` anahtarları düz
+Almanca metin gibi `word_social`/`example_social` işlerine çevriliyordu (49 yeni satır için 98 yanlış anahtar).
+`tts-own-watch.ts` yalnız dikey bölümleri okur; yatay bölümler kendi ses hattında kalır. Bu, durdurulan uzun
+bölümlerin yeni metinlerinin günlük Mac üretimine dolaylı olarak girmesini de engeller. Çalışan sabah turunun 838 işinin tamamının bu yanlış anahtar biçiminde olduğu doğrulandı;
+normal kelime işi içermediğinden bu hatalı koşu da durduruldu. Geçerli kelime/anlatım kayıtları silinmedi.

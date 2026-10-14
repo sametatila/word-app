@@ -14,15 +14,15 @@ const episode = {
     copy: {
       title: "Ev bakmaya gittin, 3 cümle",
       hook: ["Almanya'da", "ev mi arıyorsun?", "Ev gezerken geçen 3 cümle."],
-      caption: "Almanya'da ev ararken geçen üç Almanca cümle: telefonda kendini tanıtmak, dairenin büyüklüğünü anlamak ve nasıl bir ev istediğini söylemek. Ev arayan arkadaşına gönder.\n\n#almanca #almanyadayaşam #evarıyorum #deutschlernen #wohnung #almancaöğreniyorum",
+      caption: "Almanya'da ev ararken geçen üç Almanca cümle: telefonda kendini tanıtmak, dairenin büyüklüğünü anlamak ve nasıl bir ev istediğini söylemek. Ev arayan arkadaşına gönder.\n\n#almanca #almancakonuşma #evarıyorum #deutschlernen #wohnung #almancaöğreniyorum",
       outro: { series: "Her hafta yeni bir durum", ask: "Ev arayan arkadaşına gönder" },
       scenes: {
         phone: { label: "Telefonda", icon: "phone" },
         flat: { label: "Evi gezerken", icon: "home" },
       },
       them: "Ev sahibi",
-      endTitle: "Kaydet, ev ararken lazım.",
-      options: ["Banka", "Kuaför"],
+      endTitle: "Ev ararken 3 cümle",
+      options: ["Telefonda", "Evi gezerken"],
     },
   }),
 };

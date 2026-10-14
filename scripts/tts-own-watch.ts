@@ -16,7 +16,7 @@
  * Yürüyüş anlatımı (`walk_*`) eksikse susmuyor, Edge karşılığı çalıyor (`k=n`); o yüzden ayrı sayılıyor.
  *
  * SOSYAL VİDEO STÜDYOSU (2026-10-09): stüdyoda düzenlenen bölümlerin seslendirilen Almanca metinleri
- * (`social_episodes.spoken`, arşivlenmemiş) de ihtiyaç listesine girer (alan `word_social` / `example_social`: Mac kelime kayıtlarını alanın ilk parçasından tanır).
+ * (`social_episodes.spoken`, arşivlenmemiş dikey bölümler) de ihtiyaç listesine girer (alan `word_social` / `example_social`: Mac kelime kayıtlarını alanın ilk parçasından tanır).
  * Samet'in kararı "yalnız Defne": kaydı olmayan metnin bölümü onaylanamaz; Mac'in sabah turu üretince açılır.
  */
 import "dotenv/config";
@@ -34,11 +34,13 @@ async function main() {
   const { rows } = await pool.query<WordRow>(
     `select id, de, artikel, tr, en, formen, typ, niveau, beispiel, de_gloss, rank, course from words where course in ('de', 'en')`,
   );
-  // stüdyo: seslendirilen metinler (tablo yoksa ya da göç uygulanmadıysa sessizce atla)
+  // Dikey stüdyo metinleri düz Almanca metindir. Yatay spoken girdileri tam ses anahtarıdır;
+  // bunları Almanca kelime sanarak günlük üretime sokma. Yatay sesler kendi hattından üretilir.
+  // Tablo yoksa ya da göç uygulanmadıysa sessizce atla.
   let social: string[] = [];
   try {
     const r = await pool.query<{ text: string }>(
-      `select distinct jsonb_array_elements_text(spoken) as text from social_episodes where archived_at is null`,
+      `select distinct jsonb_array_elements_text(spoken) as text from social_episodes where archived_at is null and format = 'dikey'`,
     );
     social = r.rows.map((x) => x.text).filter(Boolean);
   } catch {
