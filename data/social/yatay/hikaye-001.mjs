@@ -8,7 +8,7 @@ const episode = {
   template: "hikaye",
   status: "taslak",
   created: "2026-10-14",
-  slot: "2026-11-10 19:00",
+  slot: "2026-11-07 19:00",
   ytTitle: "A2 Almanca hikâyeler: yavaş dinle, Türkçe çeviriyle çalış | 2 hikâye",
   content: ({ L, walk }) => ({
     // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
@@ -79,7 +79,7 @@ const episode = {
       lab: "Sıradaki",
       line: "Hangisini daha kolay anladın?",
       ask: "Yorumlara yaz; dinlemek istediğin konuyu da yaz.",
-      sub: "Her salı ve cuma yeni video",
+      sub: "Her çarşamba ve cumartesi yeni video",
       slot: "Sıradaki video",
       say: L("defne", "tr", "Hangi hikâyeyi daha kolay anladın? Yorumlara yaz; dinlemek istediğin konuyu da yaz."),
     },

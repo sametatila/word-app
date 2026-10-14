@@ -75,7 +75,7 @@ const episode = {
       lab: "Sıradaki",
       line: "Hangi kelime aklında kaldı?",
       ask: "Yorumlara yaz; çalışmak istediğin konuyu da yaz.",
-      sub: "Her salı ve cuma yeni video",
+      sub: "Her çarşamba ve cumartesi yeni video",
       slot: "Sıradaki video",
       say: L("ahu", "tr", "Peki, hangi kelime aklında kaldı? Yorumlara yaz; çalışmak istediğin konuyu da yaz. Görüşmek üzere!"),
     },

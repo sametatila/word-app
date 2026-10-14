@@ -5,7 +5,7 @@ const episode = {
   template: "artikel",
   status: "taslak",
   created: "2026-10-14",
-  slot: "2026-11-03 19:00",
+  slot: "2026-10-31 19:00",
   ytTitle: "Almanca artikel: der, die, das için 14 ipucu, örnekler ve istisnalar",
   content: ({ L, stats, art }) => ({
     // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
@@ -105,7 +105,7 @@ const episode = {
       lab: "Sıradaki",
       line: "Hangi kuralı bilmiyordun?",
       ask: "Önerini yorumlara yaz.",
-      sub: "Her salı ve cuma yeni video",
+      sub: "Her çarşamba ve cumartesi yeni video",
       slot: "Sıradaki video",
       say: L("defne", "tr", "Hangi kuralı bilmiyordun? Çalışmak istediğin konuyu yorumlara yaz."),
     },

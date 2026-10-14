@@ -5,7 +5,7 @@ const episode = {
   template: "duy",
   status: "taslak",
   created: "2026-10-14",
-  slot: "2026-10-23 19:00",
+  slot: "2026-10-21 19:00",
   ytTitle: "Almanca dinleme testi: 37 benzer kelime çifti | Hangisini duydun?",
   content: ({ L, pair }) => ({
     // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
@@ -122,7 +122,7 @@ const episode = {
       lab: "Sıradaki",
       line: "Puanın kaç?",
       ask: "Yorumlara yaz. Sıradaki videoda yabancılar dairesindeyiz.",
-      sub: "Her salı ve cuma yeni video",
+      sub: "Her çarşamba ve cumartesi yeni video",
       slot: "Sıradaki video",
       say: L("defne", "tr", "Puanın kaç? Yorumlara yaz. Bir sonraki videoda yabancılar dairesindeyiz."),
     },

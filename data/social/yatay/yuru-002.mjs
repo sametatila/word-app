@@ -4,7 +4,7 @@ const episode = {
   template: "yuru",
   status: "taslak",
   created: "2026-10-14",
-  slot: "2026-10-30 19:00",
+  slot: "2026-10-28 19:00",
   ytTitle: "Ev ve kira için 50 Almanca kelime: dinle ve söyle | Yürürken Almanca 2",
   content: ({ L, walk }) => ({
     // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
@@ -75,7 +75,7 @@ const episode = {
       lab: "Sıradaki",
       line: "Ev ararken hangi kelime işine yaradı?",
       ask: "Yorumlara yaz; çalışmak istediğin konuyu da yaz.",
-      sub: "Her salı ve cuma yeni video",
+      sub: "Her çarşamba ve cumartesi yeni video",
       slot: "Sıradaki video",
       say: L("defne", "tr", "Ev ararken hangi kelime işine yaradı? Yorumlara yaz; çalışmak istediğin konuyu da yaz."),
     },

@@ -6,7 +6,7 @@ const episode = {
   template: "gunluk",
   status: "taslak",
   created: "2026-10-14",
-  slot: "2026-10-27 19:00",
+  slot: "2026-10-24 19:00",
   ytTitle: "Ausländerbehörde'de Almanca: oturma izni uzatma için 3 kalıp ve konuşma provası",
   content: ({ L, walk }) => ({
     // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
@@ -139,7 +139,7 @@ const episode = {
       lab: "Sıradaki",
       line: "Hangi resmî işlemi çalışmak istersin?",
       ask: "Önerini yorumlara yaz.",
-      sub: "Her salı ve cuma yeni video",
+      sub: "Her çarşamba ve cumartesi yeni video",
       slot: "Sıradaki video",
       say: L("defne", "tr", "Hangi resmî işlemi çalışmak istersin? Bürgeramt mı, iş ajansı mı? Önerini yorumlara yaz."),
     },

@@ -295,7 +295,10 @@ Kapak 1280×720 (YouTube küçük resmi), açıklama: bölümün metni + bölüm
 bölüm ≥ 10 sn) + kampanya bağlantısı (`utm_source=youtube&utm_campaign=<bölüm>`) + etiketler. YouTube başlığında
 `#shorts` yok. Son 20 sn bitiş ekranı: soldaki daireye "abone ol", sağdaki 16:9 kutuya "video" öğesi.
 
-**Plan (Samet, 2026-10-13: 16 Ekim başlangıç, 8 video / 4 hafta):** salı ve cuma 19:00 (Berlin). Sınav ve Yürürken
+**Plan (Samet, 2026-10-13; 2026-10-14 güncel: ilk video 14 Ekim, 8 video / 4 hafta):** çarşamba ve cumartesi 19:00
+(Berlin): 14.10 Yürürken 1 · 17.10 Sınav 1 · 21.10 Hangisini Duydun · 24.10 Günlük Hayat · 28.10 Yürürken 2 · 31.10
+Artikel · 4.11 Sınav 2 · 7.11 Hikâyeler. İlk videodan sonrakilerin sesi Samet'in kararına kadar bekliyor
+(`narrationPaused`). Sınav ve Yürürken
 ikişer, Günlük hayat, Hangisini duydun, Artikel ve Hikâye birer. Her hafta bir "dinle, tekrar et" türü, bir
 etkileşimli tür. Ölçüt (4 hafta sonra): ortalama izleme süresi, abone kazanımı, açıklamadaki bağlantıdan kurulum.
 

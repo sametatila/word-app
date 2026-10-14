@@ -6,7 +6,7 @@ const episode = {
   template: "sinav",
   status: "taslak",
   created: "2026-10-14",
-  slot: "2026-10-20 19:00",
+  slot: "2026-10-17 19:00",
   ytTitle: "A1 Almanca dinleme denemesi 1: 15 soru, cevaplar ve açıklamalar",
   content: ({ L }) => ({
     // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
@@ -281,7 +281,7 @@ const episode = {
       lab: "Sıradaki",
       line: "Kaç doğru yaptın?",
       ask: "Yorumlara yaz. Sıradaki sınav videosunda ikinci deneme var.",
-      sub: "Her salı ve cuma yeni video",
+      sub: "Her çarşamba ve cumartesi yeni video",
       slot: "Sıradaki video",
       say: L("defne", "tr", "Kaç doğru yaptın? Yorumlara yaz. Bir sonraki sınav videosunda ikinci deneme sınavını çözüyoruz."),
     },
