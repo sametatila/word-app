@@ -27,6 +27,10 @@ const CASES: [string, string[], string, null | "weak" | "strong", string?][] = [
   ["F-0072 cümlesi", VERLAUFEN, "Ich nehme die zweite Strasse und biege an der Ampel rechts.", "strong", "biege an der Ampel rechts"],
   ["F-0072 sohbet, 3. satır", VERLAUFEN, "Entschuldigung, ich habe mich verlaufen.\nWo ist die Altstadt?\nIch nehme die zweite Strasse und biege an der Ampel rechts.\nDanke!", "strong", "biege an der Ampel rechts"],
   ["doğru: önek sonda", VERLAUFEN, "Ich biege an der Ampel rechts ab.", null],
+  // QA F-0108 / panel #121: "und" iki isim öbeğini bağlıyor, önek ondan sonra.
+  ["doğru: önek bağlaçlı isimlerden sonra", ["Ich bringe einen Salat mit."], "Ich bringe einen Salat und ein Kuchen mit.", null],
+  ["doğru: önek bağlaçlı isimlerden sonra + bitte", ["Ich bringe einen Salat mit."], "Ich bringe einen Salat und einen Kuchen mit bitte.", null],
+  ["eksik: bağlaçlı isimler, önek yok", ["Ich bringe einen Salat mit."], "Ich bringe einen Salat und einen Kuchen.", "strong", "bringe einen Salat"],
   ["doğru: önek sonda + virgül", VERLAUFEN, "Dann biege ich an der Ampel rechts ab, danke.", null],
   ["doğru: bitişik mastar", VERLAUFEN, "Wo muss ich abbiegen?", null],
   ["doğru: bitişik ortaç", VERLAUFEN, "Ich bin an der Ampel rechts abgebogen.", null],

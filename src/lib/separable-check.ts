@@ -142,20 +142,29 @@ function pairsFrom(patterns: string[]): Pair[] {
   return out;
 }
 
-/** Cevabı tümcelere böler: satır, noktalama ve sıralama bağlacı ("…Straße und biege …"). */
-function segments(text: string): { line: number; toks: Tok[] }[] {
-  const out: { line: number; toks: Tok[] }[] = [];
+/**
+ * Cevabı tümcelere böler: satır, noktalama ve sıralama bağlacı ("…Straße und biege …").
+ * `sentenceEnd`: bağlaçla bölünmeden önceki parçanın (noktalamaya kadar) son sözcüğü,
+ * dolgular hariç. Bağlaç iki isim öbeğini bağlıyorsa önek ondan sonra gelir:
+ * "Ich bringe einen Salat und ein Kuchen mit." (QA F-0108, panel #121).
+ */
+function segments(text: string): { line: number; toks: Tok[]; sentenceEnd: string }[] {
+  const out: { line: number; toks: Tok[]; sentenceEnd: string }[] = [];
   let lineStart = 0;
   text.split("\n").forEach((lineText, li) => {
     for (const m of lineText.matchAll(/[^.!?;:,]+/g)) {
+      const all = tokens(m[0], lineStart + (m.index ?? 0));
+      let e = all.length;
+      while (e > 0 && TRAILING_FILLERS.has(all[e - 1].w)) e--;
+      const sentenceEnd = e > 0 ? all[e - 1].w : "";
       let cur: Tok[] = [];
-      for (const t of tokens(m[0], lineStart + (m.index ?? 0))) {
+      for (const t of all) {
         if (CONJUNCTIONS.has(t.w)) {
-          if (cur.length) out.push({ line: li + 1, toks: cur });
+          if (cur.length) out.push({ line: li + 1, toks: cur, sentenceEnd });
           cur = [];
         } else cur.push(t);
       }
-      if (cur.length) out.push({ line: li + 1, toks: cur });
+      if (cur.length) out.push({ line: li + 1, toks: cur, sentenceEnd });
     }
     lineStart += lineText.length + 1;
   });
@@ -185,6 +194,8 @@ export function findSeparableMisses(text: string, req: Pick<AssessRequest, "task
       while (end > 0 && TRAILING_FILLERS.has(after[end - 1].w)) end--;
       // Sonda kalıbınki ya da BAŞKA bir önek: "Ich rufe dich später zurück" ("an" kalıbında) doğru.
       if (end > 0 && PREFIX_SET.has(after[end - 1].w)) continue;
+      // Önek bağlaçtan sonraki parçanın sonunda: "bringe einen Salat und ein Kuchen mit".
+      if (seg.sentenceEnd === p.prefix) continue;
       if (!PREPOSITION_LIKE.has(p.prefix) && after.some((t) => t.w === p.prefix)) continue;
       /* Gövdeden sonra kalıbın çerçeve sözcüklerinden hiçbiri yoksa öğrenci
          büyük olasılıkla öneksiz fiili kendi anlamıyla kullanıyor ("Ich gebe dir
