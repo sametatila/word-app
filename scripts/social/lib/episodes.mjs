@@ -95,7 +95,15 @@ export function berlinIso(slot) {
 }
 
 /**
+ * Açıklamada kullanılmayacak etiketler (2026-10-14): TikTok'ta #almanyadayaşam taşıyan beş videonun beşi "Senin için"
+ * akışından çıkarıldı (1–4 izlenme), taşımayan ikisi 300–750 izlenme aldı; reklam itirazı da reddedildi. "Almanya'da
+ * yaşam" çerçevesi göç içeriği sayılıyor olabilir: dil etiketi kullan (#almancakonuşma, #almancakelimeler).
+ */
+export const BANNED_TAGS = ["#almanyadayaşam", "#almanyadayasam"];
+
+/**
  * Takvim kuralları (yalnız slot'u olan bölümler): { errors, warnings }.
+ *   - bugünden sonraki bölümde yasak etiket yok (BANNED_TAGS)
  *   - bir saate tek bölüm
  *   - aynı gün aynı yaklaşım iki kez yok
  *   - art arda iki bölüm aynı temada değil (izleyici akışta aynı görünümü üst üste görmesin)
@@ -105,6 +113,12 @@ export function schedule(episodes) {
   const errors = [];
   const warnings = [];
   const list = episodes.filter((e) => e.slot).sort((a, b) => a.slot.localeCompare(b.slot));
+  const now = Date.now();
+  for (const e of list) {
+    if (new Date(berlinIso(e.slot)).getTime() <= now) continue; // saati geçmiş (yayınlanmış) bölüme dokunulmaz
+    const text = JSON.stringify(e.data).toLocaleLowerCase("tr");
+    for (const t of BANNED_TAGS) if (text.includes(t)) errors.push(`yasak etiket ${t}: ${e.id} ${e.slot}`);
+  }
   for (let i = 1; i < list.length; i++) {
     const [a, b] = [list[i - 1], list[i]];
     if (a.slot === b.slot) errors.push(`aynı saat ${a.slot}: ${a.id}, ${b.id}`);
