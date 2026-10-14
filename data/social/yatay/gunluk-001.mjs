@@ -94,7 +94,7 @@ const episode = {
     explain: {
       say: L("defne", "tr", "Şimdi memurun cümlelerini tek tek inceleyelim."),
       items: [
-        { at: 2, mark: "werden einige Unterlagen benötigt", tag: "Kalıp 1", note: "Başta yer tutan es yok ama kalıp aynı: çoğul özne, ortaç sonda.", say: L("defne", "tr", "Burada başta yer tutan es yok, ama kalıp aynı: belgeler çoğul, ortaç en sonda.") },
+        { at: 2, mark: "werden einige Unterlagen benötigt", tag: "Kalıp 1", note: "Başta yer tutan es yok ama kalıp aynı: çoğul özne, ortaç sonda.", say: L("defne", "tr", "Burada cümle yer tutan kelimeyle başlamıyor, ama kalıp aynı: belgeler çoğul, ortaç en sonda.") },
         { at: 4, mark: "muss vorgelegt werden", tag: "Kalıp 3", note: "Zorunluluk ve edilgen birlikte: pasaport getirilmeli.", say: L("defne", "tr", "Zorunluluk ve edilgen birlikte: pasaportun getirilmesi gerekiyor.") },
         { at: 6, mark: "wird innerhalb von vier Wochen bearbeitet", tag: "Kalıp 2", note: "Süre cümlenin ortasında, ortaç en sonda.", say: L("defne", "tr", "Süre bilgisi cümlenin ortasında, ortaç yine en sonda. Dört hafta, yaklaşık bir ay.") },
         { at: 8, mark: "wird heute hier bezahlt", tag: "Kalıp 2", note: "Kimin ödediği söylenmiyor ama belli: sen ödüyorsun.", say: L("defne", "tr", "Kimin ödediği söylenmiyor, ama belli: ücreti sen ödüyorsun.") },
@@ -137,13 +137,13 @@ const episode = {
     },
     end: {
       lab: "Sıradaki",
-      line: "Hangi resmî işlemi çalışmak istersin?",
+      line: "Hangi resmî daireyi çalışmak istersin?",
       ask: "Önerini yorumlara yaz.",
       sub: "Her çarşamba ve cumartesi yeni video",
       slot: "Sıradaki video",
-      say: L("defne", "tr", "Hangi resmî işlemi çalışmak istersin? Bürgeramt mı, iş ajansı mı? Önerini yorumlara yaz."),
+      say: L("defne", "tr", "Hangi resmî daireyi çalışmak istersin? Bürgeramt mı, iş ajansı mı? Önerini yorumlara yaz."),
     },
-    cover: { lab: "Oturma izni uzatma · B1", lines: ["Ausländerbehörde", "memurun dili: üç kalıp"], pill: "Konuşma · cep kartı · Konuşma provası" },
+    cover: { lab: "Oturma izni uzatma · B1", lines: ["Ausländerbehörde", "memurun dili: üç kalıp"], pill: "Konuşma · cep kartı · prova" },
     yt: {
       desc: "Yabancılar dairesinde oturma izni uzatma konuşmasını Almanca çalış. B1 düzeyindeki bu derste 22 kelime, belgeler ve başvurularla ilgili üç edilgen kalıp ve Türkçe altyazılı örnek konuşma var. Sonra başvuranın yerine sen cevap ver. En sonda, randevudan önce tekrar bakabileceğin bir özet kartı bulunuyor. Hangi resmî işlemi çalışmak istersin?",
       tags: "#almanca #almanya #ausländerbehörde #oturmaizni",

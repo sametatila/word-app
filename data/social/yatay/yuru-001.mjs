@@ -81,7 +81,7 @@ const episode = {
     },
     cover: { lab: "Dinle · söyle · tekrar et", lines: ["Doktorda", "Almanca"], pill: "50 kelime · örnek cümleyle", words: ["der Termin", "verschreiben"] },
     yt: {
-      desc: "Doktorda kullanabileceğin 50 Almanca kelimeyi Türkçesi ve örnek cümlesiyle çalış. Önce Türkçesini duy, Almancasını söylemek için üç saniye bekle, sonra doğru kelimeyi ve örnek cümleyi dinle. Randevu, şikâyetler, muayene, eczane ve acil durum konuları var. Ekrana bakmadan yürürken veya günlük işlerini yaparken de tekrar edebilirsin. Hangi kelime aklında kaldı?",
+      desc: "Doktorda kullanabileceğin 50 Almanca kelimeyi Türkçesi ve örnek cümlesiyle çalış. Önce Türkçesini duy, Almancasını söylemek için üç saniyen var, sonra doğru kelimeyi ve örnek cümleyi dinle. Randevu, şikâyetler, muayene, eczane ve acil durum konuları var. Ekrana bakmadan yürürken veya günlük işlerini yaparken de tekrar edebilirsin. Hangi kelime aklında kaldı?",
       tags: "#almanca #almancaöğren #almancakelimeler #doktorda",
     },
     ui: { cardNote: "Almanca alıştırması" },
