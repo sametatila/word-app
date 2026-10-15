@@ -6,8 +6,10 @@
 
   Üretim kendiliğinden: işçi (worker.mjs --once) her koşuda yatay bölümlerin kaydedilmiş metninde kaydı olmayan anlatıcı
   satırlarını üretir (koşu başına en çok MAX_PER_RUN satır). Editör metni değiştirip kaydedince birkaç dakikada gelir;
-  Mac talebi yok. Aylık karakter tavanı ELEVENLABS_MONTHLY_CHARS (varsayılan 100 bin; Creator planı 131 bin); her
-  istek SOCIAL_DIR/ses/kullanim.jsonl'a yazılır.
+  Mac talebi yok. KREDİ SINIRI ElevenLabs'in kendi sayacından (2026-10-16): her koşuda abonelikten kalan kredi okunur,
+  RESERVE'in altına inecekse üretim durur. Plan kotası (Creator 131 bin kredi) ElevenLabs'in döneminde (her ayın 14'ü)
+  yenilenir; v4 ölçümde karakter başına ~0,5 kredi düşüyor, burada karakter = kredi sayılır (temkinli). Sayaç
+  okunamazsa kendi kaydımız: bu ay FALLBACK_CHARS karakter. Her istek SOCIAL_DIR/ses/kullanim.jsonl'a yazılır.
 
   node scripts/social/yatay/anlatici.mjs <bölüm-id> [...] [--dry]   yerelde: depodaki bölümün eksik anlatımı
                                                                       → .shots/social/yatay/ses (deneme, sunucuya gitmez)
@@ -25,7 +27,9 @@ export const ELEVEN = {
   ahu: { id: "xyqF3vGMQlPk3e7yA4DI", model: "eleven_v4", settings: { stability: 0.7, similarity_boost: 0.8, style: 0, use_speaker_boost: true } },
 };
 const KEY_RE = /^([a-z]+)\|(tr|de|en)\|(.+)$/s;
-const MONTHLY = Number(process.env.ELEVENLABS_MONTHLY_CHARS || 100000);
+/** Kalan kredi bunun altına inmesin (deneme ve elle üretime pay). */
+const RESERVE = 5000;
+const FALLBACK_CHARS = 100000;
 export const MAX_PER_RUN = 20;
 
 function apiKey() {
@@ -36,6 +40,19 @@ function apiKey() {
 const fileOf = (key) => `${key.split("|")[0]}/${crypto.createHash("sha1").update(key).digest("hex").slice(0, 16)}.m4a`;
 /** Anlatıcı satırı mı (ses adı ELEVEN'de). */
 export const isNarration = (key) => key.split("|")[0] in ELEVEN;
+
+/** ElevenLabs aboneliğinden kalan kredi ve yenilenme günü; okunamazsa null. */
+async function credits(key) {
+  try {
+    const res = await fetch("https://api.elevenlabs.io/v1/user/subscription", { headers: { "xi-api-key": key }, signal: AbortSignal.timeout(30_000) });
+    if (!res.ok) return null;
+    const d = await res.json();
+    if (typeof d.character_limit !== "number" || typeof d.character_count !== "number") return null;
+    return { left: d.character_limit - d.character_count, resetAt: d.next_character_count_reset_unix ? new Date(d.next_character_count_reset_unix * 1000).toISOString().slice(0, 10) : "?" };
+  } catch {
+    return null;
+  }
+}
 
 function readMap(dir) {
   try {
@@ -125,15 +142,17 @@ export async function generateNarration(keys, { dir = sesDir(), max = MAX_PER_RU
 
 async function produce(missing, { dir, max, log, key, out }) {
   let map = readMap(dir);
-  let used = usedThisMonth(dir);
+  const c = await credits(key);
+  let left = c ? c.left - RESERVE : FALLBACK_CHARS - usedThisMonth(dir);
+  const why = c ? `ElevenLabs kredisi azaldı (${c.left} kaldı, ${RESERVE} pay; ${c.resetAt}'te yenilenir)` : `kredi sayacı okunamadı, kendi kaydımızla bu ayın ${FALLBACK_CHARS} karakteri doldu`;
   for (const k of missing.slice(0, max)) {
     const [, v, lang, text] = k.match(KEY_RE) || [];
     if (!v || k.includes("#")) {
       out.errors.push(`anlatıcı satırı tür taşımaz: ${k}`);
       continue;
     }
-    if (used + text.length > MONTHLY) {
-      out.errors.push(`aylık karakter tavanı (${MONTHLY}) doldu: ${used} kullanıldı`);
+    if (text.length > left) {
+      out.errors.push(why);
       break;
     }
     try {
@@ -152,7 +171,7 @@ async function produce(missing, { dir, max, log, key, out }) {
       map[k] = rel;
       writeMap(dir, map);
       fs.appendFileSync(path.join(dir, "kullanim.jsonl"), JSON.stringify({ at: new Date().toISOString(), voice: v, chars, key: k.slice(0, 120) }) + "\n");
-      used += chars;
+      left -= chars;
       out.made++;
       out.chars += chars;
     } catch (e) {
@@ -161,7 +180,7 @@ async function produce(missing, { dir, max, log, key, out }) {
     }
   }
   out.skipped = Math.max(0, missing.length - out.made - out.errors.length);
-  if (out.made) log(`anlatıcı: ${out.made} kayıt, ${out.chars} karakter (bu ay ${used}/${MONTHLY})${out.skipped ? `, ${out.skipped} sonraki koşuya` : ""}`);
+  if (out.made) log(`anlatıcı: ${out.made} kayıt, ${out.chars} karakter (${c ? `kalan ≈${left + RESERVE} kredi` : "kredi sayacı okunamadı"})${out.skipped ? `, ${out.skipped} sonraki koşuya` : ""}`);
   return out;
 }
 

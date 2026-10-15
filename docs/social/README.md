@@ -265,7 +265,9 @@ cümleler yine Aras/Defne (uygulamanın sesi). Model `eleven_v4`, stabilite 0,7,
 vb.) yazılmaz, öğretmen tonu metnin kendisinden: "Şimdi hızlı bir tekrar yapalım.", "Güzel. İkinci konumuz…".
 Kayıtlar uygulamanın ses tablosuna girmez: `SOCIAL_DIR/ses` (tts-map.json + m4a/ahu/), −16 LUFS'e eşitlenir (Aras'la
 aynı düzey). İşçi (`--once`) her koşuda yayını geçmemiş yatay bölümlerin eksik anlatıcı satırlarını üretir (koşu başına
-20, aylık tavan `ELEVENLABS_MONTHLY_CHARS`, varsayılan 100 bin; Creator planı 131 bin; kullanım `ses/kullanim.jsonl`):
+20; kredi sınırı ElevenLabs'in kendi sayacından: abonelikte kalan kredi 5 binin altına inecekse durur, kota (Creator
+131 bin kredi) her ayın 14'ünde yenilenir; v4 ölçümde karakter başına ~0,5 kredi; kullanım `ses/kullanim.jsonl`, aynı anda
+tek üretici `ses/.uretim.lock`):
 editör metni değiştirip kaydedince talep gerekmez. Bölüm verisinde `narrationPaused: true` varsa otomatik
 anlatım üretimi durur; metin taslağı kaydedilebilir. Samet 14 Ekim incelemesinde sekiz uzun bölüm için üretimi
 bekletti. Tekrar üretim açıkça istendiğinde bu işaret bölüm kaynağından kaldırılır. Ahu Almanca artikelleri ("die") doğru okuyor. Bölüm başına anlatım
