@@ -142,8 +142,8 @@ koyar; uygulama paketine girmez. Önbellek `~/Library/Caches/Lernomi/rn-dsyms`.
 gider. Android AAB Play iç test kanalına sürüm notuyla, ProGuard eşlemi ve yerel kod sembolleriyle
 (`PLAY_NATIVE_SYMBOLS=app/build/outputs/native-debug-symbols/release/native-debug-symbols.zip`) AYNI
 yüklemede gönderilir: Play yüklenmiş pakete sonradan sembol eklemiyor (400). Kapalı test için
-`PLAY_TRACK=alpha PLAY_STATUS=draft` (Play'de henüz yayımlanmamış uygulamada API iç test dışına yalnız taslak
-koyabiliyor, yayına alma Console'dan). İnceleme notunun
+`PLAY_TRACK=alpha PLAY_STATUS=completed PLAY_VERSION_CODE=<n>` (paket önce iç teste yüklendiyse; kapalı test
+yayımlandıktan sonra API `completed` kabul ediyor, 2026-10-15 build 23; önceden yalnız `draft`). İnceleme notunun
 (`docs/appstore/connect.md`, `docs/play/console.md` §1) yolları yeni build'le hâlâ tutuyor mu, bakılır.
 
 - **Anahtarsız release yok.** `keystore.properties` (gitignore) yoksa release görevleri düşer
