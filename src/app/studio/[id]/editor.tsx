@@ -52,6 +52,8 @@ export function errorText(d: Record<string, unknown>): string {
       return "Bu arada değişti (platform işçisi ya da başka biri). Güncel durum yüklendi; değiştirmek istiyorsan yeniden kaydet.";
     case "auto_needs_slot":
       return "Otomatik yayın için bölümün gelecekte bir yayın saati olmalı.";
+    case "duplicate_url":
+      return `Bu bağlantı ${String(d.detail)} bölümünde kayıtlı. Her bölüme kendi videosunun bağlantısını yaz.`;
     case "not_queued":
       return "Üretim artık sırada değil (başlamış ya da bitmiş).";
     case "db":

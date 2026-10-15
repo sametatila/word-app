@@ -27,7 +27,7 @@ export async function POST(req: Request) {
     switch (body.action) {
       case "set": {
         const r = await setSocialPost({ episodeId: body.episodeId, platform: body.platform, status: body.status, url: body.url, note: body.note, base: body.base }, g.writer.email);
-        if (!r.ok) return NextResponse.json({ error: r.error, ...("post" in r ? { post: r.post } : {}) }, { status: r.error === "not_found" ? 404 : r.error === "publishing" || r.error === "auto_needs_slot" || r.error === "stale" ? 409 : 400 });
+        if (!r.ok) return NextResponse.json({ error: r.error, ...("post" in r ? { post: r.post } : {}), ...("detail" in r ? { detail: r.detail } : {}) }, { status: r.error === "not_found" ? 404 : r.error === "publishing" || r.error === "auto_needs_slot" || r.error === "stale" || r.error === "duplicate_url" ? 409 : 400 });
         void logStudioAction(g.writer, "post.set", String(body.episodeId), { platform: body.platform, status: body.status });
         return NextResponse.json({ ok: true, post: r.post });
       }

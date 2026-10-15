@@ -94,7 +94,17 @@ function cleanUrl(v: unknown): string | null | "bad" {
   }
 }
 
-export type SetResult = { ok: true; post: SocialPost | null } | { ok: false; error: "bad_input" | "not_found" | "publishing" | "auto_needs_slot" } | { ok: false; error: "stale"; post: SocialPost | null };
+/** Platformdaki gönderinin kimliği (TikTok video, YouTube, Instagram reel); tanınmayan adres kendisi. */
+export function postKey(url: string): string {
+  const m = /tiktok\.com\/.*\/video\/(\d+)/.exec(url) || /youtube\.com\/(?:shorts\/|watch\?v=)([\w-]{6,})/.exec(url) || /youtu\.be\/([\w-]{6,})/.exec(url) || /instagram\.com\/(?:reels?|p)\/([\w-]+)/.exec(url);
+  return m ? m[1] : url.replace(/[?#].*$/, "").replace(/\/$/, "");
+}
+
+export type SetResult =
+  | { ok: true; post: SocialPost | null }
+  | { ok: false; error: "bad_input" | "not_found" | "publishing" | "auto_needs_slot" }
+  | { ok: false; error: "stale"; post: SocialPost | null }
+  | { ok: false; error: "duplicate_url"; detail: string };
 
 /**
  * Bir bölümün bir platformdaki durumu. `planned` satırı siler. Bağlantı ve not verilmezse eskisi korunur
@@ -118,6 +128,16 @@ export async function setSocialPost(input: { episodeId: unknown; platform: unkno
   }
   const url = input.url === undefined ? undefined : cleanUrl(input.url);
   if (url === "bad") return { ok: false, error: "bad_input" };
+  // aynı bağlantı iki bölümde olmasın (2026-10-15: 12:30 videosunun bağlantısı 18:30 bölümüne de yapıştırılmış, TikTok
+  // işçisi 12:30 videosunu 18:30 bölümüne bağladı ve ardından her koşuda çöktü)
+  if (url) {
+    const others = await db
+      .select({ episodeId: socialPosts.episodeId, url: socialPosts.url })
+      .from(socialPosts)
+      .where(and(eq(socialPosts.platform, platform), sql`${socialPosts.url} is not null`, sql`${socialPosts.episodeId} is distinct from ${episodeId}`));
+    const dup = others.find((o) => o.url && postKey(o.url) === postKey(url));
+    if (dup) return { ok: false, error: "duplicate_url", detail: dup.episodeId ?? "" };
+  }
   const note = input.note === undefined ? undefined : String(input.note ?? "").trim().slice(0, 1000) || null;
   const set: Partial<typeof socialPosts.$inferInsert> = { status, updatedBy: actor, updatedAt: sql`now()` as unknown as Date };
   if (url !== undefined) set.url = url;

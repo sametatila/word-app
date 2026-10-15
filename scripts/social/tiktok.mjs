@@ -169,11 +169,24 @@ const q = (text, params) => pool.query(text, params);
 const status = readJson(STATUS_FILE, {});
 
 async function markPublished(rowId, video, url, why) {
-  await q(
-    `update social_posts set status = 'published', external_id = coalesce($2, external_id), url = coalesce(url, $3),
-       published_at = coalesce($4, now()), job = null, updated_by = 'tiktok', updated_at = now() where id = $1`,
-    [rowId, video?.id ?? videoIdOf(url), video?.share_url ?? url, video?.create_time ? new Date(video.create_time * 1000) : null],
-  );
+  const ext = video?.id ?? videoIdOf(url);
+  try {
+    await q(
+      `update social_posts set status = 'published', external_id = coalesce($2, external_id), url = coalesce(url, $3),
+         published_at = coalesce($4, now()), job = null, updated_by = 'tiktok', updated_at = now() where id = $1`,
+      [rowId, ext, video?.share_url ?? url, video?.create_time ? new Date(video.create_time * 1000) : null],
+    );
+  } catch (e) {
+    if (e.code !== "23505") throw e;
+    // video başka bölümün satırında (aynı bağlantı iki bölüme yazılmış, 2026-10-15): bu satır atlanır, koşu sürer, bir kez Telegram
+    const r = (await q("select p.episode_id, p.job, o.episode_id as other from social_posts p left join social_posts o on o.platform = 'tiktok' and o.external_id = $2 and o.id <> p.id where p.id = $1", [rowId, ext])).rows[0];
+    if (!r?.job?.dupWarnedAt) {
+      await q("update social_posts set job = $2 where id = $1", [rowId, { ...(r?.job || {}), dupWarnedAt: new Date().toISOString(), error: `bu video ${r?.other ?? "başka bir bölüm"} bölümüne bağlı` }]);
+      await telegram(`<b>[UYARI] TikTok: aynı video iki bölümde</b>\n${esc(url ?? video?.share_url ?? ext)}\n${esc(r?.episode_id ?? rowId)} ve ${esc(r?.other ?? "?")} bölümlerinde aynı bağlantı var. Stüdyoda yanlış olanın bağlantısını düzelt.`);
+    }
+    log(`atlandı: video ${ext} başka bölüme bağlı (${r?.other ?? "?"} ↔ ${r?.episode_id ?? rowId})`);
+    return;
+  }
   log(`✓ yayında (${why}):`, url ?? video?.share_url);
 }
 
@@ -188,11 +201,15 @@ async function syncApi(t) {
   const eps = (await q("select id, slot, format from social_episodes where archived_at is null and slot is not null")).rows.map((r) => ({ id: r.id, slot: r.slot, at: slotMs(r.slot), long: r.format === "yatay" }));
   const rows = (await q("select id, episode_id, status, url, external_id, metrics_at from social_posts where platform = 'tiktok'")).rows;
   const byExt = new Map(rows.filter((r) => r.external_id).map((r) => [r.external_id, r]));
-  const byUrlId = new Map(rows.filter((r) => videoIdOf(r.url)).map((r) => [videoIdOf(r.url), r]));
+  // aynı bağlantı birden çok bölüme yazılmışsa saati videonunkine en yakın bölüm (2026-10-15: 12:30 videosu 18:30'a bağlanmıştı)
+  const slotOf = new Map(eps.map((e) => [e.id, e.at]));
+  const byUrlId = new Map();
+  for (const r of rows) if (videoIdOf(r.url)) byUrlId.set(videoIdOf(r.url), [...(byUrlId.get(videoIdOf(r.url)) || []), r]);
   const now = Date.now();
   for (const v of videos) {
     const ts = v.create_time * 1000;
-    let row = byExt.get(v.id) || byUrlId.get(v.id);
+    const near = (r) => Math.abs(ts - (slotOf.get(r.episode_id) ?? Infinity));
+    let row = byExt.get(v.id) || (byUrlId.get(v.id) || []).sort((a, b) => near(a) - near(b))[0];
     if (!row) {
       const long = (v.duration ?? 0) > 180;
       const cand = eps.filter((e) => e.long === long && ts >= e.at - 30 * MIN && ts <= e.at + 3 * HOUR).sort((a, b) => Math.abs(ts - a.at) - Math.abs(ts - b.at))[0];
