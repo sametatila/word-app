@@ -428,23 +428,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Yazı üslup açısından resmî."
+      "text": "Bir tane daha: 'İçten bir cevap ile yalın bir cevap aynı şeyi söylüyor.'"
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The piece is stylistically formal.",
+     "target": "A cordial reply and a matter-of-fact reply say the same thing.",
      "accept": [
-      "The text is stylistically formal."
+      "A cordial answer and a matter-of-fact answer say the same thing.",
+      "A cordial reply and a matter-of-fact one say the same thing."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Üslubu adlandırmak için"
+       "text": "Aynı içeriği iki dil düzeyinde göstermek için"
       },
       {
        "lang": "en",
-       "text": "stylistically"
+       "text": "a cordial … and a matter-of-fact …"
       },
       {
        "lang": "tr",
@@ -452,7 +453,7 @@
       },
       {
        "lang": "en",
-       "text": "The piece is stylistically formal."
+       "text": "A cordial reply and a matter-of-fact reply say the same thing."
       },
       {
        "lang": "tr",
@@ -3444,21 +3445,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: O ileri sürdü, o kabul etti, onlar iddia etti."
+      "text": "Bir tane daha: Açıklamanın kendisi, onu aktaran fiilden daha azını söylüyordu."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "She claimed it; he conceded it; they alleged it.",
-     "accept": [],
+     "target": "The statement itself said less than the verb used to report it.",
+     "accept": [
+      "The statement itself said less than the verb that reported it.",
+      "The announcement itself said less than the verb used to report it."
+     ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Aynı içeriği üç hükümle aktarmak için"
+       "text": "Hükmün fiilde olduğunu söylemek için"
       },
       {
        "lang": "en",
-       "text": "claimed … conceded … alleged"
+       "text": "itself said less than"
       },
       {
        "lang": "tr",
@@ -3466,7 +3470,7 @@
       },
       {
        "lang": "en",
-       "text": "She claimed it; he conceded it; they alleged it."
+       "text": "The statement itself said less than the verb used to report it."
       },
       {
        "lang": "tr",
@@ -6442,14 +6446,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Pek de küçümseyici değil, öyle mi?"
+      "text": "Bir tane daha: Pek de iftira değil, öyle mi?"
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Hardly patronizing, is it?",
+     "target": "Hardly defamation, is it?",
      "accept": [
-      "Hardly condescending, is it?"
+      "Hardly slander, is it?",
+      "Hardly libel, is it?"
      ],
      "hint": [
       {
@@ -6466,7 +6471,7 @@
       },
       {
        "lang": "en",
-       "text": "Hardly patronizing, is it?"
+       "text": "Hardly defamation, is it?"
       },
       {
        "lang": "tr",
@@ -9378,32 +9383,27 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Skandallaştırma manipülasyon gibi görünüyor."
+      "text": "Bir tane daha: Skandallaştırma, adı konmuş bir öfke dalgasıdır."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The scandalization looks like manipulation.",
+     "target": "Scandalization is a wave of outrage with a name.",
      "accept": [
-      "The scandalization looks like mass manipulation.",
-      "The scandalization seems like manipulation."
+      "The scandalization is a wave of outrage with a name."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "İki terimi birbirine bağlamak için"
+       "text": "Bir terimi, ötekinin adı konmuş hâli olarak tanımlamak için sona şunu eklersin:"
       },
       {
        "lang": "en",
-       "text": "looks like"
-      },
-      {
-       "lang": "tr",
-       "text": "kullanılır:"
+       "text": "with a name"
       },
       {
        "lang": "en",
-       "text": "The scandalization looks like manipulation."
+       "text": "Scandalization is a wave of outrage with a name."
       },
       {
        "lang": "tr",

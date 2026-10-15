@@ -221,6 +221,18 @@ export const deA1B05: Conversation[] = [
         expect: { kind: "repeat", target: "Wo ist die Kasse" },
       },
       {
+        say: [tr("Sıra sende, satıcıya kibarca sor: 'Affedersiniz, kasa nerede?'")],
+        expect: {
+          kind: "produce",
+          target: "Entschuldigung, wo ist die Kasse",
+          hint: [
+            tr("Önce özür kelimesi, sonra soru kelimesi ve fiil gelir:"),
+            de("Entschuldigung, wo ist die Kasse?"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Ich suche einen Jacke."),
@@ -459,6 +471,18 @@ export const deA1B05: Conversation[] = [
         expect: { kind: "repeat", target: "Es passt nicht" },
       },
       {
+        say: [tr("Sıra sende: 'Gömlek üstüme olmadı.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Das Hemd passt nicht",
+          hint: [
+            tr("Uymak fiilinin öznesi gömlek olur, olumsuzluk kelimesi sonda durur:"),
+            de("Das Hemd passt nicht."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Die Hose passt nicht."),
@@ -684,6 +708,18 @@ export const deA1B05: Conversation[] = [
         expect: { kind: "repeat", target: "Ich möchte den Pullover in Schwarz" },
       },
       {
+        say: [tr("Sıra sende: 'Ceketin mavisini istiyorum.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich möchte die Jacke in Blau",
+          hint: [
+            tr("Eşyanın adından sonra 'içinde' anlamındaki kelime ve renk gelir, renk ek almaz:"),
+            de("Ich möchte die Jacke in Blau."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Die Hose ist blaue."),
@@ -903,6 +939,18 @@ export const deA1B05: Conversation[] = [
         expect: { kind: "repeat", target: "Das ist im Angebot" },
       },
       {
+        say: [tr("Sıra sende, arkadaşına söyle: 'Ceket indirimde.'")],
+        expect: {
+          kind: "produce",
+          target: "Die Jacke ist im Angebot",
+          hint: [
+            tr("Önce eşyanın adı ve olmak fiili, sonra 'indirimde' anlamındaki ifade gelir:"),
+            de("Die Jacke ist im Angebot."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Kasada da tek bir soru duyacaksın:"),
           de("Bezahlen Sie bar oder mit Karte?"),
@@ -1118,6 +1166,19 @@ export const deA1B05: Conversation[] = [
           tr("de."),
         ],
         expect: { kind: "repeat", target: "Mir gefällt der Pullover besser" },
+      },
+      {
+        say: [tr("Sıra sende: 'Pantolon daha çok hoşuma gidiyor.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Mir gefällt die Hose besser",
+          accept: ["Die Hose gefällt mir besser"],
+          hint: [
+            tr("Beğenilen şey özne olur, karşılaştırma kelimesi en sonda durur:"),
+            de("Mir gefällt die Hose besser."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1341,16 +1402,14 @@ export const deA1B05: Conversation[] = [
       },
       {
         say: [
-          tr(
-            "Sebep her zaman beden olmak zorunda değil. Bir önceki konuşmadaki kalıpla başka bir sebep söyle: 'Renk hoşuma gitmiyor.'",
-          ),
+          tr("Sebep her zaman darlık olmak zorunda değil. Şimdi sen söyle: 'Pantolon fazla uzun.'"),
         ],
         expect: {
           kind: "produce",
-          target: "Die Farbe gefällt mir nicht",
+          target: "Die Hose ist zu lang",
           hint: [
-            tr("Beğenilen şey başa gelir, olumsuzluk en sona:"),
-            de("Die Farbe gefällt mir nicht."),
+            tr("'Gereğinden fazla' anlamındaki kelime sıfatın önüne gelir:"),
+            de("Die Hose ist zu lang."),
             tr("Tekrar dene."),
           ],
         },
@@ -1641,6 +1700,18 @@ export const deA1B05: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Können Sie es einpacken"), tr("de.")],
         expect: { kind: "repeat", target: "Können Sie es einpacken" },
+      },
+      {
+        say: [tr("Sıra sende: 'Parfümü paketleyebilir misiniz?' nasıl sorarsın?")],
+        expect: {
+          kind: "produce",
+          target: "Können Sie das Parfüm einpacken",
+          hint: [
+            tr("Fiil başta, asıl fiil en sonda; paketlenecek şey ortaya girer:"),
+            de("Können Sie das Parfüm einpacken?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -2125,6 +2196,22 @@ export const deA1B05: Conversation[] = [
       },
       {
         say: [
+          tr("Sıra sende. Ateş Almancada"),
+          de("das Fieber."),
+          tr("'Ateşe karşı bir şey var mı?' nasıl sorarsın?"),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Gibt es etwas gegen Fieber",
+          hint: [
+            tr("'Karşı' anlamındaki kelimeden sonra şikâyetin adı artikelsiz gelir:"),
+            de("Gibt es etwas gegen Fieber?"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
           tr("Sepetine son bir şey daha ekleyelim:"),
           de("Ich brauche auch Taschentücher."),
           tr("Yani 'Bir de kâğıt mendile ihtiyacım var'. Lütfen"),
@@ -2329,6 +2416,18 @@ export const deA1B05: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Ich lege die Jacke in den Warenkorb"), tr("de.")],
         expect: { kind: "repeat", target: "Ich lege die Jacke in den Warenkorb" },
+      },
+      {
+        say: [tr("Sıra sende: 'Ayakkabıları sepete koyuyorum.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich lege die Schuhe in den Warenkorb",
+          hint: [
+            tr("Sepet eril ve bir şey oraya gidiyor, bu yüzden artikeli değişir:"),
+            de("Ich lege die Schuhe in den Warenkorb."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [

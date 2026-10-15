@@ -20,7 +20,6 @@
  { "tr": "demen yeter; sofrada en çok duyacağın kelimelerden biri budur.", "en": "is enough; it is one of the words you hear most at the table." },
  { "tr": "Doğru. Zarf başta, çekimli fiil ikinci sırada, ortaç en sonda.", "en": "Correct. The adverb first, the finite verb second, the participle last." },
  { "tr": "Edilgen geçmiş zaman; yazıda ve anlatımda tercih edilen biçim.", "en": "The passive past; the form preferred in writing and narration." },
- { "tr": "Eşitlik karşılaştırmasında başka bir kıyas sözcüğü kullanılır:", "en": "A comparison of equals uses a different comparison word:" },
  { "tr": "Fiil ikinci sırada durur, sipariş ettiğin şey hemen arkasında:", "en": "The verb stands second, what you order right after it:" },
  { "tr": "Gerçek bir özne yok; cümle yalnızca işin yapıldığını söylüyor.", "en": "There is no real subject; the sentence only says the work is done." },
  { "tr": "Gün başta, yardımcı fiil ikinci sırada, geçmiş biçim en sonda:", "en": "The day first, the auxiliary second, the past form right at the end:" },
@@ -51,7 +50,6 @@
  { "tr": "Nötrde zamir das; 'Fragen stellen' kalıbının fiili sona gider:", "en": "In the neuter the pronoun is das; the verb of 'Fragen stellen' goes last:" },
  { "tr": "Olmak fiilinin kısa geçmişi; deneyimin başındaki hâli anlatır.", "en": "The simple past of to be; it describes how the experience started." },
  { "tr": "olur. Bakılan şey senin cinsiyetin değil, kelimenin cinsiyeti.", "en": "— what matters is not your gender but the word's gender." },
- { "tr": "Örnek: 'Doğum günün için sana bir pasta yapıyorum.' Almancası:", "en": "Example: 'I am baking you a cake for your birthday.' In German:" },
  { "tr": "Örnek: 'Trenimiz maalesef on beş dakika gecikmeli.' Almancası:", "en": "Example: 'Our train is unfortunately fifteen minutes late.' In German:" },
  { "tr": "Özne söylenmez ve bu fiilde iki noktalı harf düz hâline döner:", "en": "The subject is left out and in this verb the umlaut goes back to plain:" },
  { "tr": "Posta kodu Almanya'da beş rakamdır ve rakamlar tek tek okunur:", "en": "A German zip code has five digits and they are read one by one:" },
@@ -137,6 +135,5 @@
  { "tr": "Kişi zamiri düşmüş, fiil başa geçmiş ve nesne belirtme hâlinde.", "en": "The personal pronoun is dropped, the verb moved first and the object is accusative." },
  { "tr": "Olumsuzluk zu'dan önce; sıfat dişil belirtisizde -e ekini alır:", "en": "The negation before zu; in the indefinite feminine the adjective takes -e:" },
  { "tr": "Örnek: 'Lütfen biraz daha kısa, ama çok kısa değil.' Almancası:", "en": "Example: 'A bit shorter, please, but not too short.' In German:" },
- { "tr": "Örnek: 'Yemek yaparken podcast dinlemeyi seviyorum.' Almancası:", "en": "Example: 'I like listening to a podcast while cooking.' In German:" },
  { "tr": "yer değiştiren bir fiil, o yüzden", "en": "is a verb of movement, so" }
 ]

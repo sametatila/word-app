@@ -336,7 +336,6 @@
  { "kind": "say.tr", "tr": "Merhaba, hoş geldin. Bugün araç kiralıyoruz.", "de": "Hallo, willkommen. Heute mieten wir ein Auto." },
  { "kind": "say.tr", "tr": "Referans mektubu vardiyalı çalışmadan söz ediyor.", "de": "Das Referenzschreiben erwähnt die Schichtarbeit." },
  { "kind": "say.tr", "tr": "Bu ikisini karıştırmamak bugünün en önemli noktası.", "de": "Die zwei nicht zu verwechseln ist heute der wichtigste Punkt." },
- { "kind": "say.tr", "tr": "Şimdi en önemli cümle. Kapıdan girdin, ne diyorsun?", "de": "Jetzt der wichtigste Satz. Du kommst rein, was sagst du?" },
  { "kind": "say.tr", "tr": "Şimdi bugünün en önemli kuralı. Geçmişi taşıyan sözcük", "de": "Jetzt die wichtigste Regel von heute. Weil das Wort, das die Vergangenheit trägt," },
  { "kind": "say.tr", "tr": "Bugünün belki de en önemli kısmı: sağlığın. \"Alerji\" kelimesi", "de": "Der vielleicht wichtigste Teil von heute: deine Gesundheit. Das Wort „Allergie“:" },
  { "kind": "say.tr", "tr": "Şimdi işin kalbi. Birine haberi duyup duymadığını sormak için:", "de": "Jetzt das Herzstück. Um zu fragen, ob jemand die Neuigkeit kennt:" },

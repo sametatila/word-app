@@ -503,7 +503,7 @@ export const deB1B08: Conversation[] = [
       { say: [tr("Şimdi olasılık: 'Hafif yan etkiler görülebilir.'")], expect: produce("Leichte Nebenwirkungen können auftreten", [tr("Modal fiil çekimli, ayrılabilen mastar en sonda:"), de("Leichte Nebenwirkungen können auftreten."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha, soru sor: 'Hatırlatma dozu ne zaman gerekiyor?'")], expect: produce("Wann ist die Auffrischung nötig", [tr("Soru kelimesi başta, fiil ikinci sırada:"), de("Wann ist die Auffrischung nötig?"), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Nebenwirkungen kann auftreten."), tr("cümlesi doğru mu?")], expect: truefalse("Nebenwirkungen kann auftreten.", false, [tr("Özne çoğul olduğu için modal fiil de çoğul çekilir:"), de("Nebenwirkungen können auftreten.")]) },
-      { say: [tr("Son: 'Bu tamamen zararsız.'")], expect: produce("Das ist völlig harmlos", [tr("Kısa değerlendirme cümlesi:"), de("Das ist völlig harmlos."), tr("Tekrar dene.")]) },
+      { say: [tr("Son: 'Muayenehanede yalnızca salıları aşı yapılıyor.'")], expect: produce("In der Praxis wird nur dienstags geimpft", [tr("Öznesiz edilgen: yardımcı fiil ikinci sırada, ortaç en sonda:"), de("In der Praxis wird nur dienstags geimpft."), tr("Tekrar dene.")], ["In der Praxis wird nur am Dienstag geimpft"]) },
       { say: [tr("Hazırsın. Sohbette aşı randevusundasın: ne getirmen gerekiyor, yan etkiler ne, hatırlatma dozu ne zaman.")] },
     ],
     chat: {

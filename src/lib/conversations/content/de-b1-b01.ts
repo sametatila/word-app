@@ -461,21 +461,22 @@ export const deB1B01: Conversation[] = [
       {
         say: [
           tr("Kısa bir kalıp daha:"),
-          de("Ich bin sehr belastbar und geduldig."),
-          tr("'Baskıya dayanıklıyım ve çok sabırlıyım' demek. Lütfen"),
-          de("Ich bin sehr belastbar und geduldig"),
+          de("Meine Schwäche ist die Geduld, aber ich arbeite daran."),
+          tr("'Zayıf yönüm sabır, ama bunun üzerinde çalışıyorum' demek. Lütfen"),
+          de("Meine Schwäche ist die Geduld, aber ich arbeite daran"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Ich bin sehr belastbar und geduldig" },
+        expect: { kind: "repeat", target: "Meine Schwäche ist die Geduld, aber ich arbeite daran" },
       },
       {
-        say: [tr("Bir tane daha: 'Çok dürüst ve yaratıcıyım.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Çok düzenli değilim, ama bunun üzerinde çalışıyorum.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich bin sehr ehrlich und kreativ",
+          target: "Ich bin nicht sehr ordentlich, aber ich arbeite daran",
+          accept: ["Ich bin nicht so ordentlich, aber ich arbeite daran", "Ich bin nicht besonders ordentlich, aber ich arbeite daran"],
           hint: [
-            tr("Yüklemdeki sıfatlar ek almaz:"),
-            de("Ich bin sehr ehrlich und kreativ."),
+            tr("Bir şeyin üzerinde çalışmak an edatıyla kurulur; o şeyin yerine daran gelir ve cümlenin sonunda durur:"),
+            de("Ich bin nicht sehr ordentlich, aber ich arbeite daran."),
             tr("Tekrar dene."),
           ],
         },
@@ -763,7 +764,7 @@ export const deB1B01: Conversation[] = [
         expect: { kind: "repeat", target: "An wen wende ich mich" },
       },
       {
-        say: [tr("Şimdi aynı soruyu gömelim: 'Kime başvuracağımı bilmiyorum.' demek için ne dersin?")],
+        say: [tr("Şimdi soruyu bir cümleye göm: 'Kime başvuracağımı bilmiyorum.' demek için ne dersin?")],
         expect: {
           kind: "produce",
           target: "Ich weiß nicht, an wen ich mich wende",
@@ -785,13 +786,14 @@ export const deB1B01: Conversation[] = [
         expect: { kind: "repeat", target: "Die Einarbeitung dauert zwei Wochen" },
       },
       {
-        say: [tr("Bir tane daha: 'Toplantının ne zaman olduğunu bilmiyorum.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Programı nasıl açacağımı bana gösterebilir misiniz?' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich weiß nicht, wann die Besprechung ist",
+          target: "Können Sie mir zeigen, wie ich das Programm öffne",
+          accept: ["Können Sie mir zeigen, wie man das Programm öffnet"],
           hint: [
             tr("Dolaylı soruda çekimli fiil yan cümlenin sonuna gidiyor:"),
-            de("Ich weiß nicht, wann die Besprechung ist."),
+            de("Können Sie mir zeigen, wie ich das Programm öffne?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1111,14 +1113,14 @@ export const deB1B01: Conversation[] = [
         expect: { kind: "repeat", target: "Können wir darüber verhandeln" },
       },
       {
-        say: [tr("Bir tane daha: 'Çalışma saatleri konusunda pazarlık yapabilir miyiz?' demek için ne dersin?")],
+        say: [tr("Bir tane daha, kibarca iste: 'Daha esnek çalışma saatleri isterim.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Können wir über die Arbeitszeit verhandeln",
-          accept: ["Können wir über die Arbeitszeiten verhandeln"],
+          target: "Ich hätte gern flexiblere Arbeitszeiten",
+          accept: ["Ich hätte gerne flexiblere Arbeitszeiten"],
           hint: [
-            tr("Kiplik fiil başta, asıl fiil en sonda:"),
-            de("Können wir über die Arbeitszeit verhandeln?"),
+            tr("Kibar talepte fiilin yumuşak biçimi kullanılır; düz biçim sert duyulur:"),
+            de("Ich hätte gern flexiblere Arbeitszeiten."),
             tr("Tekrar dene."),
           ],
         },
@@ -1277,13 +1279,14 @@ export const deB1B01: Conversation[] = [
         expect: { kind: "repeat", target: "Die Firma hat sich nicht mehr gemeldet" },
       },
       {
-        say: [tr("Bir tane daha: 'Ne yazık ki bu sefer de olmadı.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Pes etmiyorum, denemeye devam ediyorum.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Leider hat es diesmal auch nicht geklappt",
+          target: "Ich gebe nicht auf, ich versuche es weiter",
+          accept: ["Ich gebe nicht auf und versuche es weiter"],
           hint: [
-            tr("Kalıp aynı kalıyor, zaman zarfı yardımcı fiille ortacın arasına giriyor:"),
-            de("Leider hat es diesmal auch nicht geklappt."),
+            tr("Ayrılabilen fiilin öneki sona gider; devam etmeyi anlatan kelime de cümlenin sonunda durur:"),
+            de("Ich gebe nicht auf, ich versuche es weiter."),
             tr("Tekrar dene."),
           ],
         },
@@ -1436,13 +1439,13 @@ export const deB1B01: Conversation[] = [
         expect: { kind: "repeat", target: "Die Kündigung muss schriftlich sein" },
       },
       {
-        say: [tr("Bir tane daha: 'İstifa yazılı olmak zorunda mı?' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Yazılı bir onay rica ediyorum.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Muss die Kündigung schriftlich sein",
+          target: "Ich bitte um eine schriftliche Bestätigung",
           hint: [
-            tr("Soruya çevirince kip fiili başa geçiyor, geri kalan sıra değişmiyor:"),
-            de("Muss die Kündigung schriftlich sein?"),
+            tr("Rica edilen şey um edatıyla verilir ve belirtme hâli alır:"),
+            de("Ich bitte um eine schriftliche Bestätigung."),
             tr("Tekrar dene."),
           ],
         },

@@ -133,7 +133,6 @@
  { "tr": "Sıra sende: 'Günün sonunda yorgundum ama mutluydum.'", "kind": "say.tr", "de": "Du bist dran: „Am Ende des Tages war ich müde, aber glücklich.“" },
  { "tr": "Sıra sende: 'Resim yapmayı seviyorum.' nasıl dersin?", "kind": "say.tr", "de": "Du bist dran: Wie sagst du „Ich male gern“?" },
  { "tr": "Sıra sende. Arkadaşına haberleri duydun mu diye sor.", "kind": "say.tr", "de": "Du bist dran. Frag deinen Freund, ob er die Neuigkeiten gehört hat." },
- { "tr": "Sıra sende. Bir kadın bana yardım etti, nasıl denir?", "kind": "say.tr", "de": "Du bist dran. Eine Frau hat mir geholfen, wie heißt das?" },
  { "tr": "Sıra sende. Öğle yemeğini birde yerim, nasıl dersin?", "kind": "say.tr", "de": "Du bist dran. Ich esse um eins zu Mittag, wie sagst du das?" },
  { "tr": "Sıra sende. Şunu söyle: Zemin katta bir banyo var.", "kind": "say.tr", "de": "Du bist dran. Sag das: Im Erdgeschoss ist ein Bad." },
  { "tr": "sonuna \"ny\" gelince \"güneşli\" oluyor. Söyle bakalım:", "kind": "say.tr", "de": "mit „ny“ hinten wird „sonnig“ daraus. Sag mal:" },
@@ -143,7 +142,6 @@
  { "tr": "Şimdi iki küçük kelimeye dikkat: 'already' ve 'yet'.", "kind": "say.tr", "de": "Jetzt Achtung bei zwei kleinen Wörtern: „already“ und „yet“." },
  { "tr": "Şimdi ilk kalıbımız. Birini tanıtırken şöyle dersin:", "kind": "say.tr", "de": "Jetzt unsere erste Wendung. Beim Vorstellen sagst du so:" },
  { "tr": "Şimdi ilk kalıbımız. Nereye gittiğini söylemek için:", "kind": "say.tr", "de": "Jetzt unsere erste Wendung. Um zu sagen, wohin du gefahren bist:" },
- { "tr": "Şimdi kahvaltıyı sor. Türkçesi: Kahvaltı saat kaçta?", "kind": "say.tr", "de": "Jetzt frag nach dem Frühstück. Auf Deutsch: Wann gibt es Frühstück?" },
  { "tr": "Şimdi sıra sende. Şoföre söyle: Havaalanına, lütfen.", "kind": "say.tr", "de": "Jetzt bist du dran. Sag dem Fahrer: Zum Flughafen, bitte." },
  { "tr": "Şimdi günün bölümleri. \"Sabah\" demek:", "kind": "say.tr", "de": "Jetzt die Tageszeiten. „Morgen“ heißt:" },
  { "tr": "Üçüncü edatımız geliyor: in.", "kind": "say.tr", "de": "Unsere dritte Präposition: in." }

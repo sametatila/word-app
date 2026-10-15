@@ -345,11 +345,6 @@
   "de": "Richtig. Der Konnektor trägt die Verneinung selbst, deshalb steht keine zweite im Satz; es heißt „wenn der Preis gleich bleibt, nehme ich das Angebot an“."
  },
  {
-  "tr": "Açıklamak için",
-  "kind": "hint.tr",
-  "de": "Für erklären wird"
- },
- {
   "tr": "Önlem bağlacı:",
   "kind": "hint.tr",
   "de": "Der Konnektor für Vorsorge:"
@@ -398,11 +393,6 @@
   "tr": "Tarifedeki saat geniş zamanla söylenir:",
   "kind": "hint.tr",
   "de": "Die Uhrzeit aus dem Fahrplan steht im Präsens:"
- },
- {
-  "tr": "kullanılır ve ardından doğrudan nesne gelir:",
-  "kind": "hint.tr",
-  "de": "benutzt, und danach kommt direkt das Objekt:"
  },
  {
   "tr": "Zaman cümlesi geniş zaman, ana cümle gelecek:",
@@ -718,11 +708,6 @@
   "tr": "Şimdi bugünün kuralı. İlk bağlacımız",
   "kind": "say.tr",
   "de": "Jetzt die Regel von heute. Unser erster Konnektor ist"
- },
- {
-  "tr": "Bir tane daha: Sebebini açıklayayım.",
-  "kind": "say.tr",
-  "de": "Noch eins: Lass mich den Grund erklären."
  },
  {
   "tr": "İkinci bağlacımız bir SINIR koyuyor:",

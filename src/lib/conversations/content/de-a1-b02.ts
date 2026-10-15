@@ -195,6 +195,18 @@ export const deA1B02: Conversation[] = [
         expect: { kind: "repeat", target: "Ich habe zwei Kinder" },
       },
       {
+        say: [tr("Sıra sende: 'Bir kızım var.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich habe eine Tochter",
+          hint: [
+            tr("'Var' demek için 'sahip olmak' fiili kullanılır; kız evlat dişil bir kelime:"),
+            de("Ich habe eine Tochter."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Das ist mein Mutter."),
@@ -642,6 +654,23 @@ export const deA1B02: Conversation[] = [
       },
       {
         say: [
+          tr(
+            "Sıra sende. Arkadaşın geç kaldığı için özür diliyor: 'Sorun değil, vaktim var.' nasıl dersin?",
+          ),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Kein Problem, ich habe Zeit",
+          accept: ["Kein Problem, ich habe noch Zeit"],
+          hint: [
+            tr("Önce hazır cümle gelir, sonra vaktin olduğunu söylersin; burada olumsuzluk yok:"),
+            de("Kein Problem, ich habe Zeit."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
           tr("Kibarca hayır demek istersen araya tek kelime eklemen yeter:"),
           de("Ich habe leider keine Zeit."),
           tr("Yani 'Maalesef vaktim yok.'"),
@@ -845,6 +874,23 @@ export const deA1B02: Conversation[] = [
       },
       {
         say: [
+          tr(
+            "Sıra sende, kedinden söz et: 'Onun adı Luna.' Kedi kelimesinin dişil olduğunu unutma.",
+          ),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Sie heißt Luna",
+          accept: ["Meine Katze heißt Luna"],
+          hint: [
+            tr("Kedi dişil olduğu için 'o' yerine dişil zamir gelir:"),
+            de("Sie heißt Luna."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
           tr("Üçüncü kalıbımız yaşını söyler ve bunu zaten biliyorsun:"),
           de("Sie ist drei Jahre alt."),
           tr("İnsanlar için ne diyorsan hayvanlar için de aynısı."),
@@ -1045,6 +1091,18 @@ export const deA1B02: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Wer ist das auf dem Foto"), tr("de.")],
         expect: { kind: "repeat", target: "Wer ist das auf dem Foto" },
+      },
+      {
+        say: [tr("Sıra sende: 'Fotoğraftaki kız kim?' nasıl sorarsın?")],
+        expect: {
+          kind: "produce",
+          target: "Wer ist das Mädchen auf dem Foto",
+          hint: [
+            tr("Soru kelimesi başta, fiil arkasında, sonra kişi ve fotoğraf gelir:"),
+            de("Wer ist das Mädchen auf dem Foto?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1315,6 +1373,19 @@ export const deA1B02: Conversation[] = [
         expect: { kind: "repeat", target: "ein paar Kinder" },
       },
       {
+        say: [tr("Sıra sende: 'Burada birkaç kişi var.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Hier sind ein paar Leute",
+          accept: ["Es sind ein paar Leute hier"],
+          hint: [
+            tr("'Birkaç' kalıbından sonra hep çoğul gelir, fiil de çoğul olur:"),
+            de("Hier sind ein paar Leute."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Ich habe ein paar Bücher."),
@@ -1530,6 +1601,20 @@ export const deA1B02: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Er trägt eine Brille"), tr("de.")],
         expect: { kind: "repeat", target: "Er trägt eine Brille" },
+      },
+      {
+        say: [tr("Sıra sende: 'Annem gözlük takıyor.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Meine Mutter trägt eine Brille",
+          hint: [
+            tr(
+              "Gözlük için de giymek fiili kullanılır; anne dişil olduğu için iyelik kelimesi uzar:",
+            ),
+            de("Meine Mutter trägt eine Brille."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1749,6 +1834,18 @@ export const deA1B02: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Wir treffen uns oft"), tr("de.")],
         expect: { kind: "repeat", target: "Wir treffen uns oft" },
+      },
+      {
+        say: [tr("Sıra sende: 'Erkek kardeşim ve ben sık sık buluşuyoruz.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Mein Bruder und ich treffen uns oft",
+          hint: [
+            tr("İki kişi birlikte özne olunca fiil 'biz' biçimine girer; dönüşlü zamir ve sıklık kelimesi arkadan gelir:"),
+            de("Mein Bruder und ich treffen uns oft."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1973,6 +2070,19 @@ export const deA1B02: Conversation[] = [
         expect: { kind: "repeat", target: "Ich schreibe nicht so gern" },
       },
       {
+        say: [tr("Sıra sende: 'İngilizce konuşmayı pek sevmem.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich spreche nicht so gern Englisch",
+          accept: ["Ich spreche Englisch nicht so gern"],
+          hint: [
+            tr("'Pek sevmeden' anlamındaki üç kelime fiilin hemen arkasına girer, dil en sonda kalır:"),
+            de("Ich spreche nicht so gern Englisch."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Ve karşındaki hızlı konuşuyorsa iki cümlen hazır olsun:"),
           de("Ich verstehe nicht. Langsam, bitte."),
@@ -2149,6 +2259,18 @@ export const deA1B02: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Wer kommt zum Fest"), tr("de.")],
         expect: { kind: "repeat", target: "Wer kommt zum Fest" },
+      },
+      {
+        say: [tr("Sıra sende: 'Düğüne kim geliyor?' nasıl sorarsın? Düğün dişil bir kelime.")],
+        expect: {
+          kind: "produce",
+          target: "Wer kommt zur Hochzeit",
+          hint: [
+            tr("Düğün dişil olduğu için yön kelimesi dişil biçimini alır:"),
+            de("Wer kommt zur Hochzeit?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [

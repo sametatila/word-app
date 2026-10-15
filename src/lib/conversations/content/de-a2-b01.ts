@@ -217,6 +217,19 @@ export const deA2B01: Conversation[] = [
         ],
       },
       {
+        say: [tr("Sıra sende: 'Tatil muhteşemdi.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Der Urlaub war fantastisch",
+          accept: ["Mein Urlaub war fantastisch"],
+          hint: [
+            tr("Değerlendirme olmak fiilinin kısa geçmişiyle yapılır, sıfat sonda durur ve ek almaz:"),
+            de("Der Urlaub war fantastisch."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Ich habe nach Berlin hingefahren."),
@@ -423,14 +436,14 @@ export const deA2B01: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Bir pasta pişirdik.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'O bana yalancı dedi.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Wir haben einen Kuchen gebacken",
+          target: "Er hat mich einen Lügner genannt",
+          accept: ["Sie hat mich einen Lügner genannt"],
           hint: [
-            de("backen"),
-            tr("fiilinin ortacı sonundan değişiyor:"),
-            de("Wir haben einen Kuchen gebacken."),
+            tr("Nennen fiilinin ortacı düz biter ama sesli harfi değişir; adlandırılan kişi belirtme hâlinde:"),
+            de("Er hat mich einen Lügner genannt."),
             tr("Tekrar dene."),
           ],
         },
@@ -443,6 +456,19 @@ export const deA2B01: Conversation[] = [
             "Fiil hem kuralsız hem de yer değiştiren bir fiil, yani yardımcı fiil de değişiyor. İkisi bir arada geldiğinde en çok hata burada yapılır.",
           ),
         ],
+      },
+      {
+        say: [tr("Sıra sende: 'Köpek kaçtı.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Der Hund ist weggelaufen",
+          accept: ["Unser Hund ist weggelaufen"],
+          hint: [
+            tr("Kaçmak hem kuralsız hem de yer değiştiren bir fiil, o yüzden yardımcı fiil de değişiyor:"),
+            de("Der Hund ist weggelaufen."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -672,6 +698,19 @@ export const deA2B01: Conversation[] = [
         ],
       },
       {
+        say: [tr("Sıra sende: 'Kapıyı kilitledin mi?' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Hast du die Tür abgeschlossen",
+          accept: ["Hast du die Tür zugeschlossen"],
+          hint: [
+            tr("Soruda yardımcı fiil başa geçer; ortaç sonda ve hecesi ön ekle kökün arasında:"),
+            de("Hast du die Tür abgeschlossen?"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Ich habe die Tür geabschlossen."),
@@ -842,6 +881,19 @@ export const deA2B01: Conversation[] = [
           tr("de."),
         ],
         expect: { kind: "repeat", target: "Ich habe ein spannendes Programm angesehen" },
+      },
+      {
+        say: [tr("Sıra sende: 'Dün akşam bir film izledim.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Gestern Abend habe ich einen Film angesehen",
+          accept: ["Ich habe gestern Abend einen Film angesehen", "Gestern Abend habe ich mir einen Film angesehen"],
+          hint: [
+            tr("Ayrılabilen fiilde ortacın hecesi ön ekle kökün arasına girer ve ortaç sonda durur:"),
+            de("Gestern Abend habe ich einen Film angesehen."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1057,6 +1109,19 @@ export const deA2B01: Conversation[] = [
         expect: { kind: "repeat", target: "Heute Morgen habe ich verschlafen" },
       },
       {
+        say: [tr("Sıra sende: 'Yine uyuyakaldım.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich habe wieder verschlafen",
+          accept: ["Ich habe schon wieder verschlafen"],
+          hint: [
+            tr("Vurgusuz ön ekli fiil ortacın hecesini almaz; yardımcı fiil ikinci sırada:"),
+            de("Ich habe wieder verschlafen."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("İkinci kalıbımız:"),
           de("Ich habe … verpasst."),
@@ -1084,13 +1149,14 @@ export const deA2B01: Conversation[] = [
         ],
       },
       {
-        say: [tr("Sıra sende: 'Tren gecikti.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Bugün hiçbir şey yolunda gitmedi.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Der Zug hat sich verspätet",
+          target: "Heute hat nichts geklappt",
+          accept: ["Heute hat gar nichts geklappt", "Nichts hat heute geklappt"],
           hint: [
-            tr("Dönüşlü zamir cümlede ayrı durur ve ortaç sona gider:"),
-            de("Der Zug hat sich verspätet."),
+            tr("Klappen fiili kurallı ve ön eki yok; ortacı düz kurulur ve sonda durur:"),
+            de("Heute hat nichts geklappt."),
             tr("Tekrar dene."),
           ],
         },
@@ -2077,6 +2143,19 @@ export const deA2B01: Conversation[] = [
         ],
       },
       {
+        say: [tr("Sıra sende: 'Tahmin et, kim aradı!' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Rate mal, wer angerufen hat",
+          accept: ["Rate mal, wer mich angerufen hat"],
+          hint: [
+            tr("Emirden sonra gelen yan cümlede çekimli fiil en sona gider:"),
+            de("Rate mal, wer angerufen hat!"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("İkinci kalıbımız:"),
           de("Ich habe … bestanden."),
@@ -2094,13 +2173,14 @@ export const deA2B01: Conversation[] = [
         expect: { kind: "repeat", target: "Ich habe die Prüfung bestanden" },
       },
       {
-        say: [tr("Sıra sende: 'Bursu aldım.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Almanca sınavını geçtim.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich habe das Stipendium bekommen",
+          target: "Ich habe die Deutschprüfung bestanden",
+          accept: ["Ich habe den Deutschtest bestanden"],
           hint: [
-            tr("Almak fiili kuralsız ve o da ortacın hecesini almaz:"),
-            de("Ich habe das Stipendium bekommen."),
+            tr("Bestehen fiili kuralsız ve vurgusuz ön ekle başladığı için ortacın hecesini almıyor:"),
+            de("Ich habe die Deutschprüfung bestanden."),
             tr("Tekrar dene."),
           ],
         },

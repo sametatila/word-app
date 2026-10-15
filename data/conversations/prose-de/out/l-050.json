@@ -120,8 +120,6 @@
  { "tr": "Bunlar 'Evet, yaptım' ve 'Hayır, yapmadım' demek.", "kind": "say.tr", "de": "Das heißt „Ja, habe ich“ und „Nein, habe ich nicht“." },
  { "tr": "çoğu zaman birbirinin yerine geçer. Saat sorarken", "kind": "say.tr", "de": "können meist füreinander stehen. Beim Fragen nach der Uhrzeit" },
  { "tr": "Daha erken bir saat sormak için şu soruyu kullan:", "kind": "say.tr", "de": "Um nach einem früheren Termin zu fragen, nimm diese Frage:" },
- { "tr": "Deneyelim. Görevliye söyle: Bagajımı kaybettiler.", "kind": "say.tr", "de": "Probieren wir es. Sag am Schalter: Sie haben mein Gepäck verloren." },
- { "tr": "Deneyelim. Kuaföre yanları kısa istediğini söyle.", "kind": "say.tr", "de": "Probieren wir es. Sag beim Friseur, die Seiten sollen kurz sein." },
  { "tr": "denir; yani paket, kargo. Görevliye şöyle dersin:", "kind": "say.tr", "de": "sagt man; also Paket, Sendung. Am Schalter sagst du so:" },
  { "tr": "Ders çalışmak, okumak demek. Geçmiş hâli studied.", "kind": "say.tr", "de": "Heißt lernen, studieren. Vergangenheit studied." },
  { "tr": "Dikkat: burada the yok. By the bus denmez, sadece", "kind": "say.tr", "de": "Achtung: hier kein the. By the bus sagt man nicht, nur" },
@@ -140,7 +138,6 @@
  { "tr": "İlk kelimemiz masaya oturur oturmaz lazım olacak.", "kind": "say.tr", "de": "Unser erstes Wort brauchst du gleich am Tisch." },
  { "tr": "İlk kelimemiz: friend. Arkadaş demek. Bir arkadaş", "kind": "say.tr", "de": "Unser erstes Wort: friend. Heißt Freund. Ein Freund" },
  { "tr": "İnternete bağlıysan bunu tek kelimeyle söylersin.", "kind": "say.tr", "de": "Wenn du im Netz bist, sagst du das mit einem Wort." },
- { "tr": "Karar verdin, alıyorsun. Bunu İngilizcede genelde", "kind": "say.tr", "de": "Du hast entschieden, du nimmst es. Das sagt man meistens mit" },
  { "tr": "Karşılaştırdın, artık seçme zamanı. Seçmek fiili:", "kind": "say.tr", "de": "Verglichen hast du, jetzt wird gewählt. Das Verb wählen:" },
  { "tr": "Kısa sıfata -er, uzun sıfata more, arkasına than.", "kind": "say.tr", "de": "Kurzes Adjektiv -er, langes more, dahinter than." }
 ]

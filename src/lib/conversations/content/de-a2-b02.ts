@@ -198,6 +198,19 @@ export const deA2B02: Conversation[] = [
         ],
       },
       {
+        say: [tr("Sıra sende: 'Bugün iş arkadaşlarımla iyi geçiniyorum.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Heute komme ich mit meinen Kollegen gut aus",
+          accept: ["Ich komme heute mit meinen Kollegen gut aus"],
+          hint: [
+            tr("Ayrılabilen fiilin ön eki şimdiki zamanda cümlenin sonuna düşer:"),
+            de("Heute komme ich mit meinen Kollegen gut aus."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Am Anfang hatte ich keine Kenntnisse."),
@@ -388,6 +401,19 @@ export const deA2B02: Conversation[] = [
           de("Ich konnte nicht …"),
           tr("Geçmişte yapamadığın şeyi anlatır. Olumsuzluk kelimesi asıl fiilin hemen önünde."),
         ],
+      },
+      {
+        say: [tr("Sıra sende: 'Geceleri uyuyamıyordum.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich konnte nachts nicht schlafen",
+          accept: ["Nachts konnte ich nicht schlafen"],
+          hint: [
+            tr("Olumsuzluk kelimesi asıl fiilin hemen önünde, asıl fiil sonda:"),
+            de("Ich konnte nachts nicht schlafen."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [

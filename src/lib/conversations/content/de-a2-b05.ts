@@ -1569,13 +1569,13 @@ export const deA2B05: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Bu yıl beş izin günüm kaldı.' Almancası:"),
-          de("Dieses Jahr habe ich noch fünf Urlaubstage."),
+          tr("Örnek: 'Mayısta üç gün izin almak istiyorum.' Almancası:"),
+          de("Ich will im Mai drei Urlaubstage nehmen."),
           tr("Lütfen"),
-          de("Dieses Jahr habe ich noch fünf Urlaubstage"),
+          de("Ich will im Mai drei Urlaubstage nehmen"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Dieses Jahr habe ich noch fünf Urlaubstage" },
+        expect: { kind: "repeat", target: "Ich will im Mai drei Urlaubstage nehmen" },
       },
       {
         say: [tr("Sıra sende: 'Ağustosta iki hafta izin almak istiyorum.' nasıl dersin?")],
@@ -1775,13 +1775,13 @@ export const deA2B05: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Boğazım ağrıyor ve bugün gelemiyorum.' Almancası:"),
-          de("Ich habe Halsschmerzen und kann heute nicht kommen."),
+          tr("Örnek: 'Size boğazımın ağrıdığını söylemem gerekiyor.' Almancası:"),
+          de("Ich muss Ihnen sagen, dass ich Halsschmerzen habe."),
           tr("Lütfen"),
-          de("Ich habe Halsschmerzen und kann heute nicht kommen"),
+          de("Ich muss Ihnen sagen, dass ich Halsschmerzen habe"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Ich habe Halsschmerzen und kann heute nicht kommen" },
+        expect: { kind: "repeat", target: "Ich muss Ihnen sagen, dass ich Halsschmerzen habe" },
       },
       {
         say: [tr("Sıra sende: 'Doktor hastalığımın bulaşıcı olduğunu söyledi.' nasıl dersin?")],

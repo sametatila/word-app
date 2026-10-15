@@ -401,16 +401,14 @@ export const deA1B04: Conversation[] = [
         expect: { kind: "repeat", target: "Es ist drei Uhr" },
       },
       {
-        say: [
-          tr("Sıra sende: 'Saat yedi.' demek için ne dersin?"),
-        ],
+        say: [tr("Sıra sende. Sokakta birine kibarca saati sor: 'Affedersiniz, saat kaç?'")],
         expect: {
           kind: "produce",
-          target: "Es ist sieben Uhr",
-          accept: ["Es ist sieben", "Sieben Uhr"],
+          target: "Entschuldigung, wie spät ist es",
+          accept: ["Entschuldigung, wie viel Uhr ist es"],
           hint: [
-            tr("Kalıp hazır, sadece sayıyı değiştir:"),
-            de("Es ist sieben Uhr."),
+            tr("Önce özür kelimesi, sonra hazır soru gelir:"),
+            de("Entschuldigung, wie spät ist es?"),
             tr("Tekrar dene."),
           ],
         },
@@ -458,6 +456,19 @@ export const deA1B04: Conversation[] = [
           tr("de."),
         ],
         expect: { kind: "repeat", target: "Um wie viel Uhr beginnt dein Tag" },
+      },
+      {
+        say: [tr("Sıra sende: 'Kurs saat kaçta başlıyor?' nasıl sorarsın?")],
+        expect: {
+          kind: "produce",
+          target: "Um wie viel Uhr beginnt der Kurs",
+          accept: ["Wann beginnt der Kurs"],
+          hint: [
+            tr("Soru kalıbı başta, fiil hemen arkasında, sonra ne başladığı gelir:"),
+            de("Um wie viel Uhr beginnt der Kurs?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1810,6 +1821,19 @@ export const deA1B04: Conversation[] = [
           hint: [
             tr("Fiilin ayrılan parçası cümlenin sonuna gider:"),
             de("Nach der Arbeit sehe ich fern."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [tr("Bir tane daha: 'Hafta sonu dinleniyorum.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Am Wochenende ruhe ich mich aus",
+          accept: ["Ich ruhe mich am Wochenende aus"],
+          hint: [
+            tr("Zaman başa gelince fiil ikinci sıraya geçer; ayrılabilen fiilin ön eki yine en sona gider:"),
+            de("Am Wochenende ruhe ich mich aus."),
             tr("Tekrar dene."),
           ],
         },

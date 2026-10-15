@@ -320,11 +320,6 @@
   "de": "Richtig. Wer veröffentlicht hat, wird nicht genannt, und in der Nachrichtensprache ist das normal; wichtig ist, dass der Artikel erschienen ist."
  },
  {
-  "tr": "Fikir cümlesi:",
-  "kind": "hint.tr",
-  "de": "Der Meinungssatz:"
- },
- {
   "tr": "Bu fiilden sonra",
   "kind": "hint.tr",
   "de": "Nach diesem Verb –"
@@ -828,11 +823,6 @@
   "tr": "Şimdi bugünün kuralı. Haber dilinde özne düşer ve edilgen kurulur:",
   "kind": "say.tr",
   "de": "Jetzt die Regel von heute. In der Nachrichtensprache fällt das Subjekt weg und das Passiv wird gebaut:"
- },
- {
-  "tr": "Bir tane daha: Bunun muhtemelen en iyi fikir olduğunu hissediyorum.",
-  "kind": "say.tr",
-  "de": "Noch eins: Ich habe das Gefühl, dass das wahrscheinlich die beste Idee ist."
  },
  {
   "tr": "Paylaşım demek; hem isim hem fiildir. İlk kalıbımız da bu. Tekrar et:",

@@ -148,6 +148,18 @@ export const deA1B08: Conversation[] = [
         expect: { kind: "repeat", target: "Mein Hobby ist Musik" },
       },
       {
+        say: [tr("Sıra sende: 'Hobim yemek yapmak.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Mein Hobby ist Kochen",
+          hint: [
+            tr("Önce 'benim hobim', sonra olmak fiili ve hobinin adı gelir:"),
+            de("Mein Hobby ist Kochen."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Şimdi asıl kelime geliyor:"),
           de("Ich spiele gern Fußball."),
@@ -394,6 +406,18 @@ export const deA1B08: Conversation[] = [
         expect: { kind: "repeat", target: "Ich kann nicht so gut singen" },
       },
       {
+        say: [tr("Sıra sende: 'Pek iyi yemek yapamam.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich kann nicht so gut kochen",
+          hint: [
+            tr("Olumsuzluk yardımcı fiilin arkasına girer, asıl fiil en sonda kalır:"),
+            de("Ich kann nicht so gut kochen."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Şimdi karşındakine sor. Soruda fiil başa geçiyor: 'Dans edebiliyor musun?'"),
         ],
@@ -587,6 +611,18 @@ export const deA1B08: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Ich mache Sport im Fitnessstudio"), tr("de.")],
         expect: { kind: "repeat", target: "Ich mache Sport im Fitnessstudio" },
+      },
+      {
+        say: [tr("Sıra sende: 'Severek spor yaparım.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich mache gern Sport",
+          hint: [
+            tr("Severek yapmayı anlatan kelime fiilin hemen arkasına gelir:"),
+            de("Ich mache gern Sport."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -804,6 +840,18 @@ export const deA1B08: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Ich höre gern Rockmusik"), tr("de.")],
         expect: { kind: "repeat", target: "Ich höre gern Rockmusik" },
+      },
+      {
+        say: [tr("Sıra sende: 'Severek caz dinlerim.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich höre gern Jazz",
+          hint: [
+            tr("Severek yapmayı anlatan kelime fiilin hemen arkasına gelir:"),
+            de("Ich höre gern Jazz."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1056,6 +1104,19 @@ export const deA1B08: Conversation[] = [
         expect: { kind: "repeat", target: "Gute Idee" },
       },
       {
+        say: [tr("Sıra sende, daveti kabul et: 'İyi fikir, seve seve gelirim.'")],
+        expect: {
+          kind: "produce",
+          target: "Gute Idee, ich komme gern",
+          accept: ["Gute Idee, ich komme gern mit"],
+          hint: [
+            tr("Önce 'iyi fikir' anlamındaki kısa ifade gelir; severek yapmayı anlatan kelime fiilin arkasına girer:"),
+            de("Gute Idee, ich komme gern."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Sonra iş ayrıntıya geliyor:"),
           de("Wann treffen wir uns?"),
@@ -1066,6 +1127,18 @@ export const deA1B08: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Wann treffen wir uns"), tr("de.")],
         expect: { kind: "repeat", target: "Wann treffen wir uns" },
+      },
+      {
+        say: [tr("Sıra sende: 'Cumartesi ne zaman buluşuyoruz?' nasıl sorarsın?")],
+        expect: {
+          kind: "produce",
+          target: "Wann treffen wir uns am Samstag",
+          hint: [
+            tr("Soru kelimesi başta, fiil arkasında, gün en sona gelir:"),
+            de("Wann treffen wir uns am Samstag?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1307,6 +1380,18 @@ export const deA1B08: Conversation[] = [
         expect: { kind: "repeat", target: "Was für ein Wetter" },
       },
       {
+        say: [tr("Sıra sende, sağanakta komşuna söyle: 'Ne yağmur ama!'")],
+        expect: {
+          kind: "produce",
+          target: "Was für ein Regen",
+          hint: [
+            tr("Şaşkınlık ifadesinden sonra şaşırdığın şey gelir; yağmur eril, ein olduğu gibi kalır:"),
+            de("Was für ein Regen!"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Ist heute kalt."),
@@ -1528,15 +1613,14 @@ export const deA1B08: Conversation[] = [
         expect: { kind: "repeat", target: "Wir sitzen unter dem Baum" },
       },
       {
-        say: [tr("Bir tane daha: 'Ormanda bir nehir var.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Parkta piknik yapıyoruz.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Im Wald gibt es einen Fluss",
+          target: "Wir machen im Park ein Picknick",
+          accept: ["Im Park machen wir ein Picknick"],
           hint: [
-            tr(
-              "Yer ifadesi başa geçince fiil hemen arkasından geliyor ve nesne belirtme hâline giriyor:",
-            ),
-            de("Im Wald gibt es einen Fluss."),
+            tr("Yer fiilin arkasına girer, piknik en sonda kalır:"),
+            de("Wir machen im Park ein Picknick."),
             tr("Tekrar dene."),
           ],
         },
@@ -1718,6 +1802,18 @@ export const deA1B08: Conversation[] = [
           tr("de."),
         ],
         expect: { kind: "repeat", target: "Wo sind die Umkleiden" },
+      },
+      {
+        say: [tr("Sıra sende: 'Duşlar nerede?' nasıl sorarsın?")],
+        expect: {
+          kind: "produce",
+          target: "Wo sind die Duschen",
+          hint: [
+            tr("Birden çok şey sorduğun için fiil çoğul olur:"),
+            de("Wo sind die Duschen?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [tr("Şimdi havluyu sen sor: 'Havlu ne kadar?'")],
@@ -1949,6 +2045,18 @@ export const deA1B08: Conversation[] = [
         expect: { kind: "repeat", target: "Auf welchem Kanal läuft das" },
       },
       {
+        say: [tr("Sıra sende: 'Film hangi kanalda?' nasıl sorarsın?")],
+        expect: {
+          kind: "produce",
+          target: "Auf welchem Kanal läuft der Film",
+          hint: [
+            tr("Kanalı soran ifade başta, fiil arkasında, film en sonda gelir:"),
+            de("Auf welchem Kanal läuft der Film?"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Saatini söylemek de kolay:"),
           de("Die Sendung beginnt um acht."),
@@ -2138,6 +2246,19 @@ export const deA1B08: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Leider kann ich nicht"), tr("de.")],
         expect: { kind: "repeat", target: "Leider kann ich nicht" },
+      },
+      {
+        say: [tr("Şimdi sen söyle: 'Maalesef cumartesi gelemiyorum.'")],
+        expect: {
+          kind: "produce",
+          target: "Leider kann ich am Samstag nicht",
+          accept: ["Am Samstag kann ich leider nicht"],
+          hint: [
+            tr("Üzüntü kelimesi başta, fiil hemen arkasında; gün olumsuzluktan önce gelir:"),
+            de("Leider kann ich am Samstag nicht."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [tr("Sıra sende. Sebebini de ekle: 'Bu sefer denk gelmiyor.'")],

@@ -402,6 +402,18 @@ export const deA1B06: Conversation[] = [
         expect: { kind: "repeat", target: "Wo ist die Haltestelle" },
       },
       {
+        say: [tr("Sıra sende, yoldan geçen birine kibarca sor: 'Affedersiniz, durak nerede?'")],
+        expect: {
+          kind: "produce",
+          target: "Entschuldigung, wo ist die Haltestelle",
+          hint: [
+            tr("Önce özür kelimesi, sonra soru kelimesi ve fiil gelir:"),
+            de("Entschuldigung, wo ist die Haltestelle?"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Durakta bir soru daha soracaksın:"),
           de("Welche Linie fährt zum Bahnhof?"),
@@ -618,13 +630,14 @@ export const deA1B06: Conversation[] = [
         expect: { kind: "repeat", target: "Ich möchte eine Fahrkarte nach Berlin" },
       },
       {
-        say: [tr("Şimdi cevabı sen ver: 'Gidiş dönüş, lütfen.'")],
+        say: [tr("Şimdi tam cümleyle iste: 'Münih'e gidiş dönüş bir bilet istiyorum.'")],
         expect: {
           kind: "produce",
-          target: "Hin und zurück, bitte",
+          target: "Ich möchte eine Fahrkarte nach München, hin und zurück",
+          accept: ["Ich möchte eine Fahrkarte hin und zurück nach München"],
           hint: [
-            tr("İki kelime yeter, sonuna nezaket kelimesini ekle:"),
-            de("Hin und zurück, bitte."),
+            tr("Bilet isteğinden sonra şehir, en sona da gidiş dönüş gelir:"),
+            de("Ich möchte eine Fahrkarte nach München, hin und zurück."),
             tr("Tekrar dene."),
           ],
         },
@@ -638,6 +651,18 @@ export const deA1B06: Conversation[] = [
           tr("de."),
         ],
         expect: { kind: "repeat", target: "Von welchem Gleis fährt der Zug" },
+      },
+      {
+        say: [tr("Sıra sende: 'Köln treni hangi perondan kalkıyor?' nasıl sorarsın?")],
+        expect: {
+          kind: "produce",
+          target: "Von welchem Gleis fährt der Zug nach Köln",
+          hint: [
+            tr("Peron sorusu başta, fiil arkasında; trenin gittiği yer en sona eklenir:"),
+            de("Von welchem Gleis fährt der Zug nach Köln?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -852,6 +877,25 @@ export const deA1B06: Conversation[] = [
           tr("de."),
         ],
         expect: { kind: "repeat", target: "Der Zug ist pünktlich" },
+      },
+      {
+        say: [
+          tr("Bir tane daha. Tren gelmedi, yanındaki yolcuya söyle: 'Yirmi dakikadır bekliyorum.'"),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Ich warte schon zwanzig Minuten",
+          accept: [
+            "Ich warte seit zwanzig Minuten",
+            "Ich warte schon seit zwanzig Minuten",
+            "Ich warte zwanzig Minuten",
+          ],
+          hint: [
+            tr("Süre fiilden sonra gelir; 'zaten' anlamındaki kısa kelime de sürenin önüne girer:"),
+            de("Ich warte schon zwanzig Minuten."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1074,6 +1118,20 @@ export const deA1B06: Conversation[] = [
       },
       {
         say: [
+          tr("Sıra sende. Şoföre yirmi euro veriyorsun: 'Yirmi euro, üstü kalsın.' nasıl dersin?"),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Zwanzig Euro, stimmt so",
+          hint: [
+            tr("Önce tutarı söylersin, sonra 'üstü kalsın' anlamındaki iki kelime gelir:"),
+            de("Zwanzig Euro, stimmt so."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Zur Flughafen, bitte."),
           tr("cümlesi doğru mu, yanlış mı?"),
@@ -1242,6 +1300,19 @@ export const deA1B06: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Ist das weit"), tr("de.")],
         expect: { kind: "repeat", target: "Ist das weit" },
+      },
+      {
+        say: [tr("Sıra sende: 'Gar uzak mı?' nasıl sorarsın?")],
+        expect: {
+          kind: "produce",
+          target: "Ist der Bahnhof weit",
+          accept: ["Ist der Bahnhof weit weg"],
+          hint: [
+            tr("Soruda fiil başa geçer, sonra yer ve sıfat gelir:"),
+            de("Ist der Bahnhof weit?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1521,15 +1592,15 @@ export const deA1B06: Conversation[] = [
         expect: { kind: "repeat", target: "Das lohnt sich" },
       },
       {
-        say: [tr("Bir tane daha: 'Kuleyi her yerden görebilirsin.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Eski şehirde ne görülebilir?' diye sor.")],
         expect: {
           kind: "produce",
-          target: "Man kann den Turm überall sehen",
+          target: "Was kann man in der Altstadt sehen",
           hint: [
             tr(
-              "Kip fiili ikinci sırada, asıl fiil mastar hâlinde sonda; yer zarfı ikisinin arasına giriyor:",
+              "Soru kelimesi başta, herkesi anlatan özne fiilin arkasında, görmek fiili en sonda:",
             ),
-            de("Man kann den Turm überall sehen."),
+            de("Was kann man in der Altstadt sehen?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1721,16 +1792,14 @@ export const deA1B06: Conversation[] = [
         expect: { kind: "repeat", target: "Ich habe mich verlaufen" },
       },
       {
-        say: [
-          tr("Arkasına aradığın yeri eklersin. Şimdi sen söyle: 'Garı arıyorum.'"),
-        ],
+        say: [tr("Arkasına aradığın yeri eklersin. Şimdi sen söyle: 'Kayboldum, garı arıyorum.'")],
         expect: {
           kind: "produce",
-          target: "Ich suche den Bahnhof",
+          target: "Ich habe mich verlaufen, ich suche den Bahnhof",
+          accept: ["Ich habe mich verlaufen und suche den Bahnhof"],
           hint: [
-            de("der Bahnhof"),
-            tr("aradığın şey olduğu için biçim değiştirir:"),
-            de("Ich suche den Bahnhof."),
+            tr("Önce hazır cümle bütün olarak gelir, sonra aradığın yer; gar eril ve nesne:"),
+            de("Ich habe mich verlaufen, ich suche den Bahnhof."),
             tr("Tekrar dene."),
           ],
         },
@@ -1958,6 +2027,20 @@ export const deA1B06: Conversation[] = [
       },
       {
         say: [
+          tr("Bir tane daha: yoldan geçen birine 'Affedersiniz, bisiklet yolu nerede?' diye sor."),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Entschuldigung, wo ist der Radweg",
+          hint: [
+            tr("Önce özür kelimesi, sonra soru kelimesi ve fiil gelir; bisiklet yolu eril:"),
+            de("Entschuldigung, wo ist der Radweg?"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
           tr("Bisikletin yoksa kiralarsın:"),
           de("Ich möchte ein Fahrrad leihen."),
           tr("Yanına bir de kask istemek iyi olur:"),
@@ -1969,14 +2052,14 @@ export const deA1B06: Conversation[] = [
         expect: { kind: "repeat", target: "Ich möchte ein Fahrrad leihen" },
       },
       {
-        say: [tr("Şimdi kaskı sen iste: 'Bir kask istiyorum.'")],
+        say: [tr("Şimdi kaskı da kirala: 'Bir kask kiralamak istiyorum.'")],
         expect: {
           kind: "produce",
-          target: "Ich möchte einen Helm",
+          target: "Ich möchte einen Helm leihen",
+          accept: ["Ich möchte auch einen Helm leihen"],
           hint: [
-            de("der Helm"),
-            tr("eril; istenen şey olunca biçim değiştirir:"),
-            de("Ich möchte einen Helm."),
+            tr("Kask eril ve nesne; kiralamak fiili en sona gider:"),
+            de("Ich möchte einen Helm leihen."),
             tr("Tekrar dene."),
           ],
         },
@@ -2189,6 +2272,18 @@ export const deA1B06: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Muss ich umsteigen"), tr("de.")],
         expect: { kind: "repeat", target: "Muss ich umsteigen" },
+      },
+      {
+        say: [tr("Sıra sende: 'Köln'de aktarma yapmam gerekiyor mu?' nasıl sorarsın?")],
+        expect: {
+          kind: "produce",
+          target: "Muss ich in Köln umsteigen",
+          hint: [
+            tr("Fiil başta, aktarma fiili en sonda, şehir ortada durur:"),
+            de("Muss ich in Köln umsteigen?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [tr("Şimdi sen sor: 'Tren aktarmasız mı gidiyor?'")],

@@ -32099,24 +32099,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Eski bir göreneği sürdüren geçit ücretsiz."
+      "text": "Bir tane daha: Yöresel bir gelenek olan dans kısa."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The parade, which keeps an old custom, is free.",
+     "target": "The dance, which is a local custom, is short.",
      "accept": [
-      "The parade, which keeps an old custom, is free of charge.",
-      "The parade, which upholds an old custom, is free."
+      "The dance, which is a local tradition, is short.",
+      "The dance, which is a regional custom, is short."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Şenliğe bilgi eklemek için"
+       "text": "Bir şeyin ne olduğunu eklemek için"
       },
       {
        "lang": "en",
-       "text": "which"
+       "text": "which is a"
       },
       {
        "lang": "tr",
@@ -32124,7 +32124,7 @@
       },
       {
        "lang": "en",
-       "text": "The parade, which keeps an old custom, is free."
+       "text": "The dance, which is a local custom, is short."
       },
       {
        "lang": "tr",

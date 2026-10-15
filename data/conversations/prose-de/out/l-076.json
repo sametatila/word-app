@@ -395,11 +395,6 @@
   "de": "Die Wendung für einen Rat:"
  },
  {
-  "tr": "Çoğul hâli düzenli:",
-  "kind": "hint.tr",
-  "de": "Der Plural ist regelmäßig:"
- },
- {
   "tr": "Bu fiil de to ister:",
   "kind": "hint.tr",
   "de": "Auch dieses Verb verlangt to:"
@@ -913,11 +908,6 @@
   "tr": "Bitmiş dönemi anlatırken süreyi de verebilirsin:",
   "kind": "say.tr",
   "de": "Beim abgeschlossenen Abschnitt kannst du auch die Dauer nennen:"
- },
- {
-  "tr": "Şimdi sen kur: Size iki referans gönderebilirim.",
-  "kind": "say.tr",
-  "de": "Jetzt du: Ich kann Ihnen zwei Referenzen schicken."
  },
  {
   "tr": "Türkçede bunu '-mıştı' eki yapıyor: bitirmiştim.",

@@ -400,11 +400,6 @@
   "de": "Die Erfahrung zählt noch:"
  },
  {
-  "tr": "Bu fiilden sonra mastar gelir:",
-  "kind": "hint.tr",
-  "de": "Nach diesem Verb steht der Infinitiv:"
- },
- {
   "tr": "Kaynağı belirsiz haber kalıbı:",
   "kind": "hint.tr",
   "de": "Die Wendung für eine Nachricht ohne klare Quelle:"
@@ -783,11 +778,6 @@
   "tr": "Şimdi sen kur: O yıldan çok şey kazandım.",
   "kind": "say.tr",
   "de": "Jetzt du: Aus diesem Jahr habe ich viel gewonnen."
- },
- {
-  "tr": "Şimdi sen kur: Bir taksi bulmayı başardım.",
-  "kind": "say.tr",
-  "de": "Jetzt du: Ich habe es geschafft, ein Taxi zu finden."
  },
  {
   "tr": "Şimdi sen kur: Tarihi değiştirmeyi önerdi.",

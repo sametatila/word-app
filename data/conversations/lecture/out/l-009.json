@@ -132,7 +132,6 @@
  { "tr": "Sıra sende: 'Yüzmeye gidiyorum.'", "en": "Your turn: 'I am going swimming.'" },
  { "tr": "Son bir soru: 'Bunun sebebi ne?'", "en": "One last question: 'What is the reason for it?'" },
  { "tr": "Son kalıbımız kısa ve işe yarar:", "en": "Our last pattern is short and useful:" },
- { "tr": "Son: 'Asıl sorun dil engeliydi.'", "en": "Last: 'The real problem was the language barrier.'" },
  { "tr": "Son: 'Bazı sloganlar yanıltıcı.'", "en": "Last: 'Some slogans are misleading.'" },
  { "tr": "Son: 'Beni asıl iten şey merak.'", "en": "Last: 'What really drives me is curiosity.'" },
  { "tr": "Son: 'Bu güzel bir açılış oldu.'", "en": "Last: 'That was a fine opening.'" },
@@ -145,6 +144,5 @@
  { "tr": "Son: 'Yine de sistem çalışıyor.'", "en": "Last: 'The system still works.'" },
  { "tr": "Son: 'Yine de sonuç değişmiyor.'", "en": "Last: 'The result still does not change.'" },
  { "tr": "Soru kelimesiyle basit bir soru:", "en": "A simple question with a question word:" },
- { "tr": "Soru sözcüğü bağlaç, fiil sonda:", "en": "The question word as a conjunction, the verb last:" },
- { "tr": "Soru zamiri nesne; karşılık als ile bağlanır:", "en": "The question pronoun is the object; 'in return' is built with als:" }
+ { "tr": "Soru sözcüğü bağlaç, fiil sonda:", "en": "The question word as a conjunction, the verb last:" }
 ]

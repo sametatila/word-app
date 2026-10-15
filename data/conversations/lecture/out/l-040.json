@@ -10,11 +10,9 @@
  { "tr": "Soru kalıbı başta, izin fiili ikinci sırada ve asıl fiil sonda.", "en": "The question phrase first, the permission verb second and the main verb last." },
  { "tr": "Şimdi bir form dolduruyorsun ve anlamadığın yerleri soruyorsun.", "en": "Now you are filling out a form and asking about what you do not understand." },
  { "tr": "Şimdi biri sana buraya nasıl geldiğini soruyor. Hikâyeni anlat.", "en": "Now someone asks how you got here. Tell your story." },
- { "tr": "Şimdi sen: 'Sana bir mesaj gönderiyorum.' demek için ne dersin?", "en": "Now you: what do you say for 'I am sending you a message.'?" },
  { "tr": "Şimdi üst kat komşunla konuşuyorsun. Kibar başla, sorunu anlat.", "en": "Now you are talking to the neighbor upstairs. Start politely, explain the problem." },
  { "tr": "Şimdi yola çıkmadan önce bavulu birlikte gözden geçiriyorsunuz.", "en": "Now you are going through the suitcase together before setting off." },
  { "tr": "Şimdi: 'Bugün bu farklı, çünkü gençlerin başka olanakları var.'", "en": "Now: 'Today that is different, because young people have other options.'" },
- { "tr": "Şimdi: 'Ne kadar çok yeni yapı olursa kiralar o kadar durulur.'", "en": "Now: 'The more new housing is built, the more rents level off.'" },
  { "tr": "Tanımlanan kelime çoğul olduğu için zamir die ve fiil de çoğul.", "en": "Because the word described is plural the pronoun is die and the verb plural." },
  { "tr": "Türkçede 'aidat ve ek giderler' demek — ısınma, su, çöp. Lütfen", "en": "It means 'utilities' — heating, water, trash. Please say" },
  { "tr": "Türkçede 'almak' demek; ilaç için de bu fiil kullanılır. Lütfen", "en": "It means 'to take'; this verb is used for medicine too. Please say" },
@@ -91,7 +89,6 @@
  { "tr": "ayrılabilen bir fiil; ortacın hecesi ön ekle kökün arasına girer:", "en": "is a separable verb; the participle syllable goes between prefix and stem:" },
  { "tr": "Ayrılabilen fiil yan cümlede birleşik kalır, yardımcı fiil sonda:", "en": "In a subclause the separable verb stays joined, the auxiliary last:" },
  { "tr": "Bir tane daha: 'Bu değişim iki nüfus grubunu da biçimlendiriyor.'", "en": "One more: 'This change shapes both groups of the population.'" },
- { "tr": "Bir tane daha: 'Emeklilik birikimini zamanında düşünmek gerekir.'", "en": "One more: 'You have to think about your pension savings in time.'" },
  { "tr": "Bisiklet nötr bir kelime ve nötrler eriller gibi davranıyor, yani", "en": "Bicycle is a neuter word and neuters behave like masculines, so" },
  { "tr": "Bu bağlaç kendi başına olumsuz, ikinci bir olumsuzluk gerekmiyor:", "en": "This conjunction is negative on its own; a second negative is not needed:" },
  { "tr": "Bu fiil bir şeyi doğrudan sevmek demek ve düzensizdir: ben biçimi", "en": "This verb means to like something directly and it is irregular: the I-form is" },
@@ -109,11 +106,9 @@
  { "tr": "Hazırsın. Şimdi yakın birine zor bir konuyu suçlamadan açacaksın.", "en": "You are ready. Now you will raise a hard subject with someone close, without blame." },
  { "tr": "İkamet yeri eril bir kelime, bu yüzden iyelik kısa hâlinde kalır:", "en": "Place of residence is a masculine word, so the possessive stays short:" },
  { "tr": "İki ana cümle; ikincisi zarfla başladığı için fiil ikinci sırada:", "en": "Two main clauses; the second starts with an adverb so the verb is second:" },
- { "tr": "İsim öbeği başta; sein artı zu yapısı zorunluluğu kişisiz söyler:", "en": "The noun phrase first; sein plus zu states the obligation impersonally:" },
  { "tr": "Kişisiz edilgen artı aktarım kipi: iddianın sahibi bile belirsiz.", "en": "An impersonal passive plus reported speech: even the claimant is unclear." },
  { "tr": "Meslekten önce artikel yok, kadın biçimi de sondaki ekle kurulur:", "en": "No article before the job, and the female form is made with the ending:" },
  { "tr": "Modülü bitirdin. Sohbette bir gelecek senaryosu tasarlayacaksın.", "en": "You have finished the module. In the chat you will design a future scenario." },
  { "tr": "Olumsuzluk kelimesi zarfın önünde duruyor ve ortaç sonda kalıyor.", "en": "The negative word stands before the adverb and the participle stays last." },
- { "tr": "Örnek: 'Başvuruyorum çünkü yeni deneyimler istiyorum.' Almancası:", "en": "Example: 'I am applying because I want new experiences.' In German:" },
- { "tr": "Örnek: 'Kız kardeşim her gün bir fotoğraf paylaşıyor.' Almancası:", "en": "Example: 'My sister posts a photo every day.' In German:" }
+ { "tr": "Örnek: 'Başvuruyorum çünkü yeni deneyimler istiyorum.' Almancası:", "en": "Example: 'I am applying because I want new experiences.' In German:" }
 ]

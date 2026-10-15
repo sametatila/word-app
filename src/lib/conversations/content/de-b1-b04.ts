@@ -72,7 +72,7 @@ export const deB1B04: Conversation[] = [
       { say: [tr("Şimdi nötr bir isimle: 'Çok soru soran çocuk meraklı.'")], expect: produce("Das Kind, das viele Fragen stellt, ist neugierig", [tr("Nötrde zamir das; 'Fragen stellen' kalıbının fiili sona gider:"), de("Das Kind, das viele Fragen stellt, ist neugierig."), tr("Tekrar dene.")]) },
       { say: [tr("Bir tane daha: 'Çok güvenilir bir meslektaşım var.'")], expect: produce("Ich habe einen Kollegen, der sehr zuverlässig ist", [tr("Tanımlanan kelime eril olduğu için zamir der; 'ist' en sonda:"), de("Ich habe einen Kollegen, der sehr zuverlässig ist."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Die Frau, die spricht Deutsch, ist meine Lehrerin."), tr("cümlesi doğru mu?")], expect: truefalse("Die Frau, die spricht Deutsch, ist meine Lehrerin.", false, [tr("Yan cümlede fiil en sona gider:"), de("Die Frau, die Deutsch spricht, ist meine Lehrerin.")]) },
-      { say: [tr("Son: 'Beni etkileyen bir konuşmaydı.'")], expect: produce("Es war eine Rede, die mich beeindruckt hat", [tr("Perfekt'te yardımcı fiil de sona gider:"), de("Es war eine Rede, die mich beeindruckt hat."), tr("Tekrar dene.")]) },
+      { say: [tr("Son, çoğul bir isimle: 'Neşeli olan insanların çok arkadaşı olur.' Cümleyi ilgi cümlesiyle kur.")], expect: produce("Menschen, die fröhlich sind, haben viele Freunde", [tr("Çoğulda zamir die, fiil de çoğul ve yan cümlenin sonunda:"), de("Menschen, die fröhlich sind, haben viele Freunde."), tr("Tekrar dene.")], ["Leute, die fröhlich sind, haben viele Freunde"]) },
       { say: [tr("Hazırsın. Şimdi bir tanıdığınla iş yerindeki insanları konuşacaksın; her kişiyi bir ilgi cümlesiyle tarif et.")] },
     ],
     chat: {

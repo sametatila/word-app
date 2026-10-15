@@ -855,24 +855,25 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Size iki referans gönderebilirim."
+      "text": "Şimdi sen kur: Önceki patronum bana bir referans yazdı."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I can send you two references.",
+     "target": "My previous boss wrote me a reference.",
      "accept": [
-      "I can send you two references today.",
-      "I can give you two references."
+      "My previous boss wrote a reference for me.",
+      "My former boss wrote me a reference.",
+      "My previous employer wrote me a reference."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Çoğul hâli düzenli:"
+       "text": "Önceki işten söz ederken geçmiş zaman kullanılır:"
       },
       {
        "lang": "en",
-       "text": "I can send you two references."
+       "text": "My previous boss wrote me a reference."
       },
       {
        "lang": "tr",
@@ -1361,6 +1362,36 @@
     "expect": {
      "kind": "repeat",
      "target": "I am writing to mention my strengths."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Pozisyona başvurmak için yazıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I am writing to apply for the position.",
+     "accept": [
+      "I'm writing to apply for the position.",
+      "I am writing to apply for this position."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Mektubun amacı to ile söylenir:"
+      },
+      {
+       "lang": "en",
+       "text": "I am writing to apply for the position."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
     }
    },
    {
@@ -7329,7 +7360,7 @@
      },
      {
       "lang": "tr",
-      "text": "deriz. Şunu kur (sözü aynı gün aktarıyorsun): Bugün tamir edeceğini söyledi."
+      "text": "deriz. Sözü aynı gün aktarıyorsun. Şunu kur: Bugün tamir edeceğini söyledi."
      }
     ],
     "expect": {
@@ -9859,32 +9890,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Sebebini açıklayayım."
+      "text": "Bir tane daha: Otobüs doluydu, bu yüzden taksiye bindim."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Let me explain the reason.",
+     "target": "The bus was full, so I took a taxi.",
      "accept": [
-      "Let me explain the reason for it.",
-      "I will explain the reason."
+      "The bus was full so I took a taxi.",
+      "The bus was full, so I took a cab."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Açıklamak için"
+       "text": "Sonuç bağlacı so virgülden sonra gelir, ardından sonuç:"
       },
       {
        "lang": "en",
-       "text": "explain"
-      },
-      {
-       "lang": "tr",
-       "text": "kullanılır ve ardından doğrudan nesne gelir:"
-      },
-      {
-       "lang": "en",
-       "text": "Let me explain the reason."
+       "text": "The bus was full, so I took a taxi."
       },
       {
        "lang": "tr",
@@ -12078,24 +12101,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Bir taksi bulmayı başardım."
+      "text": "Şimdi sen kur: Sonra bir taksi bulmayı başardım."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I managed to find a taxi.",
+     "target": "Then I managed to find a taxi.",
      "accept": [
-      "I managed to get a taxi.",
-      "I managed to find a cab."
+      "Then I managed to get a taxi.",
+      "Then I managed to find a cab."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Bu fiilden sonra mastar gelir:"
+       "text": "Sonra olan olay normal geçmişte kalır:"
       },
       {
        "lang": "en",
-       "text": "I managed to find a taxi."
+       "text": "Then I managed to find a taxi."
       },
       {
        "lang": "tr",
@@ -21732,6 +21755,36 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Şimdi sıra sende: Faturamla ilgili bir soru için yazıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I am writing with a question about my bill.",
+     "accept": [
+      "I'm writing with a question about my bill.",
+      "I am writing with a question about my invoice."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Mektup amacını söyleyerek açılır:"
+      },
+      {
+       "lang": "en",
+       "text": "I am writing with a question about my bill."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi bugünün kuralı. Resmî mektupta paragraflar bağlaçlarla bağlanır:"
      },
      {
@@ -26391,32 +26444,25 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Sunum yapan öğrenci çok sakindi."
+      "text": "Şimdi sıra sende: Seçtiğimiz görev zordu."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The student who presented was very calm.",
+     "target": "The task that we chose was difficult.",
      "accept": [
-      "The student who presented it was very calm.",
-      "The student who gave the talk was very calm."
+      "The task we chose was difficult.",
+      "The task which we chose was difficult.",
+      "The task that we chose was hard."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Kişi tanımlanıyor ve zamir özne, o yüzden düşmez. Sunmak için"
+       "text": "Bir şeyi tanımlayan yan cümle that ile bağlanır:"
       },
       {
        "lang": "en",
-       "text": "present"
-      },
-      {
-       "lang": "tr",
-       "text": "deriz:"
-      },
-      {
-       "lang": "en",
-       "text": "The student who presented was very calm."
+       "text": "The task that we chose was difficult."
       },
       {
        "lang": "tr",
@@ -28357,24 +28403,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Bunun muhtemelen en iyi fikir olduğunu hissediyorum."
+      "text": "Bir tane daha: İyi bir plan. Ancak zaman alıyor."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I feel it is probably the best idea.",
+     "target": "It is a good plan. However, it takes time.",
      "accept": [
-      "I feel it is probably the best option.",
-      "I feel that it is probably the best idea."
+      "It's a good plan. However, it takes time.",
+      "It is a good plan. However, it takes a lot of time."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Fikir cümlesi:"
+       "text": "However noktadan sonra cümle başında gelir ve virgül alır:"
       },
       {
        "lang": "en",
-       "text": "I feel it is probably the best idea."
+       "text": "It is a good plan. However, it takes time."
       },
       {
        "lang": "tr",
@@ -35488,24 +35534,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Onu yapan cerrah burada çalışıyor."
+      "text": "Bir tane daha: Cerrahın çalıştığı hastane çok büyük."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The surgeon who did it works here.",
+     "target": "The hospital where the surgeon works is very big.",
      "accept": [
-      "The surgeon who did it works here too.",
-      "The surgeon who operated works here."
+      "The hospital where the surgeon works is very large.",
+      "The hospital that the surgeon works in is very big."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Kişiyi bağlarken"
+       "text": "Yeri bağlarken"
       },
       {
        "lang": "en",
-       "text": "who"
+       "text": "where"
       },
       {
        "lang": "tr",
@@ -35513,7 +35559,7 @@
       },
       {
        "lang": "en",
-       "text": "The surgeon who did it works here."
+       "text": "The hospital where the surgeon works is very big."
       },
       {
        "lang": "tr",

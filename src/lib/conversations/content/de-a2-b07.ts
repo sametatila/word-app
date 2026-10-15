@@ -149,13 +149,13 @@ export const deA2B07: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Arabayla gidiş beş saat sürüyor.' Almancası:"),
-          de("Die Anreise mit dem Auto dauert fünf Stunden."),
+          tr("Örnek: 'Hafta sonu göle gidiyoruz.' Almancası:"),
+          de("Am Wochenende fahren wir an den See."),
           tr("Lütfen"),
-          de("Die Anreise mit dem Auto dauert fünf Stunden"),
+          de("Am Wochenende fahren wir an den See"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Die Anreise mit dem Auto dauert fünf Stunden" },
+        expect: { kind: "repeat", target: "Am Wochenende fahren wir an den See" },
       },
       {
         say: [tr("Sıra sende: 'Bu yaz dağlara gidiyoruz.' nasıl dersin?")],
@@ -559,13 +559,13 @@ export const deA2B07: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Seyahat çantam neredeyse doldu.' Almancası:"),
-          de("Meine Reisetasche ist schon fast voll."),
+          tr("Örnek: 'Her şeyi seyahat çantasına koydun mu?' Almancası:"),
+          de("Hast du alles in die Reisetasche eingepackt?"),
           tr("Lütfen"),
-          de("Meine Reisetasche ist schon fast voll"),
+          de("Hast du alles in die Reisetasche eingepackt"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Meine Reisetasche ist schon fast voll" },
+        expect: { kind: "repeat", target: "Hast du alles in die Reisetasche eingepackt" },
       },
       {
         say: [tr("Sıra sende: 'Çamaşırları bavula koydun mu?' nasıl dersin?")],
@@ -760,13 +760,13 @@ export const deA2B07: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Uçuştan iki saat önce giriş yapmamız gerekiyor.' Almancası:"),
-          de("Wir müssen zwei Stunden vor dem Flug einchecken."),
+          tr("Örnek: 'Uçuştan iki saat önce havalimanına gitmemiz gerekiyor.' Almancası:"),
+          de("Wir müssen zwei Stunden vor dem Flug zum Flughafen."),
           tr("Lütfen"),
-          de("Wir müssen zwei Stunden vor dem Flug einchecken"),
+          de("Wir müssen zwei Stunden vor dem Flug zum Flughafen"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Wir müssen zwei Stunden vor dem Flug einchecken" },
+        expect: { kind: "repeat", target: "Wir müssen zwei Stunden vor dem Flug zum Flughafen" },
       },
       {
         say: [tr("Sıra sende: 'Pasaport kontrolüne gitmemiz gerekiyor.' nasıl dersin?")],
@@ -1363,13 +1363,13 @@ export const deA2B07: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Kamp alanında bir dere var.' Almancası:"),
-          de("Auf dem Campingplatz gibt es einen Bach."),
+          tr("Örnek: 'Kamp alanında bir dere var mı?' Almancası:"),
+          de("Gibt es auf dem Campingplatz einen Bach?"),
           tr("Lütfen"),
-          de("Auf dem Campingplatz gibt es einen Bach"),
+          de("Gibt es auf dem Campingplatz einen Bach"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Auf dem Campingplatz gibt es einen Bach" },
+        expect: { kind: "repeat", target: "Gibt es auf dem Campingplatz einen Bach" },
       },
       {
         say: [tr("Sıra sende: 'Burada bir kamp ateşi var mı?' nasıl dersin?")],
@@ -1566,13 +1566,13 @@ export const deA2B07: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Pazar meydanında güzel bir çeşme var.' Almancası:"),
-          de("Auf dem Marktplatz gibt es einen schönen Brunnen."),
+          tr("Örnek: 'Kilise neredeyse bin yaşında.' Almancası:"),
+          de("Die Kirche ist fast tausend Jahre alt."),
           tr("Lütfen"),
-          de("Auf dem Marktplatz gibt es einen schönen Brunnen"),
+          de("Die Kirche ist fast tausend Jahre alt"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Auf dem Marktplatz gibt es einen schönen Brunnen" },
+        expect: { kind: "repeat", target: "Die Kirche ist fast tausend Jahre alt" },
       },
       {
         say: [tr("Sıra sende: 'Bu çeşme üç yüz yaşında.' nasıl dersin?")],

@@ -38,7 +38,6 @@
  { "tr": "Danışmaya yaklaşırken kibar bir giriş yaparız. Şöyle:", "kind": "say.tr", "de": "An der Information beginnen wir höflich. So:" },
  { "tr": "Deneyelim: 'Artık burada çalışmıyorum.' nasıl dersin?", "kind": "say.tr", "de": "Probieren wir es: Wie sagst du „Ich arbeite nicht mehr hier“?" },
  { "tr": "Deneyelim: 'Biriktirmeyi sever misin?' nasıl sorulur?", "kind": "say.tr", "de": "Probieren wir es: Wie fragt man „Sammelst du gern?“?" },
- { "tr": "Deneyelim. Görevliye şunu söyle: Bunda bir sorun var.", "kind": "say.tr", "de": "Probieren wir es. Sag am Schalter: Damit stimmt etwas nicht." },
  { "tr": "Deneyelim. Kaloriferin üç gündür çalışmadığını söyle.", "kind": "say.tr", "de": "Probieren wir es. Sag, dass die Heizung seit drei Tagen nicht geht." },
  { "tr": "diye sordun, katı floor ile anlattın ve eksik havluyu", "kind": "say.tr", "de": "gefragt, den Stock mit floor genannt und das fehlende Handtuch mit" },
  { "tr": "Duyduğun gibi tanışmak için uzun cümlelere gerek yok.", "kind": "say.tr", "de": "Wie du hörst, braucht Kennenlernen keine langen Sätze." },
@@ -140,8 +139,6 @@
  { "tr": "Sıra sende. \"Bir pencere var\" cümlesini İngilizce kur.", "kind": "say.tr", "de": "Du bist dran. Bilde „Es gibt ein Fenster“ auf Englisch." },
  { "tr": "Sıra sende. \"Kahve içmiyorum\" cümlesini İngilizce kur.", "kind": "say.tr", "de": "Du bist dran. Bilde „Ich trinke keinen Kaffee“ auf Englisch." },
  { "tr": "Sıra sende. Şunu söyle: Ondan sonra anahtarları aldık.", "kind": "say.tr", "de": "Du bist dran. Sag das: Danach haben wir die Schlüssel bekommen." },
- { "tr": "Son alıştırma. Şunu kur: Bir sonraki durakta iniyorum.", "kind": "say.tr", "de": "Letzte Übung. Bilde das: Ich steige an der nächsten Haltestelle aus." },
- { "tr": "Son bir cümle kurmanı istiyorum. Şunu İngilizce söyle:", "kind": "say.tr", "de": "Ich möchte einen letzten Satz von dir. Sag das auf Englisch:" },
  { "tr": "soru kelimesinin hemen arkasında, kişi ondan sonra ve", "kind": "say.tr", "de": "steht direkt hinter dem Fragewort, die Person danach, und" },
  { "tr": "Soru sorarken 'is' cümlenin başına geçiyor. Düz cümle:", "kind": "say.tr", "de": "In der Frage rückt „is“ an den Satzanfang. Aussagesatz:" }
 ]

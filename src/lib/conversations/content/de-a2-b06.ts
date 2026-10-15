@@ -562,13 +562,13 @@ export const deA2B06: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Bu ceket ötekinden daha rahat.' Almancası:"),
-          de("Diese Jacke ist bequemer als die andere."),
+          tr("Örnek: 'Ya rahat ceket ya da palto.' Almancası:"),
+          de("Entweder die bequeme Jacke oder der Mantel."),
           tr("Lütfen"),
-          de("Diese Jacke ist bequemer als die andere"),
+          de("Entweder die bequeme Jacke oder der Mantel"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Diese Jacke ist bequemer als die andere" },
+        expect: { kind: "repeat", target: "Entweder die bequeme Jacke oder der Mantel" },
       },
       {
         say: [tr("Sıra sende: 'Ya eteği ya da takım elbiseyi alıyorum.' nasıl dersin?")],
@@ -1178,13 +1178,13 @@ export const deA2B06: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Kutuda iki kırık tabak vardı.' Almancası:"),
-          de("Im Karton waren zwei zerbrochene Teller."),
+          tr("Örnek: 'İki tabak kırık geldi.' Almancası:"),
+          de("Zwei Teller sind zerbrochen angekommen."),
           tr("Lütfen"),
-          de("Im Karton waren zwei zerbrochene Teller"),
+          de("Zwei Teller sind zerbrochen angekommen"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Im Karton waren zwei zerbrochene Teller" },
+        expect: { kind: "repeat", target: "Zwei Teller sind zerbrochen angekommen" },
       },
       {
         say: [tr("Sıra sende: 'Lamba kırık geldi.' nasıl dersin?")],
@@ -1385,13 +1385,13 @@ export const deA2B06: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Bu yıl elektrik faturası çok yüksek.' Almancası:"),
-          de("Die Stromrechnung ist dieses Jahr sehr hoch."),
+          tr("Örnek: 'Elektrik faturası geçen yıldan daha yüksek.' Almancası:"),
+          de("Die Stromrechnung ist höher als letztes Jahr."),
           tr("Lütfen"),
-          de("Die Stromrechnung ist dieses Jahr sehr hoch"),
+          de("Die Stromrechnung ist höher als letztes Jahr"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Die Stromrechnung ist dieses Jahr sehr hoch" },
+        expect: { kind: "repeat", target: "Die Stromrechnung ist höher als letztes Jahr" },
       },
       {
         say: [tr("Sıra sende: 'Bu akıllı telefon ötekinden daha pahalı.' nasıl dersin?")],
@@ -1589,13 +1589,13 @@ export const deA2B06: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Hesabım tasarruf bankasında.' Almancası:"),
-          de("Mein Konto ist bei der Sparkasse."),
+          tr("Örnek: 'Her ay para biriktirmek istiyorum.' Almancası:"),
+          de("Ich möchte jeden Monat Geld sparen."),
           tr("Lütfen"),
-          de("Mein Konto ist bei der Sparkasse"),
+          de("Ich möchte jeden Monat Geld sparen"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Mein Konto ist bei der Sparkasse" },
+        expect: { kind: "repeat", target: "Ich möchte jeden Monat Geld sparen" },
       },
       {
         say: [tr("Sıra sende: 'Kredi için başvurmak istiyorum.' nasıl dersin?")],
@@ -1794,13 +1794,13 @@ export const deA2B06: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Bu mektubun ücreti bir avro.' Almancası:"),
-          de("Das Porto für den Brief kostet einen Euro."),
+          tr("Örnek: 'Mektup en hızlı nasıl ulaşır?' Almancası:"),
+          de("Wie kommt der Brief am schnellsten an?"),
           tr("Lütfen"),
-          de("Das Porto für den Brief kostet einen Euro"),
+          de("Wie kommt der Brief am schnellsten an"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Das Porto für den Brief kostet einen Euro" },
+        expect: { kind: "repeat", target: "Wie kommt der Brief am schnellsten an" },
       },
       {
         say: [tr("Sıra sende: 'Hangi zarf en ucuz?' nasıl dersin?")],
@@ -2000,13 +2000,13 @@ export const deA2B06: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Bu şapkayı bit pazarından aldım.' Almancası:"),
-          de("Diesen Hut habe ich auf dem Flohmarkt gekauft."),
+          tr("Örnek: 'Kutu oyunu daha ucuza olur mu?' Almancası:"),
+          de("Geht das Brettspiel auch billiger?"),
           tr("Lütfen"),
-          de("Diesen Hut habe ich auf dem Flohmarkt gekauft"),
+          de("Geht das Brettspiel auch billiger"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Diesen Hut habe ich auf dem Flohmarkt gekauft" },
+        expect: { kind: "repeat", target: "Geht das Brettspiel auch billiger" },
       },
       {
         say: [tr("Sıra sende: 'Tabure biraz daha ucuza olur mu?' nasıl dersin?")],

@@ -423,27 +423,26 @@ export const deA1B10: Conversation[] = [
         expect: { kind: "repeat", target: "Liebe Grüße" },
       },
       {
-        say: [tr("Şimdi sen: 'Sana bir mesaj gönderiyorum.' demek için ne dersin?")],
+        say: [tr("Şimdi sen: mesajını 'Sonra garda görüşürüz!' diye kapat.")],
         expect: {
           kind: "produce",
-          target: "Ich schicke dir eine Nachricht",
+          target: "Bis später am Bahnhof",
+          accept: ["Bis später, am Bahnhof"],
           hint: [
-            tr("Önce kime, sonra ne gönderdiğin gelir:"),
-            de("Ich schicke dir eine Nachricht."),
+            tr("Arkadaşça kapanışın sonuna buluşma yerini ekle:"),
+            de("Bis später am Bahnhof!"),
             tr("Tekrar dene."),
           ],
         },
       },
       {
-        say: [tr("Bir tane daha: 'Yakında bir mektup gönderiyorum.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: mesajını 'Berlin'den sevgiler' diye kapat.")],
         expect: {
           kind: "produce",
-          target: "Bald schicke ich einen Brief",
+          target: "Liebe Grüße aus Berlin",
           hint: [
-            tr(
-              "Zaman zarfı başa geçince fiil hemen arkasından geliyor, özne üçüncü sıraya kayıyor:",
-            ),
-            de("Bald schicke ich einen Brief."),
+            tr("Sıcak kapanışın sonuna nereden yazdığını ekle:"),
+            de("Liebe Grüße aus Berlin."),
             tr("Tekrar dene."),
           ],
         },
@@ -665,13 +664,15 @@ export const deA1B10: Conversation[] = [
         },
       },
       {
-        say: [tr("Bir tane daha: 'Saati bilmiyorum.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Randevuyu cumaya erteleyebilir miyiz?' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich weiß die Uhrzeit nicht",
+          target: "Können wir den Termin auf Freitag verschieben",
           hint: [
-            tr("Olumsuzluk sözcüğü nesneden sonra, cümlenin sonunda duruyor:"),
-            de("Ich weiß die Uhrzeit nicht."),
+            tr(
+              "Erteleyeceğin günün önüne 'üzerine' anlamındaki kısa kelime gelir, erteleme fiili en sonda:",
+            ),
+            de("Können wir den Termin auf Freitag verschieben?"),
             tr("Tekrar dene."),
           ],
         },
@@ -893,16 +894,17 @@ export const deA1B10: Conversation[] = [
         },
       },
       {
-        say: [tr("Bir tane daha: 'Misafirleri yarın davet etmek istiyorum.' demek için ne dersin?")],
+        say: [
+          tr(
+            "Bir tane daha: 'Doğum günüme geliyor musun?' demek için ne dersin? Doğum günü eril bir kelime.",
+          ),
+        ],
         expect: {
           kind: "produce",
-          target: "Ich möchte die Gäste morgen einladen",
-          accept: ["Morgen möchte ich die Gäste einladen", "Ich möchte morgen die Gäste einladen"],
+          target: "Kommst du zu meinem Geburtstag",
           hint: [
-            tr(
-              "Kip fiili ikinci sırada, asıl fiil mastar hâlinde sonda; nesne ve zaman zarfı araya giriyor:",
-            ),
-            de("Ich möchte die Gäste morgen einladen."),
+            tr("Zu edatı yönelme hâli ister; doğum günü eril olduğu için iyelik kelimesi m ile biter:"),
+            de("Kommst du zu meinem Geburtstag?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1086,6 +1088,19 @@ export const deA1B10: Conversation[] = [
           hint: [
             tr("Yardımcı fiil ikinci sırada kalır, geçmiş biçim en sona gider:"),
             de("Ich habe einen Kaffee gekauft."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [tr("Bir tane daha: 'Dün spor yaptım.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich habe gestern Sport gemacht",
+          accept: ["Gestern habe ich Sport gemacht"],
+          hint: [
+            tr("Yardımcı fiil ikinci sırada, yapmak fiilinin geçmiş biçimi en sonda:"),
+            de("Ich habe gestern Sport gemacht."),
             tr("Tekrar dene."),
           ],
         },
@@ -1321,6 +1336,19 @@ export const deA1B10: Conversation[] = [
         },
       },
       {
+        say: [tr("Bir tane daha: 'Pazar günü evde kaldım.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Am Sonntag bin ich zu Hause geblieben",
+          accept: ["Ich bin am Sonntag zu Hause geblieben"],
+          hint: [
+            tr("Kalmak fiili de 'olmak' yardımcı fiilini alır, geçmiş biçim en sonda:"),
+            de("Am Sonntag bin ich zu Hause geblieben."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Meine Freunde sind gekommen."),
@@ -1490,6 +1518,21 @@ export const deA1B10: Conversation[] = [
           tr("de."),
         ],
         expect: { kind: "repeat", target: "Zuerst bin ich aufgestanden" },
+      },
+      {
+        say: [tr("Şimdi sen söyle: 'Önce işe gittim.'")],
+        expect: {
+          kind: "produce",
+          target: "Zuerst bin ich zur Arbeit gegangen",
+          accept: ["Zuerst bin ich zur Arbeit gefahren"],
+          hint: [
+            tr(
+              "Sıralama kelimesi başta, yardımcı fiil hemen arkasında; gitmek de 'olmak' yardımcı fiilini alır:",
+            ),
+            de("Zuerst bin ich zur Arbeit gegangen."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [tr("Sıra sende: 'Sonra bir kahve içtim.' demek için ne dersin?")],
@@ -1745,13 +1788,16 @@ export const deA1B10: Conversation[] = [
         },
       },
       {
-        say: [tr("Bir tane daha: 'Otelde geceledik.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Trenle Köln'e gittik.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Wir haben im Hotel übernachtet",
+          target: "Wir sind mit dem Zug nach Köln gefahren",
+          accept: ["Wir sind nach Köln mit dem Zug gefahren"],
           hint: [
-            tr("Geçmiş zamanda yardımcı fiil ikinci sırada, asıl fiilin geçmiş biçimi sonda:"),
-            de("Wir haben im Hotel übernachtet."),
+            tr(
+              "Yer değiştirme bildirdiği için 'olmak' yardımcı fiili gelir, geçmiş biçim en sonda:",
+            ),
+            de("Wir sind mit dem Zug nach Köln gefahren."),
             tr("Tekrar dene."),
           ],
         },
@@ -2190,13 +2236,16 @@ export const deA1B10: Conversation[] = [
         },
       },
       {
-        say: [tr("Bir tane daha: 'Şimdi kendimle gurur duyuyorum.' demek için ne dersin?")],
+        say: [
+          tr("Bir tane daha: 'Artık Almanca telefonla konuşabiliyorum.' demek için ne dersin?"),
+        ],
         expect: {
           kind: "produce",
-          target: "Jetzt bin ich stolz",
+          target: "Ich kann jetzt auf Deutsch telefonieren",
+          accept: ["Jetzt kann ich auf Deutsch telefonieren"],
           hint: [
-            tr("Zaman zarfı başa geçince fiil hemen arkasından geliyor:"),
-            de("Jetzt bin ich stolz."),
+            tr("Yapabilmeyi anlatan fiil ikinci sırada, telefon etmek fiili en sonda:"),
+            de("Ich kann jetzt auf Deutsch telefonieren."),
             tr("Tekrar dene."),
           ],
         },

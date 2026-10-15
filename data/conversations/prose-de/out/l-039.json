@@ -57,7 +57,6 @@
  { "tr": "Sıra sende: 'Ne kadar tutacak?'", "kind": "say.tr", "de": "Du bist dran: „Wie viel wird das kosten?“" },
  { "tr": "Sıra sende: 'Otobüse yetiştim.'", "kind": "say.tr", "de": "Du bist dran: „Ich habe den Bus erwischt.“" },
  { "tr": "Sıra sende. Şunu İngilizce kur:", "kind": "say.tr", "de": "Du bist dran. Bilde das auf Englisch:" },
- { "tr": "Son kelimemiz: tadını çıkarmak.", "kind": "say.tr", "de": "Unser letztes Wort: genießen." },
  { "tr": "Sormak için başa Do koyuyorsun:", "kind": "say.tr", "de": "Zum Fragen setzt du Do an den Anfang:" },
  { "tr": "Sorusu da aynı kalıpla kurulur.", "kind": "say.tr", "de": "Die Frage dazu wird genauso gebildet." },
  { "tr": "Şimdi cevabı sen ver. Biri sana", "kind": "say.tr", "de": "Jetzt antwortest du. Jemand hat dich" },

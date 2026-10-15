@@ -337,7 +337,7 @@ export const deB1B15: Conversation[] = [
       { say: [tr("İkinci kalıbımız çoğul özneyle çalışıyor. Özne çoğul olunca yardımcı fiil de çoğula girer.")] },
       { say: [tr("Şimdi: 'İki pencere zorla açıldı.'")], expect: produce("Zwei Fenster wurden aufgebrochen", [tr("Çoğul özne, çoğul yardımcı fiil:"), de("Zwei Fenster wurden aufgebrochen."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Der Täter wurde noch nicht gefunden."), tr("cümlesi doğru mu?")], expect: truefalse("Der Täter wurde noch nicht gefunden.", true, [tr("Doğru. Edilgende asıl fiil ortaç hâlinde ve cümlenin sonunda duruyor.")]) },
-      { say: [tr("Son: 'Kapıda zorlama izi görünmüyordu.'")], expect: produce("An der Tür waren keine Spuren von Gewalt sichtbar", [tr("Yer tümleci başta, fiil ikinci sırada:"), de("An der Tür waren keine Spuren von Gewalt sichtbar."), tr("Tekrar dene.")]) },
+      { say: [tr("Son: 'Geçen hafta komşuların evine de zorla girildi.'")], expect: produce("Letzte Woche wurde auch bei den Nachbarn eingebrochen", [tr("Fail bilinmiyorsa özne yok; yardımcı fiil tekil, ortaç en sonda:"), de("Letzte Woche wurde auch bei den Nachbarn eingebrochen."), tr("Tekrar dene.")], ["Letzte Woche wurde bei den Nachbarn auch eingebrochen", "Auch bei den Nachbarn wurde letzte Woche eingebrochen", "Bei den Nachbarn wurde letzte Woche auch eingebrochen", "Letzte Woche wurde auch bei unseren Nachbarn eingebrochen", "Letzte Woche ist auch bei den Nachbarn eingebrochen worden"]) },
       { say: [tr("Hazırsın. Şimdi polise olayı bildireceksin.")] },
     ],
     chat: {
@@ -439,7 +439,7 @@ export const deB1B15: Conversation[] = [
       word("Son", { de: "umgekehrt", tr: "tersine" }),
       { say: [tr("İlk kalıbımız eskiyi bugünle karşılaştırıyor: zaman zarfı, sıfatın karşılaştırma biçimi ve kıyas sözcüğü.")] },
       { say: [tr("Örnek:"), de("Früher war die Technik langsamer als heute."), tr("Tekrar et:"), de("Früher war die Technik langsamer als heute")], expect: repeat("Früher war die Technik langsamer als heute") },
-      { say: [tr("Sıra sende: 'Kaset bugünkü telefon kadar pratik değildi.'")], expect: produce("Die Kassette war nicht so praktisch wie das Handy heute", [tr("Eşitlik karşılaştırmasında başka bir kıyas sözcüğü kullanılır:"), de("Die Kassette war nicht so praktisch wie das Handy heute."), tr("Tekrar dene.")]) },
+      { say: [tr("Sıra sende: 'Eskiden radyo bugünkünden daha önemliydi.'")], expect: produce("Früher war das Radio wichtiger als heute", [tr("Karşılaştırma biçimi ve karşılaştırma bağlacı:"), de("Früher war das Radio wichtiger als heute."), tr("Tekrar dene.")], ["Das Radio war früher wichtiger als heute", "Früher war das Radio wichtiger als jetzt"]) },
       { say: [tr("İkinci kalıbımız değişimi söylüyor: bir zaman zarfı ve tersine anlamına gelen sözcük. Cümle zarfla başladığı için fiil ikinci sıraya geçiyor.")] },
       { say: [tr("Şimdi: 'Artık durum tam tersi.'")], expect: produce("Mittlerweile ist es genau umgekehrt", [tr("Zarf başta, fiil ikinci sırada:"), de("Mittlerweile ist es genau umgekehrt."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Der Sender sendet mehr oft als früher."), tr("cümlesi doğru mu?")], expect: truefalse("Der Sender sendet mehr oft als früher.", false, [tr("Karşılaştırma ayrı bir sözcükle değil, zarfa gelen ekle yapılır:"), de("Der Sender sendet öfter als früher.")]) },

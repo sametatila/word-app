@@ -1,11 +1,9 @@
 [
  { "tr": "Bir tane daha: 'Kuru espri hemen anlaşılmaz.'", "en": "One more: 'Dry humor does not reveal itself right away.'" },
- { "tr": "Bir tane daha: 'Okunabilirlik böylece artar.'", "en": "One more: 'Readability improves that way.'" },
  { "tr": "Bir tane daha: 'Sesinden bir çekince sezdim.'", "en": "One more: 'I sensed a reservation in his tone.'" },
  { "tr": "Bir tane daha: 'Şampiyona çoktan belli oldu.'", "en": "One more: 'The championship has long been decided.'" },
  { "tr": "Bir tane daha: 'Tartarak bir sonuca varalım.'", "en": "One more: 'Let us weigh it up and conclude.'" },
  { "tr": "bitten fiili um edatıyla ve belirtme hâliyle:", "en": "the verb bitten with um and the accusative:" },
- { "tr": "Bu fiil edilgen almaz; mastar doğrudan gelir:", "en": "This verb takes no passive; the infinitive comes straight after:" },
  { "tr": "Bu fiil ölçü bildirir ve belirtme hâli ister:", "en": "This verb gives a measure and takes the accusative:" },
  { "tr": "Çoğulda zamir die, fiil yan cümlenin sonunda:", "en": "In the plural the pronoun is die, the verb at the end of the clause:" },
  { "tr": "Çokluk kelimesinden sonra ad yine çoğul olur:", "en": "After the word for many the noun is plural again:" },
@@ -15,7 +13,6 @@
  { "tr": "Doktora neden gittiğini de söyleyebilmelisin:", "en": "You should be able to say why you are going to the doctor:" },
  { "tr": "Fiilin ayrılan parçası cümlenin sonuna gider:", "en": "The separated part of the verb goes to the end:" },
  { "tr": "Her sıra kelimesinden sonra fiil hemen gelir:", "en": "After each ordering word the verb comes right away:" },
- { "tr": "İki isimleşmiş mastar; karşılaştırma wie ile:", "en": "Two nominalized infinitives; the comparison with wie:" },
  { "tr": "İkinci kalıbımız birlikte iş yapmayı anlatır:", "en": "Our second pattern is about doing something together:" },
  { "tr": "İkinci kalıbımız kuralı herkes için söylüyor:", "en": "Our second pattern states the rule for everyone:" },
  { "tr": "İlgi cümlesi araya giriyor, modal fiil sonra:", "en": "The relative clause comes in between, the modal after:" },
@@ -86,7 +83,6 @@
  { "tr": "Şimdi yeni işini bir arkadaşına anlatıyorsun.", "en": "Now you are telling a friend about your new job." },
  { "tr": "Şimdi: 'Akşamları küçük porsiyonlar yiyorum.'", "en": "Now: 'In the evenings I eat small portions.'" },
  { "tr": "Şimdi: 'Ara cümle iki virgül arasında durur.'", "en": "Now: 'The interjected clause sits between two commas.'" },
- { "tr": "Şimdi: 'Bu noktada geri adım atmaya hazırım.'", "en": "Now: 'On this point I am ready to give ground.'" },
  { "tr": "Şimdi: 'Dönüm noktası hiç beklenmedik geldi.'", "en": "Now: 'The turning point came quite unexpectedly.'" },
  { "tr": "Şimdi: 'Eskiye göre çok daha az kar yağıyor.'", "en": "Now: 'It snows far less than it used to.'" },
  { "tr": "Şimdi: 'Geçen yıla göre her şey daha pahalı.'", "en": "Now: 'Everything is more expensive than last year.'" },
@@ -135,6 +131,5 @@
  { "tr": "Belirtisiz tekilde iki sıfat da aynı eki alır:", "en": "In the indefinite singular both adjectives take the same ending:" },
  { "tr": "Bir tane daha, soru sor: 'Bunun menşei nedir?'", "en": "One more, ask a question: 'Where does this come from?'" },
  { "tr": "Bir tane daha: 'Alışmak gerekiyor ama mümkün.'", "en": "One more: 'It takes getting used to but it is possible.'" },
- { "tr": "Bir tane daha: 'Bir makine sorumlu tutulamaz.'", "en": "One more: 'A machine cannot be held responsible.'" },
- { "tr": "Bir tane daha: 'Bir seçim süreci sabır ister.'", "en": "One more: 'A selection process takes patience.'" }
+ { "tr": "Bir tane daha: 'Bir makine sorumlu tutulamaz.'", "en": "One more: 'A machine cannot be held responsible.'" }
 ]

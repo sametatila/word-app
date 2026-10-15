@@ -196,22 +196,19 @@ export const deA1B03: Conversation[] = [
       {
         say: [
           tr(
-            "Küçük bir meydan okuma: 'Bir kahve ve bir su istiyorum.' nasıl dersin? Dikkat: kahve eril, su değil.",
+            "Küçük bir meydan okuma: garsona tek cümlede 'Bir kahve ve hesap, lütfen.' de. Dikkat: kahve eril bir kelime.",
           ),
         ],
         expect: {
           kind: "produce",
-          target: "Ich möchte einen Kaffee und ein Wasser",
+          target: "Einen Kaffee und die Rechnung, bitte",
+          accept: ["Ich möchte einen Kaffee und die Rechnung, bitte"],
           hint: [
             de("der Kaffee"),
-            tr("eril,"),
+            tr("eril ve burada nesne, bu yüzden"),
             de("einen"),
-            tr("alır;"),
-            de("das Wasser"),
-            tr("nötr,"),
-            de("ein"),
-            tr("kalır:"),
-            de("Ich möchte einen Kaffee und ein Wasser."),
+            tr("alır; hesabı da kısa kalıpla istersin:"),
+            de("Einen Kaffee und die Rechnung, bitte."),
             tr("Tekrar dene."),
           ],
         },
@@ -702,6 +699,19 @@ export const deA1B03: Conversation[] = [
           tr("de."),
         ],
         expect: { kind: "repeat", target: "Zum Mitnehmen, bitte" },
+      },
+      {
+        say: [tr("Sıra sende: 'Bir porsiyon pizza, paket olsun lütfen.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Einmal Pizza zum Mitnehmen, bitte",
+          accept: ["Einmal Pizza, zum Mitnehmen, bitte"],
+          hint: [
+            tr("Önce porsiyon ve yemek, sonra paket kalıbı gelir:"),
+            de("Einmal Pizza zum Mitnehmen, bitte."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1206,6 +1216,18 @@ export const deA1B03: Conversation[] = [
         expect: { kind: "repeat", target: "Ich esse lieber Gemüse" },
       },
       {
+        say: [tr("Sıra sende: 'Ben daha çok et yerim.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich esse lieber Fleisch",
+          hint: [
+            tr("Tercih kelimesi fiilin hemen arkasına gelir:"),
+            de("Ich esse lieber Fleisch."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Ich gern esse Fleisch."),
@@ -1448,6 +1470,19 @@ export const deA1B03: Conversation[] = [
         expect: { kind: "repeat", target: "Haben Sie Zucker" },
       },
       {
+        say: [tr("Sıra sende: görevliye 'Sizde armut da var mı?' diye sor.")],
+        expect: {
+          kind: "produce",
+          target: "Haben Sie auch Birnen",
+          accept: ["Haben Sie Birnen"],
+          hint: [
+            tr("Fiil başa geçer; armut çoğul söylenir ve önüne artikel gelmez:"),
+            de("Haben Sie auch Birnen?"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Ich brauche Milch und Zucker."),
@@ -1675,6 +1710,19 @@ export const deA1B03: Conversation[] = [
         expect: { kind: "repeat", target: "drei Stück Käse" },
       },
       {
+        say: [tr("Sıra sende, fırında söyle: 'İki dilim kek, lütfen.'")],
+        expect: {
+          kind: "produce",
+          target: "Zwei Stück Kuchen, bitte",
+          accept: ["Ich möchte zwei Stück Kuchen", "Ich hätte gern zwei Stück Kuchen"],
+          hint: [
+            tr("Tane ölçüsü çoğula girmez, sayıdan sonra olduğu gibi kalır:"),
+            de("Zwei Stück Kuchen, bitte."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Ich möchte zwei Kilos Tomaten."),
@@ -1850,6 +1898,18 @@ export const deA1B03: Conversation[] = [
           tr("de."),
         ],
         expect: { kind: "repeat", target: "Ich schneide die Zwiebel" },
+      },
+      {
+        say: [tr("Sıra sende: 'Sebzeyi doğruyorum.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich schneide das Gemüse",
+          hint: [
+            tr("Ben biçiminde fiilin sonuna e gelir:"),
+            de("Ich schneide das Gemüse."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -2152,6 +2212,19 @@ export const deA1B03: Conversation[] = [
         expect: { kind: "repeat", target: "Gibt es eine Suppe ohne Ei" },
       },
       {
+        say: [tr("Sıra sende: 'Jambonsuz pizza var mı?' diye sor.")],
+        expect: {
+          kind: "produce",
+          target: "Gibt es Pizza ohne Schinken",
+          accept: ["Gibt es eine Pizza ohne Schinken"],
+          hint: [
+            tr("Türkçedeki suz eki yerine malzemenin önüne 'olmadan' anlamındaki kelime gelir:"),
+            de("Gibt es Pizza ohne Schinken?"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Bir de her yerde işine yarayacak kısa bir cümle var:"),
           de("Ich vertrage das nicht."),
@@ -2407,6 +2480,23 @@ export const deA1B03: Conversation[] = [
           tr("de."),
         ],
         expect: { kind: "repeat", target: "Nein danke, ich bin satt" },
+      },
+      {
+        say: [
+          tr(
+            "Sıra sende. Ev sahibi bir tabak daha uzatıyor: 'Teşekkürler ama doydum.' nasıl dersin?",
+          ),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Danke, aber ich bin satt",
+          accept: ["Danke, aber ich bin schon satt"],
+          hint: [
+            tr("Doymak bir durumdur, 'olmak' fiiliyle söylenir:"),
+            de("Danke, aber ich bin satt."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [

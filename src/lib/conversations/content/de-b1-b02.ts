@@ -300,13 +300,14 @@ export const deB1B02: Conversation[] = [
         expect: { kind: "repeat", target: "Die Kaution beträgt drei Monatsmieten" },
       },
       {
-        say: [tr("Bir tane daha: 'Çatının yeni olup olmadığını bilmek isterdim.' demek için ne dersin?")],
+        say: [tr("Bir tane daha, kibarca sor: 'Anahtarları ne zaman alabilirim?' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich wüsste gern, ob das Dach neu ist",
+          target: "Wann könnte ich die Schlüssel abholen",
+          accept: ["Wann kann ich die Schlüssel abholen", "Wann könnte ich die Schlüssel bekommen"],
           hint: [
-            tr("Dolaylı soruda çekimli fiil yan cümlenin sonuna gidiyor:"),
-            de("Ich wüsste gern, ob das Dach neu ist."),
+            tr("Kibar soruda fiilin yumuşak biçimi soru kelimesinin hemen arkasında, mastar en sonda:"),
+            de("Wann könnte ich die Schlüssel abholen?"),
             tr("Tekrar dene."),
           ],
         },
@@ -618,13 +619,14 @@ export const deB1B02: Conversation[] = [
         expect: { kind: "repeat", target: "Der Lärm stört mich sehr" },
       },
       {
-        say: [tr("Bir tane daha: 'Gürültü beni geceleri rahatsız ediyor.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Müziğin sesini kısar mıydınız acaba?' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Der Lärm stört mich nachts",
+          target: "Wären Sie so nett, die Musik leiser zu machen",
+          accept: ["Wären Sie so nett, die Musik leiser zu stellen", "Wären Sie bitte so nett, die Musik leiser zu machen"],
           hint: [
-            tr("Zaman zarfı nesneden sonra geliyor:"),
-            de("Der Lärm stört mich nachts."),
+            tr("Rica edilen iş virgülden sonra gelir ve mastar en sonda durur:"),
+            de("Wären Sie so nett, die Musik leiser zu machen?"),
             tr("Tekrar dene."),
           ],
         },
@@ -1249,15 +1251,15 @@ export const deB1B02: Conversation[] = [
         expect: { kind: "repeat", target: "Der alte Teppich passt gut dazu" },
       },
       {
-        say: [tr("Bir tane daha: 'rahat eski koltuk' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'İskandinav tarzını seviyorum.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "der gemütliche alte Sessel",
+          target: "Ich mag den skandinavischen Stil",
           hint: [
-            tr("Belirli artikelden sonra sıfat"),
-            de("-e"),
-            tr("sonunu alıyor; eril yalın hâlde her iki sıfat da aynı sonu taşıyor:"),
-            de("der gemütliche alte Sessel"),
+            tr("Tarz eril ve burada nesne; belirli artikelden sonra sıfat"),
+            de("-en"),
+            tr("sonunu alıyor:"),
+            de("Ich mag den skandinavischen Stil."),
             tr("Tekrar dene."),
           ],
         },
@@ -1414,16 +1416,14 @@ export const deB1B02: Conversation[] = [
         expect: { kind: "repeat", target: "Wir brauchen noch zwei Helfer" },
       },
       {
-        say: [tr("Bir tane daha: 'On koliye daha ihtiyacımız var.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Yola çıkmadan önce on koli daha alıyoruz.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Wir brauchen noch zehn Kisten",
-          accept: ["Wir brauchen noch zehn Kartons"],
+          target: "Bevor wir fahren, holen wir noch zehn Kisten",
+          accept: ["Bevor wir losfahren, holen wir noch zehn Kisten", "Bevor wir fahren, holen wir noch zehn Kartons"],
           hint: [
-            tr("Daha anlamındaki"),
-            de("noch"),
-            tr("fiilden hemen sonra gelir:"),
-            de("Wir brauchen noch zehn Kisten."),
+            tr("bevor bölümünde fiil sonda ve olumsuz değil; virgülden sonra fiil öne geçer:"),
+            de("Bevor wir fahren, holen wir noch zehn Kisten."),
             tr("Tekrar dene."),
           ],
         },

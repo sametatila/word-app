@@ -6,7 +6,6 @@
  { "tr": "Özne, lassen artı sich, mastar en sonda:", "en": "The subject, lassen plus sich, the infinitive last:" },
  { "tr": "Roman eril ve nesne → den; Perfekt sona:", "en": "Novel is masculine and the object → den; the perfect last:" },
  { "tr": "Sebep bildiren edat tamlayan hâli ister:", "en": "A preposition of cause takes the genitive:" },
- { "tr": "Sıra sende: 'Bursu aldım.' nasıl dersin?", "en": "Your turn: how do you say 'I got the scholarship.'?" },
  { "tr": "Sıra sende: 'Fiyatlarda yüzde üç artış.'", "en": "Your turn: 'A three percent increase in prices.'" },
  { "tr": "Sıra sende: 'Kefil sorumlu tutulabilir.'", "en": "Your turn: 'The guarantor can be held liable.'" },
  { "tr": "Sıra sende: 'Pazar günü sözleşebiliriz.'", "en": "Your turn: 'We could arrange to meet on Sunday.'" },
@@ -48,7 +47,6 @@
  { "tr": "Şimdi: 'Burada bir hedef çatışması var.'", "en": "Now: 'There is a conflict of aims here.'" },
  { "tr": "Şimdi: 'Dün rastladığım kadın komşumuz.'", "en": "Now: 'The woman I ran into yesterday is our neighbor.'" },
  { "tr": "Şimdi: 'Geçiş önceliğine burada uyulur.'", "en": "Now: 'Right of way is observed here.'" },
- { "tr": "Şimdi: 'İlk yüz sayfa ağır ilerliyordu.'", "en": "Now: 'The first hundred pages were slow going.'" },
  { "tr": "Şimdi: 'İyi iş kulaktan kulağa yayılır.'", "en": "Now: 'Good work spreads by word of mouth.'" },
  { "tr": "Şimdi: 'Küçük başlamak yardımcı oluyor.'", "en": "Now: 'Starting small helps.'" },
  { "tr": "Şimdi: 'Metni haber diline çeviriyorum.'", "en": "Now: 'I am putting the text into news language.'" },
@@ -120,7 +118,6 @@
  { "tr": "Bir tane daha: 'Havlu atmak istemiyorum.'", "en": "One more: 'I do not want to throw in the towel.'" },
  { "tr": "Bir tane daha: 'İtirazımı yazılı sundum.'", "en": "One more: 'I put my objection in writing.'" },
  { "tr": "Bir tane daha: 'Kesintisiz uyuyamıyorum.'", "en": "One more: 'I cannot sleep through the night.'" },
- { "tr": "Bir tane daha: 'Teminat kapsamı sınırlı.'", "en": "One more: 'The coverage is limited.'" },
  { "tr": "Bir tane daha: 'Turumuz burada başlıyor.'", "en": "One more: 'Our tour starts here.'" },
  { "tr": "Bir tane daha: 'Vurgu nüansı belirliyor.'", "en": "One more: 'The stress decides the nuance.'" },
  { "tr": "Çoğul özne, edilgen geçmiş, yapan edatla:", "en": "A plural subject, the passive past, the doer with a preposition:" },
@@ -139,6 +136,5 @@
  { "tr": "İkinci kalıbımız bir kişiyi tarif ediyor:", "en": "Our second pattern describes a person:" },
  { "tr": "İkinci kalıbımız haber vermeyi anlatıyor:", "en": "Our second pattern is about letting someone know:" },
  { "tr": "İkinci kalıbımız isteği kibarca söylüyor:", "en": "Our second pattern puts the wish politely:" },
- { "tr": "İkinci kalıbımız sözleşmelerde çok geçer:", "en": "Our second pattern comes up a lot in contracts:" },
- { "tr": "Kalıplaşmış fiil; nesne belirtme hâlinde:", "en": "A set verb phrase; the object in the accusative:" }
+ { "tr": "İkinci kalıbımız sözleşmelerde çok geçer:", "en": "Our second pattern comes up a lot in contracts:" }
 ]

@@ -325,11 +325,6 @@
   "de": "Wer bewertet, wird nicht genannt, deshalb Passiv:"
  },
  {
-  "tr": "Kişi tanımlanıyor ve zamir özne, o yüzden düşmez. Sunmak için",
-  "kind": "hint.tr",
-  "de": "Eine Person wird beschrieben und das Pronomen ist Subjekt, deshalb bleibt es. Für präsentieren"
- },
- {
   "tr": "ders,",
   "kind": "say.tr",
   "de": "Lektion,"
@@ -688,11 +683,6 @@
   "tr": "Şimdi bugünün kuralı. Edilgen iki parçadan kurulur:",
   "kind": "say.tr",
   "de": "Jetzt die Regel von heute. Das Passiv besteht aus zwei Teilen:"
- },
- {
-  "tr": "Şimdi sıra sende: Sunum yapan öğrenci çok sakindi.",
-  "kind": "say.tr",
-  "de": "Jetzt bist du dran: Die Studentin, die präsentiert hat, war sehr ruhig."
  },
  {
   "tr": "Şimdi bir danışmanla sıradaki adımını konuşacaksın.",

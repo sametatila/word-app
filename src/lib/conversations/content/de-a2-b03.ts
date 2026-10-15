@@ -1562,13 +1562,13 @@ export const deA2B03: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Şiddetli diş ağrım var.' Almancası:"),
-          de("Ich habe heftige Zahnschmerzen."),
+          tr("Örnek: 'Gerçekten korkunç.' Almancası:"),
+          de("Es ist wirklich furchtbar."),
           tr("Lütfen"),
-          de("Ich habe heftige Zahnschmerzen"),
+          de("Es ist wirklich furchtbar"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Ich habe heftige Zahnschmerzen" },
+        expect: { kind: "repeat", target: "Es ist wirklich furchtbar" },
       },
       {
         say: [tr("Sıra sende: 'Çok acı veriyor.' nasıl dersin?")],

@@ -349,13 +349,13 @@ export const deA2B09: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Bu akşam eski bir film izliyoruz.' Almancası:"),
-          de("Heute Abend schauen wir einen alten Film an."),
+          tr("Örnek: 'Reklam gelince kanalı değiştiriyorum.' Almancası:"),
+          de("Ich schalte um, wenn Werbung kommt."),
           tr("Lütfen"),
-          de("Heute Abend schauen wir einen alten Film an"),
+          de("Ich schalte um, wenn Werbung kommt"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Heute Abend schauen wir einen alten Film an" },
+        expect: { kind: "repeat", target: "Ich schalte um, wenn Werbung kommt" },
       },
       {
         say: [tr("Sıra sende: 'Yorgun olduğumda polisiye izliyorum.' nasıl dersin?")],
@@ -548,13 +548,13 @@ export const deA2B09: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Bu hatayı hiç fark etmedim.' Almancası:"),
-          de("Ich habe den Fehler gar nicht mitbekommen."),
+          tr("Örnek: 'Kiraların arttığını öğrendim.' Almancası:"),
+          de("Ich habe mitbekommen, dass die Mieten steigen."),
           tr("Lütfen"),
-          de("Ich habe den Fehler gar nicht mitbekommen"),
+          de("Ich habe mitbekommen, dass die Mieten steigen"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Ich habe den Fehler gar nicht mitbekommen" },
+        expect: { kind: "repeat", target: "Ich habe mitbekommen, dass die Mieten steigen" },
       },
       {
         say: [tr("Sıra sende: 'Biletlerin daha pahalı olacağını duydum.' nasıl dersin?")],
@@ -747,13 +747,13 @@ export const deA2B09: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Kız kardeşim her gün bir fotoğraf paylaşıyor.' Almancası:"),
-          de("Meine Schwester postet jeden Tag ein Foto."),
+          tr("Örnek: 'Bir fotoğraf hoşuma gidince onu beğeniyorum.' Almancası:"),
+          de("Wenn mir ein Foto gefällt, like ich es."),
           tr("Lütfen"),
-          de("Meine Schwester postet jeden Tag ein Foto"),
+          de("Wenn mir ein Foto gefällt, like ich es"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Meine Schwester postet jeden Tag ein Foto" },
+        expect: { kind: "repeat", target: "Wenn mir ein Foto gefällt, like ich es" },
       },
       {
         say: [tr("Sıra sende: 'Canım sıkılınca bir özçekim paylaşıyorum.' nasıl dersin?")],
@@ -949,13 +949,13 @@ export const deA2B09: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Kasada uzun süre kuyrukta beklememiz gerekiyor.' Almancası:"),
-          de("An der Kasse müssen wir lange anstehen."),
+          tr("Örnek: 'Doktoru sabırla bekliyorum.' Almancası:"),
+          de("Ich warte geduldig auf den Arzt."),
           tr("Lütfen"),
-          de("An der Kasse müssen wir lange anstehen"),
+          de("Ich warte geduldig auf den Arzt"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "An der Kasse müssen wir lange anstehen" },
+        expect: { kind: "repeat", target: "Ich warte geduldig auf den Arzt" },
       },
       {
         say: [tr("Sıra sende: 'Cevabını bekliyorum.' nasıl dersin?")],
@@ -1152,13 +1152,13 @@ export const deA2B09: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Uygulamayı ücretsiz indirebilirsin.' Almancası:"),
-          de("Du kannst die App kostenlos herunterladen."),
+          tr("Örnek: 'Önce güncellemeyi indir!' Almancası:"),
+          de("Lade zuerst das Update herunter."),
           tr("Lütfen"),
-          de("Du kannst die App kostenlos herunterladen"),
+          de("Lade zuerst das Update herunter"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Du kannst die App kostenlos herunterladen" },
+        expect: { kind: "repeat", target: "Lade zuerst das Update herunter" },
       },
       {
         say: [tr("Sıra sende: 'Önce bilgisayarı aç!' nasıl dersin?")],
@@ -1353,13 +1353,13 @@ export const deA2B09: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Bugün gökyüzü mavi ve açık.' Almancası:"),
-          de("Heute ist der Himmel blau und klar."),
+          tr("Örnek: 'En çok gökyüzü fotoğrafını beğeniyorum.' Almancası:"),
+          de("Das Foto vom Himmel gefällt mir am besten."),
           tr("Lütfen"),
-          de("Heute ist der Himmel blau und klar"),
+          de("Das Foto vom Himmel gefällt mir am besten"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Heute ist der Himmel blau und klar" },
+        expect: { kind: "repeat", target: "Das Foto vom Himmel gefällt mir am besten" },
       },
       {
         say: [tr("Sıra sende: 'Bu fotoğrafı en çok beğendim.' nasıl dersin?")],
@@ -1556,13 +1556,13 @@ export const deA2B09: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Yemek yaparken podcast dinlemeyi seviyorum.' Almancası:"),
-          de("Beim Kochen höre ich gern einen Podcast."),
+          tr("Örnek: 'Kız kardeşim podcastlere ilgi duyuyor.' Almancası:"),
+          de("Meine Schwester interessiert sich für Podcasts."),
           tr("Lütfen"),
-          de("Beim Kochen höre ich gern einen Podcast"),
+          de("Meine Schwester interessiert sich für Podcasts"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Beim Kochen höre ich gern einen Podcast" },
+        expect: { kind: "repeat", target: "Meine Schwester interessiert sich für Podcasts" },
       },
       {
         say: [tr("Sıra sende: 'Futbola çok ilgi duyuyorum.' nasıl dersin?")],
@@ -1763,13 +1763,13 @@ export const deA2B09: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Mikrofonun kapalı, seni duymuyorum.' Almancası:"),
-          de("Dein Mikrofon ist aus, ich höre dich nicht."),
+          tr("Örnek: 'Konuşmadığınızda mikrofonu kapatın.' Almancası:"),
+          de("Wenn Sie nicht sprechen, schalten Sie das Mikrofon aus."),
           tr("Lütfen"),
-          de("Dein Mikrofon ist aus, ich höre dich nicht"),
+          de("Wenn Sie nicht sprechen, schalten Sie das Mikrofon aus"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Dein Mikrofon ist aus, ich höre dich nicht" },
+        expect: { kind: "repeat", target: "Wenn Sie nicht sprechen, schalten Sie das Mikrofon aus" },
       },
       {
         say: [tr("Sıra sende: 'Bir sorunuz olursa lütfen bana yazın.' nasıl dersin?")],
@@ -1965,13 +1965,13 @@ export const deA2B09: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Kardeşim bütün gün çevrimdışıydı.' Almancası:"),
-          de("Mein Bruder war den ganzen Tag offline."),
+          tr("Örnek: 'Yeni bir tablet denedim.' Almancası:"),
+          de("Ich habe ein neues Tablet ausprobiert."),
           tr("Lütfen"),
-          de("Mein Bruder war den ganzen Tag offline"),
+          de("Ich habe ein neues Tablet ausprobiert"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Mein Bruder war den ganzen Tag offline" },
+        expect: { kind: "repeat", target: "Ich habe ein neues Tablet ausprobiert" },
       },
       {
         say: [tr("Sıra sende: 'Öğleden sonra parkta yürüdük.' nasıl dersin?")],

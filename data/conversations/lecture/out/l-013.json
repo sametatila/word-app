@@ -101,7 +101,6 @@
  { "tr": "En üstünlük derecesi özne öbeğinde:", "en": "The superlative inside the subject phrase:" },
  { "tr": "Evet-hayır sorusunda fiil en başta:", "en": "In a yes-no question the verb comes first:" },
  { "tr": "Fiilin yumuşak biçimi başa geçiyor:", "en": "The softened form of the verb moves to the front:" },
- { "tr": "fiilinin ortacı sonundan değişiyor:", "en": "the participle of this verb changes at the end:" },
  { "tr": "İki büyüklük arasında doğru orantı.", "en": "Direct proportion between two quantities." },
  { "tr": "İki cümle; ikincisinde ortaç sonda:", "en": "Two clauses; in the second the participle last:" },
  { "tr": "İki mastar öbeği karşılaştırılıyor:", "en": "Two infinitive phrases are compared:" },
@@ -130,10 +129,8 @@
  { "tr": "Rica biçimi; edat zamirle kaynaşır:", "en": "The request form; the preposition fuses with the pronoun:" },
  { "tr": "Semt eril, yer bildiriyor → in dem:", "en": "District is masculine and shows place → in dem:" },
  { "tr": "Sıra sende: 'Bu bakımdan haklısın.'", "en": "Your turn: 'You are right on that count.'" },
- { "tr": "Sıra sende: 'Bu tek umut ışığıydı.'", "en": "Your turn: 'That was the one ray of hope.'" },
  { "tr": "Sıra sende: 'Eski fırın kapatıldı.'", "en": "Your turn: 'The old bakery was closed down.'" },
  { "tr": "Sıra sende: 'Ziyaretçiler engellenmez.'", "en": "Your turn: 'Visitors are not obstructed.'" },
- { "tr": "Sıra sende: 'Görmeden satın almam.'", "en": "Your turn: 'I will not buy it unseen.'" },
  { "tr": "Sıra sende: 'Müzik üstlenilebilir.'", "en": "Your turn: 'The music can be taken care of.'" },
  { "tr": "Sıra sende: 'Zamanlama her şeydir.'", "en": "Your turn: 'Timing is everything.'" },
  { "tr": "Son bir soru: 'Güncel durum nedir?'", "en": "One last question: 'What is the current status?'" },
@@ -143,7 +140,6 @@
  { "tr": "Son: 'Bu bence hukuka uygun değil.'", "en": "Last: 'In my view that is not lawful.'" },
  { "tr": "Son: 'Bunu daha önce belirtmiştim.'", "en": "Last: 'I had pointed that out before.'" },
  { "tr": "Son: 'Hazır olursan yardım ederim.'", "en": "Last: 'If you are ready I will help.'" },
- { "tr": "Son: 'Hazırcevaplık öğrenilebilir.'", "en": "Last: 'Quick wit can be learned.'" },
  { "tr": "Son: 'Karar yazısı dün gönderildi.'", "en": "Last: 'The decision letter was sent yesterday.'" },
  { "tr": "Son: 'Katılım ancak birlikte olur.'", "en": "Last: 'Participation is only possible together.'" }
 ]

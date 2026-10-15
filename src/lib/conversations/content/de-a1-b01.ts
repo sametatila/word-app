@@ -217,6 +217,18 @@ export const deA1B01: Conversation[] = [
         expect: { kind: "repeat", target: "Ich wohne in Berlin" },
       },
       {
+        say: [tr("Şimdi sen söyle: 'Münih'te oturuyorum.' demek için hangi cümleyi kullanırsın?")],
+        expect: {
+          kind: "produce",
+          target: "Ich wohne in München",
+          hint: [
+            tr("Şehir adı kalıbın sonuna gelir, önüne artikel gelmez:"),
+            de("Ich wohne in München."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Ich heiße aus Ankara."),
@@ -386,6 +398,19 @@ export const deA1B01: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Wie geht es dir"), tr("de.")],
         expect: { kind: "repeat", target: "Wie geht es dir" },
+      },
+      {
+        say: [tr("Sıra sende: arkadaşın Anna'ya 'Merhaba Anna, nasılsın?' diye sor.")],
+        expect: {
+          kind: "produce",
+          target: "Hallo Anna, wie geht es dir",
+          accept: ["Hallo Anna, wie geht's dir", "Hallo Anna, wie geht's"],
+          hint: [
+            tr("Önce selam ve ad, sonra hâl sorusu olduğu gibi gelir:"),
+            de("Hallo Anna, wie geht es dir?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -633,6 +658,22 @@ export const deA1B01: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Wie heißt du"), tr("de.")],
         expect: { kind: "repeat", target: "Wie heißt du" },
+      },
+      {
+        say: [
+          tr("Küçük bir ipucu: 'senin' demek"),
+          de("dein."),
+          tr("Şimdi arkadaşına sor: 'Patronunun adı ne?'"),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Wie heißt dein Chef",
+          hint: [
+            tr("Soru kelimesi başta, fiil hemen arkasında, sonra kimin adını sorduğun gelir:"),
+            de("Wie heißt dein Chef?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -924,6 +965,19 @@ export const deA1B01: Conversation[] = [
         expect: { kind: "repeat", target: "Was ist das" },
       },
       {
+        say: [tr("Sıra sende: uzaktaki bir şeyi gösterip sor: 'Şuradaki ne?'")],
+        expect: {
+          kind: "produce",
+          target: "Was ist das da",
+          accept: ["Was ist das dort"],
+          hint: [
+            tr("Sorunun sonuna 'orada' anlamındaki kısa kelimeyi ekle:"),
+            de("Was ist das da?"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Cevap vermek de kolay. Nereli olduğunu"),
           de("Ich komme aus der Türkei."),
@@ -1167,6 +1221,22 @@ export const deA1B01: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Nein, aber ich lerne Deutsch"), tr("de.")],
         expect: { kind: "repeat", target: "Nein, aber ich lerne Deutsch" },
+      },
+      {
+        say: [
+          tr(
+            "Sıra sende. Biri İngilizce bilip bilmediğini soruyor: 'Hayır, ama İngilizce öğreniyorum.' nasıl dersin?",
+          ),
+        ],
+        expect: {
+          kind: "produce",
+          target: "Nein, aber ich lerne Englisch",
+          hint: [
+            tr("Önce hayır, sonra 'ama' anlamındaki kelime ve öğrenmek fiili gelir; dilin adı en sonda:"),
+            de("Nein, aber ich lerne Englisch."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1845,6 +1915,18 @@ export const deA1B01: Conversation[] = [
         expect: { kind: "repeat", target: "Ich arbeite als Verkäuferin" },
       },
       {
+        say: [tr("Sıra sende, bir erkek olarak söyle: 'Öğretmen olarak çalışıyorum.'")],
+        expect: {
+          kind: "produce",
+          target: "Ich arbeite als Lehrer",
+          hint: [
+            tr("Meslekten önce artikel gelmez, erkek için sona ek de gelmez:"),
+            de("Ich arbeite als Lehrer."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Üçüncü kalıbımız şirketi söyler:"),
           de("Ich arbeite bei Siemens."),
@@ -2092,6 +2174,18 @@ export const deA1B01: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Ich bin in Izmir geboren"), tr("de.")],
         expect: { kind: "repeat", target: "Ich bin in Izmir geboren" },
+      },
+      {
+        say: [tr("Sıra sende: 'Köln'de doğdum.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich bin in Köln geboren",
+          hint: [
+            tr("Şehir ortada durur, 'doğmuş' kelimesi en sona gider:"),
+            de("Ich bin in Köln geboren."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [

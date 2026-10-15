@@ -197,6 +197,18 @@ export const deA1B09: Conversation[] = [
         expect: { kind: "repeat", target: "Wie heißt das auf Deutsch" },
       },
       {
+        say: [tr("Sıra sende: 'Bunun İngilizcesi ne?' nasıl sorarsın?")],
+        expect: {
+          kind: "produce",
+          target: "Wie heißt das auf Englisch",
+          hint: [
+            tr("Soru kelimesi başta, fiil arkasında; dilin adı en sonda ve artikelsiz gelir:"),
+            de("Wie heißt das auf Englisch?"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Küçük bir tavsiye: kelimeyi asla yalnız ezberleme, yani"),
           de("Kopf"),
@@ -421,6 +433,18 @@ export const deA1B09: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Ich habe seit gestern Schmerzen"), tr("de.")],
         expect: { kind: "repeat", target: "Ich habe seit gestern Schmerzen" },
+      },
+      {
+        say: [tr("Sıra sende: 'Pazartesiden beri ağrım var.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich habe seit Montag Schmerzen",
+          hint: [
+            tr("Süre fiilin arkasına, ağrı kelimesi en sona gelir:"),
+            de("Ich habe seit Montag Schmerzen."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -848,6 +872,19 @@ export const deA1B09: Conversation[] = [
         expect: { kind: "repeat", target: "Du musst zum Arzt" },
       },
       {
+        say: [tr("Sıra sende, hasta arkadaşına söyle: 'Eve gitmelisin.'")],
+        expect: {
+          kind: "produce",
+          target: "Du musst nach Hause",
+          accept: ["Du musst nach Hause gehen"],
+          hint: [
+            tr("Gitmek fiili açık olduğu için düşer, yer en sonda kalır:"),
+            de("Du musst nach Hause."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Doktora neden gittiğini de söyleyebilmelisin:"),
           de("Ich bin krank und habe Fieber."),
@@ -1267,14 +1304,16 @@ export const deA1B09: Conversation[] = [
         expect: { kind: "repeat", target: "Ich bin krank und habe eine Erkältung" },
       },
       {
-        say: [tr("Sıra sende: 'Öksürüğüm var.' nasıl dersin?")],
+        say: [tr("Sıra sende: 'Hastayım ve öksürüğüm var.' nasıl dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich habe Husten",
-          accept: ["Ich habe einen Husten"],
+          target: "Ich bin krank und habe Husten",
+          accept: ["Ich bin krank und habe einen Husten"],
           hint: [
-            tr("Elindeki bir şey olduğu için 'sahip olmak' fiili gelir:"),
-            de("Ich habe Husten."),
+            tr(
+              "Hasta olmak bir durum, 'olmak' fiiliyle; öksürük ise elindeki bir şey, 'sahip olmak' fiiliyle:",
+            ),
+            de("Ich bin krank und habe Husten."),
             tr("Tekrar dene."),
           ],
         },
@@ -1552,6 +1591,18 @@ export const deA1B09: Conversation[] = [
         expect: { kind: "repeat", target: "Mach dir keine Sorgen" },
       },
       {
+        say: [tr("Sıra sende. Arkadaşına 'Benim için endişelenme!' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Mach dir keine Sorgen um mich",
+          hint: [
+            tr("Hazır kalıbın sonuna 'benim için' anlamındaki iki kelime gelir:"),
+            de("Mach dir keine Sorgen um mich!"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Bir de klasik ev tarifi:"),
           de("Trink Tee mit Honig!"),
@@ -1753,6 +1804,20 @@ export const deA1B09: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Hier ist ein Unfall passiert"), tr("de.")],
         expect: { kind: "repeat", target: "Hier ist ein Unfall passiert" },
+      },
+      {
+        say: [tr("Sıra sende, görevliye söyle: 'Garın önünde bir kaza oldu.'")],
+        expect: {
+          kind: "produce",
+          target: "Vor dem Bahnhof ist ein Unfall passiert",
+          hint: [
+            tr(
+              "Yer başa gelir, yardımcı fiil hemen arkasında durur, 'oldu' anlamındaki kelime en sona gider:",
+            ),
+            de("Vor dem Bahnhof ist ein Unfall passiert."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -2011,6 +2076,18 @@ export const deA1B09: Conversation[] = [
       {
         say: [tr("Lütfen"), de("Das ist sehr wichtig"), tr("de.")],
         expect: { kind: "repeat", target: "Das ist sehr wichtig" },
+      },
+      {
+        say: [tr("Sıra sende: 'Spor çok önemli.' nasıl dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Sport ist sehr wichtig",
+          hint: [
+            tr("Özne başta, fiil ikinci sırada, önemli kelimesi en sonda:"),
+            de("Sport ist sehr wichtig."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [

@@ -208,16 +208,14 @@ export const deA1B07: Conversation[] = [
         },
       },
       {
-        say: [tr("Bir tane daha: 'Odada iki pencere var.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Binanın çok penceresi var.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Im Zimmer gibt es zwei Fenster",
-          accept: ["Es gibt zwei Fenster im Zimmer", "Das Zimmer hat zwei Fenster"],
+          target: "Das Haus hat viele Fenster",
+          accept: ["Im Haus gibt es viele Fenster"],
           hint: [
-            tr(
-              "Yer ifadesi başa geçince fiil hemen arkasından geliyor ve sözde özne üçüncü sıraya kayıyor:",
-            ),
-            de("Im Zimmer gibt es zwei Fenster."),
+            tr("Türkçedeki 'var' burada 'sahip olmak' fiiliyle söylenir:"),
+            de("Das Haus hat viele Fenster."),
             tr("Tekrar dene."),
           ],
         },
@@ -670,14 +668,18 @@ export const deA1B07: Conversation[] = [
         },
       },
       {
-        say: [tr("Bir tane daha: 'Mobilyaları köşeye koyuyorum.' demek için ne dersin?")],
+        say: [
+          tr(
+            "Bir tane daha: 'Resim duvarda asılı.' demek için ne dersin? Asılı şeylerin fiilini kullan.",
+          ),
+        ],
         expect: {
           kind: "produce",
-          target: "Ich stelle die Möbel in die Ecke",
+          target: "Das Bild hängt an der Wand",
           hint: [
-            tr("Hareket varsa edattan sonra Dativ değil, belirtme hâli (Akkusativ) gelir:"),
-            de("Ich stelle die Möbel in die Ecke."),
-            tr("Duran bir eşya anlatılsaydı hâl değişirdi. Tekrar dene."),
+            tr("Asılı şeyler için asılı durmak fiili kullanılır; duvar dişil:"),
+            de("Das Bild hängt an der Wand."),
+            tr("Tekrar dene."),
           ],
         },
       },
@@ -1137,21 +1139,19 @@ export const deA1B07: Conversation[] = [
         },
       },
       {
-        say: [tr("Bir tane daha: 'Bodrumda gürültü yapmak yasak.' demek için ne dersin?")],
+        say: [tr("Bir tane daha. Apartman ilanına yazıyorsun: 'Lütfen akşamları sessiz olun.'")],
         expect: {
           kind: "produce",
-          target: "Man darf im Keller nicht laut sein",
+          target: "Bitte am Abend leise sein",
           accept: [
-            "Im Keller darf man nicht laut sein",
-            "Man darf im Keller keinen Lärm machen",
-            "Im Keller darf man keinen Lärm machen",
-            "Im Keller ist Lärm verboten",
-            "Lärm ist im Keller verboten",
-            "Es ist verboten, im Keller Lärm zu machen",
+            "Bitte abends leise sein",
+            "Seien Sie bitte am Abend leise",
+            "Bitte seien Sie am Abend leise",
+            "Seien Sie bitte abends leise",
           ],
           hint: [
-            tr("Olumsuzluk sözcüğü sıfattan hemen önce duruyor, mastar sona kalıyor:"),
-            de("Man darf im Keller nicht laut sein."),
+            tr("İlan dilinde fiil mastar hâlinde en sona gider, zaman ortaya girer:"),
+            de("Bitte am Abend leise sein."),
             tr("Tekrar dene."),
           ],
         },
@@ -1608,16 +1608,14 @@ export const deA1B07: Conversation[] = [
         },
       },
       {
-        say: [tr("Bir tane daha: 'Buzdolabını yarın düzenliyorum.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Yemekten sonra bulaşık yıkıyorum.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Ich räume den Kühlschrank morgen auf",
-          accept: ["Morgen räume ich den Kühlschrank auf", "Ich räume morgen den Kühlschrank auf"],
+          target: "Nach dem Essen wasche ich ab",
+          accept: ["Ich wasche nach dem Essen ab"],
           hint: [
-            tr(
-              "Ayrılabilen fiilin öneki en sona gidiyor; zaman zarfı nesneyle önekin arasında kalıyor:",
-            ),
-            de("Ich räume den Kühlschrank morgen auf."),
+            tr("Zaman başa gelince fiil ikinci sıraya geçer; ayrılabilen fiilin ön eki en sona gider:"),
+            de("Nach dem Essen wasche ich ab."),
             tr("Tekrar dene."),
           ],
         },
@@ -1851,26 +1849,13 @@ export const deA1B07: Conversation[] = [
         expect: { kind: "repeat", target: "Ich packe die Kartons" },
       },
       {
-        say: [tr("Bir tane daha: 'Bagajı buraya koyabilir misin?' demek için ne dersin?")],
+        say: [tr("Bir tane daha. Arkadaşını uyar: 'Dikkat, koli ağır!'")],
         expect: {
           kind: "produce",
-          target: "Kannst du das Gepäck hierherlegen",
-          accept: [
-            "Kannst du das Gepäck hierhinlegen",
-            "Kannst du das Gepäck hierhin legen",
-            "Kannst du das Gepäck hierher legen",
-            "Kannst du das Gepäck hier hinlegen",
-            "Kannst du das Gepäck hierhinstellen",
-            "Kannst du das Gepäck hierhin stellen",
-            "Kannst du das Gepäck hier abstellen",
-          ],
+          target: "Vorsicht, der Karton ist schwer",
           hint: [
-            tr("Kip fiili başa geçiyor, asıl fiil sonda kalıyor. 'Buraya' yön bildiriyor, bunun için"),
-            de("hierher"),
-            tr("ya da"),
-            de("hierhin"),
-            tr("kullanılır, ikisi de doğru:"),
-            de("Kannst du das Gepäck hierherlegen?"),
+            tr("Önce uyarı kelimesi, sonra neyin ağır olduğu gelir:"),
+            de("Vorsicht, der Karton ist schwer!"),
             tr("Tekrar dene."),
           ],
         },
@@ -2109,14 +2094,14 @@ export const deA1B07: Conversation[] = [
         },
       },
       {
-        say: [tr("Bir tane daha: 'Balkonda güneş parlıyor.' demek için ne dersin?")],
+        say: [tr("Bir tane daha: 'Sabahları bahçeyi suluyorum.' demek için ne dersin?")],
         expect: {
           kind: "produce",
-          target: "Auf dem Balkon scheint die Sonne",
-          accept: ["Die Sonne scheint auf dem Balkon"],
+          target: "Am Morgen gieße ich den Garten",
+          accept: ["Morgens gieße ich den Garten", "Ich gieße am Morgen den Garten", "Ich gieße den Garten am Morgen"],
           hint: [
-            tr("Yer ifadesi başa geçince fiil hemen arkasından geliyor, özne sonra:"),
-            de("Auf dem Balkon scheint die Sonne."),
+            tr("Zaman başa gelince fiil arkasından gelir; bahçe eril ve nesne:"),
+            de("Am Morgen gieße ich den Garten."),
             tr("Tekrar dene."),
           ],
         },

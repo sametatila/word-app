@@ -131,7 +131,6 @@
  { "tr": "Şimdi resepsiyonda deneyelim.", "kind": "say.tr", "de": "Probieren wir es jetzt an der Rezeption." },
  { "tr": "Şimdi sadece fiili tekrar et:", "kind": "say.tr", "de": "Jetzt wiederhole nur das Verb:" },
  { "tr": "Şimdi sen kur: Diş ağrım var.", "kind": "say.tr", "de": "Bilde du jetzt: Ich habe Zahnschmerzen." },
- { "tr": "Şimdi sen sor: kaçıncı katta?", "kind": "say.tr", "de": "Frag du jetzt: in welchem Stock?" },
  { "tr": "Şimdi yer soralım. Düz hâli:", "kind": "say.tr", "de": "Fragen wir jetzt nach dem Ort. Die einfache Form:" },
  { "tr": "Şu cümle doğru mu, yanlış mı?", "kind": "say.tr", "de": "Ist dieser Satz richtig oder falsch?" },
  { "tr": "Tam cevap genelde böyle olur:", "kind": "say.tr", "de": "Die ganze Antwort lautet meist so:" },

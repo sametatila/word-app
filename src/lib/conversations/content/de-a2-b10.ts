@@ -151,13 +151,13 @@ export const deA2B10: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Formu belediye binasından alıyorsunuz.' Almancası:"),
-          de("Das Formular bekommen Sie im Rathaus."),
+          tr("Örnek: 'Belediyede adres kaydı yaptırmak istiyoruz.' Almancası:"),
+          de("Wir möchten uns im Rathaus anmelden."),
           tr("Lütfen"),
-          de("Das Formular bekommen Sie im Rathaus"),
+          de("Wir möchten uns im Rathaus anmelden"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Das Formular bekommen Sie im Rathaus" },
+        expect: { kind: "repeat", target: "Wir möchten uns im Rathaus anmelden" },
       },
       {
         say: [tr("Sıra sende: 'Adres kaydımı sildirmek istiyorum.' nasıl dersin?")],
@@ -552,13 +552,13 @@ export const deA2B10: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Kasada uzun bir kuyruk vardı.' Almancası:"),
-          de("An der Kasse war eine lange Warteschlange."),
+          tr("Örnek: 'Kuyrukta üç saat bekledik.' Almancası:"),
+          de("Wir haben drei Stunden in der Warteschlange gewartet."),
           tr("Lütfen"),
-          de("An der Kasse war eine lange Warteschlange"),
+          de("Wir haben drei Stunden in der Warteschlange gewartet"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "An der Kasse war eine lange Warteschlange" },
+        expect: { kind: "repeat", target: "Wir haben drei Stunden in der Warteschlange gewartet" },
       },
       {
         say: [tr("Sıra sende: 'Yarım saat bekledim.' nasıl dersin?")],
@@ -755,13 +755,13 @@ export const deA2B10: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Kuralı kitaptan okuyup bakabilirsin.' Almancası:"),
-          de("Die Regel kannst du im Buch nachlesen."),
+          tr("Örnek: 'Yemek kitabını ne kadar süre tutabilirim?' Almancası:"),
+          de("Wie lange darf ich das Kochbuch behalten?"),
           tr("Lütfen"),
-          de("Die Regel kannst du im Buch nachlesen"),
+          de("Wie lange darf ich das Kochbuch behalten"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Die Regel kannst du im Buch nachlesen" },
+        expect: { kind: "repeat", target: "Wie lange darf ich das Kochbuch behalten" },
       },
       {
         say: [tr("Sıra sende: 'Kaç kitap ödünç alabilirim?' nasıl dersin?")],
@@ -1158,13 +1158,13 @@ export const deA2B10: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Eğitimini mutlaka bitirmelisin.' Almancası:"),
-          de("Du musst deine Ausbildung auf jeden Fall beenden."),
+          tr("Örnek: 'Gelecek yıl üniversiteyi bitireceğim.' Almancası:"),
+          de("Nächstes Jahr werde ich mein Studium beenden."),
           tr("Lütfen"),
-          de("Du musst deine Ausbildung auf jeden Fall beenden"),
+          de("Nächstes Jahr werde ich mein Studium beenden"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Du musst deine Ausbildung auf jeden Fall beenden" },
+        expect: { kind: "repeat", target: "Nächstes Jahr werde ich mein Studium beenden" },
       },
       {
         say: [tr("Sıra sende: 'Bir gün bir yazlık ev inşa edeceğim.' nasıl dersin?")],
@@ -1359,13 +1359,13 @@ export const deA2B10: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Yazılımcı olarak bütün gün bilgisayar başındayım.' Almancası:"),
-          de("Als Programmierer sitze ich den ganzen Tag am Computer."),
+          tr("Örnek: 'Anaokulu öğretmeni olmak istiyorum çünkü çocukları seviyorum.' Almancası:"),
+          de("Ich möchte Erzieher werden, weil ich Kinder mag."),
           tr("Lütfen"),
-          de("Als Programmierer sitze ich den ganzen Tag am Computer"),
+          de("Ich möchte Erzieher werden, weil ich Kinder mag"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Als Programmierer sitze ich den ganzen Tag am Computer" },
+        expect: { kind: "repeat", target: "Ich möchte Erzieher werden, weil ich Kinder mag" },
       },
       {
         say: [tr("Sıra sende: 'Bahçıvan olmak istiyorum çünkü doğayı seviyorum.' nasıl dersin?")],
@@ -1558,13 +1558,13 @@ export const deA2B10: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Giriş kişi başına beş avro.' Almancası:"),
-          de("Der Eintritt kostet fünf Euro pro Person."),
+          tr("Örnek: 'Pazar günleri burası bizdekinden daha sakin.' Almancası:"),
+          de("Sonntags ist es hier ruhiger als bei uns."),
           tr("Lütfen"),
-          de("Der Eintritt kostet fünf Euro pro Person"),
+          de("Sonntags ist es hier ruhiger als bei uns"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Der Eintritt kostet fünf Euro pro Person" },
+        expect: { kind: "repeat", target: "Sonntags ist es hier ruhiger als bei uns" },
       },
       {
         say: [tr("Sıra sende: 'Burada otobüsler bizdekinden daha dakik.' nasıl dersin?")],
@@ -1759,13 +1759,13 @@ export const deA2B10: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Gelecek hafta sözlü sınavıma giriyorum.' Almancası:"),
-          de("Nächste Woche lege ich meine mündliche Prüfung ab."),
+          tr("Örnek: 'Uykum gelince ders çalışamıyorum.' Almancası:"),
+          de("Wenn ich schläfrig bin, kann ich nicht lernen."),
           tr("Lütfen"),
-          de("Nächste Woche lege ich meine mündliche Prüfung ab"),
+          de("Wenn ich schläfrig bin, kann ich nicht lernen"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Nächste Woche lege ich meine mündliche Prüfung ab" },
+        expect: { kind: "repeat", target: "Wenn ich schläfrig bin, kann ich nicht lernen" },
       },
       {
         say: [tr("Sıra sende: 'Heyecanlıyken uyuyamıyorum.' nasıl dersin?")],
@@ -1958,13 +1958,13 @@ export const deA2B10: Conversation[] = [
       },
       {
         say: [
-          tr("Örnek: 'Pastayı kendim yaptım.' Almancası:"),
-          de("Ich habe den Kuchen selbst gebacken."),
+          tr("Örnek: 'Gazeteyi bile okudum.' Almancası:"),
+          de("Ich habe sogar die Zeitung gelesen."),
           tr("Lütfen"),
-          de("Ich habe den Kuchen selbst gebacken"),
+          de("Ich habe sogar die Zeitung gelesen"),
           tr("de."),
         ],
-        expect: { kind: "repeat", target: "Ich habe den Kuchen selbst gebacken" },
+        expect: { kind: "repeat", target: "Ich habe sogar die Zeitung gelesen" },
       },
       {
         say: [tr("Sıra sende: 'Kitabın neredeyse tamamını okudum.' nasıl dersin?")],
