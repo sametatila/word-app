@@ -81,6 +81,8 @@ export type LandingCopy = {
     appStoreLabel: string;
     playSmall: string;
     playLabel: string;
+    /** Mağaza henüz yayında değilken rozetin üstündeki etiket (bağlantısız rozet). */
+    storeSoon: string;
     soon: string;
     install: string;
   };
@@ -180,6 +182,7 @@ const tr: LandingCopy = {
     appStoreLabel: "App Store",
     playSmall: "Android için",
     playLabel: "Google Play",
+    storeSoon: "Yakında",
     soon: "iPhone ve Android uygulamaları yakında mağazalarda.",
     install: "Şimdilik telefonuna ekle",
   },
@@ -363,6 +366,7 @@ const en: LandingCopy = {
     appStoreLabel: "App Store",
     playSmall: "For Android",
     playLabel: "Google Play",
+    storeSoon: "Coming soon",
     soon: "The iPhone and Android apps are coming to the stores soon.",
     install: "Add it to your phone for now",
   },
@@ -545,6 +549,7 @@ const de: LandingCopy = {
     appStoreLabel: "App Store",
     playSmall: "Für Android",
     playLabel: "Google Play",
+    storeSoon: "Bald verfügbar",
     soon: "Die Apps für iPhone und Android kommen bald in die Stores.",
     install: "Bis dahin aufs Handy legen",
   },

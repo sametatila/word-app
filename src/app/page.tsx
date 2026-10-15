@@ -13,6 +13,7 @@ import { LandingLangButton } from "@/components/landing/landing-lang";
 import { LANG_LABEL, NATIVE_LANGS } from "@/lib/i18n/dict";
 import { offeredNativeLangs } from "@/lib/courses";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { translate } from "@/lib/i18n/dict";
 import { courseList, shareMeta } from "@/lib/og/langs";
 import { SITE_URL } from "@/lib/site";
@@ -165,33 +166,57 @@ function PillarHead({ p }: { p: Pillar }) {
   );
 }
 
+const APPLE_GLYPH = (
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="none" stroke="currentColor" strokeWidth="1.6" />
+    <path d="M9.2 16.8 13.4 7.6M14.8 16.8 10.6 7.6M7.4 13.6h9.2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" fill="none" />
+  </svg>
+);
+
+const PLAY_GLYPH = (
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M5 3.2v17.6c0 .6.6.9 1.1.6l14.5-8.3c.5-.3.5-1 0-1.3L6.1 3.6C5.6 3.3 5 3.6 5 4.2" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+    <path d="M5.4 3.6 15.3 12 5.4 20.4" fill="none" stroke="currentColor" strokeWidth="1.4" />
+  </svg>
+);
+
+/**
+ * Mağaza rozeti. Yayındaki mağaza bağlantı; öteki mağaza yayındayken henüz
+ * yayında olmayan "yakında" rozeti olarak duruyor (bağlantısız, soluk): iki
+ * platformun da gelişini söylüyor, kırık bir mağaza sayfasına göndermiyor.
+ */
+function StoreBadge({ href, glyph, small, label, soon }: { href: string | null; glyph: ReactNode; small: string; label: string; soon: string }) {
+  const text = (
+    <span>
+      <small>{small}</small>
+      <b>{label}</b>
+    </span>
+  );
+  if (href) {
+    return (
+      <a className={s.badge} href={href} rel="noopener">
+        {glyph}
+        {text}
+      </a>
+    );
+  }
+  return (
+    <span className={`${s.badge} ${s.badgeSoon}`} aria-disabled="true">
+      {glyph}
+      {text}
+      <em className={s.soonTag}>{soon}</em>
+    </span>
+  );
+}
+
 function StoreBadges({ copy, ios, android }: { copy: LandingCopy; ios: string | null; android: string | null }) {
+  // İkisi de kapalıyken rozet yok: o hâlde tarayıcıya ekleme adımları (PWA) duruyor.
+  if (!ios && !android) return null;
+  const c = copy.cta;
   return (
     <>
-      {ios ? (
-        <a className={s.badge} href={ios} rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="none" stroke="currentColor" strokeWidth="1.6" />
-            <path d="M9.2 16.8 13.4 7.6M14.8 16.8 10.6 7.6M7.4 13.6h9.2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" fill="none" />
-          </svg>
-          <span>
-            <small>{copy.cta.appStoreSmall}</small>
-            <b>{copy.cta.appStoreLabel}</b>
-          </span>
-        </a>
-      ) : null}
-      {android ? (
-        <a className={s.badge} href={android} rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 3.2v17.6c0 .6.6.9 1.1.6l14.5-8.3c.5-.3.5-1 0-1.3L6.1 3.6C5.6 3.3 5 3.6 5 4.2" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-            <path d="M5.4 3.6 15.3 12 5.4 20.4" fill="none" stroke="currentColor" strokeWidth="1.4" />
-          </svg>
-          <span>
-            <small>{copy.cta.playSmall}</small>
-            <b>{copy.cta.playLabel}</b>
-          </span>
-        </a>
-      ) : null}
+      <StoreBadge href={ios} glyph={APPLE_GLYPH} small={c.appStoreSmall} label={c.appStoreLabel} soon={c.storeSoon} />
+      <StoreBadge href={android} glyph={PLAY_GLYPH} small={c.playSmall} label={c.playLabel} soon={c.storeSoon} />
     </>
   );
 }
@@ -213,9 +238,10 @@ export default async function Home() {
   const startHref = signedIn ? "/learn" : "/setup";
   const startLabel = signedIn ? copy.cta.webSignedIn : copy.cta.web;
 
-  /* Mağaza rozetleri yalnız panelde "yayında" işaretli mağaza için: yayında
-     olmayan bir mağaza sayfasına göndermek kırık bir kapı olurdu. İkisi de
-     kapalıyken tarayıcıya ekleme adımları (PWA) açılabilir kalıyor. */
+  /* Mağaza bağlantısı yalnız panelde "yayında" işaretli mağaza için: yayında
+     olmayan bir mağaza sayfasına göndermek kırık bir kapı olurdu (o mağaza
+     "yakında" rozeti olarak duruyor). İkisi de kapalıyken tarayıcıya ekleme
+     adımları (PWA) açılabilir kalıyor. */
   const store = (await appControl()).store;
   const ios = store.ios.live ? store.ios.url : null;
   const android = store.android.live ? store.android.url : null;
