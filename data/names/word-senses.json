@@ -15,6 +15,9 @@
   "Alp": ["Alps\\b"],
   "Sadık": ["Sadık (?:bir|dost|arkadaş)"],
   "Avcı": ["Avcı (?:genç|bir|hayvan)"],
-  "Şimşek": ["Şimşek (?:çak|gibi)"]
+  "Şimşek": ["Şimşek (?:çak|gibi)"],
+  "Çelik": ["Çelik sıcak fırında"],
+  "Çimen": ["Çimen, yani grass"],
+  "Ramazan": ["Ramazan ve Kurban"]
  }
 }

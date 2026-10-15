@@ -348,7 +348,7 @@ export const enA1P4: SkillExercise[] = [
       },
       {
         text: "___ you open the window, please?",
-        options: ["Tyler", "Do", "Are"],
+        options: ["Can", "Do", "Are"],
         answer: 0,
         explain: "Rica „Can you …?“ ile kurulur; ayrı bir yardımcı fiil gerekmez.",
       },
@@ -395,7 +395,7 @@ export const enA1P4: SkillExercise[] = [
         text: "Soruyu doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Tyler", "you", "help", "me?"],
+        items: ["Can", "you", "help", "me?"],
         explain: "Soruda „can“ başa geçer, sonra özne ve yalın fiil gelir: Can you help me?",
       },
       {
