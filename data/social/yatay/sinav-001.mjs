@@ -1,7 +1,7 @@
 /* A1 Sınavı 1: deneme sınavı de-a1-01 ("Ankommen und Alltag"), dinleme bölümünün 15 maddesi. Konuşmalar, sorular,
    şıklar ve cevaplar src/lib/mock-exams/de/a1-01.ts'den birebir; sesler sınav dinleme kayıtları (uygulamanın kadrosu,
    x: "listen"). Türkçe anlatım elle yazıldı: cevabı veren Almanca ifade ekranda vurgulu (mark), seslendirmede Almanca
-   yok (Defne Türkçe okuyor). */
+   yok. Türkçe anlatıcı Ahu (ElevenLabs, 2026-10-15, Samet: "bir önceki videodaki gibi"); öğretmen tonu, abartısız. */
 const episode = {
   template: "sinav",
   status: "taslak",
@@ -9,8 +9,6 @@ const episode = {
   slot: "2026-10-17 19:00",
   ytTitle: "A1 Almanca dinleme denemesi 1: 15 soru, cevaplar ve açıklamalar",
   content: ({ L }) => ({
-    // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
-    narrationPaused: true,
     series: "A1 Sınavı: Birlikte Çözüyoruz",
     ep: "Deneme 1 · Dinleme",
     hook: {
@@ -19,7 +17,7 @@ const episode = {
       sub: "15 soru. Birlikte çözüyoruz.",
       pills: ["Cevaplı", "Açıklamalı", "Cevap anahtarı"],
       chap: "Sınavın yapısı",
-      say: L("defne", "tr", "A1 sınavının dinleme bölümünü baştan sona birlikte çözüyoruz. On beş soru, sınavdaki gibi. Kâğıt kalem hazırsa başlayalım."),
+      say: L("ahu", "tr", "Merhaba! Bugün A1 sınavının dinleme bölümünü baştan sona birlikte çözüyoruz. On beş soru var, hepsi sınavdaki gibi. Kâğıt kalemin hazırsa başlayalım."),
     },
     format: {
       lab: "Sınavın yapısı",
@@ -29,14 +27,14 @@ const episode = {
         { name: "Teil 2", count: "4", what: "Anonslar", how: "Doğru ya da yanlış", plays: 1 },
         { name: "Teil 3", count: "5", what: "Telefon ve kısa konuşmalar", how: "Üç şık", plays: 2 },
       ],
-      say: L("defne", "tr", "Dinleme üç bölümden oluşuyor. Birinci ve üçüncü bölümde her kayıt iki kez çalıyor, ikinci bölümdeki anonslar yalnız bir kez. Her soruda önce soruyu oku, sonra dinle."),
+      say: L("ahu", "tr", "Önce sınavın yapısına bakalım. Dinleme üç bölümden oluşuyor. Birinci ve üçüncü bölümde her kayıt iki kez çalıyor; ikinci bölümdeki anonslar ise yalnız bir kez. Her soruda önce soruyu oku, sonra dinle."),
     },
     parts: [
       {
         title: "Teil 1: kısa konuşmalar",
         sub: "Altı soru · üç şık · iki dinleme",
         label: "HÖREN · TEIL 1",
-        say: L("defne", "tr", "Birinci bölüm: altı kısa konuşma. Her soru için üç şık var ve kayıt iki kez çalıyor."),
+        say: L("ahu", "tr", "Birinci bölümle başlıyoruz: altı kısa konuşma. Her soru için üç şık var ve kayıt iki kez çalıyor."),
         items: [
         {
           sit: "Bir müşteri kazağın fiyatını soruyor.",
@@ -51,7 +49,7 @@ const episode = {
             { role: "Verkäufer", line: L("aras", "de", "Der ist im Angebot, nur neunzehn Euro.", "listen") },
           ],
           mark: "nur neunzehn Euro",
-          say: L("defne", "tr", "Doğru cevap b, on dokuz avro. Konuşmada iki fiyat geçiyor: mavi kazak yirmi dokuz doksan, gri olan ise indirimde. Doksan şıkkı bir tuzak, çünkü bu sayı ilk fiyatın içinden geliyor."),
+          say: L("ahu", "tr", "Doğru cevap b, on dokuz avro. Konuşmada iki fiyat geçiyor: mavi kazak yirmi dokuz doksan, gri olan ise indirimde. Doksan şıkkı bir tuzak, çünkü bu sayı ilk fiyatın içinden geliyor."),
         },
         {
           sit: "İki arkadaş buluşma saatini konuşuyor.",
@@ -66,7 +64,7 @@ const episode = {
             { role: "Sara", line: L("defne", "de", "Ja, acht Uhr ist perfekt.", "listen") },
           ],
           mark: "acht Uhr ist perfekt",
-          say: L("defne", "tr", "Doğru cevap c, saat sekiz. Yedi önerildi ama Sara yetişemiyor; altı buçuk, dersinin bittiği saat. Son cümlede sekizde anlaşıyorlar."),
+          say: L("ahu", "tr", "Doğru cevap c, saat sekiz. Yedi önerildi ama Sara yetişemiyor; altı buçuk da dersinin bittiği saat. Son cümlede sekizde anlaşıyorlar."),
         },
         {
           sit: "Bir kadın yemek sipariş ediyor.",
@@ -81,7 +79,7 @@ const episode = {
             { role: "Gast", line: L("defne", "de", "Schade. Dann nehme ich das Hähnchen.", "listen") },
           ],
           mark: "Dann nehme ich das Hähnchen",
-          say: L("defne", "tr", "Doğru cevap c, tavuk. Kadın önce balık istiyor ama balık kalmamış. Çorba ana yemek değil, ondan önce geliyor."),
+          say: L("ahu", "tr", "Doğru cevap c, tavuk. Kadın önce balık istiyor ama balık kalmamış. Çorbaya da dikkat: o ana yemek değil, ondan önce geliyor."),
         },
         {
           sit: "Bir anne oğlunun sınıfından söz ediyor.",
@@ -95,7 +93,7 @@ const episode = {
             { role: "Lehrerin", line: L("defne", "de", "Ah, dann kennt er unsere Schule schon gut.", "listen") },
           ],
           mark: "Jetzt ist er in der vierten",
-          say: L("defne", "tr", "Doğru cevap b, dördüncü sınıf. Üçüncü sınıf geçen yıldı, oğlu şimdi dördüncü sınıfta. Sıra sayısını ve zaman ifadesini birlikte dinlemek gerekiyor."),
+          say: L("ahu", "tr", "Doğru cevap b, dördüncü sınıf. Üçüncü sınıf geçen yıldı, oğlu şimdi dördüncü sınıfta. Burada sıra sayısını ve zaman ifadesini birlikte dinlemen gerekiyor."),
         },
         {
           sit: "Bir kadın ikinci kata nasıl çıkacağını soruyor.",
@@ -110,7 +108,7 @@ const episode = {
             { role: "Mitarbeiter", line: L("aras", "de", "Die geht nur bis in den ersten Stock. Nehmen Sie bitte die Treppe dort hinten.", "listen") },
           ],
           mark: "Nehmen Sie bitte die Treppe dort hinten",
-          say: L("defne", "tr", "Doğru cevap c, merdivenle. Asansör bugün bozuk, yürüyen merdiven de yalnız birinci kata çıkıyor. Geriye arkadaki merdiven kalıyor."),
+          say: L("ahu", "tr", "Doğru cevap c, merdivenle. Asansör bugün bozuk, yürüyen merdiven de yalnız birinci kata çıkıyor. Geriye arkadaki merdiven kalıyor."),
         },
         {
           sit: "İki komşu tren peronunda karşılaşıyor.",
@@ -125,7 +123,7 @@ const episode = {
             { role: "Herr Albers", line: L("aras", "de", "Am Sonntag. Montag muss ich wieder ins Büro.", "listen") },
           ],
           mark: "Meine Mutter ist krank",
-          say: L("defne", "tr", "Doğru cevap b, annesini ziyaret ediyor. Tatile mi gidiyorsunuz sorusuna hayır diyor, çünkü annesi hasta. Pazartesi ofise gitmesi, bu yolculuğun nedeni değil."),
+          say: L("ahu", "tr", "Doğru cevap b, annesini ziyaret ediyor. Tatile mi gidiyorsunuz sorusuna hayır diyor, çünkü annesi hasta. Pazartesi ofise gitmesi ise bu yolculuğun nedeni değil."),
         },
         ],
       },
@@ -133,7 +131,7 @@ const episode = {
         title: "Teil 2: anonslar",
         sub: "Dört soru · doğru ya da yanlış · tek dinleme",
         label: "HÖREN · TEIL 2",
-        say: L("defne", "tr", "İkinci bölüm: dört anons. Cümle doğru mu yanlış mı, sen karar ver. Dikkat, anonslar yalnız bir kez çalıyor."),
+        say: L("ahu", "tr", "Güzel, ikinci bölüme geçiyoruz: dört anons. Cümle doğru mu yanlış mı, sen karar ver. Dikkat, anonslar yalnız bir kez çalıyor."),
         items: [
         {
           sit: "Mağazada kapanış anonsu.",
@@ -145,7 +143,7 @@ const episode = {
             { role: "", line: L("defne", "de", "Liebe Kundinnen und Kunden, unser Haus schließt in fünfzehn Minuten. Bitte kommen Sie jetzt zu den Kassen im Erdgeschoss. Wir öffnen morgen wieder um neun Uhr.", "listen") },
           ],
           mark: "Bitte kommen Sie jetzt zu den Kassen",
-          say: L("defne", "tr", "Cevap doğru. Anons müşterilerden şimdi kasalara gelmelerini istiyor; cümle de tam bunu söylüyor."),
+          say: L("ahu", "tr", "Cevap doğru. Anons müşterilerden şimdi kasalara gelmelerini istiyor; cümle de tam bunu söylüyor."),
         },
         {
           sit: "Trende yolculara duyuru.",
@@ -157,7 +155,7 @@ const episode = {
             { role: "", line: L("defne", "de", "Sehr geehrte Fahrgäste, wir erreichen in wenigen Minuten Mainz. Der Zug endet hier. Bitte steigen Sie alle aus und nehmen Sie Ihr Gepäck mit.", "listen") },
           ],
           mark: "Bitte steigen Sie alle aus",
-          say: L("defne", "tr", "Cevap yanlış. Tren Mainz'da son buluyor ve herkesin inmesi isteniyor. Cümle tam tersini söylüyor."),
+          say: L("ahu", "tr", "Cevap yanlış. Tren Mainz'da son buluyor ve herkesin inmesi isteniyor. Cümle tam tersini söylüyor."),
         },
         {
           sit: "Bir yolcu aranıyor.",
@@ -169,7 +167,7 @@ const episode = {
             { role: "", line: L("defne", "de", "Herr Daniel Kovac, gebucht nach Wien, bitte sofort zum Ausgang B zwölf. Der Ausgang schließt in fünf Minuten.", "listen") },
           ],
           mark: "bitte sofort zum Ausgang B zwölf",
-          say: L("defne", "tr", "Cevap doğru. Anons yolcuyu adıyla çağırıyor ve hemen çıkış kapısına gelmesini istiyor. Kapı beş dakika içinde kapanıyor."),
+          say: L("ahu", "tr", "Cevap doğru. Anons yolcuyu adıyla çağırıyor ve hemen çıkış kapısına gelmesini istiyor. Kapı beş dakika içinde kapanıyor."),
         },
         {
           sit: "Havuzda akşam duyurusu.",
@@ -181,7 +179,7 @@ const episode = {
             { role: "", line: L("defne", "de", "Achtung, eine Information: Das große Becken schließt heute schon um sechs Uhr. Das kleine Becken bleibt bis acht Uhr offen.", "listen") },
           ],
           mark: "Das kleine Becken bleibt bis acht Uhr offen",
-          say: L("defne", "tr", "Cevap yanlış. Saat altıda kapanan büyük havuz; küçük havuz sekize kadar açık. İki havuz ve iki saat bilerek yan yana verilmiş."),
+          say: L("ahu", "tr", "Cevap yanlış. Saat altıda kapanan büyük havuz; küçük havuz sekize kadar açık. İki havuz ve iki saat bilerek yan yana verilmiş."),
         },
         ],
       },
@@ -189,7 +187,7 @@ const episode = {
         title: "Teil 3: telefon ve kısa konuşmalar",
         sub: "Beş soru · üç şık · iki dinleme",
         label: "HÖREN · TEIL 3",
-        say: L("defne", "tr", "Üçüncü bölüm: beş telefon mesajı ve kısa konuşma. Yine üç şık, yine iki dinleme."),
+        say: L("ahu", "tr", "Ve üçüncü bölüm: beş telefon mesajı ve kısa konuşma. Yine üç şık, yine iki dinleme."),
         items: [
         {
           sit: "Bir tamirhane arıyor.",
@@ -201,7 +199,7 @@ const episode = {
             { role: "", line: L("defne", "de", "Guten Tag, hier ist die Werkstatt Kern. Ihr Fahrrad ist fertig. Rufen Sie uns bitte zurück: null zwei zwei eins, acht sechs, vier vier, zwei null.", "listen") },
           ],
           mark: "acht sechs, vier vier, zwei null",
-          say: L("defne", "tr", "Doğru cevap a. Numarada önce sekiz, sonra altı geliyor: seksen altı. Ardından kırk dört ve yirmi. Sayıları doğru duymak A1 seviyesinin temel becerilerinden biri."),
+          say: L("ahu", "tr", "Doğru cevap a. Numaraya dikkat: önce sekiz, sonra altı geliyor, yani seksen altı. Ardından kırk dört ve yirmi. Sayıları doğru duymak A1 seviyesinin temel becerilerinden biri."),
         },
         {
           sit: "İki kişi nerede buluşacaklarını konuşuyor.",
@@ -215,7 +213,7 @@ const episode = {
             { role: "Tim", line: L("aras", "de", "Gut, an der Information also.", "listen") },
           ],
           mark: "Komm lieber zur Information in der Halle",
-          say: L("defne", "tr", "Doğru cevap c, danışmada. Trenin yanı öneriliyor ama peron çok kalabalık. Bu soruda ilk önerilen yer değil, sonunda anlaştıkları yer önemli."),
+          say: L("ahu", "tr", "Doğru cevap c, danışmada. Trenin yanı öneriliyor ama peron çok kalabalık. Bu soruda ilk önerilen yer değil, sonunda anlaştıkları yer önemli."),
         },
         {
           sit: "Bir hasta ne kadar bekleyeceğini soruyor.",
@@ -229,7 +227,7 @@ const episode = {
             { role: "Patient", line: L("aras", "de", "So lange kann ich nicht warten. Ich habe um halb drei einen Termin. Ich warte noch zehn Minuten.", "listen") },
           ],
           mark: "Ich warte noch zehn Minuten",
-          say: L("defne", "tr", "Doğru cevap b, on dakika. Yirmi dakika görevlinin söylediği süre; hasta o kadar bekleyemiyor. İki buçuk ise başka bir randevunun saati."),
+          say: L("ahu", "tr", "Doğru cevap b, on dakika. Yirmi dakika görevlinin söylediği süre; hasta o kadar bekleyemiyor. İki buçuk ise başka bir randevunun saati."),
         },
         {
           sit: "Bir kadın randevu alıyor.",
@@ -244,7 +242,7 @@ const episode = {
             { role: "Frau Roth", line: L("defne", "de", "Ja, das passt.", "listen") },
           ],
           mark: "Samstag ist gut",
-          say: L("defne", "tr", "Doğru cevap b, cumartesi. Kadın pazartesi çalışıyor, bu yüzden cumartesiyi seçiyor. Saat on birde anlaşıyorlar."),
+          say: L("ahu", "tr", "Doğru cevap b, cumartesi. Kadın pazartesi çalışıyor, bu yüzden cumartesiyi seçiyor. Saat on birde anlaşıyorlar."),
         },
         {
           sit: "Bir aile bozulan aleti konuşuyor.",
@@ -258,7 +256,7 @@ const episode = {
             { role: "Vater", line: L("aras", "de", "Der ist kaputt. Wir müssen ihn in die Werkstatt bringen.", "listen") },
           ],
           mark: "Der ist kaputt",
-          say: L("defne", "tr", "Doğru cevap c, bilgisayar. Televizyon yeniden çalışıyor, yalnız kablosu değişti. Bozuk olan bilgisayar; tamirciye götürülecek."),
+          say: L("ahu", "tr", "Doğru cevap c, bilgisayar. Televizyon yeniden çalışıyor, yalnız kablosu değişti. Bozuk olan bilgisayar; tamirciye götürülecek."),
         },
         ],
       },
@@ -266,7 +264,7 @@ const episode = {
     key: {
       lab: "Cevap anahtarı",
       title: "Kaç doğru yaptın?",
-      say: L("defne", "tr", "Cevap anahtarı burada. İşaretlediğin cevaplarla karşılaştırıp doğrularını say."),
+      say: L("ahu", "tr", "Ve cevap anahtarı burada. İşaretlediğin cevaplarla karşılaştır, doğrularını say."),
     },
     app: {
       lab: "Lernomi'de",
@@ -275,7 +273,7 @@ const episode = {
       where: "Deneme sınavı 1 · A1",
       link: "Bağlantı açıklamada",
       panel: { title: "80 dakika", sub: "Dört bölüm, sırayla", rows: [["Lesen", "25 dk"], ["Hören", "20 dk"], ["Schreiben", "20 dk"], ["Sprechen", "15 dk"]], start: "Başla" },
-      say: L("defne", "tr", "Bu deneme sınavının tamamı Lernomi'de var: okuma, yazma ve konuşma bölümleriyle, gerçek süreyle. Bağlantı açıklamada."),
+      say: L("ahu", "tr", "Bu deneme sınavının tamamı Lernomi'de var: okuma, yazma ve konuşma bölümleriyle, gerçek süreyle. Bağlantıyı açıklamaya koydum."),
     },
     end: {
       lab: "Sıradaki",
@@ -283,7 +281,7 @@ const episode = {
       ask: "Yorumlara yaz. Sıradaki sınav videosunda ikinci deneme var.",
       sub: "Her çarşamba ve cumartesi yeni video",
       slot: "Sıradaki video",
-      say: L("defne", "tr", "Kaç doğru yaptın? Yorumlara yaz. Bir sonraki sınav videosunda ikinci deneme sınavını çözüyoruz."),
+      say: L("ahu", "tr", "Peki, kaç doğru yaptın? Yorumlara yaz. Bir sonraki sınav videosunda ikinci deneme sınavını birlikte çözüyoruz. Görüşmek üzere!"),
     },
     cover: { lab: "A1 · Dinleme · 15 soru", lines: ["A1 dinleme", "cevaplı deneme"] },
     yt: {
