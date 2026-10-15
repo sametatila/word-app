@@ -304,7 +304,7 @@ entitlement, offering ve webhook değişikliği canlı etkili: Samet açıkça i
 | App Store | Abonelik grubu `Lernomi Premium`; seviye sırası yıllık 1, aylık 2. Durum ve eksikler `docs/store/audit.md` (M4) |
 | Play base plan'lar | `monthly-autorenew` (P1M), `yearly-autorenew` (P1Y), otomatik yenilenen, `legacyCompatible: true` |
 | Deneme | 1 ay ücretsiz, yalnız gruptaki bir aboneliği daha önce almamışa. ASC intro offer (New Subscribers); Play teklifi `free-trial-1m`. Panel `plans.trialDays` = 30 |
-| Grup kodu teklifi | Play: her base plan'da `promo-2m` (P2M ücretsiz, uygunluk "hiç abonelik almamış", etiketler `promo2m` + `rc-ignore-offer`). iOS: teklif kodları `promo2m-monthly` / `promo2m-yearly`; özel kod değerleri uygulama onaylanınca üretilir. Kod kaydı bizde (`promo_codes.kind='store_trial'`, `src/lib/premium/store-trial.ts`) |
+| Grup kodu teklifi | Play: her base plan'da `promo-2m` (P2M ücretsiz, uygunluk "hiç abonelik almamış", etiketler `promo2m` + `rc-ignore-offer`). iOS: teklif kodları `promo2m-monthly` / `promo2m-yearly`; özel kodlar `LERNOMI2AYAYLIK` / `LERNOMI2AYYILLIK` (2026-10-15; 10.000 kullanım, son 2027-10-15; sunucu `IOS_PROMO2M_CODE_*`). Kod kaydı bizde (`promo_codes.kind='store_trial'`, `src/lib/premium/store-trial.ts`) |
 | Fiyat (aylık / yıllık) | TR 199,99 / 1.199,99 TRY · euro bölgesi 4,99 / 29,99 EUR · GB 4,99 / 29,99 GBP · CH 4 / 25 CHF · diğer 4,99 / 29,99 USD tabanından dönüşüm. Vitrin kopyası `gates.ts` › `plans.prices` |
 | Bölgeler | Play 173; ASC 175 bölge, satış 173'ünde (Çin, Rusya kapalı) |
 | RevenueCat projesi | `proj05e87e13`; uygulamalar Play `app2101cd9c6b`, App Store `app37837eed80` (Test Store `app7fb7bfd160` şablon, dokunulmaz) |
