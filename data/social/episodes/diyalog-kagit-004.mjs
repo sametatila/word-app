@@ -13,7 +13,7 @@ const episode = {
     ].map((l) => (l.key === "die Fläche" ? { ...line(l), tr: "Daire 80 metrekare." } : line(l))),
     copy: {
       title: "Ev ararken 3 cümle",
-      hook: ["Ev mi arıyorsun?", "Ev ararken geçen 3 cümle."],
+      hook: ["Bu aralar", "ev mi arıyorsun?", "Ev ararken geçen 3 cümle."],
       caption: "Almanya'da ev ararken geçen üç Almanca cümle: telefonda kendini tanıtmak, dairenin büyüklüğünü anlamak ve nasıl bir ev istediğini söylemek. Ev arayan arkadaşına gönder.\n\n#almanca #almancakonuşma #evarıyorum #deutschlernen #wohnung #almancaöğreniyorum",
       outro: { series: "Her hafta yeni bir durum", ask: "Ev arayan arkadaşına gönder" },
       scenes: {
