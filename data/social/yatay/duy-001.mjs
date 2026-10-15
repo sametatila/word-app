@@ -1,6 +1,7 @@
 /* Hangisini Duydun? 1: Türk kulağını zorlayan Almanca kelime çiftleri, beş tur (37 çift). Çiftler
    data/content/confusables.json'dan, iki kelime aynı tür ve aynı artikel; anlamlar words.json'dan; sesler Defne'nin
-   kelime kayıtları. Yeni seslendirme yalnız Türkçe anlatım. */
+   kelime kayıtları. Yeni seslendirme yalnız Türkçe anlatım: anlatıcı Ahu (ElevenLabs, 2026-10-15, Samet); öğretmen tonu,
+   abartısız. Kelimeleri Defne okuduğu için anlatıcı "ben söyleyeceğim" demez. */
 const episode = {
   template: "duy",
   status: "taslak",
@@ -8,15 +9,13 @@ const episode = {
   slot: "2026-10-21 19:00",
   ytTitle: "Almanca dinleme testi: 37 benzer kelime çifti | Hangisini duydun?",
   content: ({ L, pair }) => ({
-    // Samet: uzun videolarda ses/video üretimi beklesin (2026-10-14).
-    narrationPaused: true,
     series: "Hangisini Duydun?",
     ep: "1. bölüm · 37 çift",
     hook: {
       lab: "Dinleme testi · 5 tur · 37 çift",
       lines: ["Hangisini duydun?", "Benzer kelimeler, farklı sesler."],
       demo: ["der Herd", "der Herr"],
-      say: L("defne", "tr", "İki kelime göreceksin, ben yalnız birini söyleyeceğim. Hangisini duyduysan onu seç. Beş tur, otuz yedi çift."),
+      say: L("ahu", "tr", "Merhaba! Bugün kulağını biraz zorlayacağız. Ekranda iki kelime göreceksin ama yalnız birini duyacaksın. Hangisini duyduysan onu seç. Beş tur, otuz yedi çift; hazırsan başlayalım."),
     },
     how: {
       lab: "Kurallar",
@@ -26,13 +25,13 @@ const episode = {
         ["Üç saniyede seç", "A mı, B mi? Doğru bildiğin her çift bir puan."],
         ["Puanını yaz", "Her doğru cevabını not et."],
       ],
-      say: L("defne", "tr", "Her kelimeyi iki kez duyacaksın. Sonra üç saniyen var: A mı, B mi? Her doğru cevabın bir puan. Saymak istersen doğrularını bir kâğıda not et."),
+      say: L("ahu", "tr", "Kurallar basit. Her kelimeyi iki kez duyacaksın. Sonra üç saniyen var: A mı, B mi? Her doğru cevabın bir puan. Saymak istersen doğrularını bir kâğıda not et."),
     },
     rounds: [
       {
         name: "Benzer ünsüzler",
         sub: "r ile l, n ile l, d ile r, r ile s",
-        say: L("defne", "tr", "Birinci turda benzer ünsüzleri dinliyoruz. Bazı çiftlerde bir ses değişiyor, bazılarında ek bir ses var."),
+        say: L("ahu", "tr", "Birinci turla başlıyoruz: benzer ünsüzler. Bazı çiftlerde bir ses değişiyor, bazılarında fazladan bir ses var."),
         pairs: [
           pair("das Glas", "das Gras", 1),
           pair("die Flucht", "die Frucht", 0),
@@ -48,7 +47,7 @@ const episode = {
       {
         name: "e mi, i mi?",
         sub: "Kelimenin anlamını tek ünlü değiştiriyor",
-        say: L("defne", "tr", "İkinci tur: e mi, i mi? Bu iki ses Almancada kelimenin anlamını değiştiriyor."),
+        say: L("ahu", "tr", "Güzel, ikinci tura geçiyoruz: e mi, i mi? Bu iki ses Almancada kelimenin anlamını değiştiriyor."),
         pairs: [
           pair("leben", "lieben", 1),
           pair("legen", "liegen", 0),
@@ -63,7 +62,7 @@ const episode = {
       {
         name: "a, e ve ä",
         sub: "ä çoğu zaman e gibi duyulur",
-        say: L("defne", "tr", "Üçüncü turda farklı ünlüleri dinliyoruz. Ekrandaki iki noktalı a harfine de dikkat et; sesi e harfine benzeyebilir."),
+        say: L("ahu", "tr", "Üçüncü turda farklı ünlüleri dinliyoruz. Ekrandaki iki noktalı a harfine dikkat et; sesi çoğu zaman e harfine benziyor."),
         pairs: [
           pair("danken", "denken", 1),
           pair("dann", "denn", 0),
@@ -78,7 +77,7 @@ const episode = {
       {
         name: "Uzun mu, kısa mı?",
         sub: "Harfler neredeyse aynı, fark ünlünün uzunluğunda",
-        say: L("defne", "tr", "Dördüncü tur: uzun mu, kısa mı? Burada harfler neredeyse aynı; fark ünlünün uzunluğunda."),
+        say: L("ahu", "tr", "Dördüncü tur: uzun mu, kısa mı? Burada harfler neredeyse aynı; fark, ünlünün ne kadar uzun okunduğunda."),
         pairs: [
           pair("bitten", "bieten", 1),
           pair("die Miete", "die Mitte", 0),
@@ -89,7 +88,7 @@ const episode = {
       {
         name: "Umlaut ve ch",
         sub: "o ile ö, u ile ü, ch ile ck",
-        say: L("defne", "tr", "Son turda iki noktalı ünlüler ve farklı ünsüzler var. Önce kelimeyi dinle, sonra seç."),
+        say: L("ahu", "tr", "Ve son tur: iki noktalı ünlüler ve birbirine benzeyen ünsüzler. Önce kelimeyi dinle, sonra seç."),
         pairs: [
           pair("schon", "schön", 1),
           pair("froh", "früh", 0),
@@ -102,12 +101,12 @@ const episode = {
         ],
       },
     ],
-    compare: { say: L("defne", "tr", "Şimdi bu turun çiftlerini yan yana dinle: önce A, sonra B.") },
+    compare: { say: L("ahu", "tr", "Şimdi bu turun çiftlerini yan yana dinleyelim: önce A, sonra B.") },
     score: {
       lab: "Puan",
       title: "Kaçını doğru bildin?",
       sub: "En çok hangi turda zorlandın?",
-      say: L("defne", "tr", "En çok hangi turda zorlandın? Sonuçlarını karşılaştır; istersen o turu bir kez daha dinle."),
+      say: L("ahu", "tr", "Peki, en çok hangi turda zorlandın? Sonuçlarına bak; istersen o turu bir kez daha dinle."),
     },
     app: {
       lab: "Lernomi'de",
@@ -116,7 +115,7 @@ const episode = {
       where: "Yürüyüş modu",
       link: "Bağlantı açıklamada",
       panel: { lab: "Söyle", w: "nützen", tr: "işe yaramak", ok: "Doğru söyledin" },
-      say: L("defne", "tr", "Bu kelimelerin hepsi Lernomi'de Defne'nin sesiyle var. Yürüyüş modunda sen söyle, uygulama dinlesin. Bağlantı açıklamada."),
+      say: L("ahu", "tr", "Bu kelimelerin hepsi Lernomi'de Defne'nin sesiyle var. Yürüyüş modunda sen söylersin, uygulama seni dinler. Bağlantıyı açıklamaya koydum."),
     },
     end: {
       lab: "Sıradaki",
@@ -124,7 +123,7 @@ const episode = {
       ask: "Yorumlara yaz. Sıradaki videoda yabancılar dairesindeyiz.",
       sub: "Her çarşamba ve cumartesi yeni video",
       slot: "Sıradaki video",
-      say: L("defne", "tr", "Puanın kaç? Yorumlara yaz. Bir sonraki videoda yabancılar dairesindeyiz."),
+      say: L("ahu", "tr", "Puanın kaç? Yorumlara yaz. Bir sonraki videoda yabancılar dairesindeyiz. Görüşmek üzere!"),
     },
     cover: { lines: ["Hangisini", "duydun?"], pill: "37 çift · kaç puan?" },
     yt: {
