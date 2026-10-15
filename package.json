@@ -24,6 +24,7 @@
     "test:assess": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/assess-eval.ts",
     "test:translate-check": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/translate-check-eval.ts",
     "test:translate-check-unit": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-translate-check.ts",
+    "test:edge-gec": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-edge-gec.ts",
     "test:coach-lines": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-coach.ts",
     "test:rules": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-rules.ts",
     "test:why": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-why.ts",

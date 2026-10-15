@@ -1,5 +1,6 @@
 import "server-only";
-import { createHash, randomUUID } from "node:crypto";
+import { randomUUID } from "node:crypto";
+import { secMsGecV2 } from "./edge-gec";
 import { pitchFor, rateFor, type Pace, type Pitch, type VoiceId } from "./voices";
 import { buildSsml } from "./ssml";
 
@@ -84,24 +85,16 @@ function browserVersion(): number {
 }
 
 /**
- * Sec-MS-GEC jetonu.
- *
- * Windows dosya zamanı (1601'den bu yana 100 nanosaniyelik adımlar) beş
- * dakikaya yuvarlanıp güvenilen jetonla birleştiriliyor, SHA-256'sının büyük
- * harfli hex'i gönderiliyor. Yuvarlama sayesinde saat farkı olan istemciler de
- * aynı değeri üretiyor.
+ * Sec-MS-GEC jetonu: v2 (2026-10-10 civarından beri; v1 düz SHA-256'ydı ve her
+ * sürümde 403 alıyordu). Hesap `edge-gec.ts`te, dosya zamanı beş dakikaya
+ * yuvarlanıyor; sürüm parametresinin öneki de `2-` olmalı.
  */
-function securityToken(): string {
-  const ticks = Math.floor((Date.now() / 1000 + 11_644_473_600) / 300) * 300 * 1e7;
-  return createHash("sha256").update(`${ticks}${TRUSTED_TOKEN}`).digest("hex").toUpperCase();
-}
-
 function endpoint(version: number): string {
   const params = new URLSearchParams({
     TrustedClientToken: TRUSTED_TOKEN,
-    "Sec-MS-GEC": securityToken(),
-    // Değeri denetlenmiyor ama parametrenin bulunması şart.
-    "Sec-MS-GEC-Version": `1-${version}.0.0.0`,
+    "Sec-MS-GEC": secMsGecV2(TRUSTED_TOKEN),
+    // Öneki jetonun sürümü (v2), gerisi tarayıcı sürümü; parametrenin bulunması şart.
+    "Sec-MS-GEC-Version": `2-${version}.0.0.0`,
   });
   return `wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?${params}`;
 }

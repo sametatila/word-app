@@ -453,6 +453,7 @@ jobs:
           npm run test:fix-guard
           npm run test:separable
           npm run test:translate-check-unit
+          npm run test:edge-gec
           npm run test:moderation
           npm run test:rc-delete
           npm run test:track
