@@ -87,7 +87,7 @@ async function synth(key, voice, lang, text) {
 
 /**
  * Kaydı olmayan anlatıcı satırlarını üret. keys: "ses|dil|metin" (anlatıcı olmayanlar atlanır).
- * → { made, chars, skipped, errors }
+ * → { made, chars, skipped, errors, locked? } (locked: başka üretim sürüyordu, hiçbir şey yapılmadı)
  */
 export async function generateNarration(keys, { dir = sesDir(), max = MAX_PER_RUN, dry = false, log = console.log } = {}) {
   const out = { made: 0, chars: 0, skipped: 0, errors: [] };
@@ -104,6 +104,27 @@ export async function generateNarration(keys, { dir = sesDir(), max = MAX_PER_RU
   }
   const key = apiKey();
   if (!key) throw new Error("ELEVENLABS_API_KEY yok");
+  // tek üretici: işçi ile elle koşu aynı satırları aynı anda üretip iki kez ödüyordu (2026-10-15, 9 satır)
+  const lock = path.join(dir, ".uretim.lock");
+  try {
+    fs.mkdirSync(lock);
+  } catch {
+    if (Date.now() - fs.statSync(lock).mtimeMs < 30 * 60_000) {
+      log("anlatıcı: başka bir üretim sürüyor, sonraki koşuya");
+      return { ...out, skipped: missing.length, locked: true };
+    }
+    fs.rmSync(lock, { recursive: true, force: true });
+    fs.mkdirSync(lock);
+  }
+  try {
+    return await produce(missing, { dir, max, log, key, out });
+  } finally {
+    fs.rmSync(lock, { recursive: true, force: true });
+  }
+}
+
+async function produce(missing, { dir, max, log, key, out }) {
+  let map = readMap(dir);
   let used = usedThisMonth(dir);
   for (const k of missing.slice(0, max)) {
     const [, v, lang, text] = k.match(KEY_RE) || [];
@@ -152,6 +173,10 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   let total = { made: 0, chars: 0 };
   for (;;) {
     const r = await generateNarration(keys, { dry: process.argv.includes("--dry"), max: 200 });
+    if (r.locked) {
+      await new Promise((ok) => setTimeout(ok, 20_000)); // işçinin koşusu bitince kalan
+      continue;
+    }
     for (const e of r.errors) console.error(`✗ ${e}`);
     total = { made: total.made + r.made, chars: total.chars + r.chars };
     if (!r.made || r.errors.length || !r.skipped) break;
