@@ -10,6 +10,10 @@ yapılan değişiklikleri soruyor. Cevaplar buradan yazılır. Testçi adı yaz�
 | 2026-10-02 17:03 | Build 17 (1.0.0) kapalı teste gönderildi (mağaza girişi, uygulama içeriği, ön plan hizmeti videosu dahil) |
 | 2026-10-02 17:34 | Onaylandı, yayında; ülkeler Almanya ve Türkiye, testçiler "Test" e-posta listesi |
 | 2026-10-02 akşam | 12 testçi katıldı, 14 günlük sayaç başladı → 2026-10-16 |
+| 2026-10-03 | Build 18 (1.0.0) kapalı teste gönderildi |
+| 2026-10-06 / 10-07 | Build 20 ve 22 (1.0.0) kapalı teste |
+| 2026-10-15 | Build 23 (1.0.1) kapalı teste gönderildi (API, `completed`; Google incelemesi) |
+| 2026-10-16 | 14 gün doldu; üretim erişimi başvurusu (anket cevapları bu dosyadan) |
 
 ## Geri bildirim
 

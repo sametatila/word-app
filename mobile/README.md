@@ -6,8 +6,8 @@ sunucusu yok: istekler `https://www.lernomi.app`'e gider; ağ o adresi engelliyo
 Oturum Better Auth çerezidir ve adrese bağlıdır: yedeğe geçen hesap yeniden giriş yapar. Yani `mobile/` bir istemcidir; iş kuralları, içerik ve
 veritabanı depo kökündeki Next.js uygulamasında.
 
-- Android: `com.lernomi.learn` — yayında değil, Play iç testte (`docs/play/`)
-- iOS: `app.lernomi.ios` — yayında değil, TestFlight'ta (`docs/appstore/README.md`)
+- Android: `com.lernomi.learn` — herkese açık değil; Play dahili ve kapalı testte (`alpha`), üretim erişimi kapalı testin 14 günü dolunca (`docs/play/`)
+- iOS: `app.lernomi.ios` — App Store'da yayında (1.0.0, 2026-10-15); güncellemeler TestFlight'tan sonra incelemeye (`docs/appstore/README.md`)
 - Açık mağaza işleri: `docs/store/audit.md`
 
 ## Kurulum

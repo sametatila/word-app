@@ -16,10 +16,10 @@ maddeleri `docs/store/audit.md`'de.
 
 | | |
 |---|---|
-| Kayıt | App Store Connect `6810593275`, bundle `app.lernomi.ios`, sürüm kaydı 1.0.0 |
+| Kayıt | App Store Connect `6810593275`, bundle `app.lernomi.ios`. Mağaza sayfası https://apps.apple.com/app/id6810593275 |
 | Sürüm | Tek kaynak kökteki `package.json` (`version` + `versionCode`); `scripts/version.mjs` yedi kayda yazıyor, `npm run version:check` CI'da denetliyor. Numara belgelere kopyalanmaz |
-| TestFlight | 2026-09-28: build 10 dahili testte (Dahili test grubu bütün build'leri alıyor; Harici test grubuna eklenmedi, kapalı test bekliyor). Sürüm kaydı 1.0.0'a build 10 bağlı (denetim M5); yeni build yüklenince bağlanan build de güncellenir |
-| Yayın | **Elle** (`releaseType: MANUAL`, 2026-09-26, Samet; denetim M13): onaydan sonra App Store Connect'te "Release this version" ile açılır. Android 14 günlük kapalı testte olduğundan iki platform birlikte açılabilsin diye |
+| TestFlight | Dahili test grubu bütün build'leri alıyor; her build'e tr "Neler test edilecek" notu. Harici test grubu kullanılmıyor |
+| Yayın | 1.0.0 (build 22) 2026-10-15'te onaylandı ve yayına alındı (ilk sürüm `MANUAL`, Android kapalı testteyken iki platform birlikte açılsın diye; Samet iOS'u önce açmayı seçti). Güncellemeler `AFTER_APPROVAL`: onaylanınca kendiliğinden yayına girer (1.0.1/build 23, 2026-10-15 incelemeye). Geçmiş ve kanıt: denetim M4 |
 | Derleme | CI (`.github/workflows/ios-build.yml`) ve yerel Mac mini (Xcode) |
 | Cihazda koşuldu mu | Kayıtlı bir gerçek iPhone koşusu yok (M10). Mikrofon, arka plan sesi, kilit ekranı, satın alma yalnız cihazda ölçülür; sıra `docs/plan/ios-device-runbook.md` |
 | Cihaz ailesi | iPhone + iPad (`TARGETED_DEVICE_FAMILY = "1,2"`, Split View açık). Bedeli: 13" iPad ekran görüntüsü zorunlu. `npm run ios:check` › "cihaz ailesi" beyanı ve kare betiğini birlikte tutuyor |
