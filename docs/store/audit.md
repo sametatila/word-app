@@ -139,7 +139,7 @@ AND-4 → M9 · AND-6 → S10 · TEC-1 → T4 · LEG-13 → G4.
 | LEG-2 | Seslendirme resmî olmayan Edge ucunda | ✅ | cf9ebbcc (beyan); hizmet riski İ6 |
 | LEG-3 | Speechmatics ve Deepgram'da "ses saklanmaz" | ✅ | 840b4548 (iş silme, `mip_opt_out`) |
 | LEG-4 | Impressum ve DSA tüccar beyanı | ✅ | Künye yayında; ASC DSA beyanı aktif (2026-09-10); Play'de ayrı form yok, bilgi hesap doğrulamasından (2026-09-24) |
-| LEG-5 | Yurt dışı aktarım güvenceleri | ⏳ Samet + Musa | KVKK standart sözleşme + Kurul bildirimi, m.27 yazılı görevlendirme, DPA'lar, eğitim ayarları. Metin yalnız var olanı söylüyor |
+| LEG-5 | Yurt dışı aktarım güvenceleri | ✅ Samet + Musa | KVKK standart sözleşme + Kurul bildirimi, m.27 yazılı görevlendirme, DPA'lar, eğitim ayarları. Metin yalnız var olanı söylüyor. 2026-10-15: Samet çözüldü dedi, madde kapandı (hatırlatma yok) |
 | LEG-6 | Hesap silinince RevenueCat kaydı kalıyor | ✅ | 8b3e5c53; sunucu anahtarı 2026-09-23 |
 | LEG-7 | Analitik tercihi yalnız cihazda | ✅ | 72e9429f, 9cb15ad2 |
 | LEG-8 | Şart kabulü kaydedilmiyor | ✅ | 72e9429f |
