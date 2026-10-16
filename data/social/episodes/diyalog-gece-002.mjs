@@ -19,7 +19,7 @@ const episode = {
       callee: "Yabancılar dairesi",
       calleeTag: "YABANCILAR DAİRESİ",
       avatar: "work",
-      endTitle: "İzin ve vize uzatma için 3 cümle.",
+      endTitle: "3 cümlede hallettin.",
     },
   }),
 };
