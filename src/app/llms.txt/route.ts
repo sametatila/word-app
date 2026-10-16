@@ -7,6 +7,7 @@ import { legalPath } from "@/lib/legal";
 /* Dil adları kendi dillerinde (endonim), tek kaynaktan: dil seçicideki adlarla aynı. */
 import { LANG_LABEL } from "@/lib/i18n/dict";
 import { SITE_URL } from "@/lib/site";
+import { SOCIAL_PROFILES } from "@/lib/social-profiles";
 
 /**
  * `/llms.txt` — dil modelleri için ürün özeti (llmstxt.org biçimi, Markdown).
@@ -124,6 +125,7 @@ export async function GET() {
     `- [Lernomi (${LANG_LABEL.de})](${abs(landingPath("de"))})`,
     ...(ios ? [`- [App Store](${ios})`] : []),
     ...(android ? [`- [Google Play](${android})`] : []),
+    ...SOCIAL_PROFILES.map((p) => `- [${p.name} (${p.handle})](${p.url})`),
     `- [Support](${abs(legalPath("support", "en"))})`,
     `- [Privacy policy](${abs(legalPath("privacy", "en"))})`,
     `- [Terms of use](${abs(legalPath("terms", "en"))})`,

@@ -10,6 +10,8 @@ import { getT, getLang } from "@/lib/i18n/server";
 import { legalPath } from "@/lib/legal";
 import { appControl } from "@/lib/app-control";
 import { LandingLangButton } from "@/components/landing/landing-lang";
+import { SocialIcon } from "@/components/landing/social-icon";
+import { SOCIAL_PROFILES } from "@/lib/social-profiles";
 import { LANG_LABEL, NATIVE_LANGS } from "@/lib/i18n/dict";
 import { offeredNativeLangs } from "@/lib/courses";
 import type { Metadata } from "next";
@@ -82,7 +84,9 @@ export async function generateMetadata(): Promise<Metadata> {
 /*
   Yapısal veri: Google sonuçta site adını ("Lernomi") `WebSite`tan, logoyu
   `Organization`dan alıyor. Yalnız gerçek olan yazılıyor: puan, yorum, fiyat
-  yok; mağaza bağlantısı yalnız yayındaki mağaza için.
+  yok; mağaza bağlantısı yalnız yayındaki mağaza için. `sameAs` sosyal
+  hesapları da taşıyor (`lib/social-profiles`): arama motoru markayı
+  hesaplarla eşleştirsin.
 */
 function StructuredData({ lang, stores }: { lang: string; stores: string[] }) {
   const home = `${SITE_URL}/`;
@@ -96,7 +100,7 @@ function StructuredData({ lang, stores }: { lang: string; stores: string[] }) {
         name: "Lernomi",
         url: home,
         logo: `${SITE_URL}/icon-512.png`,
-        ...(stores.length ? { sameAs: stores } : {}),
+        sameAs: [...stores, ...SOCIAL_PROFILES.map((p) => p.url)],
       },
     ],
   };
@@ -648,6 +652,25 @@ export default async function Home() {
               </Link>
             </li>
           </ul>
+          {/* Sosyal hesaplar: dil seçiciyle aynı hap dili; platform adı görünür
+              metin (simge tek başına bırakılmıyor), kullanıcı adı ipucu değil
+              ayrı satır olmasın diye yalnız ekran okuyucuya. */}
+          <div className={s.social}>
+            <span className={s.socialLabel} id="foot-follow">
+              {copy.follow}
+            </span>
+            <ul className={s.socialList} aria-labelledby="foot-follow">
+              {SOCIAL_PROFILES.map((p) => (
+                <li key={p.id}>
+                  <a className={s.socialLink} href={p.url} rel="me noopener">
+                    <SocialIcon id={p.id} className={s.socialIcon} />
+                    {p.name}
+                    <span className="sr-only"> {p.handle}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
           {/* Sayfanın dili: diller KENDİ adlarıyla (LangSetting ile aynı). */}
           <div className={s.langs} role="group" aria-label={copy.langs.langNav}>
             {NATIVE_LANGS.filter((l) => offered.has(l)).map((l) =>

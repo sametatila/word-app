@@ -164,6 +164,8 @@ export type LandingCopy = {
     cert: string;
     disclaimer: string;
   };
+  /** Alt bilgideki sosyal hesaplar grubunun başlığı (hesaplar `lib/social-profiles`). */
+  follow: string;
 };
 
 const tr: LandingCopy = {
@@ -348,6 +350,7 @@ const tr: LandingCopy = {
     disclaimer:
       "Deneme sınavlarını Lernomi hazırladı; Lernomi hiçbir sınav kurumuyla bağlantılı değildir, belgeler resmî bir sertifika yerine geçmez.",
   },
+  follow: "Bizi takip et",
 };
 
 const en: LandingCopy = {
@@ -531,6 +534,7 @@ const en: LandingCopy = {
     disclaimer:
       "The mock exams are Lernomi's own; Lernomi is not affiliated with any exam provider, and certificates of achievement are not official certificates.",
   },
+  follow: "Follow us",
 };
 
 const de: LandingCopy = {
@@ -714,6 +718,7 @@ const de: LandingCopy = {
     disclaimer:
       "Die Probeprüfungen stammen von Lernomi; Lernomi ist mit keinem Prüfungsanbieter verbunden, ein Leistungsnachweis ersetzt kein offizielles Zertifikat.",
   },
+  follow: "Folge uns",
 };
 
 export const LANDING: Record<NativeLang, LandingCopy> = { tr, en, de };
