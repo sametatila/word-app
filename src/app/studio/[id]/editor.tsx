@@ -11,7 +11,7 @@ import { apiFetch } from "@/lib/api-fetch";
 import { adminErrorText } from "@/lib/admin-errors";
 import { AdminPage, BTN, Badge, FIELD, FIELD_STYLE, Field, KeyValue, Notice, PageHeader, Panel, Segmented, TONE, type Tone, when } from "../../admin/_ui/ui";
 import { TwoStep } from "../../admin/_ui/two-step";
-import { APPROACH_TR, CONTENT_STATE, PLACED, PLATFORMS, POST_STATE, THEME_TR, contentState, dayLabel, postState } from "../shared";
+import { APPROACH_TR, CONTENT_STATE, PLACED, PLATFORMS, POST_STATE, THEME_TR, calendarHref, contentState, dayLabel, postState } from "../shared";
 import { CopyButton, Fields } from "./fields";
 import { Preview, type PreviewState } from "./preview";
 
@@ -214,7 +214,7 @@ export function StudioEditor({ initial, posts: initialPosts, igConnected, role, 
   return (
     <AdminPage>
       <PageHeader
-        crumb={["/studio/takvim", "Takvim"]}
+        crumb={[calendarHref(ep.slot), "Takvim"]}
         title={ep.title}
         description={<>{APPROACH_TR[ep.approach] ?? ep.approach} · {THEME_TR[ep.theme] ?? ep.theme} · <span className="font-mono">{ep.id}</span> · sürüm {ep.revision}{ep.updatedBy ? ` (${ep.updatedBy === "claude" ? "Claude" : ep.updatedBy}, ${when(ep.updatedAt)})` : ""}</>}
         meta={<span className="flex flex-wrap items-center gap-2"><Badge tone={CONTENT_STATE[cs.key].tone}>{cs.label}</Badge>{ep.slot ? <span>Yayın: {dayLabel(ep.slot.slice(0, 10))} {ep.slot.slice(11)} (Berlin)</span> : <span>Takvim dışı</span>}</span>}
@@ -736,7 +736,7 @@ export function History({ ep, busy, onRestore }: { ep: EpisodeDetail; busy: bool
           </li>
         ))}
       </ul>
-      <p className="mt-2"><Link className="text-caption underline underline-offset-2" href="/studio/takvim">← Takvime dön</Link></p>
+      <p className="mt-2"><Link className="text-caption underline underline-offset-2" href={calendarHref(ep.slot)}>← Takvime dön</Link></p>
     </details>
   );
 }

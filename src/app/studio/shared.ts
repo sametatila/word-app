@@ -16,6 +16,8 @@ export const LONG_SERIES_SHORT: Record<string, string> = { yuru: "Yürürken", s
 export const APPROACH_SHORT: Record<string, string> = { artikel: "Artikel", diyalog: "Diyalog", kelime: "Kelime", duy: "Duy", kur: "Kur" };
 export const THEME_TR: Record<string, string> = { gece: "Gece", kagit: "Kâğıt", turuncu: "Turuncu", lacivert: "Lacivert" };
 
+/** Takvimde bölümün haftası (`?hafta=`, takvim o günün pazartesisine yuvarlar); saati yoksa bu hafta. */
+export const calendarHref = (slot: string | null | undefined) => (slot ? `/studio/takvim?hafta=${slot.slice(0, 10)}` : "/studio/takvim");
 export const dayLabel = (day: string) => new Date(`${day}T12:00:00Z`).toLocaleDateString("tr-TR", { weekday: "short", day: "numeric", month: "short", timeZone: "UTC" });
 
 /**

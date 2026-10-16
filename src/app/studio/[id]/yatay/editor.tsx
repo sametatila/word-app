@@ -10,7 +10,7 @@ import { REQUEST_STATE, RequestActions, requestCall } from "../../requests/actio
 import { apiFetch } from "@/lib/api-fetch";
 import { AdminPage, BTN, Badge, FIELD, FIELD_STYLE, Field, Notice, PageHeader, Panel, TONE, type Tone, when } from "../../../admin/_ui/ui";
 import { TwoStep } from "../../../admin/_ui/two-step";
-import { CONTENT_STATE, LONG_SERIES_TR, POST_STATE, contentState, dayLabel, postState } from "../../shared";
+import { CONTENT_STATE, LONG_SERIES_TR, POST_STATE, calendarHref, contentState, dayLabel, postState } from "../../shared";
 import { CopyButton } from "../fields";
 import { History, PlatformBox, call, errorText, files, mb } from "../editor";
 import { LongPreview, type LongState } from "./oynatici";
@@ -156,7 +156,7 @@ export function LongEditor({ initial, posts: initialPosts, role, email, requests
   return (
     <AdminPage>
       <PageHeader
-        crumb={["/studio/takvim", "Takvim"]}
+        crumb={[calendarHref(ep.slot), "Takvim"]}
         title={ep.title}
         description={<>Uzun video (YouTube) · {LONG_SERIES_TR[ep.template] ?? ep.template} · <span className="font-mono">{ep.id}</span> · sürüm {ep.revision}{ep.updatedBy ? ` (${ep.updatedBy === "claude" ? "Claude" : ep.updatedBy}, ${when(ep.updatedAt)})` : ""}</>}
         meta={<span className="flex flex-wrap items-center gap-2"><Badge tone={CONTENT_STATE[cs.key].tone}>{cs.label}</Badge>{ep.slot ? <span>Yayın: {dayLabel(ep.slot.slice(0, 10))} {ep.slot.slice(11)} (Berlin)</span> : <span>Takvim dışı</span>}{pv?.plan ? <span className="muted">· {Math.floor(pv.plan.duration / 60)} dk {Math.round(pv.plan.duration % 60)} sn</span> : null}</span>}

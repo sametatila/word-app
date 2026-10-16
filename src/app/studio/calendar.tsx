@@ -61,13 +61,24 @@ const THEME_SWATCH: Record<string, string> = { gece: "#1b1b1f", kagit: "#e9dcc4"
 
 type Toast = { tone: Tone; text: string; detail?: string[]; undo?: () => void } | null;
 
-export function StudioCalendar({ episodes: initial, posts: initialPosts, missing, now, ig, tt, yt }: { episodes: Ep[]; posts: SocialPost[]; missing: boolean; now: string; ig: PlatformApiStatus; tt: PlatformApiStatus; yt: PlatformApiStatus }) {
+export function StudioCalendar({ week: initialWeek, episodes: initial, posts: initialPosts, missing, now, ig, tt, yt }: { week?: string; episodes: Ep[]; posts: SocialPost[]; missing: boolean; now: string; ig: PlatformApiStatus; tt: PlatformApiStatus; yt: PlatformApiStatus }) {
   const toMap = (xs: SocialPost[]) => new Map(xs.filter((p) => p.episodeId).map((p) => [key(p.episodeId as string, p.platform), p]));
   const [episodes, setEpisodes] = useState(initial);
   const [posts, setPosts] = useState(() => toMap(initialPosts));
   const nowMs = new Date(now).getTime();
   const today = berlinDay(now);
-  const [week, setWeek] = useState(() => monday(today));
+  const [week, setWeekState] = useState(() => monday(initialWeek ?? today));
+  // hafta adreste (?hafta=): bölüme girip geri dönünce, sayfa tazelenince aynı hafta açılsın; bu hafta parametresiz
+  const setWeek = (w: string) => {
+    setWeekState(w);
+    window.history.replaceState(null, "", w === monday(today) ? window.location.pathname : `?hafta=${w}`);
+  };
+  // adresten gelen hafta değişirse (menüden "Takvim", editörden "← Takvime dön") ona geç
+  const [seenWeek, setSeenWeek] = useState(initialWeek);
+  if (seenWeek !== initialWeek) {
+    setSeenWeek(initialWeek);
+    setWeekState(monday(initialWeek ?? today));
+  }
   const [drag, setDrag] = useState<string | null>(null);
   const [over, setOver] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
