@@ -5,7 +5,7 @@ import { SkeletonLine, SkeletonBar, SkeletonTile, TextBox } from "@/components/s
  * Gelişim iskeleti — sayfanın GERÇEK sırasıyla (`ActivityProgress`): başlık,
  * turuncu seri kahramanı (bu hafta noktalarıyla), "Nasıl gidiyorum" başlığı ve
  * kartı, dört karo, kelime ustalığı + seviye satırları, tekrar kuyruğu, iki
- * haftalık ritim. Altındakiler (zayıf noktalar, zaman içinde, menü satırları)
+ * seviye hazırlığı, haftalık ritim. Altındakiler (zayıf noktalar, zaman içinde, menü satırları)
  * veri gelince açılıyor; ilk ekranın dışında kalıyorlar.
  *
  * Kahraman TEMADAN BAĞIMSIZ turuncu: iskelet de turuncu kabuk ve üstünde
@@ -90,6 +90,18 @@ export default function Loading() {
               <SkeletonLine variant="caption" width="80%" />
             </div>
           ))}
+        </div>
+
+        {/* Seviye hazırlığı (`LevelProgress`): başlık + yüzde, 8'lik çubuk, kırılım, açıklama, bağlantı. */}
+        <div className="card grid gap-2 p-5">
+          <div className="flex items-baseline justify-between gap-3">
+            <SkeletonLine variant="h3" width={120} />
+            <SkeletonLine variant="strong" width={40} />
+          </div>
+          <SkeletonBar height={8} />
+          <SkeletonLine variant="caption" width="55%" />
+          <SkeletonLine variant="caption" width="90%" />
+          <SkeletonLine variant="caption" width="60%" />
         </div>
 
         {/* Kelime ustalığı: başlık + 10'luk şerit, seviye etiketi ve beş satır. */}

@@ -5,6 +5,7 @@ import { T, barPct, fillStyle, fillX } from "@/lib/motion";
 import Link from "next/link";
 import { MASTERED_DAYS } from "@/lib/srs";
 import { MenuRow } from "@/components/menu-row";
+import { LevelProgress, type LevelProgressData } from "@/components/learn/level-progress";
 import { WeakSpotsCard } from "@/components/weak-spots-card";
 import { GrowthTrends, HowAmIDoing, HowAmIDoingHead, useGrowth } from "@/components/progress-panel";
 import { ChevronNextIcon, CorrectIcon, DurationIcon, LevelIcon, MyWordsIcon, MyWritingsIcon, StreakIcon, XpIcon } from "@/components/icons";
@@ -162,6 +163,7 @@ export function ActivityProgress({
   dueNow,
   upcoming,
   leeches,
+  levelStatus,
 }: {
   days: DayRow[];
   streak: number;
@@ -179,6 +181,8 @@ export function ActivityProgress({
   dueNow: number;
   upcoming: number;
   leeches: number;
+  /** Seviye hazırlığı (lib/level-readiness); okunamazsa null, kart çizilmez. */
+  levelStatus?: LevelProgressData | null;
 }) {
   const t = useT();
   const lang = useLang();
@@ -211,6 +215,9 @@ export function ActivityProgress({
         <KpiCard label={t("progress.time_total")} value={formatDuration(seconds, t)} tone="var(--color-sky-500)" Icon={DurationIcon} />
         <KpiCard label={t("progress.level")} value={level} tone="var(--color-violet-500)" Icon={LevelIcon} />
       </div>
+
+      {/* Seviye hazırlığı (2026-10-17'de Öğren'den taşındı; mobil `ProgressScreen` aynı yerde). */}
+      {levelStatus ? <LevelProgress status={levelStatus} place="progress" /> : null}
 
       {/* KELİME USTALIĞI + SEVİYE KIRILIMI tek kart ve KART BİR HEDEF:
           Kelimeler ekranı. Seviye satırları Android'de bu ekranda duruyordu,

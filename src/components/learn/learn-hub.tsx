@@ -182,8 +182,8 @@ export function LearnHub({ data }: { data: LearnHubData }) {
           sırasını mobilden ayırmaya değmiyordu. */}
       {/* İlk hafta seviye önerisi: yalnız sunucu önerdiğinde (mobil `PlacementNudge` aynı yerde). */}
       {data.nudge ? <PlacementNudge nudge={data.nudge} /> : null}
-      {/* Seviye ilerlemesi (docs/plan/level-progress.md); mobil `LevelProgress` aynı yerde. */}
-      {data.levelStatus ? <LevelProgress status={data.levelStatus} /> : null}
+      {/* Seviye: yalnız sınava hazırken ya da geçiş kararında; hazırlık kartı Gelişim'de (docs/plan/level-progress.md). */}
+      {data.levelStatus ? <LevelProgress status={data.levelStatus} place="learn" /> : null}
       <div className="mb-5">
         <QuestCard />
       </div>

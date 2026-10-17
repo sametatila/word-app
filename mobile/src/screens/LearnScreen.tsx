@@ -202,8 +202,8 @@ export function LearnScreen() {
       {/* GÜNÜN GÖREVLERİ — öne çıkanın ÜSTÜNDE, gömülü kutular (ayrı ekran yok) */}
       {/* İlk hafta seviye önerisi (seviye testi v2): yalnız sunucu önerdiğinde görünür. */}
       <PlacementNudge />
-      {/* Seviye ilerlemesi: hazırlık ve sınavla onaylı geçiş (docs/plan/level-progress.md). */}
-      <LevelProgress />
+      {/* Seviye: yalnız sınava hazırken ya da geçiş kararında; hazırlık kartı Gelişim'de (docs/plan/level-progress.md). */}
+      <LevelProgress place="learn" />
       <DailyQuests />
 
       {/* Bu haftanın ortak görevi/daveti varsa tek satır nabız; yoksa hiç çizilmez. */}

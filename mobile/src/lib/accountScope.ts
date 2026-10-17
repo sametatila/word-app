@@ -34,6 +34,7 @@ const ACCOUNT_SCOPED_PREFIXES = [
   "lernomi-conversation-resume:", //     yarım kalmış konuşma
   "lernomi:mock-done", //          bitirilen deneme kâğıtları
   "lernomi:mock-run:", //          yarım kalmış deneme koşusu
+  "lernomi:level-status:", //      son seviye hazırlığı (Öğren/Gelişim kartı, kullanıcı başına)
   /*
     GONDERILMEYI BEKLEYEN KAYITLAR DA HESABA AIT.
 

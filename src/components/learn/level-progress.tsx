@@ -7,6 +7,7 @@ import { apiFetch } from "@/lib/api-fetch";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatPercent, type NativeLang } from "@/lib/i18n/dict";
 import { READY_AT } from "@/lib/level-readiness-score";
+import { CheckIcon, ChevronNextIcon } from "@/components/icons";
 
 /* "Şimdilik kalsın" denen geçiş bir daha sorulmaz (aynı hedef seviye için). */
 const DISMISS_KEY = "lernomi-level-advance-dismissed";
@@ -20,11 +21,14 @@ export type LevelProgressData = {
 };
 
 /**
- * SEVİYE İLERLEMESİ (docs/plan/level-progress.md) — mobil `M/src/ui/LevelProgress` ile aynı iki hâl:
- * hazırlık (kelime/Patika kırılımı, %60'ta seviye sınavı çağrısı, öncesinde "şimdi gir") ve
- * geçiş (sınav geçildiyse "B2'ye geçelim mi?"; seviye yalnız kabulde değişir).
+ * SEVİYE İLERLEMESİ (docs/plan/level-progress.md) — mobil `M/src/ui/LevelProgress` ile aynı iki yer
+ * (Samet, 2026-10-17: Öğren'de içeriği gereksiz yere genişletiyordu):
+ *   Gelişim (`place="progress"`)  hazırlık kartı: kelime/Patika kırılımı, %60'ta seviye sınavı
+ *             çağrısı, öncesinde "şimdi gir".
+ *   Öğren (`place="learn"`)  yalnız yapılacak bir şey varsa: %60'ı geçince tek satır "sınava
+ *             hazırsın", sınav geçildiyse "B2'ye geçelim mi?" (seviye yalnız kabulde değişir).
  */
-export function LevelProgress({ status }: { status: LevelProgressData }) {
+export function LevelProgress({ status, place }: { status: LevelProgressData; place: "learn" | "progress" }) {
   const t = useT();
   const lang = useLang() as NativeLang;
   const router = useRouter();
@@ -34,7 +38,7 @@ export function LevelProgress({ status }: { status: LevelProgressData }) {
     try { setDismissed(localStorage.getItem(DISMISS_KEY)); } catch { /* depolama kapalı */ }
   }, []);
 
-  if (status.advance && status.advance !== dismissed) {
+  if (place === "learn" && status.advance && status.advance !== dismissed) {
     const to = status.advance;
     const passed = LEVELS[LEVELS.indexOf(to) - 1] ?? status.level;
     const later = () => {
@@ -62,8 +66,19 @@ export function LevelProgress({ status }: { status: LevelProgressData }) {
   }
 
   const r = status.readiness;
+  if (place === "learn") {
+    if (!r.ready) return null;
+    return (
+      <Link href={`/exam/${status.level}`} prefetch={false} aria-label={`${t("lvl.ready_now", { level: status.level })}. ${t("lvl.take_exam", { level: status.level })}`}
+        className="pressable card mb-5 flex items-center gap-3 p-4">
+        <CheckIcon aria-hidden className="h-5 w-5 shrink-0 text-success" />
+        <span className="text-strong min-w-0 flex-1">{t("lvl.ready_now", { level: status.level })}</span>
+        <ChevronNextIcon aria-hidden className="muted h-5 w-5 shrink-0" />
+      </Link>
+    );
+  }
   return (
-    <section className="card mb-5 grid gap-2 p-5">
+    <section className="card grid gap-2 p-5">
       <div className="flex items-baseline justify-between">
         <h2 className="text-h3">{t("lvl.ready_title", { level: status.level })}</h2>
         <span className={`text-strong tabular-nums ${r.ready ? "text-success" : ""}`}>{formatPercent(r.total, lang)}</span>

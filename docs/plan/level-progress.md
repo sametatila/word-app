@@ -86,5 +86,5 @@ yüzden haksız düşmez; ama kurs o kelimeleri öğretmiyor. Kapatmak ayrı iç
 2. Hazırlık: `lib/level-readiness` + `GET /api/level`; sınav geçme notu %60 (web + mobil + metinler).
 3. Geçiş: sınav sonucunda "L+1'e geç" (onay) → `POST /api/level {action:"advance"}`; sunucu geçilmiş
    sınavı doğrular.
-4. Arayüz: Öğren ekranında hazırlık kartı (kelime/Patika kırılımı, %60'ta sınav çağrısı), ileri atlama.
+4. Arayüz: hazırlık kartı (kelime/Patika kırılımı, %60'ta sınav çağrısı, ileri atlama) Gelişim'de; Öğren'de yalnız %60'ı geçince tek satır "sınava hazırsın" ve geçiş kararı (Samet, 2026-10-17: kart Öğren'i gereksiz yere uzatıyordu). Son durum mobilde cihazda da saklanıyor, kart soğuk açılışta beklemeden çiziliyor; ilk açılışta iki ekranda da iskelet.
 5. Testler, belgeler, CI; sonra build 18.

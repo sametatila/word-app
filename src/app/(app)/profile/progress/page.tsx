@@ -8,6 +8,7 @@ import { EmptyCard } from "@/components/empty-card";
 import { StreakIcon } from "@/components/icons";
 import Link from "next/link";
 import { shownStreak } from "@/lib/streak-live";
+import { levelStatus } from "@/lib/level-readiness";
 
 export const dynamic = "force-dynamic";
 export const generateMetadata = titleMeta("progress.progress");
@@ -30,6 +31,8 @@ export default async function ProgressPage() {
   try {
     const profile = await ensureProfile(user.id, user.name);
     const data = await getProgress(user.id, today);
+    /* Okunamazsa kart çizilmez; sayfa yine açılır. */
+    const level = await levelStatus(user.id).catch(() => null);
     const mastered = data.levels.reduce((s, l) => s + l.mastered, 0);
     const totalWords = data.levels.reduce((s, l) => s + l.total, 0);
     content = (
@@ -52,6 +55,7 @@ export default async function ProgressPage() {
         dueNow={data.dueNow}
         upcoming={data.upcoming}
         leeches={data.leeches}
+        levelStatus={level}
       />
     );
   } catch (err) {

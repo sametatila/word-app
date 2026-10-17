@@ -14,6 +14,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ChevronNextIcon, CorrectIcon, DurationIcon, LevelIcon, MyWordsIcon, MyWritingsIcon, StreakIcon, XpIcon } from "../ui/icons";
 import { WeakSpots } from "../ui/WeakSpots";
 import { GrowthTrends, HowAmIDoing, HowAmIDoingHead, useGrowth } from "../ui/GrowthPanel";
+import { LevelProgress } from "../ui/LevelProgress";
 import { Skeleton, SkeletonBar, SkeletonCard, SkeletonLine, SkeletonText, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useMe, formatXp, formatDuration } from "../lib/useMe";
 import { bumpStats } from "../lib/statsSignal";
@@ -317,6 +318,9 @@ export function ProgressScreen() {
             ))}
           </CardGrid>
         )}
+
+        {/* Seviye hazırlığı (2026-10-17'de Öğren'den taşındı; docs/plan/level-progress.md). */}
+        <LevelProgress place="progress" />
 
         {/*
           KELİME USTALIĞI + SEVİYE KIRILIMI tek kart ve kart DOKUNULABİLİR:
