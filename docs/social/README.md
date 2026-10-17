@@ -414,7 +414,9 @@ stüdyo takviminde "Instagram API" etiketi.
 TikTok for Developers uygulaması **Lernomi**, **sandbox** (inceleme yok; hedef kullanıcı Lernomi'nin TikTok hesabı, gerçek veri
 dönüyor; 2026-10-17'den beri Samet'in YENİ geliştirici hesabındaki uygulama ve Almanya merkezli YENİ TikTok hesabı, eski
 @lernomi_app belirteci `tiktok/token.eski-lernomi_app-2026-10-17.json`; API yalnız bağlı hesabı görür, başka hesaptaki
-zamanlanmış video saatinden sonra oEmbed'le denetlenir, eski hesabın videolarının sayıları donar), Login Kit + `user.info.basic`, `user.info.stats`, `video.list` (yayın ürünleri bilerek yok: denetimden
+zamanlanmış video saatinden sonra oEmbed'le denetlenir. Samet: "eski hesabın verilerinin anlamı kalmadı": eski
+hesapta yayındaki 16 TikTok satırı **Atlandı** yapıldı, notunda eski bağlantı ve son izlenme (toplam 3.698) duruyor;
+eski hesapta zamanlanmış 7 satırın bağlantısı silindi, yeni hesapta yeniden zamanlanıyor, saatinden eşlenir), Login Kit + `user.info.basic`, `user.info.stats`, `video.list` (yayın ürünleri bilerek yok: denetimden
 geçmez). Yönlendirme `https://www.lernomi.app/`. Yerelde `.secrets/tiktok/` (`key`, `secret`, logo). İşçi
 `scripts/social/tiktok.mjs` (başındaki yorum ayrıntılı), sunucuda `lernomi-social-tt.timer` 5 dakikada bir →
 `/opt/lernomi/social-tt.sh` (repo dışı). Belirteç `/opt/lernomi/social/tiktok/token.json` (600, `lernomi`; uygulama
