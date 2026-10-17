@@ -48,10 +48,23 @@ const ROUNDS_PER_SESSION = 20;
  * Bu pencere kümelenmeyi doğrudan engeller.
  */
 const RECENT_GAME_WINDOW = 3;
-/** Serbest cümle turu oturum başına tavanı (AI kotası ve süre). */
-const FREE_SENTENCE_PER_SESSION = 2;
 /**
- * Oturumda üretim turlarının en düşük payı (KPI 2 hedefi %40).
+ * Cümle yazdıran turlar (çeviri + serbest cümle) oturum başına TOPLAM tavanı.
+ *
+ * Ürün kararı (Samet, 2026-10-17): kullanıcıları en çok bunlar sıkıyor ve
+ * atlatıyor; 30 günlük gerçek cevaplarda çevirinin %68'i, serbest cümlenin
+ * %73'ü yanlış ya da atlanmış. Üretim tavanının (%20) içinde de bu ikisi en
+ * az çıkanlar olmalı: ikisi birlikte turda en çok bir kez. Yalnız normal
+ * turda; meydan okuma (`bias`) kendi zorluk eğrisini izliyor.
+ */
+const SENTENCE_WRITE_PER_SESSION = 1;
+const SENTENCE_WRITE_GAMES: readonly Round["game"][] = ["translate", "free_sentence"];
+function sentenceWrites(usage: Map<string, number> | undefined): number {
+  return SENTENCE_WRITE_GAMES.reduce((a, g) => a + (usage?.get(g) ?? 0), 0);
+}
+/**
+ * Oturumda üretim turlarının en düşük payı. Varsayılan 0 (2026-10-17, aşağıdaki
+ * tavan yorumu); env ile ölçüm için yeniden açılabilir.
  *
  * Merdiven (WP-14) her basamağa bir üretim dokunuşu koydu ama ölçüm (26 Ağu,
  * 30 gün) payın %12–18'de kaldığını gösterdi: gerçek hesaplarda kelimelerin
@@ -61,10 +74,10 @@ const FREE_SENTENCE_PER_SESSION = 2;
  * %20; olgunlaşmış kuyrukta üst sınır da var, bkz. `PRODUCTION_CEILING`): yeni/takılan
  * kelimede ipuçlu yazma ya da harf bulmacası (destekli), oturmuş/sağlamda
  * çeviri, cümle diz, yazma. Aynı kelime iki kez üretilmez; tanıtım ve
- * eşleştirme dokunulmaz; tek oyun modunda taban yok. `PRODUCTION_FLOOR=0`
- * ile kapatılır (ölçüm/karşılaştırma için).
+ * eşleştirme dokunulmaz; tek oyun modunda taban yok. Tavanı (%20) aşan bir
+ * `PRODUCTION_FLOOR` tavan tarafından geri indirilir.
  */
-const PRODUCTION_FLOOR = Math.max(0, Math.min(0.8, Number(process.env.PRODUCTION_FLOOR || 0.2)));
+const PRODUCTION_FLOOR = Math.max(0, Math.min(0.8, Number(process.env.PRODUCTION_FLOOR || 0)));
 
 /**
  * ÜRETİM TAVANI — tabanın öteki ucu.
@@ -75,9 +88,15 @@ const PRODUCTION_FLOOR = Math.max(0, Math.min(0.8, Number(process.env.PRODUCTION
  * tur baştan sona üretime döndü (Eylül ortası, gerçek hesaplar: tanıtım %2,7,
  * yazma doğruluğu %42). Ürün kararı (2026-09-15): tur tekdüzeleşmesin ve
  * öğrenciyi "yapamıyorum" noktasına itmesin — üretim en çok %40, en az %20.
- * Fazlası, oturumda en az çıkmış tanıma oyununa çevriliyor.
+ *
+ * İkinci ürün kararı (Samet, 2026-10-17): %20–40 da fazla, "kullanıcıları
+ * sıkıyor ve atlıyorlar" → üretim %0–20. Taban kalktı (0), tavan %20 ve
+ * yeni kelimenin ipuçlu yazması da artık tavana SAYILIYOR (yeni kelimesi çok
+ * olan turda tek başına %25'i geçiyordu). Fazlası, oturumda en az çıkmış
+ * tanıma oyununa çevriliyor; önce pekişmiş kelimelerin üretimi, en son ipuçlu
+ * yazma. Küçük kuyrukta (5 turdan az) üretim hiç yok.
  */
-const PRODUCTION_CEILING = 0.4;
+const PRODUCTION_CEILING = 0.2;
 
 /**
  * Borç varken de gelen yeni kelime: taban 2, tavan 5.
@@ -1398,7 +1417,7 @@ function composeRounds(
           // isim, örnek cümlesi olmayan bir kelime) kelime atlanıyor. Zorla
           // başka bir oyuna düşmek, seçimi anlamsız kılardı.
           makeRound(only, item.word, pool, nextId, item.strength, native)
-        : pickRound(item.word, item.strength, pool, recent, nextId, native, item.bias, usage, skipGames);
+        : pickRound(item.word, item.strength, pool, recent, nextId, native, item.bias, usage, productionDue(rounds) ? skipGames : [...(skipGames ?? []), ...PRODUCTION_GAMES]);
     if (!round) continue;
     rounds.push(round);
     meta.set(round.id, item);
@@ -1419,6 +1438,19 @@ function composeRounds(
   return rounds;
 }
 
+/**
+ * Tur kurulurken üretim kotası: bu tur üretim olabilir mi? Kota turun her
+ * noktasında `PRODUCTION_CEILING` (5. turda 1, 10. turda 2 …), üretim böylece
+ * tura yayılıyor ve seçim tekdüzelik penceresinin içinde kalıyor. Sonradan
+ * çevirmek (`lowerProductionCeiling`) yalnız güvenlik ağı: çok sayıda turu dört
+ * tanıma oyununa çevirmek aynı oyunu üç tur içinde tekrarlatıyordu (e2e 11j).
+ */
+function productionDue(rounds: Round[]): boolean {
+  const counted = rounds.filter((r) => r.game !== "intro" && r.game !== "match");
+  const produced = counted.filter((r) => isProductionGame(r.game)).length;
+  return produced + 1 <= Math.floor((counted.length + 1) * PRODUCTION_CEILING);
+}
+
 /** Üretim tavanı — gerekçe `PRODUCTION_CEILING` yorumunda. */
 function lowerProductionCeiling(
   rounds: Round[],
@@ -1428,14 +1460,11 @@ function lowerProductionCeiling(
   native: NativeLang,
   skipGames: readonly string[],
 ): void {
-  // Yeni kelimenin ipuçlu yazması (WP-14) tavana SAYILMIYOR: destekli bir
-  // pedagojik adım, zorluk değil; sayılsaydı yeni kelime çok olan turda
-  // pekişmiş kelimenin üretim turunu iterdi.
+  // Yeni kelimenin ipuçlu yazması (WP-14) da sayılıyor (2026-10-17): kullanıcı
+  // için o da yazdıran bir tur. Kuyruk küçükse (5 turdan az) tavan sıfır.
   const isAssist = (r: Round) => Boolean((r as { assist?: boolean }).assist);
-  const counted = rounds.filter((r) => r.game !== "intro" && r.game !== "match" && !isAssist(r));
-  // En az bir: iki-üç turluk küçük bir kuyrukta tavan sıfıra inip pekişmiş
-  // kelimenin tek üretim turunu da almasın.
-  const cap = Math.max(1, Math.floor(counted.length * PRODUCTION_CEILING));
+  const counted = rounds.filter((r) => r.game !== "intro" && r.game !== "match");
+  const cap = Math.floor(counted.length * PRODUCTION_CEILING);
   let over = counted.filter((r) => isProductionGame(r.game)).length - cap;
   if (over <= 0) return;
   const usage = new Map<string, number>();
@@ -1446,12 +1475,15 @@ function lowerProductionCeiling(
   // penceresi doluysa hemen gevşiyordu, oysa aynı düşüş sonraki bir üretim
   // turunda pencereyi bozmadan yapılabiliyordu (e2e 11j, 20 oturumda ~%40
   // olasılıkla bir "artikel · truefalse · listen · artikel" dizisi).
-  for (const relaxed of [false, true]) {
-    // Baştan sona: turun başı hafiflesin; yeni kelimenin ipuçlu yazması (WP-14)
-    // pedagojik adım, dokunulmuyor.
+  // Önce pekişmiş kelimelerin üretimi, en son yeni kelimenin ipuçlu yazması
+  // (destekli adım, en az zorlayan). Son gevşeme ("any") yalnız komşuyla aynı
+  // oyunu da kabul ediyor: tavan tekdüzelikten önce geliyor.
+  for (const assistPass of [false, true])
+  for (const relaxed of ["strict", "near", "any"] as const) {
+    // Baştan sona: turun başı hafiflesin.
     for (let i = 0; i < rounds.length && over > 0; i++) {
       const r = rounds[i];
-      if (!isProductionGame(r.game) || !("word" in r) || (r as { assist?: boolean }).assist) continue;
+      if (!isProductionGame(r.game) || !("word" in r) || isAssist(r) !== assistPass) continue;
       const strength = meta.get(r.id)?.strength ?? "solid";
       const near = new Set(rounds.slice(Math.max(0, i - RECENT_GAME_WINDOW), i + RECENT_GAME_WINDOW + 1).filter((_, k) => k !== Math.min(i, RECENT_GAME_WINDOW)).map((x) => x.game));
       const all = (["choice", "listen", "truefalse", ...(r.word.artikel ? ["artikel"] : [])] as Round["game"][])
@@ -1459,7 +1491,7 @@ function lowerProductionCeiling(
         .sort((a, b) => (usage.get(a) ?? 0) - (usage.get(b) ?? 0));
       // Hemen yanındaki turla aynı oyun HİÇ konmuyor: öyleyse üretim turu kalıyor.
       const adjacent = new Set([rounds[i - 1]?.game, rounds[i + 1]?.game]);
-      const options = relaxed ? all.filter((g) => near.has(g) && !adjacent.has(g)) : all.filter((g) => !near.has(g));
+      const options = relaxed === "any" ? all : relaxed === "near" ? all.filter((g) => near.has(g) && !adjacent.has(g)) : all.filter((g) => !near.has(g));
       let alt: Round | null = null;
       for (const g of options) {
         alt = makeRound(g, r.word, pool, nextId, strength, native);
@@ -1489,6 +1521,7 @@ function raiseProductionFloor(
   if (need <= 0) return;
   const produced = new Set<number>();
   for (const r of rounds) if (isProductionGame(r.game) && "word" in r) produced.add(r.word.id);
+  let writes = rounds.filter((r) => SENTENCE_WRITE_GAMES.includes(r.game)).length;
   // Sondan başa: tanıtımın hemen ardındaki tanıma turu yerinde kalsın,
   // üretim kelimeyle ikinci karşılaşmaya düşsün.
   for (let i = rounds.length - 1; i >= 0 && need > 0; i--) {
@@ -1499,13 +1532,14 @@ function raiseProductionFloor(
     let alt: Round | null = null;
     if (strength === "solid" || strength === "strong") {
       alt =
-        makeRound(i % 2 ? "translate" : "order", r.word, pool, nextId, strength, native) ??
+        makeRound(i % 2 && writes < SENTENCE_WRITE_PER_SESSION ? "translate" : "order", r.word, pool, nextId, strength, native) ??
         makeRound("typing", r.word, pool, nextId, strength, native);
     } else {
       alt = i % 2 ? makeRound("scramble", r.word, pool, nextId, strength, native) : null;
       if (!alt) alt = { id: nextId(), game: "typing", word: r.word, alternatives: [], assist: true } as Round;
     }
     if (!alt) continue;
+    if (alt.game === "translate") writes++;
     rounds[i] = alt;
     produced.add(r.word.id);
     need--;
@@ -1547,7 +1581,10 @@ function pickRound(
 ): Round | null {
   // Basamağa göre aday küme merdivende (lib/ladder.ts): sunucu, istemci ve
   // rapor aynı listeyi okuyor. Gerekçeler orada.
-  const candidates: Round["game"][] = gamesFor(strength, word);
+  const candidates: Round["game"][] = gamesFor(strength, word).filter(
+    // Çeviri + serbest cümle turda toplam bir kez (`SENTENCE_WRITE_PER_SESSION`).
+    (g) => bias || g !== "translate" || sentenceWrites(usage) < SENTENCE_WRITE_PER_SESSION,
+  );
   // Serbest cümle (WP-12): yalnız sağlam kelimede, oturumda en çok iki kez,
   // meydan okuma/sınav dalgalarında hiç (hakemi AI, süresi belirsiz) ve
   // sağlayıcı varken — yedek hakem dilbilgisini ölçemiyor, onunla tur kurmak
@@ -1555,7 +1592,7 @@ function pickRound(
   if (
     strength === "strong" &&
     !bias &&
-    (usage?.get("free_sentence") ?? 0) < FREE_SENTENCE_PER_SESSION &&
+    sentenceWrites(usage) < SENTENCE_WRITE_PER_SESSION &&
     chatConfigured() &&
     !skipGames?.includes("free_sentence")
   ) {

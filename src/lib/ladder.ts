@@ -23,7 +23,8 @@ export type Strength = "fresh" | "shaky" | "solid" | "strong";
 /**
  * Öğrenciden bir şey KURMASINI isteyen oyunlar; tanıma oyunlarında doğru
  * cevap zaten ekranda. KPI 2 (üretim oranı) buradan sayılır: production /
- * (production + recognition) ≥ %40 hedefi.
+ * (production + recognition); hedef aralık %0–20 (Samet, 2026-10-17: fazlası
+ * kullanıcıyı sıkıyor, tur atlanıyor; tavan `session.ts` `PRODUCTION_CEILING`).
  */
 export const PRODUCTION_GAMES: readonly GameId[] = ["typing", "scramble", "order", "translate", "free_sentence", "speak"];
 
@@ -38,7 +39,7 @@ export function isProductionGame(game: string): boolean {
  *   fresh  — tanıma + harf bulmacası + ipuçlu yazma (assist, composeRounds'ta ayrı)
  *   shaky  — tanıma ağırlıklı; harf bulmacası kalır (takılan kelimeyi yazdırmak yıldırır)
  *   solid  — tanıma + yazma + cümle diz + cümle yaz + yazarak tamamlama
- *   strong — üretim önde: cümle yaz, yazma, yazarak tamamlama; tanıma azınlık
+ *   strong — üretim önde: yazma, cümle diz, cümle yaz, yazarak tamamlama; tanıma azınlık
  */
 export function gamesFor(strength: Strength, word: Pick<RoundWord, "de" | "artikel">): Round["game"][] {
   const short = word.de.length <= 12;
@@ -57,9 +58,10 @@ export function gamesFor(strength: Strength, word: Pick<RoundWord, "de" | "artik
     if (short) c.push("scramble");
     if (word.de.length <= 14) c.push("typing");
   } else {
-    // Üretim önde ve ÇİFT yazılı: karıştırma sonrası öne çıkma olasılığı artar
-    // (bkz. session.ts `tuned` mantığı).
-    c.push("translate", "typing", "order", "translate", "typing", "cloze", "choice", "listen", "truefalse");
+    // Üretim önde, yazma ÇİFT yazılı: karıştırma sonrası öne çıkma olasılığı
+    // artar (bkz. session.ts `tuned` mantığı). Çeviri tek (2026-10-17: en çok
+    // atlanan tur; ayrıca turda en çok bir kez, `SENTENCE_WRITE_PER_SESSION`).
+    c.push("translate", "typing", "order", "typing", "cloze", "choice", "listen", "truefalse");
     if (word.artikel) c.push("artikel", "plural");
     if (short) c.push("scramble");
   }

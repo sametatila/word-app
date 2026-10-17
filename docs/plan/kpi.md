@@ -30,7 +30,8 @@ from daily_stats where reviews > 0 or xp > 0 group by 1 order by 1;
 ### 2. Üretim oranı
 Üretim turu / bütün turlar. Üretim = `PRODUCTION_GAMES` (`lib/ladder.ts`: typing, scramble, order,
 translate, speak) + `production_attempt` olayları. Tanıma turu sayılır: tanıtım kartı 0, eşleştirme
-turu beş cevap yazsa da 1 tur (0,2 ağırlık). Hedef ≥ %40. Oyun listesi `lib/ladder.ts` ile aynı tutulur.
+turu beş cevap yazsa da 1 tur (0,2 ağırlık). Hedef aralık %0–20 (Samet, 2026-10-17: eski ≥ %40 hedefi
+kullanıcıyı sıkıyor, üretim turları atlanıyor; kelime turunda tavan %20, çeviri + serbest cümle turda en çok bir). Oyun listesi `lib/ladder.ts` ile aynı tutulur.
 ```sql
 with p as (
   select date_trunc('week', day)::date as week, count(*) as n

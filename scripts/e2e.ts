@@ -384,9 +384,10 @@ async function main() {
   }
   const strongGames = gamesFor.get(strongW.id)!;
   const shakyGames = gamesFor.get(shakyW.id)!;
+  // İki turluk kuyrukta üretim tavanı (%20) sıfır: pekişmiş kelime de tanımayla sorulur.
   check(
-    "pekişmiş kelimede üretim oyunu çıkıyor",
-    strongGames.has("typing") || strongGames.has("scramble"),
+    "küçük kuyrukta üretim turu yok",
+    ![...strongGames].some((g) => isProductionGame(g)),
     `(${[...strongGames].join(", ")})`,
   );
   check(
@@ -433,11 +434,17 @@ async function main() {
   const kept = await loadSession(USER, day1);
   check("başlanmış tur bozulmuyor", !kept.rounds.some((r) => r.game === "intro") && kept.rounds.length === noNew.length);
   await db.delete(sessionState).where(eq(sessionState.userId, USER));
-  // Üretim tavanı: tanıtım ve eşleştirme dışındaki turların en çok %40'ı üretim.
+  // Üretim tavanı: tanıtım ve eşleştirme dışındaki turların en çok %20'si üretim
+  // (ipuçlu yazma dahil); çeviri + serbest cümle turda en çok bir (2026-10-17).
   const backlogCounted = sBacklog.rounds.filter((r) => r.game !== "intro" && r.game !== "match");
-  const backlogProd = backlogCounted.filter((r) => ["typing", "scramble", "order", "translate", "free_sentence", "speak"].includes(r.game)).length;
-  const backlogAssist = backlogCounted.filter((r) => (r as { assist?: boolean }).assist).length;
-  check("üretim payı tavanı aşmıyor", backlogProd - backlogAssist <= Math.max(1, Math.floor((backlogCounted.length - backlogAssist) * 0.4)), `(${backlogProd - backlogAssist}/${backlogCounted.length - backlogAssist})`);
+  const backlogProd = backlogCounted.filter((r) => isProductionGame(r.game)).length;
+  check("üretim payı tavanı aşmıyor", backlogProd <= Math.floor(backlogCounted.length * 0.2), `(${backlogProd}/${backlogCounted.length})`);
+  let writesMax = 0;
+  for (let i = 0; i < 15; i++) {
+    const s = await buildSession(USER, day1, true);
+    writesMax = Math.max(writesMax, s.rounds.filter((r) => r.game === "translate" || r.game === "free_sentence").length);
+  }
+  check("çeviri + serbest cümle turda en çok bir", writesMax <= 1, `(${writesMax})`);
 
   const challenge = await buildChallenge(USER);
   check("meydan okuma turu kuruluyor", challenge.rounds.length > 0, `(${challenge.rounds.length})`);

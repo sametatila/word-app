@@ -76,7 +76,7 @@ async function main() {
     select coalesce(p.week, r.week)::text as week, (coalesce(p.n,0) + coalesce(r.prod,0))::int as production, coalesce(r.recog,0)::int as recognition
     from p full join r on p.week = r.week order by 1
   `) as Row[];
-  head("2. Üretim oranı", "üretim turu (yazma/bulmaca/diz/çeviri/sesli + üretim görevleri) / tüm turlar (tanıtım hariç, eşleştirme = 1 tur) · hedef ≥ %40");
+  head("2. Üretim oranı", "üretim turu (yazma/bulmaca/diz/çeviri/sesli + üretim görevleri) / tüm turlar (tanıtım hariç, eşleştirme = 1 tur) · hedef %0–20");
   for (const r of prod) {
     const p = n(r.production), q = n(r.recognition);
     console.log(`  ${r.week}  ${pad(p, 5)} üretim  ${pad(q, 6)} tanıma  → ${pct(p, p + q)}`);
