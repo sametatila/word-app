@@ -1982,6 +1982,14 @@ function pickDistractors(
   const seen = new Set([target.text]);
   const head = withArtikel(word).toLocaleLowerCase("de-DE");
   const scored: { option: Option; score: number }[] = [];
+  // Eşanlamlının ekrandaki METNİ de yasak: herbeiführen ("meydana getirmek, to bring about") sorusunda bewirken
+  // ("yol açmak, to bring about") eleniyordu ama aynı "yol açmak" metniyle hervorrufen ("to cause") şık olabiliyordu
+  // (2026-10-17, test:rounds) — öğrenci için ikinci doğru cevap.
+  for (const p of pool) {
+    if (p.id === word.id || !sharesMeaning(word, p, native)) continue;
+    const text = label(p)?.text;
+    if (text) seen.add(text);
+  }
 
   for (const p of pool) {
     const option = label(p);
