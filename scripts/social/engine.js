@@ -942,7 +942,7 @@
     const first = caption.split("\n")[0];
     return `<div class="v-tt"><div class="tabs"><span>Takip edilenler</span><b>Sana Özel</b></div>
       <div class="rail"><div class="av"><img src="${E.ICON}" alt=""></div>${ic(heart, "12,4 B")}${ic(bubble, "843")}${ic(save, "2.951")}${ic(share, "611")}</div>
-      <div class="cap"><b>@lernomi_app</b><p>${first}</p><small>♫ orijinal ses · Lernomi App</small></div></div>
+      <div class="cap"><b>@lernomi.app</b><p>${first}</p><small>♫ orijinal ses · Lernomi App</small></div></div>
       <div class="v-ig"><div class="ig-top"><b>Reels</b></div>
       <div class="rail ig">${ic(heart, "12,4 B")}${ic(bubble, "843")}${ic(send, "611")}${ic(save, "")}</div>
       <div class="cap ig"><div class="who"><img src="${E.ICON}" alt=""><b>lernomi_app</b><span>Takip et</span></div><p>${first}</p><small>♫ lernomi_app · Orijinal ses</small></div>

@@ -412,7 +412,7 @@ stüdyo takviminde "Instagram API" etiketi.
 ### TikTok: API kurulu (2026-10-12)
 
 TikTok for Developers uygulaması **Lernomi**, **sandbox** (inceleme yok; hedef kullanıcı Lernomi'nin TikTok hesabı, gerçek veri
-dönüyor; 2026-10-17'den beri Samet'in YENİ geliştirici hesabındaki uygulama ve Almanya merkezli YENİ TikTok hesabı, eski
+dönüyor; 2026-10-17'den beri Samet'in YENİ geliştirici hesabındaki uygulama ve Almanya merkezli YENİ TikTok hesabı **@lernomi.app**, eski
 @lernomi_app belirteci `tiktok/token.eski-lernomi_app-2026-10-17.json`; API yalnız bağlı hesabı görür, başka hesaptaki
 zamanlanmış video saatinden sonra oEmbed'le denetlenir. Samet: "eski hesabın verilerinin anlamı kalmadı": eski
 hesapta yayındaki 16 TikTok satırı **Atlandı** yapıldı, notunda eski bağlantı ve son izlenme (toplam 3.698) duruyor;
