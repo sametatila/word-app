@@ -257,9 +257,13 @@ async function watchScheduled(live) {
     }
     // API'de görülen video syncApi'de zaten "published" oldu; burada kalan, API'nin göremedikleri
     const id = videoIdOf(r.url);
-    const state = live && (id || !r.url) ? (id && live.has(id) ? "live" : "hidden") : await probe(r.url); // kısa bağlantı: oEmbed
+    let state = live && (id || !r.url) ? (id && live.has(id) ? "live" : "hidden") : await probe(r.url); // kısa bağlantı: oEmbed
+    let via = live ? "API" : "oEmbed";
+    // API yalnız bağlı hesabın videolarını görür: listede olmayan bağlantı başka hesapta olabilir (2026-10-17 hesap
+    // değişimi, eski hesapta zamanlanmış videolar) → saatinden sonra oEmbed'e de sor
+    if (state === "hidden" && live && id && now >= at && (await probe(r.url)) === "live") [state, via] = ["live", "oEmbed"];
     if (state === "live") {
-      await markPublished(r.id, null, r.url, live ? "API" : "oEmbed");
+      await markPublished(r.id, null, r.url, via);
       if (job.warnedAt) await telegram(`<b>[BİLGİ] TikTok: geç de olsa yayında</b>\n${esc(r.episode_id)} (${esc(r.slot)} Berlin)\n${esc(r.url)}`);
     } else if (state === "hidden" && now >= at + WARN_AFTER && !job.warnedAt) {
       await q("update social_posts set job = $2 where id = $1", [r.id, { ...job, warnedAt: new Date().toISOString(), error: "saatinde yayına çıkmadı (TikTok'ta zamanlama, gizlilik ya da silinme)" }]);

@@ -411,8 +411,10 @@ stüdyo takviminde "Instagram API" etiketi.
 
 ### TikTok: API kurulu (2026-10-12)
 
-TikTok for Developers uygulaması **Lernomi**, **sandbox** (inceleme yok; hedef kullanıcı @lernomi_app, gerçek veri
-dönüyor), Login Kit + `user.info.basic`, `user.info.stats`, `video.list` (yayın ürünleri bilerek yok: denetimden
+TikTok for Developers uygulaması **Lernomi**, **sandbox** (inceleme yok; hedef kullanıcı Lernomi'nin TikTok hesabı, gerçek veri
+dönüyor; 2026-10-17'den beri Samet'in YENİ geliştirici hesabındaki uygulama ve Almanya merkezli YENİ TikTok hesabı, eski
+@lernomi_app belirteci `tiktok/token.eski-lernomi_app-2026-10-17.json`; API yalnız bağlı hesabı görür, başka hesaptaki
+zamanlanmış video saatinden sonra oEmbed'le denetlenir, eski hesabın videolarının sayıları donar), Login Kit + `user.info.basic`, `user.info.stats`, `video.list` (yayın ürünleri bilerek yok: denetimden
 geçmez). Yönlendirme `https://www.lernomi.app/`. Yerelde `.secrets/tiktok/` (`key`, `secret`, logo). İşçi
 `scripts/social/tiktok.mjs` (başındaki yorum ayrıntılı), sunucuda `lernomi-social-tt.timer` 5 dakikada bir →
 `/opt/lernomi/social-tt.sh` (repo dışı). Belirteç `/opt/lernomi/social/tiktok/token.json` (600, `lernomi`; uygulama
